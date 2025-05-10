@@ -1,0 +1,1383 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Frameset//EN""http://www.w3.org/TR/REC-html40/frameset.dtd">
+<HTML>
+<HEAD>
+<TITLE>
+ Overview
+</TITLE>
+<LINK REL ="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+<SCRIPT>
+function asd()
+{
+parent.document.title=" Overview";
+}
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="white" onload="asd();">
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_top"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"></TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev">	&nbsp;<FONT CLASS="NavBarFont1Rev"><b>Overview</b></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"> 	&nbsp;<FONT CLASS="NavBarFont1">Class</FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="overview-tree.html"><FONT CLASS="NavBarFont1"><b>Tree</b></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="index-all.html"--><FONT CLASS="NavBarFont1"><b>Index</b></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="help-doc.html"><FONT CLASS="NavBarFont1"><b>Help</b></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD BGCOLOR="#EEEEFF" ALIGN="right" VALIGN="top"><EM>
+<b></b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="index.html" TARGET="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="overview-summary.html" TARGET="_top"><B>NO FRAMES</B></A>
+&nbsp;&nbsp;
+<SCRIPT>
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+
+<HR>
+
+<!-- START SOURCECODE -->
+<pre class="sourceview">
+<span class="comment">
+// First, make sure all browsers have necessary ECMAScript v3 </span>
+<span class="comment">// and DOM Level 1 properties</span>
+
+<span class="comment">/** <span class="attrib">@type</span> undefined */</span>
+var undefined;
+
+<span class="comment">/** <span class="attrib">@type</span> Object */</span>
+var Node = Node ? Node : {};
+<span class="comment">/** <span class="attrib">@type</span> number */</span>
+Node.ELEMENT_NODE 					= 1;
+<span class="comment">/** <span class="attrib">@type</span> number */</span>
+Node.ATTRIBUTE_NODE 				= 2;
+<span class="comment">/** <span class="attrib">@type</span> number */</span>
+Node.TEXT_NODE 						= 3;
+<span class="comment">/** <span class="attrib">@type</span> number */</span>
+Node.CDATA_SECTION_NODE 			= 4;
+<span class="comment">/** <span class="attrib">@type</span> number */</span>
+Node.ENTITY_REFERENCE_NODE 			= 5;
+<span class="comment">/** <span class="attrib">@type</span> number */</span>
+Node.ENTITY_NODE 					= 6;
+<span class="comment">/** <span class="attrib">@type</span> number */</span>
+Node.PROCESSING_INSTRUCTION_NODE 	= 7;
+<span class="comment">/** <span class="attrib">@type</span> number */</span>
+Node.COMMENT_NODE 					= 8;
+<span class="comment">/** <span class="attrib">@type</span> number */</span>
+Node.DOCUMENT_NODE 					= 9;
+<span class="comment">/** <span class="attrib">@type</span> number */</span>
+Node.DOCUMENT_TYPE_NODE 			= 10;
+<span class="comment">/** <span class="attrib">@type</span> number */</span>
+Node.DOCUMENT_FRAGMENT_NODE 		= 11;
+<span class="comment">/** <span class="attrib">@type</span> number */</span>
+Node.NOTATION_NODE 					= 12;
+
+
+<span class="comment">/**
+ *	String convenience method to trim leading and trailing whitespace.
+ *
+ *	<span class="attrib">@returns</span> String
+ */</span>
+String.<span class="reserved">prototype</span>.trim = <span class="reserved">function</span> () {
+	<span class="reserved">return</span> <span class="reserved">this</span>.replace(/^\s*(.+)/gi,<span class="literal">"$1"</span>).replace(/\s*$/gi,<span class="literal">""</span>);
+};
+
+<span class="comment">/**
+ *	String convenience method for checking if the end of this string equals
+ *	a given string.
+ *
+ *	<span class="attrib">@returns</span> String
+ */</span>
+String.<span class="reserved">prototype</span>.endsWith = <span class="reserved">function</span> (s) {
+	<span class="reserved">if</span> (<span class="literal">"string"</span> != typeof s) {
+		throw(<span class="literal">"IllegalArgumentException: Must pass a string to "</span> +
+				<span class="literal">"String.endsWith()"</span>);
+	}
+	var start = <span class="reserved">this</span>.length - s.length;
+	<span class="reserved">return</span> <span class="reserved">this</span>.substring(start) == s;
+};
+
+<span class="comment">/**
+ *	Array convenience method to check for membership.
+ *
+ *	<span class="attrib">@param</span> object element
+ *	<span class="attrib">@returns</span> boolean
+ */</span>
+Array.<span class="reserved">prototype</span>.contains = <span class="reserved">function</span> (element) {
+	<span class="reserved">for</span> (var i = 0; i &lt; <span class="reserved">this</span>.length; i++) {
+		<span class="reserved">if</span> (<span class="reserved">this</span>[i] == element) {
+			<span class="reserved">return</span> true;
+		}
+	}
+	<span class="reserved">return</span> false;
+};
+
+<span class="comment">/**
+ *	Array convenience method to remove element.
+ *
+ *	<span class="attrib">@param</span> object element
+ *	<span class="attrib">@returns</span> boolean
+ */</span>
+Array.<span class="reserved">prototype</span>.remove = <span class="reserved">function</span> (element) {
+	var result = false;
+	var array = [];
+	<span class="reserved">for</span> (var i = 0; i &lt; <span class="reserved">this</span>.length; i++) {
+		<span class="reserved">if</span> (<span class="reserved">this</span>[i] == element) {
+			result = true;
+		} <span class="reserved">else</span> {
+			array.push(<span class="reserved">this</span>[i]);
+		}
+	}
+	<span class="reserved">this</span>.clear();
+	<span class="reserved">for</span> (var i = 0; i &lt; array.length; i++) {
+		<span class="reserved">this</span>.push(array[i]);
+	}
+	array = null;
+	<span class="reserved">return</span> result;
+};
+
+<span class="comment">/**
+ *	Array convenience method to clear membership.
+ *
+ *	<span class="attrib">@param</span> object element
+ *	<span class="attrib">@returns</span> void
+ */</span>
+Array.<span class="reserved">prototype</span>.clear = <span class="reserved">function</span> () {
+	<span class="reserved">this</span>.length = 0;
+};
+
+<span class="comment">/**
+ *	Array convenience method to add stack functionality to &lt;code&gt;Array&lt;/code&gt;s
+ *	in browsers that do not support ECMAScript v3.
+ *
+ *	<span class="attrib">@param</span> object element
+ *	<span class="attrib">@returns</span> number
+ */</span>
+Array.<span class="reserved">prototype</span>.push = <span class="reserved">function</span> (element) {
+	<span class="reserved">this</span>[<span class="reserved">this</span>.length] = element;
+	<span class="reserved">return</span> <span class="reserved">this</span>.length;
+};
+
+<span class="comment">/**
+ *	Array convenience method to add set functionality to &lt;code&gt;Array&lt;/code&gt;s
+ *	... if the element is already a member of this array, return false. 
+ *	Otherwise, add it and return true.
+ *
+ *	<span class="attrib">@param</span> object element
+ *	<span class="attrib">@returns</span> boolean
+ */</span>
+Array.<span class="reserved">prototype</span>.add = <span class="reserved">function</span> (element) {
+	<span class="reserved">if</span> (<span class="reserved">this</span>.contains(element)) {
+		<span class="reserved">return</span> false;
+	}
+	<span class="reserved">this</span>.push(element);
+	<span class="reserved">return</span> false;
+};
+
+<span class="comment">/**
+ *	Array convenience method to add set functionality to &lt;code&gt;Array&lt;/code&gt;s
+ *	... Uniquely adds all elements in the array parameter to this array. 
+ *	Returns true if any new elements were added to this array. False otherwise.
+ *
+ *	<span class="attrib">@param</span> Array that
+ *	<span class="attrib">@returns</span> boolean
+ */</span>
+Array.<span class="reserved">prototype</span>.addAll = <span class="reserved">function</span> (that) {
+	var result = false;
+	<span class="reserved">for</span> (var i = 0; i &lt; that.length; i++) {
+		<span class="reserved">if</span> (<span class="reserved">this</span>.add(that[i])) {
+			result = true;
+		}
+	}
+	<span class="reserved">return</span> true;
+};
+<span class="comment">
+
+// Initialize org.ditchnet namespace</span>
+var org = org ? org : {};
+	org.ditchnet = org.ditchnet ? org.ditchnet : {};
+	org.ditchnet.dom   = org.ditchnet.dom   ? org.ditchnet.dom 	 : {};
+	org.ditchnet.jsp   = org.ditchnet.jsp   ? org.ditchnet.jsp   : {};
+	org.ditchnet.util  = org.ditchnet.util  ? org.ditchnet.util  : {};
+	org.ditchnet.event = org.ditchnet.event ? org.ditchnet.event : {};
+
+<span class="comment">/**
+ *	A utility class that exists to combine functionality for the Tabs
+ *	into a single class as static methods and constants. This class is not 
+ *	meant to be subclassed.
+ *
+ *	<span class="attrib">@constructor</span> 
+ */</span>
+org.ditchnet.jsp.TabUtils = <span class="reserved">function</span> () {};
+
+<span class="comment">/** <span class="attrib">@type</span> string */</span>
+org.ditchnet.jsp.TabUtils.TAB_CONTAINER_CLASS_NAME	= <span class="literal">"ditch-tab-container"</span>;
+<span class="comment">/** <span class="attrib">@type</span> string */</span>
+org.ditchnet.jsp.TabUtils.TAB_WRAP_CLASS_NAME	    = <span class="literal">"ditch-tab-wrap"</span>;
+<span class="comment">/** <span class="attrib">@type</span> string */</span>
+org.ditchnet.jsp.TabUtils.TAB_CLASS_NAME		    = <span class="literal">"ditch-tab"</span>;
+<span class="comment">/** <span class="attrib">@type</span> string */</span>
+org.ditchnet.jsp.TabUtils.TAB_BG_LEFT_CLASS_NAME	= <span class="literal">"ditch-tab-bg-left"</span>;
+<span class="comment">/** <span class="attrib">@type</span> string */</span>
+org.ditchnet.jsp.TabUtils.TAB_PANE_WRAP_CLASS_NAME	= <span class="literal">"ditch-tab-pane-wrap"</span>;
+<span class="comment">/** <span class="attrib">@type</span> string */</span>
+org.ditchnet.jsp.TabUtils.TAB_PANE_CLASS_NAME	    = <span class="literal">"ditch-tab-pane"</span>;
+
+<span class="comment">/** <span class="attrib">@type</span> HTMLElement */</span>
+org.ditchnet.jsp.TabUtils.tabContainer;
+<span class="comment">/** <span class="attrib">@type</span> HTMLElement */</span>
+org.ditchnet.jsp.TabUtils.tabWrap;
+<span class="comment">/** <span class="attrib">@type</span> HTMLElement */</span>
+org.ditchnet.jsp.TabUtils.tab;
+<span class="comment">/** <span class="attrib">@type</span> Array */</span>
+org.ditchnet.jsp.TabUtils.tabs;
+<span class="comment">/** <span class="attrib">@type</span> Array */</span>
+org.ditchnet.jsp.TabUtils.tabPanes;
+<span class="comment">/** <span class="attrib">@type</span> number */</span>
+org.ditchnet.jsp.TabUtils.selectedIndex;
+
+
+<span class="comment">/**
+ *	A utility class that exists to combine common DOM algorithms and utilities
+ *	into a single class as static methods and constants. This class is not 
+ *	meant to be subclassed.
+ *
+ *	<span class="attrib">@constructor</span> 
+ */</span>
+org.ditchnet.dom.DomUtils = <span class="reserved">function</span> () {};
+
+<span class="comment">/** <span class="attrib">@type</span> string */</span>
+org.ditchnet.dom.DomUtils.FOCUSED_CLASS_NAME	= <span class="literal">"ditch-focused"</span>;
+<span class="comment">/** <span class="attrib">@type</span> string */</span>
+org.ditchnet.dom.DomUtils.UNFOCUSED_CLASS_NAME	= <span class="literal">"ditch-unfocused"</span>;
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> Element target
+ *	<span class="attrib">@returns</span> void
+ */</span>
+org.ditchnet.dom.DomUtils.show = <span class="reserved">function</span> (target) {
+	target.style.display = <span class="literal">""</span>;
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> Element target
+ *	<span class="attrib">@returns</span> void
+ */</span>
+org.ditchnet.dom.DomUtils.hide = <span class="reserved">function</span> (target) {
+	target.style.display = <span class="literal">"none"</span>;
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> Element target
+ *	<span class="attrib">@returns</span> void
+ */</span>
+org.ditchnet.dom.DomUtils.setClassNameAsFocused = <span class="reserved">function</span> (target) {
+	with (org.ditchnet.dom.DomUtils) {
+		removeClassName( target,UNFOCUSED_CLASS_NAME );
+		addClassName(    target,FOCUSED_CLASS_NAME   );
+	}
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> Element target
+ *	<span class="attrib">@returns</span> void
+ */</span>
+org.ditchnet.dom.DomUtils.setClassNameAsUnFocused = <span class="reserved">function</span> (target) {
+	with (org.ditchnet.dom.DomUtils) {
+		removeClassName( target,FOCUSED_CLASS_NAME   );
+		addClassName(    target,UNFOCUSED_CLASS_NAME );
+	}
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> Node target
+ *	<span class="attrib">@param</span> string k
+ *	<span class="attrib">@returns</span> void
+ */</span>
+org.ditchnet.dom.DomUtils.addClassName = <span class="reserved">function</span> (target,k) {
+	with (org.ditchnet.dom.DomUtils) {
+		<span class="reserved">if</span>(!isElementNode(target)) {
+			throw new Error(<span class="literal">"Attempting to add a className to a non-Element"</span> +
+								<span class="literal">" Node"</span>);
+		}
+		var classNames = target.className.split(/\s+/g);
+		<span class="reserved">if</span> (classNames.contains(k)) {
+			<span class="reserved">return</span>;
+		} <span class="reserved">else</span> {
+			classNames.push(k);
+		}
+		target.className = classNames.join(<span class="literal">" "</span>);
+		target.className = target.className.trim();
+	}
+}
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> Node target
+ *	<span class="attrib">@param</span> string k
+ *	<span class="attrib">@returns</span> void
+ */</span>
+org.ditchnet.dom.DomUtils.removeClassName = <span class="reserved">function</span> (target,k) {
+	with (org.ditchnet.dom.DomUtils) {
+		<span class="reserved">if</span>(!isElementNode(target)) {
+			throw new Error(<span class="literal">"Attempting to remove a className to a "</span> +
+								<span class="literal">"non-Element Node"</span>);
+		}
+		var classNames = target.className.split(/\s+/g);
+		<span class="reserved">if</span> (!classNames.contains(k)) {
+			<span class="reserved">return</span>;
+		} <span class="reserved">else</span> {
+			classNames.remove(k);
+		}
+		target.className = classNames.join(<span class="literal">" "</span>);
+		target.className = target.className.trim();
+	}
+}
+
+<span class="comment">/**
+ *	Tests to see if &lt;code&gt;target&lt;/code&gt;'s &lt;code&gt;getNodeType()&lt;/code&gt; 
+ *	method returns &lt;code&gt;Node.ELEMENT_NODE&lt;/code&gt;.
+ *	<span class="attrib">@param</span> Element target
+ *	<span class="attrib">@returns</span> boolean
+ */</span>
+org.ditchnet.dom.DomUtils.isElementNode = <span class="reserved">function</span> (target) {
+	<span class="reserved">return</span> Node.ELEMENT_NODE == target.nodeType;
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> Element target
+ *	<span class="attrib">@param</span> string id
+ *	<span class="attrib">@returns</span> boolean
+ */</span>
+org.ditchnet.dom.DomUtils.hasId = <span class="reserved">function</span> (target,id) {
+	<span class="reserved">return</span> target.id == id;
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> Element target
+ *	<span class="attrib">@param</span> string className
+ *	<span class="attrib">@returns</span> boolean
+ */</span>
+org.ditchnet.dom.DomUtils.hasClassName = <span class="reserved">function</span> (target,className) {
+	
+	<span class="reserved">function</span> _isLastOfMultpleClassNames(all,className) {
+		var spaceBefore = all.lastIndexOf(className)-1;
+		<span class="reserved">return</span> all.endsWith(className) &amp;&amp; 
+			all.substring(spaceBefore,spaceBefore+1) == <span class="literal">" "</span>;
+	}
+
+	className = className.trim();
+	var cn = target.className;
+	<span class="reserved">if</span> (!cn) {
+		<span class="reserved">return</span> false;
+	}
+	cn = cn.trim();
+	<span class="reserved">if</span> (cn == className) {
+		<span class="reserved">return</span> true;
+	}
+	<span class="reserved">if</span> (cn.indexOf(className + <span class="literal">" "</span>) &gt; -1) {
+		<span class="reserved">return</span> true;
+	}
+	<span class="reserved">if</span> (_isLastOfMultpleClassNames(cn,className)) {
+		<span class="reserved">return</span> true;
+	}
+	<span class="reserved">return</span> false;
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> Node target
+ *	<span class="attrib">@param</span> string className
+ *	<span class="attrib">@returns</span> Element
+ */</span>
+org.ditchnet.dom.DomUtils.getFirstAncestorOrSelfByClassName = <span class="reserved">function</span> (target,
+															   className) {
+	with (org.ditchnet.dom.DomUtils) {
+		var parent = target;
+		do {
+			<span class="reserved">if</span> (isElementNode(parent) &amp;&amp; hasClassName(parent,className)) {
+				<span class="reserved">return</span> parent;
+			}
+		} <span class="reserved">while</span> (parent = parent.parentNode);
+	}
+	<span class="reserved">return</span> null;
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> Node target
+ *	<span class="attrib">@param</span> string className
+ *	<span class="attrib">@returns</span> Element
+ */</span>
+org.ditchnet.dom.DomUtils.getFirstAncestorByClassName = <span class="reserved">function</span> (target,className) {
+	with (org.ditchnet.dom.DomUtils) {
+		var parent = target;
+		<span class="reserved">while</span> (parent = parent.parentNode) {
+			<span class="reserved">if</span> (isElementNode(parent) &amp;&amp; hasClassName(parent,className)) {
+				<span class="reserved">return</span> parent;
+			}
+		}
+	}
+	<span class="reserved">return</span> null;
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> Node target
+ *	<span class="attrib">@param</span> string className
+ *	<span class="attrib">@returns</span> Element
+ */</span>
+org.ditchnet.dom.DomUtils.getFirstChildByClassName = <span class="reserved">function</span> (target,className) {
+	with (org.ditchnet.dom.DomUtils) {
+		var kids = target.childNodes;
+		<span class="reserved">for</span> (var i = 0; i &lt; kids.length; i++) {
+			var kid = kids[i];
+			<span class="reserved">if</span> (isElementNode(kid) &amp;&amp; hasClassName(kid,className)) {
+				<span class="reserved">return</span> kid;
+			}
+		}
+	}
+	<span class="reserved">return</span> null;
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> Node target
+ *	<span class="attrib">@param</span> string className
+ *	<span class="attrib">@returns</span> Array
+ */</span>
+org.ditchnet.dom.DomUtils.getChildrenByClassName = <span class="reserved">function</span> (target,className) {
+	var result = [];
+	with (org.ditchnet.dom.DomUtils) {
+		var kids = target.childNodes;
+		<span class="reserved">for</span> (var i = 0; i &lt; kids.length; i++) {
+			var kid = kids[i];
+			<span class="reserved">if</span> (isElementNode(kid) &amp;&amp; hasClassName(kid,className)) {
+				result.push(kid);
+			}
+		}
+	}
+	<span class="reserved">return</span> result;
+};
+
+
+
+<span class="comment">/**
+ *	Retreives &lt;code&gt;target&lt;/code&gt;'s first descendant element with an
+ *	HTML &lt;code&gt;class&lt;/code&gt; attribute value that includes &lt;code&gt;
+ *	className&lt;/code&gt; using a breadth-first algorithm.
+ *	
+ *	<span class="attrib">@param</span> Element target
+ *	<span class="attrib">@param</span> string className
+ *	<span class="attrib">@returns</span> Element
+ */</span>
+org.ditchnet.dom.DomUtils.getFirstDescendantByClassNameBreadthFirst = <span class="reserved">function</span> (
+																target,
+																className) {
+	var result;
+	with (org.ditchnet.dom.DomUtils) {
+		<span class="reserved">if</span> (result = getFirstChildByClassName(target,className)) {
+			<span class="reserved">return</span> result;
+		}
+		<span class="reserved">for</span> (var i = 0; i &lt; target.childNodes.length; i++) {
+			result = getFirstDescendantByClassNameBreadthFirst(
+										target.childNodes.item(i),
+										className );
+			<span class="reserved">if</span> (result) {
+				<span class="reserved">return</span> result;
+			}
+		}
+		<span class="reserved">return</span> null;
+	}
+};
+
+<span class="comment">/**
+ *	Retreives &lt;code&gt;target&lt;/code&gt;'s first descendant element with an
+ *	HTML &lt;code&gt;class&lt;/code&gt; attribute value that includes &lt;code&gt;
+ *	className&lt;/code&gt; using a depth-first algorithm.
+ *	
+ *	<span class="attrib">@param</span> Element target
+ *	<span class="attrib">@param</span> string className
+ *	<span class="attrib">@returns</span> Element
+ */</span>
+org.ditchnet.dom.DomUtils.getFirstDescendantByClassNameDepthFirst = <span class="reserved">function</span> (
+																target,
+																className) {
+	var child;
+	var result;
+	with (org.ditchnet.dom.DomUtils) {
+		<span class="reserved">for</span> (var i = 0; i &lt; target.childNodes.length; i++) {
+			child = target.childNodes.item(i);
+			<span class="reserved">if</span> (isElementNode(child) &amp;&amp; hasClassName(child,className)) {
+				<span class="reserved">return</span> child;
+			}
+			result = getFirstDescendantByClassNameDepthFirst(
+													target.childNodes.item(i),
+													className );
+			<span class="reserved">if</span> (result) {
+				<span class="reserved">return</span> result;
+			}
+		}
+		<span class="reserved">return</span> null;
+	}
+};
+
+<span class="comment">/**
+ *	Returns all descendant elements of &lt;code&gt;target&lt;/code&gt; with HTML &lt;code&gt;
+ *	class&lt;/code&gt; attribute values that contain &lt;code&gt;className&lt;/code&gt;
+ *	as an Array. NOTE that unlike the
+ *	algorithms specified in the DOM spec, a &lt;code&gt;NodeList&lt;/code&gt; is NOT
+ *	returned. This method searched for all descendants of &lt;code&gt;target
+ *	&lt;/code&gt; meeting the criteria using a breadth-first algorithm.
+ *
+ *	<span class="attrib">@param</span> Element target
+ *	<span class="attrib">@param</span> string className
+ *	<span class="attrib">@returns</span> Element
+ */</span>
+org.ditchnet.dom.DomUtils.getDescendantsByClassName = <span class="reserved">function</span> (target,className) {
+	var result = [];
+	with (org.ditchnet.dom.DomUtils) {
+		result.addAll(getChildrenByClassName(target,className));
+		<span class="reserved">for</span> (var i = 0; i &lt; target.childNodes.length; i++) {
+			result.addAll(getDescendantsByClassName(
+											target.childNodes.item(i),
+											className));
+		}
+		<span class="reserved">return</span> result;
+	}
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> MouseEvent evt
+ *	<span class="attrib">@returns</span> void
+ */</span>
+org.ditchnet.jsp.TabUtils.tabClicked = <span class="reserved">function</span> (evt) {
+	var eventSource;
+	with (org.ditchnet) {
+		evt = new event.Event(evt);
+		eventSource = evt.getSource();
+		eventSource = dom.DomUtils.getFirstAncestorOrSelfByClassName(
+												eventSource,
+												jsp.TabUtils.TAB_CLASS_NAME );
+		jsp.TabUtils.switchTab(eventSource);
+		evt.consume();
+	}
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> HTMLElement eventSource
+ *	<span class="attrib">@returns</span> void
+ */</span>
+org.ditchnet.jsp.TabUtils.switchTab = <span class="reserved">function</span> (eventSource) {
+	with (org.ditchnet.jsp.TabUtils) {
+		findTabElements(eventSource);
+		selectedIndex = determineSelectedIndex(eventSource);
+		toggleTabVisibility(selectedIndex);
+		setTabCookie(selectedIndex);
+	}
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> number selectedIndex
+ *	<span class="attrib">@returns</span> void
+ */</span>
+org.ditchnet.jsp.TabUtils.setTabCookie = <span class="reserved">function</span> (selectedIndex) {
+	with (org.ditchnet) {
+		var name  = <span class="literal">"org.ditchnet.jsp.tabs:"</span>+jsp.TabUtils.tabContainer.id;
+		var value = selectedIndex;
+		var c = new util.Cookie(name,value);
+		util.Cookie.addPageCookie(c);
+	}
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> HTMLElement eventSource
+ *	<span class="attrib">@returns</span> void
+ */</span>
+org.ditchnet.jsp.TabUtils.findTabElements = <span class="reserved">function</span> (eventSource) {
+	with (org.ditchnet) {
+		jsp.TabUtils.tab		  = eventSource;
+		jsp.TabUtils.tabContainer = dom.DomUtils.getFirstAncestorByClassName(
+										eventSource,
+										jsp.TabUtils.TAB_CONTAINER_CLASS_NAME );
+		jsp.TabUtils.tabWrap 	  	= dom.DomUtils.getFirstChildByClassName(
+										jsp.TabUtils.tabContainer,
+										jsp.TabUtils.TAB_WRAP_CLASS_NAME );
+		jsp.TabUtils.tabs 		  = dom.DomUtils.getChildrenByClassName(
+										jsp.TabUtils.tabWrap,
+										jsp.TabUtils.TAB_CLASS_NAME );
+		jsp.TabUtils.tabPaneWrap  = dom.DomUtils.getFirstChildByClassName(
+										jsp.TabUtils.tabContainer,
+										jsp.TabUtils.TAB_PANE_WRAP_CLASS_NAME );
+		jsp.TabUtils.tabPanes  	  = dom.DomUtils.getChildrenByClassName(
+										jsp.TabUtils.tabPaneWrap,
+										jsp.TabUtils.TAB_PANE_CLASS_NAME );
+	}
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> HTMLElement eventSource
+ *	<span class="attrib">@returns</span> number
+ */</span>
+org.ditchnet.jsp.TabUtils.determineSelectedIndex = <span class="reserved">function</span> (eventSource) {
+	with (org.ditchnet.jsp.TabUtils) {
+		<span class="reserved">for</span> (var i = 0; i &lt; tabs.length; i++) {
+			<span class="reserved">if</span> (tabs[i] == eventSource) {
+				<span class="reserved">return</span> i;
+			}
+		}
+	}
+<span class="comment">	//throw new Error("Should not reach here: Did not find tab selectedIndex");</span>
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> number selectedIndex
+ *	<span class="attrib">@returns</span> void
+ */</span>
+org.ditchnet.jsp.TabUtils.toggleTabVisibility = <span class="reserved">function</span> (selectedIndex) {
+	with (org.ditchnet) {
+		<span class="reserved">for</span> (var i = 0; i &lt; jsp.TabUtils.tabPanes.length; i++) {
+			var tabPane = jsp.TabUtils.tabPanes[i];
+			<span class="reserved">if</span> (i == selectedIndex) {
+				dom.DomUtils.show(tabPane);
+				dom.DomUtils.setClassNameAsFocused(jsp.TabUtils.tabs[i]);
+			} <span class="reserved">else</span> {
+				dom.DomUtils.hide(tabPane);
+				dom.DomUtils.setClassNameAsUnFocused(jsp.TabUtils.tabs[i]);
+			}
+		}
+	}
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> Event evt
+ *	<span class="attrib">@param</span> string tabContainerId
+ *	<span class="attrib">@param</span> number selectedIndex
+ *	<span class="attrib">@returns</span> void
+ */</span>
+org.ditchnet.jsp.TabUtils.tabLinkClicked = <span class="reserved">function</span> (evt,selectedTabPaneId) {
+	var tabContainer,selectedTabPane,tabWrap,tabs,tabPaneWrap,tabPanes,
+		selectedIndex;
+	with (org.ditchnet) {
+		evt = new event.Event(evt);
+		selectedTabPane = document.getElementById(selectedTabPaneId);
+		tabContainer    = dom.DomUtils.getFirstAncestorByClassName(
+										selectedTabPane,
+										jsp.TabUtils.TAB_CONTAINER_CLASS_NAME );
+		tabWrap			= dom.DomUtils.getFirstChildByClassName(
+										tabContainer,
+										jsp.TabUtils.TAB_WRAP_CLASS_NAME );
+		tabs			= dom.DomUtils.getChildrenByClassName(
+										tabWrap,
+										jsp.TabUtils.TAB_CLASS_NAME );
+		tabPaneWrap		= dom.DomUtils.getFirstAncestorByClassName(
+										selectedTabPane,
+										jsp.TabUtils.TAB_PANE_WRAP_CLASS_NAME );
+		tabPanes		= dom.DomUtils.getChildrenByClassName(
+										tabPaneWrap,
+										jsp.TabUtils.TAB_PANE_CLASS_NAME );
+		<span class="reserved">for</span> (var i = 0; i &lt; tabPanes.length; i++) {
+			<span class="reserved">if</span> (tabPanes[i] == selectedTabPane) {
+				selectedIndex = i;
+				break;
+			}
+		}
+		jsp.TabUtils.switchTab(tabs[selectedIndex]);
+		window.scrollTo(0,0);
+		evt.consume();
+	}
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> Event evt
+ *	<span class="attrib">@param</span> string tabContainerId
+ *	<span class="attrib">@returns</span> void
+ */</span>
+org.ditchnet.jsp.TabUtils.prevTabButtonClicked = <span class="reserved">function</span> (evt,tabContainerId) {
+	org.ditchnet.jsp.TabUtils.tabButtonClicked(evt,tabContainerId,true);
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> Event evt
+ *	<span class="attrib">@param</span> string tabContainerId
+ *	<span class="attrib">@returns</span> void
+ */</span>
+org.ditchnet.jsp.TabUtils.nextTabButtonClicked = <span class="reserved">function</span> (evt,tabContainerId) {
+	org.ditchnet.jsp.TabUtils.tabButtonClicked(evt,tabContainerId,false);
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@param</span> Event evt
+ *	<span class="attrib">@param</span> string tabContainerId
+ *	<span class="attrib">@returns</span> void
+ */</span>
+org.ditchnet.jsp.TabUtils.tabButtonClicked = <span class="reserved">function</span> (evt,tabContainerId,isPrev) {
+	var tabContainer,tabWrap,tabs,selectedIndex;
+	with (org.ditchnet) {
+		evt = new event.Event(evt);
+		tabContainer = document.getElementById(tabContainerId);
+		tabWrap 	 = dom.DomUtils.getFirstChildByClassName(
+											tabContainer,
+											jsp.TabUtils.TAB_WRAP_CLASS_NAME );
+		tabs		 = dom.DomUtils.getChildrenByClassName(
+											tabWrap,
+											jsp.TabUtils.TAB_CLASS_NAME );
+		<span class="reserved">for</span> (var i = 0; i &lt; tabs.length; i++) {
+			<span class="reserved">if</span> (dom.DomUtils.hasClassName(tabs[i],dom.DomUtils.FOCUSED_CLASS_NAME)) {
+				selectedIndex = (isPrev) ? i-1 : i+1;
+				selectedIndex = (selectedIndex &gt;= tabs.length) ? 0 : 
+								(0 &gt; selectedIndex) ? tabs.length - 1  : 
+								selectedIndex;
+				break;
+			}
+		}
+		jsp.TabUtils.switchTab(tabs[selectedIndex]);
+		evt.consume();
+	}
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@constructor</span>
+ *	<span class="attrib">@param</span> HTMLElement
+ */</span>
+org.ditchnet.jsp.TabEvent = <span class="reserved">function</span> (source) {
+	<span class="reserved">this</span>._source = source;
+	with (org.ditchnet.jsp.TabUtils) {
+		<span class="reserved">this</span>._tabContainer = tabContainer;
+		<span class="reserved">this</span>._selectedIndex = selectedIndex;
+		<span class="reserved">this</span>._tabPane = tabPanes[selectedIndex];
+	}
+};
+
+<span class="comment">/**	<span class="attrib">@return</span> HTMLElement */</span>
+org.ditchnet.jsp.TabEvent.<span class="reserved">prototype</span>.getSource = <span class="reserved">function</span> () {
+	<span class="reserved">return</span> <span class="reserved">this</span>._source;
+};
+<span class="comment">/**	<span class="attrib">@return</span> number */</span>
+org.ditchnet.jsp.TabEvent.<span class="reserved">prototype</span>.getSelectedIndex = <span class="reserved">function</span> () {
+	<span class="reserved">return</span> <span class="reserved">this</span>._selectedIndex;
+};
+<span class="comment">/**	<span class="attrib">@return</span> HTMLElement */</span>
+org.ditchnet.jsp.TabEvent.<span class="reserved">prototype</span>.getTab = <span class="reserved">function</span> () {
+	<span class="reserved">return</span> <span class="reserved">this</span>._source;
+};
+<span class="comment">/**	<span class="attrib">@return</span> HTMLElement */</span>
+org.ditchnet.jsp.TabEvent.<span class="reserved">prototype</span>.getTabContainer = <span class="reserved">function</span> () {
+	<span class="reserved">return</span> <span class="reserved">this</span>._tabContainer;
+};
+<span class="comment">/**	<span class="attrib">@return</span> HTMLElement */</span>
+org.ditchnet.jsp.TabEvent.<span class="reserved">prototype</span>.getTabPane = <span class="reserved">function</span> () {
+	<span class="reserved">return</span> <span class="reserved">this</span>._tabPane;
+};
+<span class="comment">/**	<span class="attrib">@return</span> string */</span>
+org.ditchnet.jsp.TabEvent.<span class="reserved">prototype</span>.toString = <span class="reserved">function</span> () {
+	<span class="reserved">return</span> <span class="literal">"[ org.ditchnet.jsp.TabEvent object ]"</span>;
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@constructor</span>
+ *	<span class="attrib">@param</span> MouseEvent evt
+ */</span>
+org.ditchnet.event.Event = <span class="reserved">function</span> (evt) {
+	<span class="reserved">this</span>._evt 	 = evt ? evt : window.event;
+	<span class="reserved">this</span>._source = <span class="reserved">this</span>._evt.currentTarget ? 
+				   <span class="reserved">this</span>._evt.currentTarget : <span class="reserved">this</span>._evt.srcElement;
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@returns</span> Element
+ */</span>
+org.ditchnet.event.Event.<span class="reserved">prototype</span>.getSource = <span class="reserved">function</span> () {
+	<span class="reserved">return</span> <span class="reserved">this</span>._source;
+};
+
+<span class="comment">/**
+ *	<span class="attrib">@returns</span> void
+ */</span>
+org.ditchnet.event.Event.<span class="reserved">prototype</span>.consume = <span class="reserved">function</span> () {
+	<span class="reserved">if</span> (<span class="reserved">this</span>._evt.stopPropagation) {
+		<span class="reserved">this</span>._evt.stopPropagation();
+		<span class="reserved">this</span>._evt.preventDefault();
+	} <span class="reserved">else</span> <span class="reserved">if</span> (<span class="reserved">this</span>._evt.cancelBubble) {
+		<span class="reserved">this</span>._evt.cancelBubble = true;
+		<span class="reserved">this</span>._evt.returnValue  = false;
+	}
+};
+
+
+
+
+
+
+
+<span class="comment">/**
+ *	&lt;p&gt;Bean that represents individual Cookie objects, packaging their 
+ *	attributes into a convenient API that can more easily be manipulated and
+ *	set.&lt;/p&gt;&lt;p&gt;Also contains 2 static convenience methods for setting and
+ *	the cookies for the current page.
+ *	<span class="attrib">@author</span>		Todd Ditchendorf
+ *	<span class="attrib">@constructor</span>	Accepts initial values for the &lt;code&gt;name&lt;/code&gt; and 
+ *				&lt;code&gt;value&lt;/code&gt; attribute values.
+ *	<span class="attrib">@param</span>	String	name		Initial &lt;code&gt;name&lt;/code&gt; attribute value.	
+ *	<span class="attrib">@param</span>	String	value	Initial &lt;code&gt;value&lt;/code&gt; attribute value.	
+ */</span>	
+org.ditchnet.util.Cookie = <span class="reserved">function</span> (name,value) {
+	<span class="reserved">this</span>._name;
+	<span class="reserved">this</span>._value;
+	<span class="reserved">this</span>._path;
+	<span class="reserved">this</span>._secure;
+	<span class="reserved">this</span>._domain;
+	<span class="reserved">this</span>._expires;
+	<span class="reserved">if</span> (name) {
+		<span class="reserved">this</span>.setName(name);
+	}
+	<span class="reserved">if</span> (value) {
+		<span class="reserved">this</span>.setValue(value);
+	}
+};
+<span class="comment">
+// Static attributes</span>
+org.ditchnet.util.Cookie.EQUALS 			= <span class="literal">"="</span>;
+org.ditchnet.util.Cookie.DELIM 				= <span class="literal">"; "</span>;
+org.ditchnet.util.Cookie.PATH 				= <span class="literal">"path"</span>;
+org.ditchnet.util.Cookie.SECURE 			= <span class="literal">"secure"</span>;
+org.ditchnet.util.Cookie.DOMAIN 			= <span class="literal">"domain"</span>;
+org.ditchnet.util.Cookie.EXPIRES 			= <span class="literal">"expires"</span>;
+org.ditchnet.util.Cookie.SUB_VALUE_DELIM 	= <span class="literal">":"</span>
+
+<span class="comment">/**
+ *	Static convenience method that sets the given cookie for the current page.
+ *	<span class="attrib">@param</span>	Cookie	c	&lt;code&gt;Cookie&lt;/code&gt; object to be set.
+ *	<span class="attrib">@returns</span>	void
+ */</span>
+org.ditchnet.util.Cookie.addPageCookie = <span class="reserved">function</span> (c) {
+<span class="comment">/*	if (!(c instanceof org.ditchnet.util.Cookie)) {
+		throw new Error("IllegalArgumentException: Cookie.set() accepts only" +
+			" one parameter of type Cookie");
+	}*/</span>
+	document.cookie = c.toCookieString();
+};
+
+<span class="comment">/**
+ *	Static convenience method that returns all the &lt;code&gt;document.cookie&lt;/code&gt;
+ *	String for the current page.
+ *	<span class="attrib">@returns</span>	String
+ */</span>
+org.ditchnet.util.Cookie.getPageCookieString = <span class="reserved">function</span> () {
+	<span class="reserved">return</span> document.cookie;
+};
+
+<span class="comment">/**
+ *	Static convenience method that checks the &lt;code&gt;document.cookie&lt;/code&gt;
+ *	String for the current page to see if the give &lt;code&gt;Cookie&lt;/code&gt; exists.
+ *	<span class="attrib">@param</span>	Cookie	c
+ *	<span class="attrib">@returns</span>	boolean
+ */</span>
+org.ditchnet.util.Cookie.pageHasCookieWithNameAndValue = <span class="reserved">function</span> (c) {
+	var s = c.toNameValueString();
+	<span class="reserved">return</span> (Cookie.get().indexOf(s) &gt; -1);
+};
+
+org.ditchnet.util.Cookie.pageHasCookieWithName = <span class="reserved">function</span> (c) {
+	var s = c.getName();
+	<span class="reserved">return</span> (Cookie.get().indexOf(s) &gt; -1);
+};
+
+<span class="comment">/**
+ *	Returns a String representation of this &lt;code&gt;Cookie&lt;/cookie&gt; in the 
+ *	standard cookie syntax.
+ *	<span class="attrib">@returns</span>	String
+ */</span>
+org.ditchnet.util.Cookie.<span class="reserved">prototype</span>.toCookieString = <span class="reserved">function</span> () {
+	with (org.ditchnet.util) {
+		var buff = new StringBuffer();
+<span class="comment">		// name=value;</span>
+		buff.append(<span class="reserved">this</span>.getName()).append(Cookie.EQUALS);
+<span class="comment">//		if (this.getValue() instanceof Array) {</span>
+		<span class="reserved">if</span> (typeof <span class="reserved">this</span>.getValue() == <span class="literal">"object"</span> &amp;&amp; 
+			<span class="reserved">this</span>.getValue().constructor == Array) {
+			var values = <span class="reserved">this</span>.getValue();
+			<span class="reserved">for</span> (var i = 0; i &lt; values.length; i++) {
+				buff.append(values[i])
+					.append(i == values.length-1 ? <span class="literal">""</span> : Cookie.SUB_VALUE_DELIM);
+			}
+		} <span class="reserved">else</span> {
+			buff.append(<span class="reserved">this</span>.getValue())
+		}
+		buff.append(Cookie.DELIM);
+<span class="comment">		// path=pathvalue;</span>
+		buff.append(Cookie.PATH).append(Cookie.EQUALS)
+			.append(<span class="reserved">this</span>.getPath()).append(Cookie.DELIM);
+<span class="comment">		// expires=expiresvalue</span>
+		buff.append(Cookie.EXPIRES).append(Cookie.EQUALS)
+			.append(<span class="reserved">this</span>.getExpires()).append(Cookie.DELIM);
+		<span class="reserved">if</span> (<span class="reserved">this</span>.getDomain()) {
+<span class="comment">			// domain=domainvalue</span>
+			buff.append(Cookie.DOMAIN).append(Cookie.EQUALS)
+				.append(<span class="reserved">this</span>.getDomain()).append(Cookie.DELIM);
+		}
+		<span class="reserved">if</span> (<span class="reserved">this</span>.isSecure()) {
+<span class="comment">			// secure;</span>
+			buff.append(Cookie.SECURE).append(Cookie.DELIM);
+		}
+	}
+	<span class="reserved">return</span> buff.toString();
+};
+
+<span class="comment">/**
+ *	Returns a String representation of this &lt;code&gt;Cookie&lt;/cookie&gt; in the 
+ *	standard cookie syntax -- but only the name and value with no trailing
+ *	semicolon.
+ *	<span class="attrib">@returns</span>	String
+ */</span>
+org.ditchnet.util.Cookie.<span class="reserved">prototype</span>.toNameValueString = <span class="reserved">function</span> () {
+	var buff = new org.ditchnet.util.StringBuffer();
+<span class="comment">	// name=value -- no trailing semicolon</span>
+	buff.append(<span class="reserved">this</span>.getName()).append(Cookie.EQUALS)
+		.append(<span class="reserved">this</span>.getValue());
+	<span class="reserved">return</span> buff.toString();
+};
+
+<span class="comment">/**	
+ *	Get the &lt;code&gt;name&lt;/code&gt; attribute value for this &lt;code&gt;Cookie&lt;/code&gt; 
+ *	object.
+ *	<span class="attrib">@returns</span> String
+ */</span>	
+org.ditchnet.util.Cookie.<span class="reserved">prototype</span>.getName = <span class="reserved">function</span> () {
+	<span class="reserved">return</span> <span class="reserved">this</span>._name;
+};
+
+<span class="comment">/**	
+ *	Set the &lt;code&gt;name&lt;/code&gt; attribute value for this &lt;code&gt;Cookie&lt;/code&gt; 
+ *	object.
+ *	<span class="attrib">@param</span>	String 	name
+ *	<span class="attrib">@returns</span>	void
+ */</span>	
+org.ditchnet.util.Cookie.<span class="reserved">prototype</span>.setName = <span class="reserved">function</span> (name) {
+	<span class="reserved">this</span>._name = name;
+};
+
+<span class="comment">/**	
+ *	Get the &lt;code&gt;value&lt;/code&gt; attribute value for this &lt;code&gt;Cookie&lt;/code&gt; 
+ *	object.
+ *	<span class="attrib">@returns</span> String
+ */</span>	
+org.ditchnet.util.Cookie.<span class="reserved">prototype</span>.getValue = <span class="reserved">function</span> () {
+	<span class="reserved">return</span> <span class="reserved">this</span>._value;
+};
+
+<span class="comment">/**	
+ *	Set the &lt;code&gt;value&lt;/code&gt; attribute value for this &lt;code&gt;Cookie&lt;/code&gt; 
+ *	object.
+ *	<span class="attrib">@param</span>	String 	value
+ *	<span class="attrib">@returns</span>	void
+ */</span>	
+org.ditchnet.util.Cookie.<span class="reserved">prototype</span>.setValue = <span class="reserved">function</span> (value) {
+	<span class="reserved">this</span>._value = value;
+};
+
+<span class="comment">/**	
+ *	Get the &lt;code&gt;path&lt;/code&gt; attribute value for this &lt;code&gt;Cookie&lt;/code&gt; 
+ *	object.
+ *	<span class="attrib">@returns</span> String
+ */</span>	
+org.ditchnet.util.Cookie.<span class="reserved">prototype</span>.getPath = <span class="reserved">function</span> () {
+	<span class="reserved">if</span> (<span class="reserved">this</span>._path === undefined) {
+		<span class="reserved">return</span> <span class="literal">"/"</span>;
+	} <span class="reserved">else</span> {
+		<span class="reserved">return</span> <span class="reserved">this</span>._path;
+	}
+};
+
+<span class="comment">/**	
+ *	Set the &lt;code&gt;path&lt;/code&gt; attribute value for this &lt;code&gt;Cookie&lt;/code&gt; 
+ *	object.
+ *	<span class="attrib">@param</span>	String 	path
+ *	<span class="attrib">@returns</span>	void
+ */</span>	
+org.ditchnet.util.Cookie.<span class="reserved">prototype</span>.setPath = <span class="reserved">function</span> (path) {
+	<span class="reserved">this</span>._path = path;
+};
+
+<span class="comment">/**	
+ *	Get the &lt;code&gt;secure&lt;/code&gt; attribute value for this &lt;code&gt;Cookie&lt;/code&gt; 
+ *	object.
+ *	<span class="attrib">@returns</span> boolean
+ */</span>	
+org.ditchnet.util.Cookie.<span class="reserved">prototype</span>.isSecure = <span class="reserved">function</span> () {
+	<span class="reserved">return</span> <span class="reserved">this</span>._secure;
+};
+
+<span class="comment">/**	
+ *	Set the &lt;code&gt;secure&lt;/code&gt; attribute value for this &lt;code&gt;Cookie&lt;/code&gt; 
+ *	object.
+ *	<span class="attrib">@param</span>	boolean 	secure
+ *	<span class="attrib">@returns</span>	void
+ */</span>	
+org.ditchnet.util.Cookie.<span class="reserved">prototype</span>.setSecure = <span class="reserved">function</span> (secure) {
+	<span class="reserved">this</span>._secure = secure;
+};
+
+<span class="comment">/**	
+ *	Get the &lt;code&gt;domain&lt;/code&gt; attribute value for this &lt;code&gt;Cookie&lt;/code&gt; 
+ *	object.
+ *	<span class="attrib">@returns</span> String
+ */</span>	
+org.ditchnet.util.Cookie.<span class="reserved">prototype</span>.getDomain = <span class="reserved">function</span> () {
+	<span class="reserved">return</span> <span class="reserved">this</span>._domain;
+};
+
+<span class="comment">/**	
+ *	Set the &lt;code&gt;domain&lt;/code&gt; attribute value for this &lt;code&gt;Cookie&lt;/code&gt; 
+ *	object.
+ *	<span class="attrib">@param</span>	String 	domain
+ *	<span class="attrib">@returns</span>	void
+ */</span>	
+org.ditchnet.util.Cookie.<span class="reserved">prototype</span>.setDomain = <span class="reserved">function</span> (domain) {
+	<span class="reserved">this</span>._domain = domain;
+};
+
+<span class="comment">/**	
+ *	Get the &lt;code&gt;expires&lt;/code&gt; attribute value for this &lt;code&gt;Cookie&lt;/code&gt; 
+ *	object.
+ *	<span class="attrib">@returns</span> String
+ */</span>	
+org.ditchnet.util.Cookie.<span class="reserved">prototype</span>.getExpires = <span class="reserved">function</span> () {
+	<span class="reserved">if</span> (<span class="reserved">this</span>._expires === undefined) {
+		<span class="reserved">return</span> <span class="reserved">this</span>._getDefaultExpires();
+	} <span class="reserved">else</span> {
+		<span class="reserved">return</span> <span class="reserved">this</span>._expires;
+	}
+};
+
+<span class="comment">/**	
+ *	Set the &lt;code&gt;expires&lt;/code&gt; attribute value for this &lt;code&gt;Cookie&lt;/code&gt; 
+ *	object.
+ *	<span class="attrib">@param</span>	String 	expires
+ *	<span class="attrib">@returns</span>	void
+ */</span>	
+org.ditchnet.util.Cookie.<span class="reserved">prototype</span>.setExpires = <span class="reserved">function</span> (expires) {
+	<span class="reserved">this</span>._expires = expires;
+};
+
+<span class="comment">/**	
+ *	Private method to get the devault value for the &lt;code&gt;domain&lt;/code&gt;
+ *	attribute value for this &lt;code&gt;Cookie&lt;/code&gt; 
+ *	object.
+ *	<span class="attrib">@returns</span> String
+ */</span>	
+org.ditchnet.util.Cookie.<span class="reserved">prototype</span>._getDefaultDomain = <span class="reserved">function</span> () {
+	<span class="reserved">return</span> window.location.hostname;
+};
+
+<span class="comment">/**	
+ *	Private method to get the devault value for the &lt;code&gt;expires&lt;/code&gt;
+ *	attribute value for this &lt;code&gt;Cookie&lt;/code&gt; 
+ *	object.
+ *	<span class="attrib">@returns</span> String
+ */</span>	
+org.ditchnet.util.Cookie.<span class="reserved">prototype</span>._getDefaultExpires = <span class="reserved">function</span> () {
+	var date = new Date();
+	date.setFullYear(date.getFullYear()+10);
+	<span class="reserved">return</span> date.toGMTString();
+};
+
+<span class="comment">/**
+ *	A utility class that mirrors the &lt;code&gt;java.util.StringBuffer&lt;/code&gt; class.
+ *	Improves performance of string concatenation by storing strings in a
+ *	private internal array.
+ *	<span class="attrib">@author</span>	Todd Ditchendorf
+ *	<span class="attrib">@constructor</span>			Accepts optional inital parameter to store in the 
+ *						buffer.
+ *	<span class="attrib">@param</span>	String	s	Initial buffer value.
+ */</span>
+org.ditchnet.util.StringBuffer = <span class="reserved">function</span> (s) {
+	<span class="reserved">this</span>._array = [];
+	<span class="reserved">if</span> (s &amp;&amp; typeof s != <span class="literal">"string"</span>) {
+		throw new Error(<span class="literal">"IllegalArgumentException: StringBuffer's "</span> +
+			<span class="literal">"constructor accepts an optional String argument. Given:"</span> +
+			(typeof s));
+	}
+	<span class="reserved">if</span> (s) {
+		<span class="reserved">this</span>.append(s);
+	}
+};
+
+<span class="comment">/**
+ *	Appends an additional String to the buffer and returns a reference to this
+ *	object for method chaining.
+ *	<span class="attrib">@param</span>	String	s	New String to be added to buffer.
+ *	<span class="attrib">@returns</span>	StringBuffer
+ */</span>
+org.ditchnet.util.StringBuffer.<span class="reserved">prototype</span>.append = <span class="reserved">function</span> (s) {
+	<span class="reserved">this</span>._array.push(s);
+	<span class="reserved">return</span> <span class="reserved">this</span>;
+};
+
+<span class="comment">/**
+ *	Returns a String representation of this &lt;code&gt;StringBuffer&lt;/code&gt;
+ *	<span class="attrib">@returns</span>	String
+ */</span>
+org.ditchnet.util.StringBuffer.<span class="reserved">prototype</span>.toString = <span class="reserved">function</span> () {
+	<span class="reserved">return</span> <span class="reserved">this</span>._array.join(<span class="literal">""</span>);
+};
+
+<span class="comment">/**
+ *	An object that maps keys to values. A map cannot contain duplicate keys;
+ *	each key can map to at most one value.
+ *	<span class="attrib">@author</span>	Todd Ditchendorf
+ */</span>
+org.ditchnet.util.Map = <span class="reserved">function</span> (o) {
+<span class="comment">/*	if (o &amp;&amp; !(o instanceof Object)) {
+		throw new Error("IllegalArgumentException: Map's " +
+					"constructor's only argument must be an Object");
+	}*/</span>
+	<span class="reserved">this</span>._obj = (o) ? (o) : new Object();
+};
+
+<span class="comment">/**
+ *	Associates the specified value with the specified key in this map.
+ *	<span class="attrib">@param</span>	Object key	New key to enter,
+ *	<span class="attrib">@param</span>	Object Value	New value to enter.
+ *	<span class="attrib">@returns</span> Object
+ */</span>
+org.ditchnet.util.Map.<span class="reserved">prototype</span>.put = <span class="reserved">function</span> (key,value) {
+	<span class="reserved">this</span>._obj[key] = value;
+};
+
+<span class="comment">/**
+ *	Returns the value to which this map maps the specified key.
+ *	<span class="attrib">@param</span>	Object key	Get the value for this key in this Map.
+ *	<span class="attrib">@returns</span> Object
+ */</span>
+org.ditchnet.util.Map.<span class="reserved">prototype</span>.get = <span class="reserved">function</span> (key) {
+	<span class="reserved">if</span> (!<span class="reserved">this</span>._obj[key]) <span class="reserved">return</span> null;
+	<span class="reserved">return</span> <span class="reserved">this</span>._obj[key];
+};
+
+<span class="comment">/**
+ *	Returns the number of key-value mappings in this map.
+ *	<span class="attrib">@returns</span> number
+ */</span>
+org.ditchnet.util.Map.<span class="reserved">prototype</span>.size = <span class="reserved">function</span> () {
+	var count = 0;
+	<span class="reserved">for</span> (var key in <span class="reserved">this</span>._obj)
+		count++;
+	<span class="reserved">return</span> count;
+};
+
+<span class="comment">/**
+ *	Returns true if this map contains no key-value mappings.
+ *	<span class="attrib">@returns</span>	boolean
+ */</span>
+org.ditchnet.util.Map.<span class="reserved">prototype</span>.isEmpty = <span class="reserved">function</span> () {
+	<span class="reserved">return</span> <span class="reserved">this</span>.size() == 0;
+};
+
+<span class="comment">/**
+ *	Returns a string representation of this map.
+ *	<span class="attrib">@returns</span> String
+ */</span>
+org.ditchnet.util.Map.<span class="reserved">prototype</span>.toString = <span class="reserved">function</span> () {
+	var buff = new org.ditchnet.util.StringBuffer();
+	count = 0;
+	<span class="reserved">for</span> ( var key in <span class="reserved">this</span>._obj ) {
+		buff.append(key).append(<span class="literal">" = "</span>).append(<span class="reserved">this</span>._obj[key])
+			.append(count == <span class="reserved">this</span>.size() - 1 ? <span class="literal">""</span> : <span class="literal">"\r\n"</span>);
+		count++;
+	}
+	<span class="reserved">return</span> buff.toString();
+};
+
+<span class="comment">/**
+ *	Returns true if this map contains a mapping for the specified  key.
+ *	<span class="attrib">@param</span>	Object	key	Testing this Map for key with this value.
+ *	<span class="attrib">@returns</span>	boolean
+ */</span>
+org.ditchnet.util.Map.<span class="reserved">prototype</span>.containsKey = <span class="reserved">function</span> (key) {
+	<span class="reserved">if</span> (<span class="reserved">this</span>._obj[key] !== undefined) {
+		<span class="reserved">return</span> true;
+	}
+	<span class="reserved">return</span> false;
+};
+
+<span class="comment">/**
+ *	Returns true if this map maps one or more keys to the  specified value.
+ *	<span class="attrib">@param</span>	Object	value	Testing this Map for key with this value.
+ *	<span class="attrib">@returns</span>	boolean
+ */</span>
+org.ditchnet.util.Map.<span class="reserved">prototype</span>.containsValue = <span class="reserved">function</span> (value) {
+	<span class="reserved">for</span> (var key in <span class="reserved">this</span>._obj) {
+		<span class="reserved">if</span> (<span class="reserved">this</span>._obj[key] == value) {
+			<span class="reserved">return</span> true;
+		}
+	}
+	<span class="reserved">return</span> false;
+};
+
+<span class="comment">/**
+ *	Removes the mapping for this key from this map if it is present
+ *	<span class="attrib">@param</span>	Object	key	Testing this Map for key with this value.
+ *	<span class="attrib">@returns</span>	boolean
+ */</span>
+org.ditchnet.util.Map.<span class="reserved">prototype</span>.remove = <span class="reserved">function</span> (key) {
+	<span class="reserved">if</span> (<span class="reserved">this</span>.containsKey(key)) {
+		delete <span class="reserved">this</span>._obj[key];
+	}
+};
+
+<span class="comment">/**
+ *	Returns a set view of the values contained in this map.
+ *	<span class="attrib">@returns</span>	Array
+ */</span>
+org.ditchnet.util.Map.<span class="reserved">prototype</span>.keySet = <span class="reserved">function</span> () {
+	var keys = [];
+	<span class="reserved">for</span> (var key in <span class="reserved">this</span>._obj) {
+		keys.push(key);
+	}
+	<span class="reserved">return</span> keys;
+};
+
+<span class="comment">/**
+ *	Returns a collection view of the values contained in this map.
+ *	<span class="attrib">@returns</span>	Collection
+ */</span>
+org.ditchnet.util.Map.<span class="reserved">prototype</span>.values = <span class="reserved">function</span> () {
+	var values = new Collection();
+	<span class="reserved">for</span> (var key in <span class="reserved">this</span>._obj) {
+		values.add(<span class="reserved">this</span>._obj[key]);
+	}
+	<span class="reserved">return</span> values;
+};
+
+<span class="comment">/**
+ *	Map implementation that makes working with URL params easy.
+ *	<span class="attrib">@author</span>	Todd Ditchendorf
+ *	<span class="attrib">@constructor</span>		should not be called directly
+ */</span>
+org.ditchnet.util.ParameterMap = <span class="reserved">function</span> (q) {
+	<span class="reserved">this</span>._map = new org.ditchnet.util.Map();
+	<span class="reserved">this</span>._q;
+	<span class="reserved">if</span> (q) {
+		<span class="reserved">this</span>._q = q.substring(1);
+	}
+	var pairs = <span class="reserved">this</span>._q.split(/&amp;+/g);
+	var a;
+	<span class="reserved">for</span> (var i = 0; i &lt; pairs.length; i++) {
+		a = pairs[i].split(/=+/g);
+		<span class="reserved">this</span>._map.put(a[0],a[1]);
+	}
+	<span class="comment">/*this._re = /(\w+)\=([^&amp;]+)&amp;?/g;
+	this._current = [];
+	if(!isIE5Mac &amp;&amp; !isIEWin50) {
+		while (this._current = this._re.exec(this._q)) {
+			this._map.put(this._current[1],this._current[2]);
+		}
+	}*/</span>
+};
+
+<span class="comment">/**
+ *	Static convenience method to get a parameter map containing the current
+ *	pages URL params.
+ *	<span class="attrib">@returns</span>	ParameterMap
+ */</span>
+org.ditchnet.util.ParameterMap.getPageParameterMap = <span class="reserved">function</span> () {
+	<span class="reserved">return</span> new org.ditchnet.util.ParameterMap(
+								window.location.search.toString());
+};
+
+<span class="comment">/**
+ *	Returns string representation of this parameter map in the standard URL 
+ *	query string format (e.g. '?name=value&amp;name2=value'
+ *	<span class="attrib">@returns</span>	String
+ */</span>
+org.ditchnet.util.ParameterMap.<span class="reserved">prototype</span>.toQueryString = <span class="reserved">function</span> () {
+	var buff = new org.ditchnet.util.StringBuffer(<span class="literal">"?"</span>);
+	var count = 0;
+	var key,value;
+	var keys = <span class="reserved">this</span>._map.keySet();
+	<span class="reserved">for</span> (var i = 0; i &lt; keys.length; i++) {
+		key = keys[i];
+		value = <span class="reserved">this</span>._map.get(key);
+		buff.append(key).append(<span class="literal">"="</span>).append(value)
+			.append(count == <span class="reserved">this</span>._map.size() - 1 ? <span class="literal">""</span> : <span class="literal">"&amp;"</span>);
+		count++;
+	}
+	<span class="reserved">return</span> buff.toString();
+};
+</pre>
+<!-- END SOURCECODE -->
+
+<HR>
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_top"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"></TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev">	&nbsp;<FONT CLASS="NavBarFont1Rev"><b>Overview</b></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"> 	&nbsp;<FONT CLASS="NavBarFont1">Class</FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="overview-tree.html"><FONT CLASS="NavBarFont1"><b>Tree</b></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="index-all.html"--><FONT CLASS="NavBarFont1"><b>Index</b></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="help-doc.html"><FONT CLASS="NavBarFont1"><b>Help</b></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD BGCOLOR="#EEEEFF" ALIGN="right" VALIGN="top"><EM>
+<b></b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="index.html" TARGET="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="overview-summary.html" TARGET="_top"><B>NO FRAMES</B></A>
+&nbsp;&nbsp;
+<SCRIPT>
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+
+<hr>
+<FONT SIZE="-1">
+
+</FONT>
+</BODY>
+</HTML>

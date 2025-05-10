@@ -1,0 +1,97 @@
+	protected void doSearch(HttpServletResponse response, String[] organisms, String[] peptides) throws ServletException, IOException {
+		String fileName = peptides[0];
+		for (int i = 1; i < peptides.length; i++) {
+			fileName = fileName + "_" + peptides[i];
+		}
+		String organism_part = "";
+		for (int i = 0; i < organismCount; i++) {
+			organism_part += organisms[i] + "_";
+		}
+		fileName = organism_part.toUpperCase() + fileName.toUpperCase()
+					+ ".txt";
+		response.setContentType("text/plain;");
+		response.setHeader("Content-disposition", "attachment;filename="
+				+ fileName);
+		Query finalQuery;
+		//for each peptide, using the Lucene to dowload the query
+		BooleanQuery organismQuery = new BooleanQuery();
+		int count = 0;
+		for (int s = 0; s < peptides.length; s++) {
+			phraseQuery = new PhraseQuery();
+			peptide = peptides[s].replaceAll("[^a-zA-Z]", "");
+			// Construct the Phrase query
+			if (peptide.length() >= 3) {
+				for (int j = 0; j <= peptide.length() - 3; j++) {
+					phraseQuery.add(new Term("sequence", peptide.toLowerCase().substring(j, j + 3)));
+				}
+				if (organism.equals("all")) {
+					finalQuery = phraseQuery;
+				} else {
+					for (int i = 0; i < organismCount; i++) {
+						organismQuery.add(new TermQuery(new Term(
+								"organismid", organisms[i])),
+							BooleanClause.Occur.SHOULD);
+				}
+					bQuery = new BooleanQuery();
+					bQuery.add(organismQuery, BooleanClause.Occur.MUST);
+					bQuery.add(phraseQuery, BooleanClause.Occur.MUST);
+					finalQuery = bQuery;
+				}
+				//get the matched sequence number
+				collector = TopScoreDocCollector.create(10, true);
+				searcher.search(finalQuery, collector);
+				totalNumber = collector.getTotalHits();
+				// Print out the header
+				if (count > 0)
+					out.println("");
+					out.println("##Query: " + peptide.toUpperCase() + "\t");
+					out.println("##DB: " + resultCount + " sequence(s) from \""
+							+ organismName + "\" (" + version + ")" + "\t");
+					out.println("##Matched: " + totalNumber + " sequence(s)");
+					if (totalNumber > 0) {
+						// not using sorter
+						 collector = TopScoreDocCollector.create(totalNumber,
+						 true);
+						 searcher.search(finalQuery, collector);
+						 ScoreDoc[] hits = collector.topDocs().scoreDocs;
+						/* using sorter
+						//Sort sort = new Sort(new SortField("id",
+						//		SortField.STRING));
+						//TopFieldDocs topdocs = searcher.search(finalQuery,
+						//		totalNumber, sort);
+						ScoreDoc[] hits = topdocs.scoreDocs; */
+						//if (request.getParameter("rows") != null)
+						//	printOutNumber = Math.min(Integer.parseInt(request
+						//		.getParameter("rows")), totalNumber);
+						//else
+						//	printOutNumber = Math.min(totalNumber, 20000);
+						out.print("#AC\t");
+						out.print("ID\t");
+						out.print("Protein_Name\t");
+						out.print("Length\t");
+						out.print("Organism\t");
+						out.print("Matched_range\t");
+						out.println("");
+						for (int i = 0; i < totalNumber; i++) {
+							doc = searcher.doc(hits[i].doc);
+							printTable(doc, response, peptide);
+						}
+
+					}
+				} 
+				//if the peptide length is less than 3, then print the error
+				else {
+					out.println("##Query: " + peptide.toUpperCase() + "\t");
+					out.println("##DB: " + resultCount + " sequences from "
+							+ organismName + " (" + version + ")" + "\t");
+					out.println("##Total Matched: " + totalNumber);
+					out.println("Valid peptide length is at least 3 characerters");
+				}
+				count++;
+			}
+		} else {
+			out.println("Wrong parameters");
+		}
+		out.flush();
+	}
+

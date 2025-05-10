@@ -1,0 +1,14 @@
+cp ../../../../peptidematch_new_2018_05/WEB-INF/classes/config/taxToTaxGroupWithName.txt .
+cp ../../../../peptidematch_new_2018_05/WEB-INF/classes/config/ipro_names.txt .
+cp ../../../../peptidematch_new_2018_05/WEB-INF/classes/config/orgNameToTaxon.txt .
+cp ../../../../peptidematch_new_2018_05/WEB-INF/classes/config/names.txt .
+cp ../../../../peptidematch_new_2018_05/WEB-INF/classes/config/lineage.txt .
+cp ../../../../peptidematch_new_2018_05/WEB-INF/classes/config/children.txt .
+cp ../../../../peptidematch_new_2018_05/WEB-INF/classes/config/condenseChildren.txt .
+cp ../../../../peptidematch_new_2018_05/WEB-INF/classes/config/shortLineage.txt .
+cp ../../../../peptidematch_new_2018_05/WEB-INF/classes/config/orgToTaxonGroup.txt .
+cp ../../../../peptidematch_new_2018_05/WEB-INF/classes/config/taxToTaxGroup.txt .
+cp ../../../../peptidematch_new_2018_05/WEB-INF/classes/config/proteomes_reference.txt.nocount .
+cp ../../../../peptidematch_new_2018_05/WEB-INF/classes/config/proteomes_complete.txt.nocount .
+cp ../../../../peptidematch_new_2018_05/WEB-INF/classes/config/proteomes_reference.txt .
+cp ../../../../peptidematch_new_2018_05/WEB-INF/classes/config/proteomes_complete.txt .

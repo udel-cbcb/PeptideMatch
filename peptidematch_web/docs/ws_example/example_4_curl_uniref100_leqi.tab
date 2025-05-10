@@ -1,0 +1,226 @@
+##Sequence data set: UniProtKB (2013_06) | UniRef100 | L and I are equivalent
+##Job ID: 785495926
+##Unique query peptides: 2
+
+##Query peptide: AAVEEGIVLGGGCALLR
+##Number of matched proteins: 61
+#UniRef100 Cluster ID	Representative Protein AC	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+UniRef100_A4II42	A4II42	LOC100124945 protein	576	Xenopus tropicalis (Western clawed frog) (Silurana tropicalis) [8364]	430-446		
+UniRef100_B3GQS7	B3GQS7	Mitochondrial heat shock 60kD protein 1 variant 1	569	Homo sapiens (Human) [9606]	430-446	Pride	117259
+UniRef100_B7Z4F6	B7Z4F6	cDNA FLJ54912, highly similar to 60 kDa heat shock protein, mitochondrial	550	Homo sapiens (Human) [9606]	407-423	NIST, Pride	
+UniRef100_B7Z597	B7Z597	cDNA FLJ54373, highly similar to 60 kDa heat shock protein, mitochondrial	564	Homo sapiens (Human) [9606]	421-437	Pride	
+UniRef100_B7Z5E7	B7Z5E7	cDNA FLJ51046, highly similar to 60 kDa heat shock protein, mitochondrial	517	Homo sapiens (Human) [9606]	374-390	NIST, Pride	
+UniRef100_E2QUU5	E2QUU5	60 kDa heat shock protein, mitochondrial	573	Canis familiaris (Dog) (Canis lupus familiaris) [9615]	430-446		
+UniRef100_F1MUZ9	F1MUZ9	60 kDa heat shock protein, mitochondrial	573	Bos taurus (Bovine) [9913]	430-446		
+UniRef100_F1SMZ7	F1SMZ7	Uncharacterized protein	575	Sus scrofa (Pig) [9823]	432-448		
+UniRef100_F6PQQ8	F6PQQ8	Uncharacterized protein	573	Monodelphis domestica (Gray short-tailed opossum) [13616]	430-446		
+UniRef100_F6TFZ0	F6TFZ0	Uncharacterized protein	575	Callithrix jacchus (White-tufted-ear marmoset) [9483]	432-448		
+UniRef100_F6UT23	F6UT23	Uncharacterized protein	517	Callithrix jacchus (White-tufted-ear marmoset) [9483]	374-390		
+UniRef100_F6Z587	F6Z587	Uncharacterized protein	575	Equus caballus (Horse) [9796]	432-448		
+UniRef100_F7BGB7	F7BGB7	Uncharacterized protein	575	Macaca mulatta (Rhesus macaque) [9544]	432-448		
+UniRef100_F7GF46	F7GF46	Uncharacterized protein	571	Monodelphis domestica (Gray short-tailed opossum) [13616]	428-444		
+UniRef100_F7GZG0	F7GZG0	Uncharacterized protein (Fragment)	533	Macaca mulatta (Rhesus macaque) [9544]	398-414		
+UniRef100_F7HMR4	F7HMR4	Uncharacterized protein	573	Macaca mulatta (Rhesus macaque) [9544]	430-446		
+UniRef100_F7I3J9	F7I3J9	Uncharacterized protein	573	Callithrix jacchus (White-tufted-ear marmoset) [9483]	430-446		
+UniRef100_G1M5B6	G1M5B6	Uncharacterized protein	575	Ailuropoda melanoleuca (Giant panda) [9646]	432-448		
+UniRef100_G1NUB2	G1NUB2	Uncharacterized protein	575	Myotis lucifugus (Little brown bat) [59463]	432-448		
+UniRef100_G1R5A6	G1R5A6	Uncharacterized protein	575	Nomascus leucogenys (Northern white-cheeked gibbon) (Hylobates leucogenys) [61853]	432-448		
+UniRef100_G1R5A7	G1R5A7	Uncharacterized protein	517	Nomascus leucogenys (Northern white-cheeked gibbon) (Hylobates leucogenys) [61853]	374-390		
+UniRef100_G1T3Y8	G1T3Y8	Uncharacterized protein	574	Oryctolagus cuniculus (Rabbit) [9986]	431-447		
+UniRef100_G2HFN5	G2HFN5	60 kDa heat shock protein, mitochondrial	573	Pan troglodytes (Chimpanzee) [9598]	430-446		
+UniRef100_G2HG50	G2HG50	60 kDa heat shock protein, mitochondrial	573	Pan troglodytes (Chimpanzee) [9598]	430-446		
+UniRef100_G3HL13	G3HL13	60 kDa heat shock protein, mitochondrial	526	Cricetulus griseus (Chinese hamster) (Cricetulus barabensis griseus) [10029]	430-446		
+UniRef100_G3QYY4	G3QYY4	Uncharacterized protein	572	Gorilla gorilla gorilla (Lowland gorilla) [9595]	430-446		
+UniRef100_G3SL08	G3SL08	Uncharacterized protein	573	Loxodonta africana (African elephant) [9785]	430-446		
+UniRef100_G3WZS7	G3WZS7	Uncharacterized protein	573	Sarcophilus harrisii (Tasmanian devil) (Sarcophilus laniarius) [9305]	430-446		
+UniRef100_G4W8Y6	G4W8Y6	Heat shock protein 60	575	Kryptolebias marmoratus (Mangrove killifish) (Rivulus marmoratus) [37003]	430-446		
+UniRef100_G5DYI3	G5DYI3	Putative heat shock subunit protein 1 (Fragment)	367	Hymenochirus curtipes (western dwarf clawed frog) [8362]	336-352		
+UniRef100_G9F6X6	G9F6X6	Mitochondrial heat shock 60 kDa protein 1	573	Sus scrofa (Pig) [9823]	430-446		
+UniRef100_G9K4Y8	G9K4Y8	Heat shock 60kDa protein 1 (Fragment)	572	Mustela putorius furo (European domestic ferret) (Mustela furo) [9669]	430-446		
+UniRef100_H0W1Z7	H0W1Z7	Uncharacterized protein	563	Cavia porcellus (Guinea pig) [10141]	429-445		
+UniRef100_H2P876	H2P876	60 kDa heat shock protein, mitochondrial	573	Pongo abelii (Sumatran orangutan) (Pongo pygmaeus abelii) [9601]	430-446		
+UniRef100_H3B645	H3B645	Uncharacterized protein	545	Latimeria chalumnae (West Indian ocean coelacanth) [7897]	430-446		
+UniRef100_H3B646	H3B646	Uncharacterized protein	565	Latimeria chalumnae (West Indian ocean coelacanth) [7897]	430-446		
+UniRef100_H9FTU5	H9FTU5	60 kDa heat shock protein, mitochondrial	573	Macaca mulatta (Rhesus macaque) [9544]	430-446		
+UniRef100_H9GFC4	H9GFC4	Uncharacterized protein	570	Anolis carolinensis (Green anole) (American chameleon) [28377]	430-446		
+UniRef100_H9Z8E7	H9Z8E7	60 kDa heat shock protein, mitochondrial	573	Macaca mulatta (Rhesus macaque) [9544]	430-446		
+UniRef100_I3L9N6	I3L9N6	Uncharacterized protein	518	Sus scrofa (Pig) [9823]	375-391		
+UniRef100_K7D0W0	K7D0W0	Heat shock 60kDa protein 1 (Chaperonin)	607	Pan troglodytes (Chimpanzee) [9598]	464-480		
+UniRef100_K7GIW1	K7GIW1	Uncharacterized protein	571	Pelodiscus sinensis (Chinese softshell turtle) (Trionyx sinensis) [13735]	431-447		
+UniRef100_K9J1X2	K9J1X2	Putative 60 kDa heat shock protein mitochondrial	573	Desmodus rotundus (Vampire bat) [9430]	430-446		
+UniRef100_K9K3I2	K9K3I2	Mitochondrial 60 kDa heat shock protein-like protein (Fragment)	566	Equus caballus (Horse) [9796]	423-439		
+UniRef100_L5K231	L5K231	60 kDa heat shock protein, mitochondrial	750	Pteropus alecto (Black flying fox) [9402]	606-622		
+UniRef100_L5LQG7	L5LQG7	60 kDa heat shock protein, mitochondrial	543	Myotis davidii (David's myotis) [225400]	400-416		
+UniRef100_L9JWG7	L9JWG7	60 kDa heat shock protein, mitochondrial	352	Tupaia chinensis (Chinese tree shrew) [246437]	251-267[L=I: 257]		
+UniRef100_L9KNI8	L9KNI8	60 kDa heat shock protein, mitochondrial	522	Tupaia chinensis (Chinese tree shrew) [246437]	379-395		
+UniRef100_L9KX39	L9KX39	60 kDa heat shock protein, mitochondrial	325	Tupaia chinensis (Chinese tree shrew) [246437]	196-212		
+UniRef100_L9L1D2	L9L1D2	60 kDa heat shock protein, mitochondrial	220	Tupaia chinensis (Chinese tree shrew) [246437]	75-91		
+UniRef100_M3WXZ4	M3WXZ4	Uncharacterized protein	573	Felis catus (Cat) (Felis silvestris catus) [9685]	430-446		
+UniRef100_M3Y8V3	M3Y8V3	Uncharacterized protein	575	Mustela putorius furo (European domestic ferret) (Mustela furo) [9669]	432-448		
+UniRef100_M3ZUM7	M3ZUM7	Uncharacterized protein	575	Xiphophorus maculatus (Southern platyfish) (Platypoecilus maculatus) [8083]	430-446		
+UniRef100_M7B7Y4	M7B7Y4	60 kDa heat shock protein	570	Chelonia mydas (Green sea-turtle) (Chelonia agassizi) [8469]	430-446		
+UniRef100_P10809	P10809	60 kDa heat shock protein, mitochondrial precursor	573	Homo sapiens (Human) [9606]	430-446	NIST, Pride	483, 1468, 2247, 4534, 5008, 5568, 7465, 8428, 8508, 12058, 12393, 12459, 12775, 12867, 14709, 16265, 18853, 19517, 19925, 22219, 26466, 29253, 29342, 30710, 31045, 32154, 32797, 34215, 34836, 35330, 37051, 42042, 42411, 43430, 43580, 43967, 45693, 46865, 47641, 48072, 49855, 51852, 53281, 54468, 56107, 58447, 58681, 58832, 62458, 62839, 64964, 67060, 67791, 68202, 68987, 71529, 74374, 76350, 79540, 79553, 79579, 79582, 79584, 79589, 79612, 79618, 79635, 100813, 101048, 101066, 101166, 101386, 102353, 102382, 102391, 102397, 102404, 102459, 102570, 102598, 102617, 102641, 102650, 102657, 102687, 102736, 102750, 102765, 102775, 102777, 102782, 102817, 102832, 102853, 102872, 102897, 103706, 104547, 107579, 107932, 108009, 108049, 110247, 110826, 112560, 112717, 114735, 114753, 114829, 114868, 114968, 118256, 118257, 118264, 118265, 118271, 118272, 118275, 118276, 118283, 118284, 118285, 118291, 118292, 118294, 118311, 118312, 118313, 118316, 118319, 118321, 118322, 118323, 118324, 118325, 118327, 118334, 118364, 118366, 118367, 118369, 118370, 118384, 118387, 118399, 118422, 118430, 118431, 118434, 118435, 118437, 118440, 118443, 118445, 118447, 118449, 118450, 118451, 118452, 118458, 118459, 118464, 118468, 118471, 118472, 118483, 118485, 118487, 118488, 118490, 118491, 118492, 118500, 118505, 118509, 118510, 118512, 118513, 118517, 118521, 118522, 118526, 118532, 118533, 118534, 118540, 118542, 118547, 118551, 118552, 118562, 118563, 118564, 118567, 118568, 118569, 118570, 118571, 118572, 118576, 118582, 118589, 118591, 118592, 118595, 118603, 118618, 118622, 118628, 118629, 118630, 118635, 118637, 118638, 118639, 118642, 118643, 118644, 118646, 118649, 118651, 118652, 118655, 118658, 118665, 118672, 118673, 118681, 130448, 130480, 130519, 130534, 130543, 130608, 132049, 133581, 133613, 133614, 133639, 133662, 133715, 133747, 135896, 135914, 135916, 135917, 135927, 135929, 135934, 135935, 135942, 135945, 135959, 135965, 135966, 135977, 135979, 135988, 135989, 135991, 135995, 135996, 136004, 150305, 151003, 151012, 151013, 162805, 163765, 175723, 176566, 176960, 176964, 176999, 177042, 177064, 177123, 177129, 177159, 177329, 177359
+UniRef100_P18687	P18687	60 kDa heat shock protein, mitochondrial precursor	573	Cricetulus griseus (Chinese hamster) (Cricetulus barabensis griseus) [10029]	430-446	Pride	
+UniRef100_P63038	P63038	60 kDa heat shock protein, mitochondrial precursor	573	Mus musculus (Mouse) [10090]	430-446	NIST, Pride	11673, 18980, 20694, 21291, 27274, 27796, 30169, 40453, 43578, 50085, 54711, 57208, 64455, 64963, 65128, 65987, 102316, 102381, 102549, 102716, 102892, 102911, 102918, 103058, 103106, 103139, 103148, 103294, 103303, 103307, 103318, 103343, 103405, 103412, 103442, 103514, 103533, 103540, 103572, 103630, 105025, 105492, 112704, 143665, 143782
+UniRef100_P86206	P86206	60 kDa heat shock protein, mitochondrial (Fragments)	271	Mesocricetus auratus (Golden hamster) [10036]	247-263	Pride	
+UniRef100_Q6IP60	Q6IP60	Hspd1 protein	579	Xenopus laevis (African clawed frog) [8355]	430-446		
+UniRef100_Q7ZTK0	Q7ZTK0	MGC53106 protein	468	Xenopus laevis (African clawed frog) [8355]	430-446		
+UniRef100_Q7ZTR6	Q7ZTR6	Hspd1 protein (Fragment)	555	Xenopus laevis (African clawed frog) [8355]	430-446	Pride	
+
+##Query peptide: SVQYDDVPEYK
+##Number of matched proteins: 40
+#UniRef100 Cluster ID	Representative Protein AC	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+UniRef100_B3KNN9	B3KNN9	cDNA FLJ30070 fis, clone ASTRO2000046, highly similar to CD166 ANTIGEN	555	Homo sapiens (Human) [9606]	77-87	Pride	
+UniRef100_D2H3A9	D2H3A9	Putative uncharacterized protein (Fragment)	569	Ailuropoda melanoleuca (Giant panda) [9646]	63-73		
+UniRef100_E9Q3Q6	E9Q3Q6	CD166 antigen	570	Mus musculus (Mouse) [10090]	77-87		
+UniRef100_F1MHN8	F1MHN8	CD166 antigen	583	Bos taurus (Bovine) [9913]	77-87		
+UniRef100_F1PDR0	F1PDR0	CD166 antigen	583	Canis familiaris (Dog) (Canis lupus familiaris) [9615]	77-87		
+UniRef100_F1SL34	F1SL34	Uncharacterized protein (Fragment)	547	Sus scrofa (Pig) [9823]	54-64		
+UniRef100_F7B5L3	F7B5L3	Uncharacterized protein	583	Equus caballus (Horse) [9796]	77-87		
+UniRef100_F7E9U2	F7E9U2	Uncharacterized protein	583	Macaca mulatta (Rhesus macaque) [9544]	77-87		
+UniRef100_F7HMG0	F7HMG0	Uncharacterized protein	583	Callithrix jacchus (White-tufted-ear marmoset) [9483]	77-87		
+UniRef100_F7HMH1	F7HMH1	Uncharacterized protein	570	Callithrix jacchus (White-tufted-ear marmoset) [9483]	77-87		
+UniRef100_G1LH19	G1LH19	Uncharacterized protein (Fragment)	586	Ailuropoda melanoleuca (Giant panda) [9646]	80-90		
+UniRef100_G1P9R8	G1P9R8	Uncharacterized protein (Fragment)	544	Myotis lucifugus (Little brown bat) [59463]	67-77		
+UniRef100_G1QTH1	G1QTH1	Uncharacterized protein	583	Nomascus leucogenys (Northern white-cheeked gibbon) (Hylobates leucogenys) [61853]	77-87		
+UniRef100_G1T112	G1T112	CD166 antigen	583	Oryctolagus cuniculus (Rabbit) [9986]	77-87		
+UniRef100_G3HRF8	G3HRF8	CD166 antigen	583	Cricetulus griseus (Chinese hamster) (Cricetulus barabensis griseus) [10029]	77-87		
+UniRef100_G3QZI0	G3QZI0	Uncharacterized protein	583	Gorilla gorilla gorilla (Lowland gorilla) [9595]	77-87		
+UniRef100_G7MK34	G7MK34	Putative uncharacterized protein	583	Macaca mulatta (Rhesus macaque) [9544]	77-87		
+UniRef100_H2P9U5	H2P9U5	Uncharacterized protein	583	Pongo abelii (Sumatran orangutan) (Pongo pygmaeus abelii) [9601]	77-87		
+UniRef100_H2R846	H2R846	Activated leukocyte cell adhesion molecule	583	Pan troglodytes (Chimpanzee) [9598]	77-87		
+UniRef100_H9ERZ1	H9ERZ1	CD166 antigen isoform 1	583	Macaca mulatta (Rhesus macaque) [9544]	77-87		
+UniRef100_H9YZP2	H9YZP2	CD166 antigen	583	Macaca mulatta (Rhesus macaque) [9544]	77-87		
+UniRef100_I3LXH3	I3LXH3	Uncharacterized protein (Fragment)	570	Spermophilus tridecemlineatus (Thirteen-lined ground squirrel) (Ictidomys tridecemlineatus) [43179]	77-87		
+UniRef100_K7GAY1	K7GAY1	Uncharacterized protein	541	Pelodiscus sinensis (Chinese softshell turtle) (Trionyx sinensis) [13735]	37-47		
+UniRef100_K7GLE8	K7GLE8	Uncharacterized protein (Fragment)	560	Sus scrofa (Pig) [9823]	54-64		
+UniRef100_K9ILN7	K9ILN7	Putative activated leukocyte cell adhesion molecule	583	Desmodus rotundus (Vampire bat) [9430]	77-87		
+UniRef100_K9IWH1	K9IWH1	CD166 antigen	583	Sus scrofa (Pig) [9823]	77-87		
+UniRef100_L5LYA4	L5LYA4	CD166 antigen	542	Myotis davidii (David's myotis) [225400]	125-135		
+UniRef100_L8IQD7	L8IQD7	CD166 antigen (Fragment)	593	Bos grunniens mutus [72004]	87-97		
+UniRef100_L9KY86	L9KY86	CD166 antigen (Fragment)	521	Tupaia chinensis (Chinese tree shrew) [246437]	61-71		
+UniRef100_M3W6Y7	M3W6Y7	Uncharacterized protein (Fragment)	580	Felis catus (Cat) (Felis silvestris catus) [9685]	74-84		
+UniRef100_O35112	O35112	CD166 antigen precursor	583	Rattus norvegicus (Rat) [10116]	77-87	NIST, Pride	
+UniRef100_O46651	O46651	CD166 antigen (Fragment)	521	Oryctolagus cuniculus (Rabbit) [9986]	15-25		
+UniRef100_Q13740	Q13740	CD166 antigen precursor	583	Homo sapiens (Human) [9606]	77-87	NIST, Pride	
+UniRef100_Q13740-2	Q13740-2	CD166 antigen precursor	570	Homo sapiens (Human) [9606]	77-87		
+UniRef100_Q5MPX5	Q5MPX5	Activated leukocyte cell adhesion molecule soluble isoform	133	Mus musculus (Mouse) [10090]	77-87	NIST	
+UniRef100_Q5R640	Q5R640	Putative uncharacterized protein DKFZp459H0124	570	Pongo abelii (Sumatran orangutan) (Pongo pygmaeus abelii) [9601]	77-87		
+UniRef100_Q61490	Q61490	CD166 antigen precursor	583	Mus musculus (Mouse) [10090]	77-87	NIST, Pride	11408
+UniRef100_Q6PEY4	Q6PEY4	ALCAM protein	133	Homo sapiens (Human) [9606]	77-87	NIST	
+UniRef100_Q9BDE7	Q9BDE7	Activated leukocyte cell adhesion molecule (Fragment)	113	Sus scrofa (Pig) [9823]	15-25		
+UniRef100_Q9BH13	Q9BH13	CD166 antigen precursor	583	Bos taurus (Bovine) [9913]	77-87	Pride	
+
+##Per peptide matched protein summary report
+##Number of peptides had matches: 2
+##Unique matched protein(s): 101
+##Unique matched organisms(s): 39
+#Query peptide	Num. matched proteins	Num. matched organisms
+AAVEEGIVLGGGCALLR	61	36
+SVQYDDVPEYK	40	24
+
+##Per protein matching peptide summary report
+##Unique matched protein(s): 101
+##Unique matched organisms(s): 39
+#UniRef100 ClusterID	Representative protein AC	Num. matching peptdies	Matching peptides
+UniRef100_A4II42	A4II42	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_B3GQS7	B3GQS7	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_B3KNN9	B3KNN9	1	SVQYDDVPEYK(77-87)
+UniRef100_B7Z4F6	B7Z4F6	1	AAVEEGIVLGGGCALLR(407-423)
+UniRef100_B7Z597	B7Z597	1	AAVEEGIVLGGGCALLR(421-437)
+UniRef100_B7Z5E7	B7Z5E7	1	AAVEEGIVLGGGCALLR(374-390)
+UniRef100_D2H3A9	D2H3A9	1	SVQYDDVPEYK(63-73)
+UniRef100_E2QUU5	E2QUU5	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_E9Q3Q6	E9Q3Q6	1	SVQYDDVPEYK(77-87)
+UniRef100_F1MHN8	F1MHN8	1	SVQYDDVPEYK(77-87)
+UniRef100_F1MUZ9	F1MUZ9	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_F1PDR0	F1PDR0	1	SVQYDDVPEYK(77-87)
+UniRef100_F1SL34	F1SL34	1	SVQYDDVPEYK(54-64)
+UniRef100_F1SMZ7	F1SMZ7	1	AAVEEGIVLGGGCALLR(432-448)
+UniRef100_F6PQQ8	F6PQQ8	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_F6TFZ0	F6TFZ0	1	AAVEEGIVLGGGCALLR(432-448)
+UniRef100_F6UT23	F6UT23	1	AAVEEGIVLGGGCALLR(374-390)
+UniRef100_F6Z587	F6Z587	1	AAVEEGIVLGGGCALLR(432-448)
+UniRef100_F7B5L3	F7B5L3	1	SVQYDDVPEYK(77-87)
+UniRef100_F7BGB7	F7BGB7	1	AAVEEGIVLGGGCALLR(432-448)
+UniRef100_F7E9U2	F7E9U2	1	SVQYDDVPEYK(77-87)
+UniRef100_F7GF46	F7GF46	1	AAVEEGIVLGGGCALLR(428-444)
+UniRef100_F7GZG0	F7GZG0	1	AAVEEGIVLGGGCALLR(398-414)
+UniRef100_F7HMG0	F7HMG0	1	SVQYDDVPEYK(77-87)
+UniRef100_F7HMH1	F7HMH1	1	SVQYDDVPEYK(77-87)
+UniRef100_F7HMR4	F7HMR4	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_F7I3J9	F7I3J9	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_G1LH19	G1LH19	1	SVQYDDVPEYK(80-90)
+UniRef100_G1M5B6	G1M5B6	1	AAVEEGIVLGGGCALLR(432-448)
+UniRef100_G1NUB2	G1NUB2	1	AAVEEGIVLGGGCALLR(432-448)
+UniRef100_G1P9R8	G1P9R8	1	SVQYDDVPEYK(67-77)
+UniRef100_G1QTH1	G1QTH1	1	SVQYDDVPEYK(77-87)
+UniRef100_G1R5A6	G1R5A6	1	AAVEEGIVLGGGCALLR(432-448)
+UniRef100_G1R5A7	G1R5A7	1	AAVEEGIVLGGGCALLR(374-390)
+UniRef100_G1T112	G1T112	1	SVQYDDVPEYK(77-87)
+UniRef100_G1T3Y8	G1T3Y8	1	AAVEEGIVLGGGCALLR(431-447)
+UniRef100_G2HFN5	G2HFN5	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_G2HG50	G2HG50	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_G3HL13	G3HL13	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_G3HRF8	G3HRF8	1	SVQYDDVPEYK(77-87)
+UniRef100_G3QYY4	G3QYY4	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_G3QZI0	G3QZI0	1	SVQYDDVPEYK(77-87)
+UniRef100_G3SL08	G3SL08	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_G3WZS7	G3WZS7	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_G4W8Y6	G4W8Y6	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_G5DYI3	G5DYI3	1	AAVEEGIVLGGGCALLR(336-352)
+UniRef100_G7MK34	G7MK34	1	SVQYDDVPEYK(77-87)
+UniRef100_G9F6X6	G9F6X6	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_G9K4Y8	G9K4Y8	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_H0W1Z7	H0W1Z7	1	AAVEEGIVLGGGCALLR(429-445)
+UniRef100_H2P876	H2P876	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_H2P9U5	H2P9U5	1	SVQYDDVPEYK(77-87)
+UniRef100_H2R846	H2R846	1	SVQYDDVPEYK(77-87)
+UniRef100_H3B645	H3B645	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_H3B646	H3B646	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_H9ERZ1	H9ERZ1	1	SVQYDDVPEYK(77-87)
+UniRef100_H9FTU5	H9FTU5	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_H9GFC4	H9GFC4	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_H9YZP2	H9YZP2	1	SVQYDDVPEYK(77-87)
+UniRef100_H9Z8E7	H9Z8E7	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_I3L9N6	I3L9N6	1	AAVEEGIVLGGGCALLR(375-391)
+UniRef100_I3LXH3	I3LXH3	1	SVQYDDVPEYK(77-87)
+UniRef100_K7D0W0	K7D0W0	1	AAVEEGIVLGGGCALLR(464-480)
+UniRef100_K7GAY1	K7GAY1	1	SVQYDDVPEYK(37-47)
+UniRef100_K7GIW1	K7GIW1	1	AAVEEGIVLGGGCALLR(431-447)
+UniRef100_K7GLE8	K7GLE8	1	SVQYDDVPEYK(54-64)
+UniRef100_K9ILN7	K9ILN7	1	SVQYDDVPEYK(77-87)
+UniRef100_K9IWH1	K9IWH1	1	SVQYDDVPEYK(77-87)
+UniRef100_K9J1X2	K9J1X2	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_K9K3I2	K9K3I2	1	AAVEEGIVLGGGCALLR(423-439)
+UniRef100_L5K231	L5K231	1	AAVEEGIVLGGGCALLR(606-622)
+UniRef100_L5LQG7	L5LQG7	1	AAVEEGIVLGGGCALLR(400-416)
+UniRef100_L5LYA4	L5LYA4	1	SVQYDDVPEYK(125-135)
+UniRef100_L8IQD7	L8IQD7	1	SVQYDDVPEYK(87-97)
+UniRef100_L9JWG7	L9JWG7	1	AAVEEGIVLGGGCALLR(251-267[L=I: 257])
+UniRef100_L9KNI8	L9KNI8	1	AAVEEGIVLGGGCALLR(379-395)
+UniRef100_L9KX39	L9KX39	1	AAVEEGIVLGGGCALLR(196-212)
+UniRef100_L9KY86	L9KY86	1	SVQYDDVPEYK(61-71)
+UniRef100_L9L1D2	L9L1D2	1	AAVEEGIVLGGGCALLR(75-91)
+UniRef100_M3W6Y7	M3W6Y7	1	SVQYDDVPEYK(74-84)
+UniRef100_M3WXZ4	M3WXZ4	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_M3Y8V3	M3Y8V3	1	AAVEEGIVLGGGCALLR(432-448)
+UniRef100_M3ZUM7	M3ZUM7	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_M7B7Y4	M7B7Y4	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_O35112	O35112	1	SVQYDDVPEYK(77-87)
+UniRef100_O46651	O46651	1	SVQYDDVPEYK(15-25)
+UniRef100_P10809	P10809	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_P18687	P18687	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_P63038	P63038	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_P86206	P86206	1	AAVEEGIVLGGGCALLR(247-263)
+UniRef100_Q13740	Q13740	1	SVQYDDVPEYK(77-87)
+UniRef100_Q13740-2	Q13740-2	1	SVQYDDVPEYK(77-87)
+UniRef100_Q5MPX5	Q5MPX5	1	SVQYDDVPEYK(77-87)
+UniRef100_Q5R640	Q5R640	1	SVQYDDVPEYK(77-87)
+UniRef100_Q61490	Q61490	1	SVQYDDVPEYK(77-87)
+UniRef100_Q6IP60	Q6IP60	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_Q6PEY4	Q6PEY4	1	SVQYDDVPEYK(77-87)
+UniRef100_Q7ZTK0	Q7ZTK0	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_Q7ZTR6	Q7ZTR6	1	AAVEEGIVLGGGCALLR(430-446)
+UniRef100_Q9BDE7	Q9BDE7	1	SVQYDDVPEYK(15-25)
+UniRef100_Q9BH13	Q9BH13	1	SVQYDDVPEYK(77-87)

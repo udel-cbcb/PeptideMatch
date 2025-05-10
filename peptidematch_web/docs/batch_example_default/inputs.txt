@@ -1,0 +1,2 @@
+##Sequence data set: UniProtKB (2013_06)
+##Unique query peptides: 26

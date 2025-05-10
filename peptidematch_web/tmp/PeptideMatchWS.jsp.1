@@ -1,0 +1,370 @@
+<%@ page import="java.io.*,java.util.*, javax.servlet.*" %>
+<%@ page import="javax.servlet.http.*" %>
+<%@ page import="org.apache.commons.fileupload.*" %>
+<%@ page import="org.apache.commons.fileupload.disk.*" %>
+<%@ page import="org.apache.commons.fileupload.servlet.*" %>
+<%@ page import="org.apache.commons.io.output.*" %>
+<%@ page import="org.apache.lucene.*" %>
+<%@ page import="org.apache.lucene.search.*" %>
+<%@ page import="org.apache.lucene.index.*" %>
+<%@ page import="org.apache.lucene.store.*" %>
+<%@ page import="org.apache.lucene.document.*" %>
+<%@ page import="org.apache.solr.*" %>
+<%@ page import="query.PeptidePhraseQuery" %>
+
+<%
+	String organism;
+	String fileName;
+	String format;
+	String peptide = "";
+	//using the Solr to get the total matched sequences
+	//PeptidePharseQuery is used in the web
+ 	ArrayList peptideList = null; 
+ 	ArrayList organismList = null; 
+	String[] peptides = null;
+	String[] organisms = null;
+	PeptidePhraseQuery pquery = new PeptidePhraseQuery();
+	if(request.getParameter("queryFile") != null) {
+		String queryFile = getUploadedFile(request, "queryFile");
+		String queryList = getUploadedList(queryFile);
+		if(querylist.length() > 0) {
+			peptides = querylist.split(",");
+			peptideList = Array.asList(peptides);
+		}
+	}
+	if (request.getParameter("query") != null) {
+		peptides = request.getParameter("query").split(";");
+		for(int i=0; i < peptides.length; i++) {
+			if(peptideList.indexOf(peptides[i]) = -1) {
+				peptideList.add(peptides[i]);
+			}
+		}
+	}
+	if (request.getParameter("organismFile") != null) {
+		String organismFile = getUploadedFile(request, "organismFile");
+		String taxonList = getUploadedList(organismFile);
+		if(taxonList.length() > 0) {
+			organisms = taxonList.split(",");
+			organismList = Array.asList(organims);
+		}
+	}
+	if (request.getParameter("organism") != null) {
+		organisms = request.getParameter("organism").split(",");
+		for(int i=0; i < organisms.length; i++) {
+			if(organisms.indexOf(organisms[i]) = -1) {
+				organismList.add(organisms[i]);
+			}
+		}
+	}
+	else {
+			organismList.add("all");
+	}
+	if (request.getParameter("format") != null) {
+		format = request.getParameter("format");
+	}
+	else {
+		format = "tab";
+	}
+
+	if(organismList.size() == 0) {
+		out.println("You need to specify the query peptides!");
+	}
+	else {
+		Boolean searchUniProtKB = false;
+		String organism = "";
+		int organimsCount = 0;
+		for (int i = 0; i < organismList.size(); i++) {
+    			if(organismList.get(i).toLowerCase().equals("all")){
+				searchUniProtKB = true;
+				organism = "all";
+				organismCount = 1;
+				break;	
+    			}
+			else {
+				organism += organimsList.get(i).toLowerCase()+";";	
+				organismCount++;
+			}
+		}
+		organism = organism.substirng(0, organims.length() -1);	
+		int resultCount = 0;
+		String organismName = "";
+		// get the number of the candidate sequences for all the organisms
+		if (searchUniProtKB) {
+			pquery.queryAll(0, 1);
+			organismName = "UniProtKB";
+			resultCount = pquery.getResult();
+		} else {
+			pquery.queryByOrganismIDs(organism, 0, 1);
+			SolrDocumentList doclist = pquery.getCurrentDocs();
+			Iterator<SolrDocument> docItr = doclist.iterator();
+			SolrDocument solrDoc;
+			while (docItr.hasNext()) {
+				solrDoc = docItr.next();
+				description = (String) solrDoc.get("description");
+				features = description.trim().split("\\^\\|\\^");
+				if (organismCount == 1) {
+					organismName = features[5];
+				}
+				else {
+					organismName = organism;
+				}
+			}
+			resultCount = pquery.getResult();
+		}
+		doSearch(request, response, organisms, peptides, resultCount, organism, organismName);
+	}
+%>
+<%!	
+	protected void doSearch(HttpServletRequest request, HttpServletResponse response, String[] organisms, String[] peptides, int resultCount, String organism, String organismName) throws ServletException, IOException {
+		Document doc = new Document();
+		request.setCharacterEncoding("UTF-8");
+		String currentPath = request.getRealPath("/") + "WEB-INF/classes/config/";
+		PrintWriter out = response.getWriter();
+		// indexpath.properties is in the $tomcat_home/WEB-INF/class/
+		//InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream("config/index.properties");
+		InputStream inputStream = new FileInputStream(currentPath + "index.properties");
+		Properties properties = new Properties();
+		properties.load(inputStream);
+		// get the value of the property
+		String indexPath = properties.getProperty("indexpath");
+		String version = properties.getProperty("version");
+		// open the index
+		Directory indexDir = FSDirectory.open(new File(indexPath));
+		IndexSearcher searcher = new IndexSearcher(IndexReader.open(indexDir));
+		TopScoreDocCollector collector;
+		BooleanQuery bQuery = new BooleanQuery();
+		PhraseQuery phraseQuery;
+		String fileName = peptides[0];
+		int totalNumber = 0;
+		for (int i = 1; i < peptides.length; i++) {
+			fileName = fileName + "_" + peptides[i];
+		}
+		int organismCount = organisms.length;
+		String organism_part = "";
+		for (int i = 0; i < organismCount; i++) {
+			organism_part += organisms[i] + "_";
+		}
+		fileName = organism_part.toUpperCase() + fileName.toUpperCase()
+					+ ".txt";
+		response.setContentType("text/plain;");
+		response.setHeader("Content-disposition", "attachment;filename="+ fileName);
+		Query finalQuery;
+		//for each peptide, using the Lucene to dowload the query
+		BooleanQuery organismQuery = new BooleanQuery();
+		String peptide;
+		int count = 0;
+		for (int s = 0; s < peptides.length; s++) {
+			phraseQuery = new PhraseQuery();
+			peptide = peptides[s].replaceAll("[^a-zA-Z]", "");
+			// Construct the Phrase query
+			if (peptide.length() >= 3) {
+				for (int j = 0; j <= peptide.length() - 3; j++) {
+					phraseQuery.add(new Term("sequence", peptide.toLowerCase().substring(j, j + 3)));
+				}
+				if (organism.equals("all")) {
+					finalQuery = phraseQuery;
+				} else {
+					for (int i = 0; i < organismCount; i++) {
+						organismQuery.add(new TermQuery(new Term("organismid", organisms[i])), BooleanClause.Occur.SHOULD);
+					}
+					bQuery = new BooleanQuery();
+					bQuery.add(organismQuery, BooleanClause.Occur.MUST);
+					bQuery.add(phraseQuery, BooleanClause.Occur.MUST);
+					finalQuery = bQuery;
+				}
+				//get the matched sequence number
+				collector = TopScoreDocCollector.create(10, true);
+				searcher.search(finalQuery, collector);
+				totalNumber = collector.getTotalHits();
+				// Print out the header
+				if (count > 0) {
+					out.println("");
+					out.println("##Query: " + peptide.toUpperCase() + "\t");
+					out.println("##DB: " + resultCount + " sequence(s) from \""
+							+ organismName + "\" (" + version + ")" + "\t");
+					out.println("##Matched: " + totalNumber + " sequence(s)");
+					if (totalNumber > 0) {
+						// not using sorter
+						collector = TopScoreDocCollector.create(totalNumber, true);
+						searcher.search(finalQuery, collector);
+						ScoreDoc[] hits = collector.topDocs().scoreDocs;
+						out.print("#AC\t");
+						out.print("ID\t");
+						out.print("Protein_Name\t");
+						out.print("Length\t");
+						out.print("Organism\t");
+						out.print("Matched_range\t");
+						out.println("");
+						for (int i = 0; i < totalNumber; i++) {
+							doc = searcher.doc(hits[i].doc);
+							printTable(doc, response, peptide);
+						}
+
+					}
+				} 
+				//if the peptide length is less than 3, then print the error
+				else {
+					out.println("##Query: " + peptide.toUpperCase() + "\t");
+					out.println("##DB: " + resultCount + " sequences from "
+							+ organismName + " (" + version + ")" + "\t");
+					out.println("##Total Matched: " + totalNumber);
+					out.println("Valid peptide length is at least 3 characerters");
+				}
+				count++;
+			}
+		} else {
+			out.println("Wrong parameters");
+		}
+		out.flush();
+	}
+%>
+<%!	
+	public void printTable(Document doc, HttpServletResponse response,
+			String originalQuery) throws IOException {
+		out = response.getWriter();
+		id = (String) doc.get("id");
+		description = (String) doc.get("description");
+		sequence = (String) doc.get("sequence");
+		features = description.trim().split("\\^\\|\\^");
+		proteinID = features[0];
+		proteinName = features[2];
+		pirsfID = features[3];
+		organism = features[5];
+		int counter = 0;
+		out.print(id + "\t");
+		out.print(proteinID + "\t");
+		out.print(proteinName + "\t");
+		out.print(sequence.length() + "\t");
+		out.print(organism + "\t");
+		if (!pirsfID.equals(""))
+			out.print("PIR" + pirsfID + "\t");
+		else
+			out.print(" \t");
+		for (int i = 0; i <= sequence.length() - originalQuery.length(); i++) {
+			if (sequence.substring(i, i + originalQuery.length()).toUpperCase()
+					.equals(originalQuery.toUpperCase())) {
+				if (counter > 0)
+					out.print(";");
+				out.print(i + 1);
+				out.print("-");
+				out.print(i + originalQuery.length());
+				out.print(" ");
+				if (i < 5
+						&& (i + originalQuery.length() + 5) > sequence.length()) {
+					out.print(sequence.substring(0, i)
+							+ originalQuery.toUpperCase()
+							+ sequence.substring(i + originalQuery.length(),
+									sequence.length()));
+				} else if (i < 5
+						&& (i + originalQuery.length() + 5) <= sequence
+								.length()) {
+					out.print(sequence.substring(0, i)
+							+ originalQuery.toUpperCase()
+							+ sequence.substring(i + originalQuery.length(), i
+									+ originalQuery.length() + 5));
+				} else if (i >= 5
+						&& (i + originalQuery.length() + 5) > sequence.length()) {
+					out.print(sequence.substring(i - 5, i)
+							+ originalQuery.toUpperCase()
+							+ sequence.substring(i + originalQuery.length(),
+									sequence.length()));
+				} else if (i >= 5
+						&& (i + originalQuery.length() + 5) <= sequence
+								.length()) {
+					out.print(sequence.substring(i - 5, i)
+							+ originalQuery.toUpperCase()
+							+ sequence.substring(i + originalQuery.length(), i
+									+ originalQuery.length() + 5));
+				}
+				counter++;
+			}
+		}
+		out.println("");
+		out.flush();
+	}
+%>
+<%!		
+	public String getUploadedFile(HttpServletRequest request, String listType) { 
+   		File file ;
+   		int maxFileSize = 5000 * 1024;
+   		int maxMemSize = 5000 * 1024;
+   		//ServletContext context = pageContext.getServletContext();
+   		String filePath = "/usr/share/tomcat6/webapps/peptidematch_new/uploadedfiles/";
+		String uploadedFile = "";
+
+   		// Verify the content type
+   		String contentType = request.getContentType();
+   		if ((contentType.indexOf("multipart/form-data") >= 0)) {
+      			DiskFileItemFactory factory = new DiskFileItemFactory();
+      			// maximum size that will be stored in memory
+      			factory.setSizeThreshold(maxMemSize);
+      			// Location to save data that is larger than maxMemSize.
+      			factory.setRepository(new File("/tmp/"));
+
+      			// Create a new file upload handler
+      			ServletFileUpload upload = new ServletFileUpload(factory);
+      			// maximum file size to be uploaded.
+      			upload.setSizeMax( maxFileSize );
+      			try{ 
+         			// Parse the request to get file items.
+         			List fileItems = upload.parseRequest(request);
+
+         			// Process the uploaded file items
+         			Iterator i = fileItems.iterator();
+
+         			while ( i.hasNext () ) 
+         			{
+            				FileItem fi = (FileItem)i.next();
+            				if ( !fi.isFormField () ){
+            					// Get the uploaded file parameters
+            					String fieldName = fi.getFieldName();
+            					String fileName = fi.getName();
+            					boolean isInMemory = fi.isInMemory();
+            					long sizeInBytes = fi.getSize();
+            					// Write the file
+            					if( fileName.lastIndexOf("\\") >= 0 ){
+            						file = new File( filePath + 
+            						fileName.substring( fileName.lastIndexOf("\\"))) ;
+            					} else {
+            						file = new File( filePath + fileName.substring(fileName.lastIndexOf("\\")+1)) ;
+            					}
+            					fi.write( file ) ;
+						if(fieldName.equals(listType) {
+            						//out.println("Uploaded Filename: " + filePath + fileName + "<br>");
+							uploadedFile = filePath + fileName;
+							return uploadedFile;
+						}
+            				}
+         			}
+      			} catch (Exception ex) {
+         			System.out.println(ex);
+      			}
+		}
+		return null;
+	}
+%>
+<%!
+	public String getUploadedList(String uploadedFile) { 
+		File file = new File(uploadedFile);
+		if(file.length() == 0) {
+			BufferedReader br = new BufferedReader(new FileReader(uploadedFile));
+    			try {
+        			StringBuilder sb = new StringBuilder();
+        			String line = br.readLine();
+
+        			while (line != null) {
+            			sb.append(line);
+            			sb.append(";");
+            			line = br.readLine();
+        		}
+        			String list = sb.toString();
+				return list.substirng(0, list.length() -1);
+    			} finally {
+        			br.close();
+    			}			
+		}
+		else {	
+			return "";
+		}	
+	}
+%>

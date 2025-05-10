@@ -1,0 +1,10 @@
+BSA	Bos taurus (Bovine)	BOVIN	9913
+Human	Homo sapiens (Human)	HUMAN	9606
+Mouse	Mus musculus (Mouse)	MOUSE	10090
+Rat	Rattus norvegicus (Rat)	RAT	10116
+Chicken	Gallus gallus (Chicken)	CHICK	9031
+Drosophila	Drosophila melanogaster (Fruit fly)	DROME	7227
+C_elegans	Caenorhabditis elegans (Worm)	CAEEL	6239
+Yeast	Saccharomyces cerevisiae (strain ATCC 204508 / S288c) (Baker's yeast)	YEAST	559292
+E_coli	Escherichia coli (strain K12)	ECOLI	83333
+Sigmaups1	Sigmaups1	SIGM	99999

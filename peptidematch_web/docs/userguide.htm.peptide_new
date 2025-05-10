@@ -1,0 +1,1007 @@
+
+<html><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Peptide Match User Guide [PIR - Protein Information Resource]</title><!-- ##### page dependent-->
+  	<link href="css/styles.css" type="text/css" rel="stylesheet">
+ <style type="text/css">
+     a:active {  color:#336699; text-decoration:none}
+    a:link {  color:#336699; text-decoration:none}
+    a:visited { color:#996666; text-decoration:none }
+    a:hover {  color: #FFAA00; text-decoration: none}
+    a.nounderline{text-decoration:none}
+    </style>
+    <style>
+ 
+    
+.radio1 {
+	font-size:4px;
+	background-color:transparent;
+	border:1px;
+	border-color:transparent;
+	border:transparent;
+}
+.searchBannerBox {
+font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif; 
+font-size: 11px; 
+WIDTH: 180px;  
+HEIGHT:18px
+}
+td.searchLable {
+	color:#ffffff;
+	font-family:Verdana,Arial, Helvetica, sans-serif;
+	font-size:10px;
+	font-weight:bold
+}
+
+.hide2 { position:absolute; visibility:hidden; }
+.show2 { position:absolute; visibility:visible; }
+#organismlink{
+display:none;
+}
+#organismlist{
+font-size:11px;
+}
+#organism_name{
+display:none;
+}
+#organism{
+display:none;
+}
+#organism_name_div{
+display:none;
+}
+#result_display{
+display:none;
+}
+#result_newline{
+display:none;
+}
+#show_selected_count{
+display:none;
+}
+th#th_link{
+color:#036;
+background-color: #369;
+}
+</style>
+</head>
+ 
+ <body onload="goBackInitilization();" bgcolor="#cccccc" background="images/bg02.gif" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"><span id="progress" class="hide2"><form name="dialog"><table width="220" height="70" border="4" cellpadding="0" cellspacing="0" align="center" bgcolor="#FFFFFF"><tbody><tr><td align="center"> Processing ... <br><input type="text" name="bar" size="25" bar.style="color:navy;"><br></td></tr></tbody></table></form></span>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%"><tbody><tr><td>
+<map name="PIRBanner_Map">
+<area shape="rect" alt="home" coords="16,16,110,60" href="http://pir.georgetown.edu/pirwww/index.shtml" target="_top">
+<area shape="rect" alt="uniprot" coords="140,36,178,50" href="http://www.uniprot.org/" target="_blank">
+</map>
+<table cellspacing="0" cellpadding="0" width="100%" border="0" height="80">
+<tr> 
+<td><img alt="" src="images/PIRBanner.png" border="0" usemap="#PIRBanner_Map"></td> 
+<td width="99%" nowrap="" height="1" background="images/blueSpacer.png">
+<img alt="" src="images/spacer.gif" width="1" height="1" border="0">
+</td>
+<td align="right" valign="top" height="80" width="400" background="images/gradientHome6.png">
+<table border="0" cellpadding="0" cellspacing="0" width="400" height="80">
+ <form action="http://pir.georgetown.edu/cgi-bin/textsearch.pl" id="textSearch" method="get" name="textSearchForm" style="MARGIN: 0px">
+   <tr>
+              <td width="400" colspan="10"><img alt="" src="images/spacer.gif" width="400" height="30"></td>
+            </tr>  
+            <tr>
+              <td><img alt="" src="images/spacer.gif" width="60" height="1"></td>
+	            <td><input type="radio" name="sitesearch" checked=""></td>
+	            <td align="right" nowrap="" class="searchLable">Protein Search</td>
+	            <td><input type="radio" name="sitesearch" value="sitesearch"></td>
+	            <td align="right" nowrap="" class="searchLable">Site Search</td>
+	            <td><img alt="" src="images/spacer.gif" width="8" height="1"></td>
+              <td align="right"><input alt="submit" type="image" src="images/but06.png" border="0" width="18" height="16" name="submit"></td>
+              <td><img alt="" src="images/spacer.gif" width="2" height="1"></td>
+              <td align="right"><input alt="query" name="query0" type="text" class="searchBannerBox" style="background:#CED9E7;" value=""></td>
+              <td><img alt="" src="images/spacer.gif" width="6" height="1"></td>
+            </tr>
+<input type="hidden" name="field0" value="ALL">
+<input type="hidden" name="search" value="1">
+</form>
+ </table>
+</td>
+</tr>
+</table>
+
+
+<noscript>
+    &lt;td&gt;
+			&lt;table bgcolor="#4a4a4a" width="100%" height="21" border="0" cellspacing="0" cellpadding="0"&gt;
+				&lt;tr&gt;
+					&lt;td class="nrm02" nowrap&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+						&lt;a href="http://pir.georgetown.edu/pirwww/index.shtml" class="m"&gt;&lt;font face=verdana size="2pt" color="white"&gt;Home&lt;/font&gt;&lt;/a&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+						&lt;a href="http://pir.georgetown.edu/pirwww/about/" class="m"&gt;&lt;font face=verdana size="2pt" color="white"&gt;About PIR&lt;/font&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+						&lt;a href="http://pir.georgetown.edu/pirwww/dbinfo/" class="m"&gt;&lt;font face=verdana size="2pt" color="white"&gt;Databases&lt;/font&gt;&lt;/a&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+						&lt;a href="http://pir.georgetown.edu/pirwww/search/" class="m"&gt;&lt;font face=verdana size="2pt" color="white"&gt;Search/Retrieval&lt;/font&gt;&lt;/a&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+						&lt;a href="http://pir.georgetown.edu/pirwww/download/" class="m"&gt;&lt;font face=verdana size="2pt" color="white"&gt;Download&lt;/font&gt;&lt;/a&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+						&lt;a href="http://pir.georgetown.edu/pirwww/support/" class="m"&gt;&lt;font face=verdana size="2pt" color="white"&gt;Support&lt;/font&gt;&lt;/a&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/table&gt;
+		&lt;/td&gt;
+</noscript>
+
+<table cellspacing="0" cellpadding="0" width="100%" bgcolor="#333333" border="0"> <tbody><tr>
+<td><img src="images/leftSearch.png"></td><!-- ############### group dependent-->
+<td class="sml01" width="99%" background="images/bgcolor.png">&nbsp;</td>
+</tr></tbody></table>
+<table cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff" border="0" style="margin-bottom:3%">
+    <tbody><tr valign="top"> 
+      <td background="images/bg02.gif"><img src="images/spacer.gif" width="94" height="1" alt=""></td>
+      <td><img width="8" height="400" src="images/spacer.gif" border="0" alt=""></td>
+      <td id="inputtd" align="left" nowrap="" bgcolor="#ffffff" width="70%">
+<!-- The closing half of the body frame is in half_frame_close.inc-->
+
+<table border="0" cellspacing="0" cellpadding="0" class="docTitle"><tbody><tr>
+	  <td width="10" rowspan="2"><img height="20" src="images/spacer.gif" width="10" alt=""></td>
+<td>
+   <table border="0" cellpadding="0" cellspacing="0" width="8" height="20">
+      <tbody><tr>
+         <td bgcolor="#336699"><img height="20" src="images/spacer.gif" width="8" alt=""></td>
+      </tr>
+   </tbody></table>
+</td>
+<td width="10"><img height="20" src="images/spacer.gif" width="10" alt=""></td>
+
+		<td>
+                <a href="http://pir.georgetown.edu/pirwww/" class="titleLink"><b>HOME</b></a>
+								   / <a href="http://pir.georgetown.edu/pirwww/search/" class="titleLink"><b>Search</b></a>
+                    / <b><i>Peptide Match User Guide</i></b><!-- ############### page dependent-->
+    </td></tr>
+</tbody></table>
+   <table cellspacing="0" cellpadding="9" border="0" width="100%" bgcolor="#ffffff" class="nrm02">
+      <tbody>
+      <tr>
+       <td><br/></td>
+      </tr>
+      <tr>
+ 	<td> 
+	<table width="100%" bgcolor="#ffffff" cellpadding="8" cellspacing="0" class="boxTable">
+                  <tbody style="font-size: large;"><tr>
+                    <th class="right" id="th_formtitle" width="97%" align="middle"><a name="toc">Table of Contents</a></th>
+                  </tr>
+
+                  <tr>
+                    <td class="nrm02">
+			<ul>
+			<!--
+				<li><a href="#intro">Introduction</a></li>
+			-->
+				<li><a href="#single">Single Peptide Match</a></li>
+					<ul>
+						<li><a href="#singleinputs">User Inputs</a></li>
+						<li><a href="#singleresults">Results Display</a></li>
+							<ul>
+								<li><a href="#table">Table View</a></li>	
+								<li><a href="#taxongroup">Taxonomy Group View</a></li>	
+								<li><a href="#taxontree">Taxonomy Tree View</a></li>	
+								<li><a href="#spectra">Query Peptide Mass Spectra</a></li>	
+							</ul>
+					</ul>
+				<li><a href="#batch">Batch Peptide Match</a></li>
+					<ul>
+						<li><a href="#batchinputs">User Inputs</a></li>
+						<li><a href="#batchresutls">Format of Downloaded File</a></li>
+					</ul>
+				<li><a href="#restful">RESTful Web Services API</a></li>
+			</ul>
+					
+	       	    </td>
+                  </tr>
+                </tbody>
+	</table>
+            </td>
+         </tr>
+      <tr>
+       <td><br/></td>
+      </tr>
+      <tr>
+ 	<td> 
+	<table width="100%" bgcolor="#ffffff" cellpadding="8" cellspacing="0" class="boxTable">
+                  <tbody><tr>
+                    <th class="right" style="font-size: 13px;" id="th_formtitle" width="97%" align="left"><a name="intro"></a></th>
+                  </tr>
+                  <tr>
+                    <td class="nrm02">
+		<p>PIR Peptide Match allows you quickly retrieve all occurrences for a given query peptide from the UniProtKB protein sequences. The matched results are tableted and can be narrowed down to a specific set of organisms by browsing the taxonomy tree or taxonomy group. Within the web page, the query peptide can be search against the three popular peptide spectra databases and libraries (gpmDB, PeptideAtlas and NIST Peptide Library) to check if the query peptide exists in any of these databases. We also provide batch retrieval from the web interface and programmatic access via RESTful web services.</p>
+				<p align="right"><a href="#toc">Back to TOC</a></p>	
+	       	    </td>
+                  </tr>
+                </tbody>
+	</table>
+	</td>
+	</tr>
+      <tr>
+       <td><br/></td>
+      </tr>
+      <tr>
+ 	<td> 
+	<table width="100%" bgcolor="#ffffff" cellpadding="8" cellspacing="0" class="boxTable">
+                  <tbody><tr>
+                    <th class="right" id="th_formtitle" style="font-size: 13px;" width="97%" align="left"><a name="single">Single Peptide Match</a></th>
+                  </tr>
+
+                  <tr>
+                    <td class="nrm02">
+				<p>User can find an exact match for a peptide sequence query in the selected database. The search can be performed against:
+				<ul>
+					<li>
+UniProtKB, which is the central hub for the collection of functional information on proteins, with accurate, consistent, and rich annotation. It consists of two sections: a section containing manually-annotated records with information extracted from literature and curator-evaluated computational analysis (UniProtKB/Swiss-Prot), and a section with computationally analyzed records that await full manual annotation (UniProtKB/TrEMBL).</li>
+<li>A subset of UniProtKB entries belonging to a certain organism which is a complete proteome.</li>
+<li>A subset of UniProtKB entries beloing to a set of organisms which are reference proteomes.</li>
+				</ul>
+
+				<h4><a name="singleinputs">User Inputs</a></h4>
+				<p>The main user interface for single peptide match is shown below. The first section is mainly deal with selecting database which will be used in the search. The second section is for user to input the peptide sequence. The "?" on the upper-right corner is a link to detailed user guide.</p>
+				<p><img src="images/singlePeptideMatchMainAnnotated.png"></img></p>	
+				<p>By default, the entire UniProtKB will be searched. However, if a user is only interested in a certain organism or a set of organsims, only a subset of the UniProtKB entries will be searched. For example, if a user is interested in an organism in the UniProt <a href="http://www.uniprot.org/faq/15">complete proteome</a> set, A complete proteome consists of a set of proteins of organism whose genome has been completely sequenced, the second option allows user to specify the organism by either entering the organism name or corresponding NCBI taxonomy ID as shown below. 
+				<p><img src="images/singlePeptideMatchCPAnnotated.png"></img></p>	
+				If a user is interesed in a larger set of organisms and want to select multiple organisms to search against, the third option alphabetically organizes the names of UniProt <a href="http://www.uniprot.org/faq/47">reference proteome</a> set. A reference proteome is the complete proteome of well-studied model organism or organism related to biomedical research. The selected organisms are tracked while user is making multiple selections as shown below. 
+				<p><img src="images/singlePeptideMatchRefPAnnotated.png"></img></p>	
+				<h4><a name="singleresults">Results Display</a></h4>
+				<p>Once the search is done, the matched results will be displayed as table shown below.
+				<p style="border-style: solid; border-width: 1px; border-color: navy;"><a name="table"><img src="images/singlePeptideMatchTableViewAnnotated.png" width=1400></img></a></p>	
+
+				<p>The table is organized into 9 sections:
+				<p><b>1 - Query Peptide Sequence</b><br/>
+				Show the query peptide sequence and allow user to do a new search by submitting a new query peptide sequence.</p>
+				<p><b>2 - Multiple Organisms</b><br/>
+				Click to show the taxonomy IDs of matched organisms.</p>
+				<p><b><a name="taxongroup">3</a> - Browse by taxonomy group</b><br/>
+				Click to view the taxonomy groups of matched proteins as shown below.</p>
+				<p style="border-style: solid; border-width: 1px; border-color: navy;"><img src="images/singlePeptideMatchTaxonGroupAnnotated.png"></img></p>	
+				<p>On the top is information about the query peptide sequence user entered, the matched organisms and the total number of protein sequences matched. Then the matched results are divided into 4 tables: Archaea, Bacteria, Eukaryota and Others. In each table, the first column is the taxonomy groups with the links to NCBI taxonomy. The second column is the number of matched protein entries and detailed view of those matched proteins. The third column is the % of matched proteins in its corresponding taxonomy group.	
+				<p><b><a name="taxontree">4</a> - Browse by taxonomy tree</b><br/>
+				Click to view the taxonomy tree of matched proteins as shown below. Each tree node includes the taxonomy name with links to NCBI taxonomy, the rank of taxonomy if it does exist, and finally the number of proteins whose lineage contain this taxonomy. The number links to a tab view of those proteins.</p> 
+				<p style="border-style: solid; border-width: 1px; border-color: navy;"><img src="images/singlePeptideMatchTaxonTreeAnnotated.png"></img></p>	
+				<p><b><a name="spectra">5</a> - View Mass Spectra of query peptide</b><br/>
+				Click to view the Mass Spectra of query peptide as shown below.</p> 
+				<p style="border-style: solid; border-width: 1px; border-color: navy;"><img src="images/singlePeptideMatchSpectraView.png"></img></p>	
+				<p>The summary lists all the organisms that have the Mass Spectra of the query peptide, user can follow the links on the right to go to the corresponding proteomics database to view the actual Mass Spectra.
+				<p><b>6 - Save current table view</b><br/>
+				The current view of the result table can be saved to the user's local computer. The results will be saved for selected entries or, if no proteins are selected, for all entries. Clicking "Table" will save the displayed columns as a tab-delimited text file, which may be imported into a spreadsheet for easier viewing or analysis. Clicking "FASTA" will save the IDs and sequences in FASTA format.</p>
+
+				<p><b>7 - Analyze: BLAST, FASTA, Pattern Match, Multiple Alignment and Domain Display</b><br/>
+				User can selected matched protein entries for further analyzed using the sequence analysis programs available in the Results page. First, select the protein(s) using the checkboxes on the left side of the table, then click the corresponding analysis tool.</p>
+<ul>
+	<li>Click "BLAST" or "FASTA" button, and a new query page will be displayed, along with the parameters that were selected in the initial search. </li>
+	<li> Click "Pattern Match" to search against the PROSITE database.</li>
+	<li>For multiple alignment, check at least 2 proteins (but no more than 70), then click the "Multiple Alignment" button. This will open the Multiple alignment form from which you can select one of the alignment programs: ClustalW, T-Coffee or Muscle. The result page will display the alignment and alignment viewer. For ClustalW and T-Coffee, the neighbor-joining tree and alignment can be viewed, edited and saved using either PIR-TAV viewer or JalView. For Muscle only Jalview is available.</li>
+	<li>Domain display option, shows PFam domains (if present) in graphical format. </li>
+</ul>
+				<p><b>8 - Results Table</b><br/>
+				The matched proteins are displayed in a table with the following columns:</p>
+				<p><i>Protein AC/ID</i><br/>
+				The Protein AC/ID refers to the UniProtKB identifiers. Below these numbers, user may choose either the iProClass or the UniProtKB view of each protein entry. The source of the UniProtKB sequence is shown as UniProtKB/Swiss-Prot or UniProtKB/TrEMBL if the protein sequence is from Swiss-Prot or TrEMBL, respectively.</p> 
+				<p><i>Protein Name</i><br/>
+				The Common name given to a protein, that identifies its function or specifies its features.</p>
+				<p><i>Length</i><br/>
+				Number of amino acid residues in the matched protein.	
+				</p>
+				<p><i>Organism Name</i><br/>
+				The genus and species of the source organism from which the sequence is originated. Links to NCBI taxonomy information is provided.
+				</p>
+				<p><i>PIRSF ID</i><br/>
+If a protein belongs to a PIRSF family, then this column will display the corresponding family identifier. Click on the ID to retrieve the PIRSF report.</p>
+				<p><i>Match Range</i><br/>
+This column displays in red is the query peptide within the sequence.</p>
+				<p><b>9 - Pagination</b><br/>
+				User can use this to navigate to different pages of the matched result table.</p>
+				<p align="right"><a href="#toc">Back to TOC</a></p>	
+	       	    </td>
+                  </tr>
+                </tbody>
+	</table>
+	</td>
+	</tr>
+      <tr>
+       <td><br/></td>
+      </tr>
+      <tr>
+ 	<td> 
+	<table width="100%" bgcolor="#ffffff" cellpadding="8" cellspacing="0" class="boxTable">
+                  <tbody><tr>
+                    <th class="right" id="th_formtitle" style="font-size: 13px;" width="97%" align="left"><a name="batch">Batch Peptide Match</a></th>
+                  </tr>
+
+                  <tr>
+                    <td class="nrm02">
+				<p>User can find the exact match for a set of peptide sequence queries in the selected database. The search can be performed against:
+				<ul>
+					<li>
+UniProtKB, which is the central hub for the collection of functional information on proteins, with accurate, consistent, and rich annotation. It consists of two sections: a section containing manually-annotated records with information extracted from literature and curator-evaluated computational analysis (UniProtKB/Swiss-Prot), and a section with computationally analyzed records that await full manual annotation (UniProtKB/TrEMBL).</li>
+<li>A subset of UniProtKB entries belonging to a certain organism which is a complete proteome.</li>
+<li>A subset of UniProtKB entries beloing to a set of organisms which are reference proteomes.</li>
+				</ul>
+	The batch peptide match results will be downloaed as a text file for further analysis. 
+				<h4><a name="batchinputs">User Inputs</a></h4>
+				<p>The main user interface for batch peptide match is shown below. It is very similar to the single peptide match. The  "Database Selection" section is exactly the same as in Single Peptide Match as shown above. The only difference is in "Query Peptide Sequence" section. We allow user to type in multiple peptide sequences, one per line or put them together as a text file, one peptide per line and upload them.
+				<p><img src="images/batchPeptideMatchMainAnnotated.png"></img></p>	
+				<h4><a name="batchresults">Format of Downloaded File</a></h4>
+The matched results in the downloaded fils are organized into sections by the query peptides. Each section starts with the information about the query peptide used, the database searched and the total number of matched protein sequences as shown below. Each line starts with "##".
+<pre>
+<p style="border-style: solid; border-width: 1px; border-color: red;">
+##Query: AAVEEGIVLGGGCALLR     
+##DB: 29805788 sequence(s) from "UniProtKB" (UniProt_2013_01)  
+##Matched: 54 sequence(s)	
+
+</p>
+</pre>
+The next line is the header line for the matched proteins followed by the matched protein information as tab-delimited table shown below. 
+<pre>
+<p style="border-style: solid; border-width: 1px; border-color: red;">
+#AC     ID      Protein_Name    Length  Organism        Matched_range   
+D3ZVX2  D3ZVX2_RAT      60 kDa heat shock protein, mitochondrial        258     Rattus norvegicus (Rat)         115-131 LNATRAAVEEGIVLGGGCALLRCIPAL
+P86206  CH60_MESAU      60 kDa heat shock protein, mitochondrial (Fragments)    271     Mesocricetus auratus (Golden hamster)           247-263 LNATRAAVEEGIVLGGGCALLRIGIEI
+
+...
+
+</p>
+</pre>
+Then the next query peptide section.
+<pre>
+<p style="border-style: solid; border-width: 1px; border-color: red;">
+##Query: SVQYDDVPEYK    
+##DB: 29805788 sequence(s) from "UniProtKB" (UniProt_2013_01)   
+##Matched: 43 sequence(s)
+#AC     ID      Protein_Name    Length  Organism        Matched_range   
+Q9BDE7  Q9BDE7_PIG      Activated leukocyte cell adhesion molecule (Fragment)   113     Sus scrofa (Pig)        PIRSF038703;    15-25 SSTKKSVQYDDVPEYKNRLSL
+Q6PEY4  Q6PEY4_HUMAN    ALCAM protein   133     Homo sapiens (Human)    PIRSF038703;    77-87 SSTKKSVQYDDVPEYKDRLNL	
+
+...
+
+</p>
+				</pre>
+				<p align="right"><a href="#toc">Back to TOC</a></p>	
+	       	    </td>
+                  </tr>
+                </tbody>
+	</table>
+	</td>
+	</tr>
+      <tr>
+       <td><br/></td>
+      </tr>
+      <tr>
+ 	<td> 
+	<table width="100%" bgcolor="#ffffff" cellpadding="8" cellspacing="0" class="boxTable">
+                  <tbody><tr>
+                    <th class="right" id="th_formtitle" width="97%" align="left" style="font-size: 13px;"><a name="restful">RESTful Web Services API</a></th>
+                  </tr>
+
+                  <tr>
+                    <td class="nrm02">
+				<ul>
+					<li><a href="#rest_format">Results format</a></li>
+					<li><a href="#single_rest">Single peptide match</a></li>
+					<li><a href="#batch_rest">Batch peptide match</a></li>
+				</ul>
+				<p>
+				In addition to the web interface to the Peptide Match web application, we also provide access to it via RESTful web services. REST (or REpresentational State Transfer) refers to a style of building web services which makes it easy to interact programmatically with the web site. A programmatic interface, also called an Application Programming Interface (API) allows users to write scripts or programs to do peptide match, rather than having to rely on a browser to do the search on the web site, which makes it more streamline with the downstream analysis. Below is a list of services provided.</P>
+				<p>	
+				In general, user needs to provide the following parameters: the query peptide sequence(s), database ranges (either the whole UniProtKB or a subset of organisms) and finally, the format of the results. Currently, we support tab, xls, fasta, and xml formats as described below:</p>
+
+				<ul>
+					<li><b><a name="rest_format">tab</a></b> returns the matched protein sequence(s) in a tab-delimited format with the following information:
+						<ul>
+							<li>Protein acession number </li>
+							<li>Protein ID</li>
+							<li>Protein name</li>
+							<li>Protein length</li>
+							<li>PIRSF ID</li>
+							<li>PIRSF name</li>
+							<li>Organism name</li>
+							<li>Organism taxonomy ID</li>
+							<li>Organism taxonomy group name</li>
+							<li>Organism taxonomy group ID</li>
+							<li>Matched range(s) (maybe multiple, if the query peptide matches multiple locations in a protein sequence)</li>
+						</ul> 
+						<!--
+						<p>Example: click <a href="example.tab">here</a></p>
+						-->
+					</li>
+					<li><b>xls</b> returns the matched protein sequence(s) with the same information as in <b>tab</b> foramt for easy importing into Excel. 
+						<!--
+						<p>Example: click <a href="example.xls">here</a></p>
+						-->
+					</li>
+					<li><b>fasta</b> returns the matched protein sequence(s) in FASTA format. The Def line of each protein record in the fasta file contains the following information:
+						<ul>
+							<li>Protein acession number </li>
+							<li>Protein ID</li>
+							<li>Protein name</li>
+							<li>PIRSF ID</li>
+							<li>PIRSF name</li>
+							<li>Organism name</li>
+							<li>Organism taxonomy ID</li>
+							<li>Organism taxonomy group name</li>
+							<li>Organism taxonomy group ID</li>
+						</ul>	
+						<!--
+						<p>Example: click <a href="example.fasta">here</a></p>
+						-->
+					</li>
+					<li><b>xml</b> returns the full information of matched protein sequence(s) in XML format. The XML schema can be found <a href="peptidematch.xsd">here</a>.
+						<!--
+						<p> Example: click <a href="example.xml">here</a></p>
+						-->
+					
+				</ul> 
+				</p>
+				<h4><a name="single_rest">Single Peptide Match</a></h4>
+					<ul>
+						<li>Example 1: get matches of a peptide in UniProtKB
+							<p>
+								<table style="border: 1px solid black; font-size: small; font-family: arial; ">
+								<tr>
+									<td style="color: navy; ">
+					curl -F query=DPETERQ http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_1_curl.tab">example_1_curl.tab</a><br/>
+					curl -F query=DPETERQ -F format=tab http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_1_curl.tab">example_1_curl.tab</a><br/>
+					curl -F query=DPETERQ -F format=xls http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_1_curl.xls">example_1_curl.xls</a><br/>
+					curl -F query=DPETERQ -F format=fasta http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_1_curl.fasta">example_1_curl.fasta</a><br/>
+					curl -F query=DPETERQ -F format=xml http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_1_curl.xml">example_1_curl.xml</a><br/><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ" -O <a href="example_outputs/example_1_wget.tab">example_1_wget.tab</a><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ&format=tab" -O <a href="example_outputs/example_1_wget.tab">example_1_wget.tab</a><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ&format=xls" -O <a href="example_outputs/example_1_wget.xls">example_1_wget.xls</a><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ&format=fasta" -O <a href="example_outputs/example_1_wget.fasta">example_1_wget.fasta</a><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ&format=xml" -O <a href="example_outputs/example_1_wget.xml">example_1_wget.xml</a><br/>
+									</td>
+								</tr>
+								</table>
+							</p>
+						</li>	
+						<li>Example 2: get matches of a peptide in a set of organisms from UniProtKB
+							<p>
+								<table style="border: 1px solid black; font-size: small; font-family: arial; ">
+								<tr>
+									<td style="color: navy; ">
+					curl -F query=DPETERQ -F organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=537012">537012</a> http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_2_curl.tab">example_2_curl.tab</a><br/>
+					curl -F query=DPETERQ -F organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=537012">537012</a> -F format=tab http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_2_curl.tab">example_2_curl.tab</a><br/>
+					curl -F query=DPETERQ -F organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=537012">537012</a> -F format=xls http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_2_curl.xls">example_2_curl.xls</a><br/>
+					curl -F query=DPETERQ -F organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=537012">537012</a> -F format=fasta http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_2_curl.fasta">example_2_curl.fasta</a><br/>
+					curl -F query=DPETERQ -F organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=537012">537012</a> -F format=xml http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_2_curl.xml">example_2_curl.xml</a><br/><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ&organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=537012">537012</a>" -O <a href="example_outputs/example_2_wget.tab">example_2_wget.tab</a><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ&format=tab&organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=537012">537012</a>" -O <a href="example_outputs/example_2_wget.tab">example_2_wget.tab</a><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ&format=xls&organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=537012">537012</a>" -O <a href="example_outputs/example_2_wget.xls">example_2_wget.xls</a><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ&format=fasta&organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=537012">537012</a>" -O <a href="example_outputs/example_2_wget.fasta">example_2_wget.fasta</a><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ&format=xml&organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=537012">537012</a>" -O <a href="example_outputs/example_2_wget.xml">example_2_wget.xml</a><br/>
+									</td>
+								</tr>
+								</table>
+							</p>
+						</li>
+						<li>Example 3: programmatically getting matches of a peptide in a set of organisms from UniProtKB
+							<p><b>Perl</b>
+								<table style="border: 1px solid black; font-size: small; font-family: arial; ">
+								<tr>
+									<td style="color: blue; font-size: 12px; ">
+										<pre>
+			
+use strict;
+use warnings;
+use LWP::UserAgent;
+
+my $base = 'http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest';
+
+my $params = {
+  format => 'tab',
+  query => 'DPETERQ',
+  organism => '5888,537012'
+};
+
+my $agent = LWP::UserAgent->new(agent => "libwww-perl");
+push @{$agent->requests_redirectable}, 'POST';
+
+my $response = $agent->post("$base", $params);
+
+while (my $wait = $response->header('Retry-After')) {
+  print STDERR "Waiting ($wait)...\n";
+  sleep $wait;
+  $response = $agent->get($response->base);
+}
+
+$response->is_success ?
+  print $response->content :
+  die 'Failed, got ' . $response->status_line .
+    ' for ' . $response->request->uri . "\n";
+
+										</pre>	
+									</td>
+								</tr>
+								</table>
+							</p>
+							<p><b>Java</b>
+								<table style="border: 1px solid black; font-size: small; font-family: arial; ">
+								<tr>
+									<td style="color: blue; font-size: 12px; ">
+										<pre>
+
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+import java.util.logging.Logger;
+
+public class Example_3
+{
+  private static final String PEPTIDEMATCH_SERVER = "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest";
+  private static final Logger LOG = Logger.getAnonymousLogger();
+
+  private static void run(ParameterNameValue[] params)
+    throws Exception
+  {
+    StringBuilder locationBuilder = new StringBuilder(PEPTIDEMATCH_SERVER + "?");
+    for (int i = 0; i < params.length; i++)
+    {
+      if (i > 0)
+        locationBuilder.append('&');
+      locationBuilder.append(params[i].name).append('=').append(params[i].value);
+    }
+    String location = locationBuilder.toString();
+    URL url = new URL(location);
+    LOG.info("Submitting...");
+    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+    HttpURLConnection.setFollowRedirects(true);
+    conn.setDoInput(true);
+    conn.connect();
+
+    int status = conn.getResponseCode();
+    while (true)
+    {
+      int wait = 0;
+      String header = conn.getHeaderField("Retry-After");
+      if (header != null)
+        wait = Integer.valueOf(header);
+      if (wait == 0)
+        break;
+      LOG.info("Waiting (" + wait + ")...");
+      conn.disconnect();
+      Thread.sleep(wait * 1000);
+      conn = (HttpURLConnection) new URL(location).openConnection();
+      conn.setDoInput(true);
+      conn.connect();
+      status = conn.getResponseCode();
+    }
+    if (status == HttpURLConnection.HTTP_OK)
+    {
+      LOG.info("Got a OK reply");
+      InputStream reader = conn.getInputStream();
+      URLConnection.guessContentTypeFromStream(reader);
+      StringBuilder builder = new StringBuilder();
+      int a = 0;
+      while ((a = reader.read()) != -1)
+      {
+        builder.append((char) a);
+      }
+      System.out.println(builder.toString());
+    }
+    else
+      LOG.severe("Failed, got " + conn.getResponseMessage() + " for "
+        + location);
+    conn.disconnect();
+  }
+
+  public static void main(String[] args)
+    throws Exception
+  {
+    run(new ParameterNameValue[] {
+      new ParameterNameValue("format", "tab"),
+      new ParameterNameValue("query", "DPETERQ"),
+      new ParameterNameValue("organism", "5888,537012"),
+    });
+  }
+
+  private static class ParameterNameValue
+  {
+    private final String name;
+    private final String value;
+
+    public ParameterNameValue(String name, String value)
+      throws UnsupportedEncodingException
+    {
+      this.name = URLEncoder.encode(name, "UTF-8");
+      this.value = URLEncoder.encode(value, "UTF-8");
+    }
+  }
+}
+										</pre>	
+									</td>
+								</tr>
+								</table>
+							</p>
+						</li>
+						
+					</ul>		
+				<h4><a name="batch_rest">Batch Peptide Match</a></h4>
+					<ul>
+						<li>Example 4: get matches of a list of peptides in UniProtKB
+							<p>
+								<table style="border: 1px solid black; font-size: small; font-family: arial; ">
+								<tr>
+									<td style="color: navy; ">
+					curl -F query=DPETERQ,PVLPPDP http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_4_curl.tab">example_4_curl.tab</a><br/>
+					curl -F query=DPETERQ,PVLPPDP -F format=tab http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_4_curl.tab">example_4_curl.tab</a><br/>
+					curl -F query=DPETERQ,PVLPPDP -F format=xls http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_4_curl.xls">example_4_curl.xls</a><br/>
+					curl -F query=DPETERQ,PVLPPDP -F format=fasta http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_4_curl.fasta">example_4_curl.fasta</a><br/>
+					curl -F query=DPETERQ,PVLPPDP -F format=xml http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_4_curl.xml">example_4_curl.xml</a><br/><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ,PVLPPDP" -O <a href="example_outputs/example_4_wget.tab">example_4_wget.tab</a><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ,PVLPPDP&format=tab" -O <a href="example_outputs/example_4_wget.tab">example_4_wget.tab</a><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ,PVLPPDP&format=xls" -O <a href="example_outputs/example_4_wget.xls">example_4_wget.xls</a><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ,PVLPPDP&format=fasta" -O <a href="example_outputs/example_4_wget.fasta">example_4_wget.fasta</a><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ,PVLPPDP&format=xml" -O <a href="example_outputs/example_4_wget.xml">example_4_wget.xml</a><br/>
+									</td>
+								</tr>
+								</table>
+							</p>
+						</li>	
+						<li>Example 5: get matches of a list of peptides in a set of organisms from UniProtKB
+							<p>
+								<table style="border: 1px solid black; font-size: small; font-family: arial; ">
+								<tr>
+									<td style="color: navy; ">
+					curl -F query=DPETERQ,PVLPPDP -F organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=11768">11768</a> http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_5_curl.tab">example_5_curl.tab</a><br/>
+					curl -F query=DPETERQ,PVLPPDP -F organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=11768">11768</a> -F format=tab http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_5_curl.tab">example_5_curl.tab</a><br/>
+					curl -F query=DPETERQ,PVLPPDP -F organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=11768">11768</a> -F format=xls http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_5_curl.xls">example_5_curl.xls</a><br/>
+					curl -F query=DPETERQ,PVLPPDP -F organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=11768">11768</a> -F format=fasta http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_5_curl.fasta">example_5_curl.fasta</a><br/>
+					curl -F query=DPETERQ,PVLPPDP -F organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=11768">11768</a> -F format=xml http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_5_curl.xml">example_5_curl.xml</a><br/><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ,PVLPPDP&organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=11768">11768</a>" -O <a href="example_outputs/example_5_wget.tab">example_5_wget.tab</a><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ,PVLPPDP&format=tab&organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=11768">11768</a>" -O <a href="example_outputs/example_5_wget.tab">example_5_wget.tab</a><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ,PVLPPDP&format=xls&organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=11768">11768</a>" -O <a href="example_outputs/example_5_wget.xls">example_5_wget.xls</a><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ,PVLPPDP&format=fasta&organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=11768">11768</a>" -O <a href="example_outputs/example_5_wget.fasta">example_5_wget.fasta</a><br/>
+					wget "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest?query=DPETERQ,PVLPPDP&format=xml&organism=<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=5888">5888</a>,<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=11768">11768</a>" -O <a href="example_outputs/example_5_wget.xml">example_5_wget.xml</a><br/>
+									</td>
+								</tr>
+								</table>
+							</p>
+						</li>
+						<li>Example 6: get matches of a list of peptides in a set of organisms from UniProtKB using files as inputs
+							<p>
+								<table style="border: 1px solid black; font-size: small; font-family: arial; ">
+								<tr>
+									<td style="color: navy; ">
+				curl -F queryFile=@<a href="example_inputs/queryFile.txt">queryFile.txt<a/> -F organismFile=@<a href="example_inputs/organismFile.txt">organismFile.txt</a> http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_6_curl_file.tab">example_6_curl_file.tab</a><br/>
+				curl -F queryFile=@<a href="example_inputs/queryFile.txt">queryFile.txt<a/> -F organismFile=@<a href="example_inputs/organismFile.txt">organismFile.txt</a> -F format=tab http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_outputs/example_6_curl_file.tab">example_6_curl_file.tab</a><br/>
+				curl -F queryFile=@<a href="example_inputs/queryFile.txt">queryFile.txt<a/> -F organismFile=@<a href="example_inputs/organismFile.txt">organismFile.txt</a> -F format=xls http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_6_curl_file.xls">example_6_curl_file.xls</a><br/>
+				curl -F queryFile=@<a href="example_inputs/queryFile.txt">queryFile.txt<a/> -F organismFile=@<a href="example_inputs/organismFile.txt">organismFile.txt</a> -F format=fasta http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_6_curl_file.fasta">example_6_curl_file.fasta</a><br/>
+				curl -F queryFile=@<a href="example_inputs/queryFile.txt">queryFile.txt<a/> -F organismFile=@<a href="example_inputs/organismFile.txt">organismFile.txt</a> -F format=xml http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest -o <a href="example_6_curl_file.xml">example_6_curl_file.xml</a>
+									</td>
+								</tr>
+								</table>
+							</p>
+						</li>
+						<li>Example 7: programmatically getting matches of a list of peptides in a set of organisms from UniProtKB
+							<p><b>Perl</b>
+								<table style="border: 1px solid black; font-size: small; font-family: arial; ">
+								<tr>
+									<td style="color: blue; font-size: 12px; ">
+										<pre>
+
+use strict;
+use LWP::UserAgent;
+use Getopt::Long;
+
+my $base = 'http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest';
+
+my ($queryFile, $organismFile, $format);
+
+if(@ARGV < 2 or !GetOptions('queryFile=s' => \$queryFile, 'organismFile=s' => \$organismFile, 'format=s' => \$format)) {
+	usage();
+	exit 1;
+}
+
+sub usage {
+	print "Unknown option: @_\n" if (@_);
+	print "usage: perl example_7.pl [--queryFile QUERYFILE] [--organmsimFile ORGANMISMFILE] [--format FORMAT]\n";	
+}
+
+if(!$format) {
+	$format ='tab';
+}
+
+my $query = "";
+my $organism = "";
+
+open(QUERY, $queryFile) or die "Can't open $queryFile\n";
+while(my $line=<QUERY>) {
+	$query .= $line.",";	
+}
+close(QUERY);
+$query =~ s/\,$//;
+
+open(ORGANISM, $organismFile) or die "Can't open $organismFile\n";
+while(my $line=<ORGANISM>) {
+	$organism .= $line.",";	
+}
+$organism =~ s/\,$//;
+close(ORGANISM);
+
+my $params = {
+  format => $format,
+  query => $query,
+  organism => $organism 
+};
+
+
+my $agent = LWP::UserAgent->new(agent => "libwww-perl");
+push @{$agent->requests_redirectable}, 'POST';
+
+my $response = $agent->post("$base", $params);
+
+while (my $wait = $response->header('Retry-After')) {
+  print STDERR "Waiting ($wait)...\n";
+  sleep $wait;
+  $response = $agent->get($response->base);
+}
+
+$response->is_success ?
+  print $response->content :
+  die 'Failed, got ' . $response->status_line .
+    ' for ' . $response->request->uri . "\n";
+
+										</pre>
+									</td>
+								</tr>
+								</table>
+							</p>
+							<p><b>Java</b>
+								<table style="border: 1px solid black; font-size: small; font-family: arial; ">
+								<tr>
+									<td style="color: blue; font-size: 12px; ">
+										<pre>
+
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+import java.util.logging.Logger;
+
+public class Example_7
+{
+  private static final String PEPTIDEMATCH_SERVER = "http://alanine.bioinformatics.udel.edu/peptidematch_new/webservices/peptidematch_rest";
+  private static final Logger LOG = Logger.getAnonymousLogger();
+
+  private static void run(ParameterNameValue[] params)
+    throws Exception
+  {
+    StringBuilder locationBuilder = new StringBuilder(PEPTIDEMATCH_SERVER + "?");
+    for (int i = 0; i < params.length; i++)
+    {
+      if (i > 0)
+        locationBuilder.append('&');
+      locationBuilder.append(params[i].name).append('=').append(params[i].value);
+    }
+    String location = locationBuilder.toString();
+    URL url = new URL(location);
+    LOG.info("Submitting...");
+    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+    HttpURLConnection.setFollowRedirects(true);
+    conn.setDoInput(true);
+    conn.connect();
+
+    int status = conn.getResponseCode();
+    while (true)
+    {
+      int wait = 0;
+      String header = conn.getHeaderField("Retry-After");
+      if (header != null)
+        wait = Integer.valueOf(header);
+      if (wait == 0)
+        break;
+      LOG.info("Waiting (" + wait + ")...");
+      conn.disconnect();
+      Thread.sleep(wait * 1000);
+      conn = (HttpURLConnection) new URL(location).openConnection();
+      conn.setDoInput(true);
+      conn.connect();
+      status = conn.getResponseCode();
+    }
+    if (status == HttpURLConnection.HTTP_OK)
+    {
+      LOG.info("Got a OK reply");
+      InputStream reader = conn.getInputStream();
+      URLConnection.guessContentTypeFromStream(reader);
+      StringBuilder builder = new StringBuilder();
+      int a = 0;
+      while ((a = reader.read()) != -1)
+      {
+        builder.append((char) a);
+      }
+      System.out.println(builder.toString());
+    }
+    else
+      LOG.severe("Failed, got " + conn.getResponseMessage() + " for "
+        + location);
+    conn.disconnect();
+  }
+
+  public static void main(String[] args)
+    throws Exception
+  {
+	int i = 0;
+	String arg = null;
+	String queryFile = "";
+	String organismFile = "";
+	String query = "";
+	String organism = "";
+	String format = "tab";
+	while(args.length > i && args[i].startsWith("-")) {
+		arg = args[i++];
+		if(arg.equals("-queryFile")) {
+			if(args.length > i) {
+				queryFile = args[i++];
+				query = readFileContent(queryFile);
+			} 
+			else {
+				System.err.println("-queryFile requires a filename");
+			}
+		}
+		else if(arg.equals("-organismFile")) {
+			if(args.length > i) {
+				organismFile = args[i++];
+				organism = readFileContent(organismFile);
+			} 
+			else {
+				System.err.println("-organismFile requires a filename");
+			}
+		}
+		else if(arg.equals("-format")) {
+			if(args.length > i) {
+				format = args[i++];
+			} 
+			else {
+				System.err.println("-format requires a value");
+			}
+		}
+	}
+	if(args.length < 2) {
+		System.err.println("Usage: Example_7 [-queryFile] queryFileName [-organismFile] organismFileName [-format] tab|xls|fasta|xml");
+		System.exit(1);
+	}
+    run(new ParameterNameValue[] {
+      new ParameterNameValue("format", format),
+      new ParameterNameValue("query", query),
+      new ParameterNameValue("organism", organism),
+    });
+  }
+  private static String readFileContent(String fileName) { 
+	String fileContent = "";
+	try {
+		FileReader input = new FileReader(fileName);
+		BufferedReader bufRead = new BufferedReader(input);
+		String line;
+		line = bufRead.readLine();
+		while(line != null) {
+			fileContent += line+",";
+			line = bufRead.readLine();
+		}
+		bufRead.close();
+	}catch(IOException ioe) {
+		ioe.printStackTrace();
+	}
+	fileContent = fileContent.substring(0, fileContent.length() -1);
+	return fileContent;
+  }
+
+  private static class ParameterNameValue
+  {
+    private final String name;
+    private final String value;
+
+    public ParameterNameValue(String name, String value)
+      throws UnsupportedEncodingException
+    {
+      this.name = URLEncoder.encode(name, "UTF-8");
+      this.value = URLEncoder.encode(value, "UTF-8");
+    }
+  }
+}
+										</pre>
+									</td>
+								</tr>
+								</table>
+							</p>
+						</li>
+									
+					</ul>	
+				<p align="right"><a href="#toc">Back to TOC</a></p>	
+	       	    </td>
+                  </tr>
+                </tbody>
+	</table>
+            </td>
+         </tr>
+        </tbody>
+</table>
+<!-- ############## end of page dependent block-->
+
+
+   <!-- This is a second half of body frame. The first half is in half_frame_close.inc"-->
+      </td>
+      <td width="100%" background="images/bg02.gif" align="right" bgcolor="#ffffff"><img src="images/spacer.gif" width="1" height="1" alt=""></td>
+    </tr>
+</tbody></table>
+
+
+
+<!-- FOOTER -->
+<table cellspacing="0" cellpadding="0" width="100%" bgcolor="#eeeeee" border="0" class="nrm02">
+  <tbody>
+    <tr> 
+			<td align="center" valign="middle" nowrap="" bgcolor="#71a1cf">
+				<img src="images/pirlogo2.png" alt="PIR">
+			</td>
+      <td align="left" valign="top"> 
+        <table background="images/spacer.gif" width="686" border="0" cellpadding="3" cellspacing="0" class="nrm02">
+          <tbody>
+            <tr> 
+              <td align="left" valign="bottom" nowrap="">
+                  &nbsp;<a href="http://pir.georgetown.edu/pirwww/" target="_blank" class="footerMenu">Home</a>
+                  |&nbsp;<a href="http://pir.georgetown.edu/pirwww/about/" target="_blank" class="footerMenu">About PIR</a>
+                  |&nbsp;<a href="http://pir.georgetown.edu/pirwww/dbinfo" target="_blank" class="footerMenu">Databases</a>
+                  |&nbsp;<a href="http://pir.georgetown.edu/pirwww/search/" target="_blank" class="footerMenu">Search/Analysis</a>
+                  |&nbsp;<a href="http://pir.georgetown.edu/pirwww/download/" target="_blank" class="footerMenu">Download</a>
+                  |&nbsp;<a href="http://pir.georgetown.edu/pirwww/support/" target="_blank" class="footerMenu">Support</a>
+              </td>
+              <td align="right" valign="bottom" nowrap="" class="nrm01">
+                  &nbsp;<a href="http://pir.georgetown.edu/pirwww/support/sitemap.shtml" target="_blank" class="footer">SITE MAP</a>
+                  |&nbsp;<a href="http://pir.georgetown.edu/pirwww/about/linkpir.shtml" target="_blank" class="footer">TERMS OF USE</a>
+              </td>
+            </tr>
+            <tr> 
+              <td colspan="2" align="center" nowrap="" class="footer3"><span class="nrm10"><font color="#999999"> &copy; 2013</font>
+                                    <img src="images/spacer.gif" alt="" width="20" height="1">
+                                    <b><a href="http://pir.georgetown.edu/pirwww/index.shtml" target="_blank">Protein Information Resource</a></b>
+                                    <img src="images/spacer.gif" alt="" width="105" height="1"></span></td>
+            </tr>
+
+            <tr><td colspan="2" nowrap=""><table border="0" cellpadding="2" cellspacing="0" class="nrm02" width="100%">
+                         <tbody><tr><td><img src="images/spacer.gif" alt="" width="50" height="1"></td>
+                             <td nowrap="" align="center" class="footer"><a href="http://bioinformatics.udel.edu/"><font color="#999999">University of Delaware</font></a>
+                                          <br><font color="#999999">15 Innovation Way, Suite 205
+                                          <br>Newark, DE 19711, USA</font></td>
+                             <td><img src="images/spacer.gif" alt="" width="20" height="1"></td>
+
+                            <td nowrap="" align="center" class="footer"><a href="http://gumc.georgetown.edu/"><font color="#999999">Georgetown University Medical Center</font></a>
+                                  <br><font color="#999999">3300 Whitehaven Street, NW, Suite 1200
+                                  <br>Washington, DC 20007, USA</font></td>
+                          </tr></tbody></table></td>
+
+            </tr>
+          </tbody>
+        </table></td>
+			<td width="99%">&nbsp;
+			</td>       
+    </tr>
+</tbody>
+</table>
+
+</td></tr></tbody></table>
+ 
+</body>
+
+<!-- Menu Related -->
+<script language="javascript" src="js/milonic_src.js"
+	type="text/javascript"></script>
+<script language="javascript">
+  if(ns4) _d.write("<scr"+"ipt language=JavaScript src=js/mmenuns4.js><\/scr"+"ipt>");		
+    else _d.write("<scr"+"ipt language=JavaScript src=js/mmenudom.js><\/scr"+"ipt>"); 
+</script>
+<script language="JavaScript" src="js/mmenudom.js"></script>
+<script>function getflta(ap){return _f}</script>
+<script language="javascript" src="js/menu_data.js"
+	type="text/javascript"></script>
+<!-- Menu Related ends -->
+
+<!-- Input process starts -->
+<!--
+<script language="JavaScript" src="images/peptidesearch.js"> </script>
+-->
+<script language="JavaScript" src="js/peptidesearch.js"> </script>
+<!-- Input process ends -->
+</html>

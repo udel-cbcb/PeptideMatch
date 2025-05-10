@@ -1,0 +1,73 @@
+<script>
+ function formatter(row, cell, value, columnDef, dataContext) {
+        return value;
+    }
+var dataView;
+var grid;
+var data = [];
+var columns = [
+  {id: "organism", name: "Organism", field: "organism", width: 320, minWidth: 120, validator: requiredFieldValidator, sortable: true, formatter: formatter},
+  {id: "matchseqs", name: "Matched Sequences", field: "matchseqs", width:200, formatter: formatter, sortable: true},
+  {id: "Lineage", name: "lineage", field: "lineage", minWidth: 60, sortable: true},
+];
+
+var options = {
+  editable: true,
+  //enableAddRow: true,
+  enableCellNavigation: true,
+  asyncEditorLoading: true,
+  forceFitColumns: false,
+  topPanelHeight: 25 
+};
+
+var sortcol = "organism";
+var sortdir = 1;
+var percentCompleteThreshold = 0;
+var searchString = "";
+
+function requiredFieldValidator(value) {
+  if (value == null || value == undefined || !value.length) {
+    return {valid: false, msg: "This is a required field"};
+  }
+  else {
+    return {valid: true, msg: null};
+  }
+}
+
+function myFilter(item, args) {
+  if (item["percentComplete"] < args.percentCompleteThreshold) {
+    return false;
+  }
+
+  if (args.searchString != "" && item["organism"].indexOf(args.searchString) == -1) {
+    return false;
+  }
+
+  return true;
+}
+
+function percentCompleteSort(a, b) {
+  return a["percentComplete"] - b["percentComplete"];
+}
+
+function comparer(a, b) {
+  var x = a[sortcol], y = b[sortcol];
+  return (x == y ? 0 : (x > y ? 1 : -1));
+}
+
+function toggleFilterRow() {
+  grid.setTopPanelVisibility(!grid.getOptions().showTopPanel);
+}
+
+
+$(".grid-header .ui-icon")
+        .addClass("ui-state-default ui-corner-all")
+        .mouseover(function (e) {
+          $(e.target).addClass("ui-state-hover")
+        })
+        .mouseout(function (e) {
+          $(e.target).removeClass("ui-state-hover")
+        });
+
+$(function () {
+  // prepare the data

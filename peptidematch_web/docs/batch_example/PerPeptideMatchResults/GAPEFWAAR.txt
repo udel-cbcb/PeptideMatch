@@ -1,0 +1,6 @@
+##Query peptide: GAPEFWAAR
+##Number of matched proteins: 3
+#UniRef100 ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+UniRef100_B2IK69	B2IK69	50S ribosomal protein L16	137	Beijerinckia indica subsp. indica (strain ATCC 9039 / DSM 1715 / NCIB 8712) [395963]	88-96		
+UniRef100_G2KQV6	G2KQV6	50S ribosomal protein L16	137	Micavibrio aeruginosavorus (strain ARL-13) [856793]	88-96		
+UniRef100_M4VK23	M4VK23	LSU ribosomal protein L16p (L10e)	137	Micavibrio aeruginosavorus EPB [349215]	88-96		

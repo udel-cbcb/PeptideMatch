@@ -1,0 +1,20 @@
+##Query: DPETERQ
+##DB: 40501 sequence(s) from "5888;11768" (UniProt_2013_01)
+##Matched: 2 sequence(s)
+#AC	ID	ProteinName	Length	PIRSFID	PIRSFName	Organism	OrganismTaxonID	OrganismTaxonGroup	OrganismTaxonGroupID	Matched_range
+A0DLY7	A0DLY7_PARTE	Chromosome undetermined scaffold_56, whole genome shotgun sequence	916	 	 	Paramecium tetraurelia	5888			288-294 TIYKSDPETERQLRELQ;334-340 IIYQPDPETERQLQELK;429-435 TIYQTDPETERQLQIKI
+A0C465	A0C465_PARTE	Chromosome undetermined scaffold_149, whole genome shotgun sequence	902	 	 	Paramecium tetraurelia	5888			432-438 TIYQPDPETERQLQLKI
+
+##Query: PVLPPDP
+##DB: 40501 sequence(s) from "5888;11768" (UniProt_2013_01)
+##Matched: 8 sequence(s)
+#AC	ID	ProteinName	Length	PIRSFID	PIRSFName	Organism	OrganismTaxonID	OrganismTaxonGroup	OrganismTaxonGroupID	Matched_range
+I7HEG0	I7HEG0_FLV	Gag protein	595	 	 	Feline leukemia virus	11768			227-233 DPPKAPVLPPDPSSPLI
+K0IZA4	K0IZA4_FLV	Gag polyprotein	584	 	 	Feline leukemia virus	11768			216-222 DPPKPPVLPPDPSSPLI
+P10262	GAG_FLV	Gag polyprotein	580	 	 	Feline leukemia virus	11768			213-219 DPPKPPVLPPDPSSPLI
+G3XDD7	G3XDD7_FLV	Gag-pol polyprotein	1790	 	 	Feline leukemia virus	11768			216-222 DPPKPPVLPPDPSSPLI
+K0H563	K0H563_FLV	Pr80 gag polyprotein (Fragment)	1786	 	 	Feline leukemia virus	11768			213-219 DPPKPPVLPPDPSSPLI
+K0H6P0	K0H6P0_FLV	Pr80 gag-pol protein (Fragment)	1786	 	 	Feline leukemia virus	11768			213-219 GPPKPPVLPPDPSSPLI
+O89811	O89811_FLV	Gag-pol polyprotein gPr80	1786	 	 	Feline leukemia virus	11768			213-219 DPPKPPVLPPDPSSPLI
+Q85521	Q85521_FLV	Gag-pol polyprotein gPr80 precursor	1784	 	 	Feline leukemia virus	11768			213-219 DPPKPPVLPPDPSSPLI
+

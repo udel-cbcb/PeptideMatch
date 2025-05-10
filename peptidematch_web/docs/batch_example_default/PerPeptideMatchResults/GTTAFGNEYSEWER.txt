@@ -1,0 +1,6 @@
+##Query peptide: GTTAFGNEYSEWER
+##Number of matched proteins: 3
+#Protein AC	Protein ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+E7NZD4	E7NZD4_PSESG [tr]	OprD family outer membrane porin	453	Pseudomonas syringae pv. glycinea str. B076 [875329]	389-402		
+E7PFI2	E7PFI2_PSESG [tr]	OprD family outer membrane porin	453	Pseudomonas syringae pv. glycinea str. race 4 [875330]	389-402		
+Q48C96	Q48C96_PSE14 [tr]	Outer membrane porin, OprD family	453	Pseudomonas syringae pv. phaseolicola (strain 1448A / Race 6) [264730]	389-402		

@@ -1,0 +1,2914 @@
+<peptideMatch xmlns="http://research.bioinformatics.udel.edu/peptidematch" xmlns:xsi="http://www.w3.org/2001/XMSchema-instance" xsi:schemaLocation="http://research.bioinforamtics.udel.edu/peptidematch http://research.bioinforamtics.udel.edu/peptidematch/docs/peptidematch.xsd">
+ <queryInfo>
+	<sequenceDataSet>
+		<version>UniProtKB (2013_06)</version>
+		<uniref100Only>yes</uniref100Only>
+		<lEqi>yes</lEqi>
+	</sequenceDataSet>
+  <jobId>784576304</jobId>
+	<uniqueQueryPeptides>2</uniqueQueryPeptides>
+</queryInfo>
+
+<matchPerPeptide>
+<queryPeptide>AAVEEGIVLGGGCALLR</queryPeptide>
+<numberOfMatchedProteins>61</numberOfMatchedProteins>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_A4II42</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>A4II42</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>LOC100124945 protein</proteinName>
+<seqLength>576</seqLength>
+<organism name="Xenopus tropicalis (Western clawed frog) (Silurana tropicalis)" taxonomyId="8364"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_B3GQS7</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>B3GQS7</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Mitochondrial heat shock 60kD protein 1 variant 1</proteinName>
+<seqLength>569</seqLength>
+<organism name="Homo sapiens (Human)" taxonomyId="9606"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+<pride>B3GQS7</pride>
+</proteomicDBs>
+<iedbs>
+<iedbID>117259</iedbID>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_B7Z4F6</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>B7Z4F6</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>cDNA FLJ54912, highly similar to 60 kDa heat shock protein, mitochondrial</proteinName>
+<seqLength>550</seqLength>
+<organism name="Homo sapiens (Human)" taxonomyId="9606"/>
+<matchRanges>
+<matchRange start="407" end="423">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+<nist>B7Z4F6</nist>
+<pride>B7Z4F6</pride>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_B7Z597</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>B7Z597</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>cDNA FLJ54373, highly similar to 60 kDa heat shock protein, mitochondrial</proteinName>
+<seqLength>564</seqLength>
+<organism name="Homo sapiens (Human)" taxonomyId="9606"/>
+<matchRanges>
+<matchRange start="421" end="437">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+<pride>B7Z597</pride>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_B7Z5E7</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>B7Z5E7</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>cDNA FLJ51046, highly similar to 60 kDa heat shock protein, mitochondrial</proteinName>
+<seqLength>517</seqLength>
+<organism name="Homo sapiens (Human)" taxonomyId="9606"/>
+<matchRanges>
+<matchRange start="374" end="390">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+<nist>B7Z5E7</nist>
+<pride>B7Z5E7</pride>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_E2QUU5</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>E2QUU5</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein, mitochondrial</proteinName>
+<seqLength>573</seqLength>
+<organism name="Canis familiaris (Dog) (Canis lupus familiaris)" taxonomyId="9615"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_F1MUZ9</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>F1MUZ9</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein, mitochondrial</proteinName>
+<seqLength>573</seqLength>
+<organism name="Bos taurus (Bovine)" taxonomyId="9913"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_F1SMZ7</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>F1SMZ7</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>575</seqLength>
+<organism name="Sus scrofa (Pig)" taxonomyId="9823"/>
+<matchRanges>
+<matchRange start="432" end="448">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_F6PQQ8</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>F6PQQ8</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>573</seqLength>
+<organism name="Monodelphis domestica (Gray short-tailed opossum)" taxonomyId="13616"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_F6TFZ0</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>F6TFZ0</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>575</seqLength>
+<organism name="Callithrix jacchus (White-tufted-ear marmoset)" taxonomyId="9483"/>
+<matchRanges>
+<matchRange start="432" end="448">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_F6UT23</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>F6UT23</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>517</seqLength>
+<organism name="Callithrix jacchus (White-tufted-ear marmoset)" taxonomyId="9483"/>
+<matchRanges>
+<matchRange start="374" end="390">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_F6Z587</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>F6Z587</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>575</seqLength>
+<organism name="Equus caballus (Horse)" taxonomyId="9796"/>
+<matchRanges>
+<matchRange start="432" end="448">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_F7BGB7</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>F7BGB7</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>575</seqLength>
+<organism name="Macaca mulatta (Rhesus macaque)" taxonomyId="9544"/>
+<matchRanges>
+<matchRange start="432" end="448">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_F7GF46</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>F7GF46</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>571</seqLength>
+<organism name="Monodelphis domestica (Gray short-tailed opossum)" taxonomyId="13616"/>
+<matchRanges>
+<matchRange start="428" end="444">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_F7GZG0</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>F7GZG0</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein (Fragment)</proteinName>
+<seqLength>533</seqLength>
+<organism name="Macaca mulatta (Rhesus macaque)" taxonomyId="9544"/>
+<matchRanges>
+<matchRange start="398" end="414">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_F7HMR4</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>F7HMR4</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>573</seqLength>
+<organism name="Macaca mulatta (Rhesus macaque)" taxonomyId="9544"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_F7I3J9</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>F7I3J9</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>573</seqLength>
+<organism name="Callithrix jacchus (White-tufted-ear marmoset)" taxonomyId="9483"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G1M5B6</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G1M5B6</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>575</seqLength>
+<organism name="Ailuropoda melanoleuca (Giant panda)" taxonomyId="9646"/>
+<matchRanges>
+<matchRange start="432" end="448">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G1NUB2</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G1NUB2</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>575</seqLength>
+<organism name="Myotis lucifugus (Little brown bat)" taxonomyId="59463"/>
+<matchRanges>
+<matchRange start="432" end="448">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G1R5A6</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G1R5A6</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>575</seqLength>
+<organism name="Nomascus leucogenys (Northern white-cheeked gibbon) (Hylobates leucogenys)" taxonomyId="61853"/>
+<matchRanges>
+<matchRange start="432" end="448">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G1R5A7</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G1R5A7</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>517</seqLength>
+<organism name="Nomascus leucogenys (Northern white-cheeked gibbon) (Hylobates leucogenys)" taxonomyId="61853"/>
+<matchRanges>
+<matchRange start="374" end="390">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G1T3Y8</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G1T3Y8</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>574</seqLength>
+<organism name="Oryctolagus cuniculus (Rabbit)" taxonomyId="9986"/>
+<matchRanges>
+<matchRange start="431" end="447">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G2HFN5</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G2HFN5</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein, mitochondrial</proteinName>
+<seqLength>573</seqLength>
+<organism name="Pan troglodytes (Chimpanzee)" taxonomyId="9598"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G2HG50</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G2HG50</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein, mitochondrial</proteinName>
+<seqLength>573</seqLength>
+<organism name="Pan troglodytes (Chimpanzee)" taxonomyId="9598"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G3HL13</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G3HL13</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein, mitochondrial</proteinName>
+<seqLength>526</seqLength>
+<organism name="Cricetulus griseus (Chinese hamster) (Cricetulus barabensis griseus)" taxonomyId="10029"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G3QYY4</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G3QYY4</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>572</seqLength>
+<organism name="Gorilla gorilla gorilla (Lowland gorilla)" taxonomyId="9595"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G3SL08</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G3SL08</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>573</seqLength>
+<organism name="Loxodonta africana (African elephant)" taxonomyId="9785"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G3WZS7</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G3WZS7</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>573</seqLength>
+<organism name="Sarcophilus harrisii (Tasmanian devil) (Sarcophilus laniarius)" taxonomyId="9305"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G4W8Y6</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G4W8Y6</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Heat shock protein 60</proteinName>
+<seqLength>575</seqLength>
+<organism name="Kryptolebias marmoratus (Mangrove killifish) (Rivulus marmoratus)" taxonomyId="37003"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G5DYI3</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G5DYI3</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Putative heat shock subunit protein 1 (Fragment)</proteinName>
+<seqLength>367</seqLength>
+<organism name="Hymenochirus curtipes (western dwarf clawed frog)" taxonomyId="8362"/>
+<matchRanges>
+<matchRange start="336" end="352">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G9F6X6</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G9F6X6</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Mitochondrial heat shock 60 kDa protein 1</proteinName>
+<seqLength>573</seqLength>
+<organism name="Sus scrofa (Pig)" taxonomyId="9823"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G9K4Y8</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G9K4Y8</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Heat shock 60kDa protein 1 (Fragment)</proteinName>
+<seqLength>572</seqLength>
+<organism name="Mustela putorius furo (European domestic ferret) (Mustela furo)" taxonomyId="9669"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_H0W1Z7</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>H0W1Z7</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>563</seqLength>
+<organism name="Cavia porcellus (Guinea pig)" taxonomyId="10141"/>
+<matchRanges>
+<matchRange start="429" end="445">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_H2P876</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>H2P876</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein, mitochondrial</proteinName>
+<seqLength>573</seqLength>
+<organism name="Pongo abelii (Sumatran orangutan) (Pongo pygmaeus abelii)" taxonomyId="9601"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_H3B645</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>H3B645</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>545</seqLength>
+<organism name="Latimeria chalumnae (West Indian ocean coelacanth)" taxonomyId="7897"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_H3B646</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>H3B646</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>565</seqLength>
+<organism name="Latimeria chalumnae (West Indian ocean coelacanth)" taxonomyId="7897"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_H9FTU5</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>H9FTU5</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein, mitochondrial</proteinName>
+<seqLength>573</seqLength>
+<organism name="Macaca mulatta (Rhesus macaque)" taxonomyId="9544"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_H9GFC4</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>H9GFC4</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>570</seqLength>
+<organism name="Anolis carolinensis (Green anole) (American chameleon)" taxonomyId="28377"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_H9Z8E7</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>H9Z8E7</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein, mitochondrial</proteinName>
+<seqLength>573</seqLength>
+<organism name="Macaca mulatta (Rhesus macaque)" taxonomyId="9544"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_I3L9N6</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>I3L9N6</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>518</seqLength>
+<organism name="Sus scrofa (Pig)" taxonomyId="9823"/>
+<matchRanges>
+<matchRange start="375" end="391">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_K7D0W0</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>K7D0W0</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Heat shock 60kDa protein 1 (Chaperonin)</proteinName>
+<seqLength>607</seqLength>
+<organism name="Pan troglodytes (Chimpanzee)" taxonomyId="9598"/>
+<matchRanges>
+<matchRange start="464" end="480">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_K7GIW1</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>K7GIW1</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>571</seqLength>
+<organism name="Pelodiscus sinensis (Chinese softshell turtle) (Trionyx sinensis)" taxonomyId="13735"/>
+<matchRanges>
+<matchRange start="431" end="447">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_K9J1X2</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>K9J1X2</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Putative 60 kDa heat shock protein mitochondrial</proteinName>
+<seqLength>573</seqLength>
+<organism name="Desmodus rotundus (Vampire bat)" taxonomyId="9430"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_K9K3I2</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>K9K3I2</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Mitochondrial 60 kDa heat shock protein-like protein (Fragment)</proteinName>
+<seqLength>566</seqLength>
+<organism name="Equus caballus (Horse)" taxonomyId="9796"/>
+<matchRanges>
+<matchRange start="423" end="439">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_L5K231</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>L5K231</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein, mitochondrial</proteinName>
+<seqLength>750</seqLength>
+<organism name="Pteropus alecto (Black flying fox)" taxonomyId="9402"/>
+<matchRanges>
+<matchRange start="606" end="622">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_L5LQG7</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>L5LQG7</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein, mitochondrial</proteinName>
+<seqLength>543</seqLength>
+<organism name="Myotis davidii (David's myotis)" taxonomyId="225400"/>
+<matchRanges>
+<matchRange start="400" end="416">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_L9JWG7</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>L9JWG7</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein, mitochondrial</proteinName>
+<seqLength>352</seqLength>
+<organism name="Tupaia chinensis (Chinese tree shrew)" taxonomyId="246437"/>
+<matchRanges>
+<matchRange start="251" end="267">
+<lEqiPos>257</lEqiPos>
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_L9KNI8</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>L9KNI8</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein, mitochondrial</proteinName>
+<seqLength>522</seqLength>
+<organism name="Tupaia chinensis (Chinese tree shrew)" taxonomyId="246437"/>
+<matchRanges>
+<matchRange start="379" end="395">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_L9KX39</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>L9KX39</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein, mitochondrial</proteinName>
+<seqLength>325</seqLength>
+<organism name="Tupaia chinensis (Chinese tree shrew)" taxonomyId="246437"/>
+<matchRanges>
+<matchRange start="196" end="212">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_L9L1D2</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>L9L1D2</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein, mitochondrial</proteinName>
+<seqLength>220</seqLength>
+<organism name="Tupaia chinensis (Chinese tree shrew)" taxonomyId="246437"/>
+<matchRanges>
+<matchRange start="75" end="91">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_M3WXZ4</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>M3WXZ4</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>573</seqLength>
+<organism name="Felis catus (Cat) (Felis silvestris catus)" taxonomyId="9685"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_M3Y8V3</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>M3Y8V3</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>575</seqLength>
+<organism name="Mustela putorius furo (European domestic ferret) (Mustela furo)" taxonomyId="9669"/>
+<matchRanges>
+<matchRange start="432" end="448">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_M3ZUM7</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>M3ZUM7</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>575</seqLength>
+<organism name="Xiphophorus maculatus (Southern platyfish) (Platypoecilus maculatus)" taxonomyId="8083"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_M7B7Y4</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>M7B7Y4</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein</proteinName>
+<seqLength>570</seqLength>
+<organism name="Chelonia mydas (Green sea-turtle) (Chelonia agassizi)" taxonomyId="8469"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_P10809</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>P10809</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein, mitochondrial precursor</proteinName>
+<seqLength>573</seqLength>
+<organism name="Homo sapiens (Human)" taxonomyId="9606"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+<nist>P10809</nist>
+<pride>P10809</pride>
+</proteomicDBs>
+<iedbs>
+<iedbID>483</iedbID>
+<iedbID>1468</iedbID>
+<iedbID>2247</iedbID>
+<iedbID>4534</iedbID>
+<iedbID>5008</iedbID>
+<iedbID>5568</iedbID>
+<iedbID>7465</iedbID>
+<iedbID>8428</iedbID>
+<iedbID>8508</iedbID>
+<iedbID>12058</iedbID>
+<iedbID>12393</iedbID>
+<iedbID>12459</iedbID>
+<iedbID>12775</iedbID>
+<iedbID>12867</iedbID>
+<iedbID>14709</iedbID>
+<iedbID>16265</iedbID>
+<iedbID>18853</iedbID>
+<iedbID>19517</iedbID>
+<iedbID>19925</iedbID>
+<iedbID>22219</iedbID>
+<iedbID>26466</iedbID>
+<iedbID>29253</iedbID>
+<iedbID>29342</iedbID>
+<iedbID>30710</iedbID>
+<iedbID>31045</iedbID>
+<iedbID>32154</iedbID>
+<iedbID>32797</iedbID>
+<iedbID>34215</iedbID>
+<iedbID>34836</iedbID>
+<iedbID>35330</iedbID>
+<iedbID>37051</iedbID>
+<iedbID>42042</iedbID>
+<iedbID>42411</iedbID>
+<iedbID>43430</iedbID>
+<iedbID>43580</iedbID>
+<iedbID>43967</iedbID>
+<iedbID>45693</iedbID>
+<iedbID>46865</iedbID>
+<iedbID>47641</iedbID>
+<iedbID>48072</iedbID>
+<iedbID>49855</iedbID>
+<iedbID>51852</iedbID>
+<iedbID>53281</iedbID>
+<iedbID>54468</iedbID>
+<iedbID>56107</iedbID>
+<iedbID>58447</iedbID>
+<iedbID>58681</iedbID>
+<iedbID>58832</iedbID>
+<iedbID>62458</iedbID>
+<iedbID>62839</iedbID>
+<iedbID>64964</iedbID>
+<iedbID>67060</iedbID>
+<iedbID>67791</iedbID>
+<iedbID>68202</iedbID>
+<iedbID>68987</iedbID>
+<iedbID>71529</iedbID>
+<iedbID>74374</iedbID>
+<iedbID>76350</iedbID>
+<iedbID>79540</iedbID>
+<iedbID>79553</iedbID>
+<iedbID>79579</iedbID>
+<iedbID>79582</iedbID>
+<iedbID>79584</iedbID>
+<iedbID>79589</iedbID>
+<iedbID>79612</iedbID>
+<iedbID>79618</iedbID>
+<iedbID>79635</iedbID>
+<iedbID>100813</iedbID>
+<iedbID>101048</iedbID>
+<iedbID>101066</iedbID>
+<iedbID>101166</iedbID>
+<iedbID>101386</iedbID>
+<iedbID>102353</iedbID>
+<iedbID>102382</iedbID>
+<iedbID>102391</iedbID>
+<iedbID>102397</iedbID>
+<iedbID>102404</iedbID>
+<iedbID>102459</iedbID>
+<iedbID>102570</iedbID>
+<iedbID>102598</iedbID>
+<iedbID>102617</iedbID>
+<iedbID>102641</iedbID>
+<iedbID>102650</iedbID>
+<iedbID>102657</iedbID>
+<iedbID>102687</iedbID>
+<iedbID>102736</iedbID>
+<iedbID>102750</iedbID>
+<iedbID>102765</iedbID>
+<iedbID>102775</iedbID>
+<iedbID>102777</iedbID>
+<iedbID>102782</iedbID>
+<iedbID>102817</iedbID>
+<iedbID>102832</iedbID>
+<iedbID>102853</iedbID>
+<iedbID>102872</iedbID>
+<iedbID>102897</iedbID>
+<iedbID>103706</iedbID>
+<iedbID>104547</iedbID>
+<iedbID>107579</iedbID>
+<iedbID>107932</iedbID>
+<iedbID>108009</iedbID>
+<iedbID>108049</iedbID>
+<iedbID>110247</iedbID>
+<iedbID>110826</iedbID>
+<iedbID>112560</iedbID>
+<iedbID>112717</iedbID>
+<iedbID>114735</iedbID>
+<iedbID>114753</iedbID>
+<iedbID>114829</iedbID>
+<iedbID>114868</iedbID>
+<iedbID>114968</iedbID>
+<iedbID>118256</iedbID>
+<iedbID>118257</iedbID>
+<iedbID>118264</iedbID>
+<iedbID>118265</iedbID>
+<iedbID>118271</iedbID>
+<iedbID>118272</iedbID>
+<iedbID>118275</iedbID>
+<iedbID>118276</iedbID>
+<iedbID>118283</iedbID>
+<iedbID>118284</iedbID>
+<iedbID>118285</iedbID>
+<iedbID>118291</iedbID>
+<iedbID>118292</iedbID>
+<iedbID>118294</iedbID>
+<iedbID>118311</iedbID>
+<iedbID>118312</iedbID>
+<iedbID>118313</iedbID>
+<iedbID>118316</iedbID>
+<iedbID>118319</iedbID>
+<iedbID>118321</iedbID>
+<iedbID>118322</iedbID>
+<iedbID>118323</iedbID>
+<iedbID>118324</iedbID>
+<iedbID>118325</iedbID>
+<iedbID>118327</iedbID>
+<iedbID>118334</iedbID>
+<iedbID>118364</iedbID>
+<iedbID>118366</iedbID>
+<iedbID>118367</iedbID>
+<iedbID>118369</iedbID>
+<iedbID>118370</iedbID>
+<iedbID>118384</iedbID>
+<iedbID>118387</iedbID>
+<iedbID>118399</iedbID>
+<iedbID>118422</iedbID>
+<iedbID>118430</iedbID>
+<iedbID>118431</iedbID>
+<iedbID>118434</iedbID>
+<iedbID>118435</iedbID>
+<iedbID>118437</iedbID>
+<iedbID>118440</iedbID>
+<iedbID>118443</iedbID>
+<iedbID>118445</iedbID>
+<iedbID>118447</iedbID>
+<iedbID>118449</iedbID>
+<iedbID>118450</iedbID>
+<iedbID>118451</iedbID>
+<iedbID>118452</iedbID>
+<iedbID>118458</iedbID>
+<iedbID>118459</iedbID>
+<iedbID>118464</iedbID>
+<iedbID>118468</iedbID>
+<iedbID>118471</iedbID>
+<iedbID>118472</iedbID>
+<iedbID>118483</iedbID>
+<iedbID>118485</iedbID>
+<iedbID>118487</iedbID>
+<iedbID>118488</iedbID>
+<iedbID>118490</iedbID>
+<iedbID>118491</iedbID>
+<iedbID>118492</iedbID>
+<iedbID>118500</iedbID>
+<iedbID>118505</iedbID>
+<iedbID>118509</iedbID>
+<iedbID>118510</iedbID>
+<iedbID>118512</iedbID>
+<iedbID>118513</iedbID>
+<iedbID>118517</iedbID>
+<iedbID>118521</iedbID>
+<iedbID>118522</iedbID>
+<iedbID>118526</iedbID>
+<iedbID>118532</iedbID>
+<iedbID>118533</iedbID>
+<iedbID>118534</iedbID>
+<iedbID>118540</iedbID>
+<iedbID>118542</iedbID>
+<iedbID>118547</iedbID>
+<iedbID>118551</iedbID>
+<iedbID>118552</iedbID>
+<iedbID>118562</iedbID>
+<iedbID>118563</iedbID>
+<iedbID>118564</iedbID>
+<iedbID>118567</iedbID>
+<iedbID>118568</iedbID>
+<iedbID>118569</iedbID>
+<iedbID>118570</iedbID>
+<iedbID>118571</iedbID>
+<iedbID>118572</iedbID>
+<iedbID>118576</iedbID>
+<iedbID>118582</iedbID>
+<iedbID>118589</iedbID>
+<iedbID>118591</iedbID>
+<iedbID>118592</iedbID>
+<iedbID>118595</iedbID>
+<iedbID>118603</iedbID>
+<iedbID>118618</iedbID>
+<iedbID>118622</iedbID>
+<iedbID>118628</iedbID>
+<iedbID>118629</iedbID>
+<iedbID>118630</iedbID>
+<iedbID>118635</iedbID>
+<iedbID>118637</iedbID>
+<iedbID>118638</iedbID>
+<iedbID>118639</iedbID>
+<iedbID>118642</iedbID>
+<iedbID>118643</iedbID>
+<iedbID>118644</iedbID>
+<iedbID>118646</iedbID>
+<iedbID>118649</iedbID>
+<iedbID>118651</iedbID>
+<iedbID>118652</iedbID>
+<iedbID>118655</iedbID>
+<iedbID>118658</iedbID>
+<iedbID>118665</iedbID>
+<iedbID>118672</iedbID>
+<iedbID>118673</iedbID>
+<iedbID>118681</iedbID>
+<iedbID>130448</iedbID>
+<iedbID>130480</iedbID>
+<iedbID>130519</iedbID>
+<iedbID>130534</iedbID>
+<iedbID>130543</iedbID>
+<iedbID>130608</iedbID>
+<iedbID>132049</iedbID>
+<iedbID>133581</iedbID>
+<iedbID>133613</iedbID>
+<iedbID>133614</iedbID>
+<iedbID>133639</iedbID>
+<iedbID>133662</iedbID>
+<iedbID>133715</iedbID>
+<iedbID>133747</iedbID>
+<iedbID>135896</iedbID>
+<iedbID>135914</iedbID>
+<iedbID>135916</iedbID>
+<iedbID>135917</iedbID>
+<iedbID>135927</iedbID>
+<iedbID>135929</iedbID>
+<iedbID>135934</iedbID>
+<iedbID>135935</iedbID>
+<iedbID>135942</iedbID>
+<iedbID>135945</iedbID>
+<iedbID>135959</iedbID>
+<iedbID>135965</iedbID>
+<iedbID>135966</iedbID>
+<iedbID>135977</iedbID>
+<iedbID>135979</iedbID>
+<iedbID>135988</iedbID>
+<iedbID>135989</iedbID>
+<iedbID>135991</iedbID>
+<iedbID>135995</iedbID>
+<iedbID>135996</iedbID>
+<iedbID>136004</iedbID>
+<iedbID>150305</iedbID>
+<iedbID>151003</iedbID>
+<iedbID>151012</iedbID>
+<iedbID>151013</iedbID>
+<iedbID>162805</iedbID>
+<iedbID>163765</iedbID>
+<iedbID>175723</iedbID>
+<iedbID>176566</iedbID>
+<iedbID>176960</iedbID>
+<iedbID>176964</iedbID>
+<iedbID>176999</iedbID>
+<iedbID>177042</iedbID>
+<iedbID>177064</iedbID>
+<iedbID>177123</iedbID>
+<iedbID>177129</iedbID>
+<iedbID>177159</iedbID>
+<iedbID>177329</iedbID>
+<iedbID>177359</iedbID>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_P18687</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>P18687</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein, mitochondrial precursor</proteinName>
+<seqLength>573</seqLength>
+<organism name="Cricetulus griseus (Chinese hamster) (Cricetulus barabensis griseus)" taxonomyId="10029"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+<pride>P18687</pride>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_P63038</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>P63038</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein, mitochondrial precursor</proteinName>
+<seqLength>573</seqLength>
+<organism name="Mus musculus (Mouse)" taxonomyId="10090"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+<nist>P63038</nist>
+<pride>P63038</pride>
+</proteomicDBs>
+<iedbs>
+<iedbID>11673</iedbID>
+<iedbID>18980</iedbID>
+<iedbID>20694</iedbID>
+<iedbID>21291</iedbID>
+<iedbID>27274</iedbID>
+<iedbID>27796</iedbID>
+<iedbID>30169</iedbID>
+<iedbID>40453</iedbID>
+<iedbID>43578</iedbID>
+<iedbID>50085</iedbID>
+<iedbID>54711</iedbID>
+<iedbID>57208</iedbID>
+<iedbID>64455</iedbID>
+<iedbID>64963</iedbID>
+<iedbID>65128</iedbID>
+<iedbID>65987</iedbID>
+<iedbID>102316</iedbID>
+<iedbID>102381</iedbID>
+<iedbID>102549</iedbID>
+<iedbID>102716</iedbID>
+<iedbID>102892</iedbID>
+<iedbID>102911</iedbID>
+<iedbID>102918</iedbID>
+<iedbID>103058</iedbID>
+<iedbID>103106</iedbID>
+<iedbID>103139</iedbID>
+<iedbID>103148</iedbID>
+<iedbID>103294</iedbID>
+<iedbID>103303</iedbID>
+<iedbID>103307</iedbID>
+<iedbID>103318</iedbID>
+<iedbID>103343</iedbID>
+<iedbID>103405</iedbID>
+<iedbID>103412</iedbID>
+<iedbID>103442</iedbID>
+<iedbID>103514</iedbID>
+<iedbID>103533</iedbID>
+<iedbID>103540</iedbID>
+<iedbID>103572</iedbID>
+<iedbID>103630</iedbID>
+<iedbID>105025</iedbID>
+<iedbID>105492</iedbID>
+<iedbID>112704</iedbID>
+<iedbID>143665</iedbID>
+<iedbID>143782</iedbID>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_P86206</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>P86206</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>60 kDa heat shock protein, mitochondrial (Fragments)</proteinName>
+<seqLength>271</seqLength>
+<organism name="Mesocricetus auratus (Golden hamster)" taxonomyId="10036"/>
+<matchRanges>
+<matchRange start="247" end="263">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+<pride>P86206</pride>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_Q6IP60</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>Q6IP60</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Hspd1 protein</proteinName>
+<seqLength>579</seqLength>
+<organism name="Xenopus laevis (African clawed frog)" taxonomyId="8355"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_Q7ZTK0</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>Q7ZTK0</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>MGC53106 protein</proteinName>
+<seqLength>468</seqLength>
+<organism name="Xenopus laevis (African clawed frog)" taxonomyId="8355"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_Q7ZTR6</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>Q7ZTR6</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Hspd1 protein (Fragment)</proteinName>
+<seqLength>555</seqLength>
+<organism name="Xenopus laevis (African clawed frog)" taxonomyId="8355"/>
+<matchRanges>
+<matchRange start="430" end="446">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+<pride>Q7ZTR6</pride>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+</matchPerPeptide>
+<matchPerPeptide>
+<queryPeptide>SVQYDDVPEYK</queryPeptide>
+<numberOfMatchedProteins>40</numberOfMatchedProteins>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_B3KNN9</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>B3KNN9</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>cDNA FLJ30070 fis, clone ASTRO2000046, highly similar to CD166 ANTIGEN</proteinName>
+<seqLength>555</seqLength>
+<organism name="Homo sapiens (Human)" taxonomyId="9606"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+<pride>B3KNN9</pride>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_D2H3A9</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>D2H3A9</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Putative uncharacterized protein (Fragment)</proteinName>
+<seqLength>569</seqLength>
+<organism name="Ailuropoda melanoleuca (Giant panda)" taxonomyId="9646"/>
+<matchRanges>
+<matchRange start="63" end="73">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_E9Q3Q6</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>E9Q3Q6</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>CD166 antigen</proteinName>
+<seqLength>570</seqLength>
+<organism name="Mus musculus (Mouse)" taxonomyId="10090"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_F1MHN8</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>F1MHN8</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>CD166 antigen</proteinName>
+<seqLength>583</seqLength>
+<organism name="Bos taurus (Bovine)" taxonomyId="9913"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_F1PDR0</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>F1PDR0</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>CD166 antigen</proteinName>
+<seqLength>583</seqLength>
+<organism name="Canis familiaris (Dog) (Canis lupus familiaris)" taxonomyId="9615"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_F1SL34</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>F1SL34</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein (Fragment)</proteinName>
+<seqLength>547</seqLength>
+<organism name="Sus scrofa (Pig)" taxonomyId="9823"/>
+<matchRanges>
+<matchRange start="54" end="64">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_F7B5L3</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>F7B5L3</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>583</seqLength>
+<organism name="Equus caballus (Horse)" taxonomyId="9796"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_F7E9U2</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>F7E9U2</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>583</seqLength>
+<organism name="Macaca mulatta (Rhesus macaque)" taxonomyId="9544"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_F7HMG0</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>F7HMG0</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>583</seqLength>
+<organism name="Callithrix jacchus (White-tufted-ear marmoset)" taxonomyId="9483"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_F7HMH1</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>F7HMH1</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>570</seqLength>
+<organism name="Callithrix jacchus (White-tufted-ear marmoset)" taxonomyId="9483"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G1LH19</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G1LH19</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein (Fragment)</proteinName>
+<seqLength>586</seqLength>
+<organism name="Ailuropoda melanoleuca (Giant panda)" taxonomyId="9646"/>
+<matchRanges>
+<matchRange start="80" end="90">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G1P9R8</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G1P9R8</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein (Fragment)</proteinName>
+<seqLength>544</seqLength>
+<organism name="Myotis lucifugus (Little brown bat)" taxonomyId="59463"/>
+<matchRanges>
+<matchRange start="67" end="77">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G1QTH1</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G1QTH1</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>583</seqLength>
+<organism name="Nomascus leucogenys (Northern white-cheeked gibbon) (Hylobates leucogenys)" taxonomyId="61853"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G1T112</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G1T112</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>CD166 antigen</proteinName>
+<seqLength>583</seqLength>
+<organism name="Oryctolagus cuniculus (Rabbit)" taxonomyId="9986"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G3HRF8</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G3HRF8</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>CD166 antigen</proteinName>
+<seqLength>583</seqLength>
+<organism name="Cricetulus griseus (Chinese hamster) (Cricetulus barabensis griseus)" taxonomyId="10029"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G3QZI0</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G3QZI0</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>583</seqLength>
+<organism name="Gorilla gorilla gorilla (Lowland gorilla)" taxonomyId="9595"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_G7MK34</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>G7MK34</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Putative uncharacterized protein</proteinName>
+<seqLength>583</seqLength>
+<organism name="Macaca mulatta (Rhesus macaque)" taxonomyId="9544"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_H2P9U5</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>H2P9U5</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>583</seqLength>
+<organism name="Pongo abelii (Sumatran orangutan) (Pongo pygmaeus abelii)" taxonomyId="9601"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_H2R846</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>H2R846</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Activated leukocyte cell adhesion molecule</proteinName>
+<seqLength>583</seqLength>
+<organism name="Pan troglodytes (Chimpanzee)" taxonomyId="9598"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_H9ERZ1</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>H9ERZ1</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>CD166 antigen isoform 1</proteinName>
+<seqLength>583</seqLength>
+<organism name="Macaca mulatta (Rhesus macaque)" taxonomyId="9544"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_H9YZP2</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>H9YZP2</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>CD166 antigen</proteinName>
+<seqLength>583</seqLength>
+<organism name="Macaca mulatta (Rhesus macaque)" taxonomyId="9544"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_I3LXH3</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>I3LXH3</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein (Fragment)</proteinName>
+<seqLength>570</seqLength>
+<organism name="Spermophilus tridecemlineatus (Thirteen-lined ground squirrel) (Ictidomys tridecemlineatus)" taxonomyId="43179"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_K7GAY1</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>K7GAY1</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein</proteinName>
+<seqLength>541</seqLength>
+<organism name="Pelodiscus sinensis (Chinese softshell turtle) (Trionyx sinensis)" taxonomyId="13735"/>
+<matchRanges>
+<matchRange start="37" end="47">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_K7GLE8</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>K7GLE8</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein (Fragment)</proteinName>
+<seqLength>560</seqLength>
+<organism name="Sus scrofa (Pig)" taxonomyId="9823"/>
+<matchRanges>
+<matchRange start="54" end="64">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_K9ILN7</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>K9ILN7</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Putative activated leukocyte cell adhesion molecule</proteinName>
+<seqLength>583</seqLength>
+<organism name="Desmodus rotundus (Vampire bat)" taxonomyId="9430"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_K9IWH1</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>K9IWH1</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>CD166 antigen</proteinName>
+<seqLength>583</seqLength>
+<organism name="Sus scrofa (Pig)" taxonomyId="9823"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_L5LYA4</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>L5LYA4</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>CD166 antigen</proteinName>
+<seqLength>542</seqLength>
+<organism name="Myotis davidii (David's myotis)" taxonomyId="225400"/>
+<matchRanges>
+<matchRange start="125" end="135">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_L8IQD7</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>L8IQD7</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>CD166 antigen (Fragment)</proteinName>
+<seqLength>593</seqLength>
+<organism name="Bos grunniens mutus" taxonomyId="72004"/>
+<matchRanges>
+<matchRange start="87" end="97">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_L9KY86</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>L9KY86</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>CD166 antigen (Fragment)</proteinName>
+<seqLength>521</seqLength>
+<organism name="Tupaia chinensis (Chinese tree shrew)" taxonomyId="246437"/>
+<matchRanges>
+<matchRange start="61" end="71">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_M3W6Y7</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>M3W6Y7</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Uncharacterized protein (Fragment)</proteinName>
+<seqLength>580</seqLength>
+<organism name="Felis catus (Cat) (Felis silvestris catus)" taxonomyId="9685"/>
+<matchRanges>
+<matchRange start="74" end="84">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_O35112</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>O35112</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>CD166 antigen precursor</proteinName>
+<seqLength>583</seqLength>
+<organism name="Rattus norvegicus (Rat)" taxonomyId="10116"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+<nist>O35112</nist>
+<pride>O35112</pride>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_O46651</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>O46651</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>CD166 antigen (Fragment)</proteinName>
+<seqLength>521</seqLength>
+<organism name="Oryctolagus cuniculus (Rabbit)" taxonomyId="9986"/>
+<matchRanges>
+<matchRange start="15" end="25">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_Q13740</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>Q13740</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>CD166 antigen precursor</proteinName>
+<seqLength>583</seqLength>
+<organism name="Homo sapiens (Human)" taxonomyId="9606"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+<nist>Q13740</nist>
+<pride>Q13740</pride>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_Q13740-2</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>Q13740-2</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>CD166 antigen precursor</proteinName>
+<seqLength>570</seqLength>
+<organism name="Homo sapiens (Human)" taxonomyId="9606"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_Q5MPX5</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>Q5MPX5</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Activated leukocyte cell adhesion molecule soluble isoform</proteinName>
+<seqLength>133</seqLength>
+<organism name="Mus musculus (Mouse)" taxonomyId="10090"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+<nist>Q5MPX5</nist>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_Q5R640</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>Q5R640</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Putative uncharacterized protein DKFZp459H0124</proteinName>
+<seqLength>570</seqLength>
+<organism name="Pongo abelii (Sumatran orangutan) (Pongo pygmaeus abelii)" taxonomyId="9601"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_Q61490</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>Q61490</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>CD166 antigen precursor</proteinName>
+<seqLength>583</seqLength>
+<organism name="Mus musculus (Mouse)" taxonomyId="10090"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+<nist>Q61490</nist>
+<pride>Q61490</pride>
+</proteomicDBs>
+<iedbs>
+<iedbID>11408</iedbID>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_Q6PEY4</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>Q6PEY4</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>ALCAM protein</proteinName>
+<seqLength>133</seqLength>
+<organism name="Homo sapiens (Human)" taxonomyId="9606"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+<nist>Q6PEY4</nist>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_Q9BDE7</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>Q9BDE7</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>Activated leukocyte cell adhesion molecule (Fragment)</proteinName>
+<seqLength>113</seqLength>
+<organism name="Sus scrofa (Pig)" taxonomyId="9823"/>
+<matchRanges>
+<matchRange start="15" end="25">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+<matchedProtein>
+<UniRef100ClusterID>UniRef100_Q9BH13</UniRef100ClusterID>
+<UniRef100RepresentativeProteinAC>Q9BH13</UniRef100RepresentativeProteinAC>
+<proteinAC/>
+<proteinID/>
+<proteinName>CD166 antigen precursor</proteinName>
+<seqLength>583</seqLength>
+<organism name="Bos taurus (Bovine)" taxonomyId="9913"/>
+<matchRanges>
+<matchRange start="77" end="87">
+</matchRange>
+</matchRanges>
+<proteomicDBs>
+<pride>Q9BH13</pride>
+</proteomicDBs>
+<iedbs>
+</iedbs>
+</matchedProtein>
+</matchPerPeptide>
+<perPeptideMatchSummaryReport>
+<numberPeptidesHadMatches>2</numberPeptidesHadMatches>
+<uniqueMatchedProteins>101</uniqueMatchedProteins>
+<uniqueMatchedOrganisms>39</uniqueMatchedOrganisms>
+<perPeptideMatchInfo>
+<queryPeptide>AAVEEGIVLGGGCALLR</queryPeptide>
+<numberOfMatchedProteins>61</numberOfMatchedProteins>
+<numberOfMatchedOrganisms>36</numberOfMatchedOrganisms>
+</perPeptideMatchInfo>
+<perPeptideMatchInfo>
+<queryPeptide>SVQYDDVPEYK</queryPeptide>
+<numberOfMatchedProteins>40</numberOfMatchedProteins>
+<numberOfMatchedOrganisms>24</numberOfMatchedOrganisms>
+</perPeptideMatchInfo>
+</perPeptideMatchSummaryReport>
+<perProteinMatchSummaryReport>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_A4II42</UniRef100ClusterID>
+<proteinAC>A4II42</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_B3GQS7</UniRef100ClusterID>
+<proteinAC>B3GQS7</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_B3KNN9</UniRef100ClusterID>
+<proteinAC>B3KNN9</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_B7Z4F6</UniRef100ClusterID>
+<proteinAC>B7Z4F6</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(407-423)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_B7Z597</UniRef100ClusterID>
+<proteinAC>B7Z597</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(421-437)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_B7Z5E7</UniRef100ClusterID>
+<proteinAC>B7Z5E7</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(374-390)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_D2H3A9</UniRef100ClusterID>
+<proteinAC>D2H3A9</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(63-73)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_E2QUU5</UniRef100ClusterID>
+<proteinAC>E2QUU5</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_E9Q3Q6</UniRef100ClusterID>
+<proteinAC>E9Q3Q6</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_F1MHN8</UniRef100ClusterID>
+<proteinAC>F1MHN8</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_F1MUZ9</UniRef100ClusterID>
+<proteinAC>F1MUZ9</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_F1PDR0</UniRef100ClusterID>
+<proteinAC>F1PDR0</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_F1SL34</UniRef100ClusterID>
+<proteinAC>F1SL34</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(54-64)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_F1SMZ7</UniRef100ClusterID>
+<proteinAC>F1SMZ7</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(432-448)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_F6PQQ8</UniRef100ClusterID>
+<proteinAC>F6PQQ8</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_F6TFZ0</UniRef100ClusterID>
+<proteinAC>F6TFZ0</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(432-448)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_F6UT23</UniRef100ClusterID>
+<proteinAC>F6UT23</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(374-390)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_F6Z587</UniRef100ClusterID>
+<proteinAC>F6Z587</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(432-448)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_F7B5L3</UniRef100ClusterID>
+<proteinAC>F7B5L3</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_F7BGB7</UniRef100ClusterID>
+<proteinAC>F7BGB7</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(432-448)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_F7E9U2</UniRef100ClusterID>
+<proteinAC>F7E9U2</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_F7GF46</UniRef100ClusterID>
+<proteinAC>F7GF46</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(428-444)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_F7GZG0</UniRef100ClusterID>
+<proteinAC>F7GZG0</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(398-414)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_F7HMG0</UniRef100ClusterID>
+<proteinAC>F7HMG0</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_F7HMH1</UniRef100ClusterID>
+<proteinAC>F7HMH1</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_F7HMR4</UniRef100ClusterID>
+<proteinAC>F7HMR4</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_F7I3J9</UniRef100ClusterID>
+<proteinAC>F7I3J9</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G1LH19</UniRef100ClusterID>
+<proteinAC>G1LH19</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(80-90)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G1M5B6</UniRef100ClusterID>
+<proteinAC>G1M5B6</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(432-448)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G1NUB2</UniRef100ClusterID>
+<proteinAC>G1NUB2</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(432-448)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G1P9R8</UniRef100ClusterID>
+<proteinAC>G1P9R8</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(67-77)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G1QTH1</UniRef100ClusterID>
+<proteinAC>G1QTH1</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G1R5A6</UniRef100ClusterID>
+<proteinAC>G1R5A6</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(432-448)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G1R5A7</UniRef100ClusterID>
+<proteinAC>G1R5A7</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(374-390)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G1T112</UniRef100ClusterID>
+<proteinAC>G1T112</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G1T3Y8</UniRef100ClusterID>
+<proteinAC>G1T3Y8</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(431-447)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G2HFN5</UniRef100ClusterID>
+<proteinAC>G2HFN5</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G2HG50</UniRef100ClusterID>
+<proteinAC>G2HG50</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G3HL13</UniRef100ClusterID>
+<proteinAC>G3HL13</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G3HRF8</UniRef100ClusterID>
+<proteinAC>G3HRF8</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G3QYY4</UniRef100ClusterID>
+<proteinAC>G3QYY4</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G3QZI0</UniRef100ClusterID>
+<proteinAC>G3QZI0</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G3SL08</UniRef100ClusterID>
+<proteinAC>G3SL08</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G3WZS7</UniRef100ClusterID>
+<proteinAC>G3WZS7</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G4W8Y6</UniRef100ClusterID>
+<proteinAC>G4W8Y6</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G5DYI3</UniRef100ClusterID>
+<proteinAC>G5DYI3</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(336-352)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G7MK34</UniRef100ClusterID>
+<proteinAC>G7MK34</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G9F6X6</UniRef100ClusterID>
+<proteinAC>G9F6X6</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_G9K4Y8</UniRef100ClusterID>
+<proteinAC>G9K4Y8</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_H0W1Z7</UniRef100ClusterID>
+<proteinAC>H0W1Z7</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(429-445)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_H2P876</UniRef100ClusterID>
+<proteinAC>H2P876</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_H2P9U5</UniRef100ClusterID>
+<proteinAC>H2P9U5</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_H2R846</UniRef100ClusterID>
+<proteinAC>H2R846</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_H3B645</UniRef100ClusterID>
+<proteinAC>H3B645</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_H3B646</UniRef100ClusterID>
+<proteinAC>H3B646</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_H9ERZ1</UniRef100ClusterID>
+<proteinAC>H9ERZ1</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_H9FTU5</UniRef100ClusterID>
+<proteinAC>H9FTU5</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_H9GFC4</UniRef100ClusterID>
+<proteinAC>H9GFC4</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_H9YZP2</UniRef100ClusterID>
+<proteinAC>H9YZP2</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_H9Z8E7</UniRef100ClusterID>
+<proteinAC>H9Z8E7</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_I3L9N6</UniRef100ClusterID>
+<proteinAC>I3L9N6</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(375-391)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_I3LXH3</UniRef100ClusterID>
+<proteinAC>I3LXH3</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_K7D0W0</UniRef100ClusterID>
+<proteinAC>K7D0W0</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(464-480)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_K7GAY1</UniRef100ClusterID>
+<proteinAC>K7GAY1</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(37-47)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_K7GIW1</UniRef100ClusterID>
+<proteinAC>K7GIW1</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(431-447)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_K7GLE8</UniRef100ClusterID>
+<proteinAC>K7GLE8</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(54-64)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_K9ILN7</UniRef100ClusterID>
+<proteinAC>K9ILN7</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_K9IWH1</UniRef100ClusterID>
+<proteinAC>K9IWH1</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_K9J1X2</UniRef100ClusterID>
+<proteinAC>K9J1X2</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_K9K3I2</UniRef100ClusterID>
+<proteinAC>K9K3I2</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(423-439)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_L5K231</UniRef100ClusterID>
+<proteinAC>L5K231</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(606-622)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_L5LQG7</UniRef100ClusterID>
+<proteinAC>L5LQG7</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(400-416)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_L5LYA4</UniRef100ClusterID>
+<proteinAC>L5LYA4</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(125-135)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_L8IQD7</UniRef100ClusterID>
+<proteinAC>L8IQD7</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(87-97)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_L9JWG7</UniRef100ClusterID>
+<proteinAC>L9JWG7</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(251-267[L=I: 257])</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_L9KNI8</UniRef100ClusterID>
+<proteinAC>L9KNI8</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(379-395)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_L9KX39</UniRef100ClusterID>
+<proteinAC>L9KX39</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(196-212)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_L9KY86</UniRef100ClusterID>
+<proteinAC>L9KY86</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(61-71)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_L9L1D2</UniRef100ClusterID>
+<proteinAC>L9L1D2</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(75-91)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_M3W6Y7</UniRef100ClusterID>
+<proteinAC>M3W6Y7</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(74-84)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_M3WXZ4</UniRef100ClusterID>
+<proteinAC>M3WXZ4</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_M3Y8V3</UniRef100ClusterID>
+<proteinAC>M3Y8V3</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(432-448)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_M3ZUM7</UniRef100ClusterID>
+<proteinAC>M3ZUM7</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_M7B7Y4</UniRef100ClusterID>
+<proteinAC>M7B7Y4</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_O35112</UniRef100ClusterID>
+<proteinAC>O35112</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_O46651</UniRef100ClusterID>
+<proteinAC>O46651</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(15-25)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_P10809</UniRef100ClusterID>
+<proteinAC>P10809</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_P18687</UniRef100ClusterID>
+<proteinAC>P18687</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_P63038</UniRef100ClusterID>
+<proteinAC>P63038</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_P86206</UniRef100ClusterID>
+<proteinAC>P86206</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(247-263)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_Q13740</UniRef100ClusterID>
+<proteinAC>Q13740</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_Q13740-2</UniRef100ClusterID>
+<proteinAC>Q13740-2</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_Q5MPX5</UniRef100ClusterID>
+<proteinAC>Q5MPX5</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_Q5R640</UniRef100ClusterID>
+<proteinAC>Q5R640</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_Q61490</UniRef100ClusterID>
+<proteinAC>Q61490</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_Q6IP60</UniRef100ClusterID>
+<proteinAC>Q6IP60</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_Q6PEY4</UniRef100ClusterID>
+<proteinAC>Q6PEY4</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_Q7ZTK0</UniRef100ClusterID>
+<proteinAC>Q7ZTK0</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_Q7ZTR6</UniRef100ClusterID>
+<proteinAC>Q7ZTR6</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>AAVEEGIVLGGGCALLR(430-446)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_Q9BDE7</UniRef100ClusterID>
+<proteinAC>Q9BDE7</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(15-25)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+<perProteinMatchInfo>
+<UniRef100ClusterID>UniRef100_Q9BH13</UniRef100ClusterID>
+<proteinAC>Q9BH13</proteinAC>
+<numberOfMatchingPeptides>1</numberOfMatchingPeptides>
+<matchingPeptides>
+<matchingPeptide>SVQYDDVPEYK(77-87)</matchingPeptide>
+</matchingPeptides>
+</perProteinMatchInfo>
+</perProteinMatchSummaryReport>
+</peptideMatch>

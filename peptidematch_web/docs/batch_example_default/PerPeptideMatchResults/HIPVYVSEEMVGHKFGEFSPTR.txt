@@ -1,0 +1,5 @@
+##Query peptide: HIPVYVSEEMVGHKFGEFSPTR
+##Number of matched proteins: 2
+#Protein AC	Protein ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+B8IS89	RS19_METNO [sp]	30S ribosomal protein S19	92	Methylobacterium nodulans (strain ORS2060 / LMG 21967) [460265]	57-78		
+I9WMC3	I9WMC3_9RHIZ [tr]	30S ribosomal protein S19	92	Methylobacterium sp. GXF4 [1096546]	57-78		

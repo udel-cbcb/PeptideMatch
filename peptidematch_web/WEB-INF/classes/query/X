@@ -1,0 +1,196 @@
+public void queryByPeptideWithShortlLineageOrganismAndTaxonId(String query, String organism_id, String taxon, int start, int rows, String op, String uniref100Only, String ilEquivalent, String sortBy) {
+                // process the peptide into the phrasequery
+                String queryField = "originalSeq:";
+                if(ilEquivalent.equals("Y")) {
+                        queryField = "lToiSeq:";
+                }
+                String phraseQuery = queryField + "\""
+                                + query.substring(0, 3).toLowerCase();
+                for (int i = 1; i <= query.length() - 3; i++) {
+                        phraseQuery = phraseQuery + "+"
+                                        + query.substring(i, i + 3).toLowerCase();
+                }
+                phraseQuery += "\"";
+                String finalQuery = phraseQuery;
+                // put the organismid with the phrase query
+                String organisms[]=organism_id.split(";");
+                String organismQuery = "(shortLineage:" + organisms[0];
+                for(int i=1;i<organisms.length;i++){
+                        organismQuery=organismQuery+" OR shortLineage:" + organisms[i];
+                }
+                organismQuery+=")";
+
+                String taxons[]=taxon.split(";");
+                String taxonQuery = "(shortLineage:" + taxons[0];
+                for(int i=1;i<taxons.length;i++){
+                        //taxonQuery=taxonQuery+" OR lineage:" + taxons[i];
+                        taxonQuery=taxonQuery+" "+op+" shortLineage:" + taxons[i];
+                }
+                taxonQuery+=")";
+
+                finalQuery += " " +taxonQuery + " " + organismQuery;
+
+                if(uniref100Only.equals("Y")) {
+                        finalQuery += " uniref100:Y";
+                }
+                System.out.println(finalQuery);
+                // connect to the solrQuery
+                SolrQuery solrQuery = new SolrQuery();
+                SolrDocumentList docs = new SolrDocumentList();
+                solrQuery.setParam("q", finalQuery);
+                solrQuery.setParam("q.op", "AND");
+                //solrQuery.setParam("sort", "ac asc");
+                solrQuery.setParam("sort", "nist asc, peptideAtlas asc, pride asc, iedb desc, ac asc");
+                if(sortBy.equals("proteomic_desc")) {
+                        solrQuery.setParam("sort", "nist desc, peptideAtlas desc, pride desc, ac asc");
+                }
+                if(sortBy.equals("ac_asc")) {
+                        solrQuery.setParam("sort", "ac asc");
+                }
+                if(sortBy.equals("ac_desc")) {
+                        solrQuery.setParam("sort", "ac desc");
+                }
+                if(sortBy.equals("proteinID_asc")) {
+                        solrQuery.setParam("sort", "proteinID asc");
+                }
+                if(sortBy.equals("proteinID_desc")) {
+                        solrQuery.setParam("sort", "proteinID desc");
+                }
+                if(sortBy.equals("proteinName_asc")) {
+                        solrQuery.setParam("sort", "proteinName asc");
+                }
+		if(sortBy.equals("proteinName_asc")) {
+                        solrQuery.setParam("sort", "proteinName asc");
+                }
+                if(sortBy.equals("proteinName_desc")) {
+                        solrQuery.setParam("sort", "proteinName desc");
+                }
+                if(sortBy.equals("organismName_asc")) {
+                        solrQuery.setParam("sort", "organismName asc");
+                }
+                if(sortBy.equals("organismName_desc")) {
+                        solrQuery.setParam("sort", "organismName desc");
+                }
+                if(sortBy.equals("length_asc")) {
+                        solrQuery.setParam("sort", "length asc");
+                }
+                if(sortBy.equals("length_desc")) {
+                        solrQuery.setParam("sort", "length desc");
+                }
+                if(sortBy.equals("iedb_asc")) {
+                        solrQuery.setParam("sort", "iedb asc");
+                }
+                if(sortBy.equals("iedb_desc")) {
+                        solrQuery.setParam("sort", "iedb desc");
+                }
+
+                solrQuery.setStart(start);
+                solrQuery.setRows(rows);
+                System.out.println(solrQuery);
+                try {
+                        response = solrServer.query(solrQuery);
+                        docs = response.getResults();
+                        if (docs != null) {
+                                result = (int) docs.getNumFound();
+                        } else
+                                result = 0;
+                } catch (SolrServerException e) {
+                        System.out.print("search fail ");
+                }
+                initialDoc = docs;
+        }
+	
+public void queryByPeptideWithShortLineageTaxonId(String query, String taxonId, int start, int rows, String op, String uniref100Only, String ilEquivalent, String sortBy) {
+                // process the peptide into the phrasequery
+                String queryField = "originalSeq:";
+                if(ilEquivalent.equals("Y")) {
+                        queryField = "lToiSeq:";
+                }
+                String phraseQuery = queryField + "\""
+                                + query.substring(0, 3).toLowerCase();
+                for (int i = 1; i <= query.length() - 3; i++) {
+                        phraseQuery = phraseQuery + "+"
+                                        + query.substring(i, i + 3).toLowerCase();
+                }
+                phraseQuery += "\"";
+                String finalQuery = phraseQuery;
+                // put the organismid with the phrase query
+                String ids[]=taxonId.split(";");
+                String idQuery = "(shortLineage:" + ids[0];
+                for(int i=1;i<ids.length;i++){
+                        //idQuery=idQuery+" OR lineage:" + ids[i];
+                        idQuery=idQuery+" "+op+" shortLineage:" + ids[i];
+                }
+                idQuery+=")";
+
+
+                finalQuery += " " + idQuery;
+                if(uniref100Only.equals("Y")) {
+                        finalQuery += " uniref100:Y";
+                }
+
+                System.out.println(finalQuery);
+                // connect to the solrQuery
+                SolrQuery solrQuery = new SolrQuery();
+                SolrDocumentList docs = new SolrDocumentList();
+                solrQuery.setParam("q", finalQuery);
+                solrQuery.setParam("q.op", "AND");
+                //solrQuery.setParam("sort", "ac asc");
+                solrQuery.setParam("sort", "nist asc, peptideAtlas asc, pride asc, iedb desc, ac asc");
+                if(sortBy.equals("proteomic_desc")) {
+                        solrQuery.setParam("sort", "nist desc, peptideAtlas desc, pride desc, ac asc");
+                }
+                if(sortBy.equals("ac_asc")) {
+                        solrQuery.setParam("sort", "ac asc");
+                }
+                if(sortBy.equals("ac_desc")) {
+                        solrQuery.setParam("sort", "ac desc");
+                }
+                if(sortBy.equals("proteinID_asc")) {
+                        solrQuery.setParam("sort", "proteinID asc");
+                }
+                if(sortBy.equals("proteinID_desc")) {
+                        solrQuery.setParam("sort", "proteinID desc");
+                }
+                if(sortBy.equals("proteinName_asc")) {
+                        solrQuery.setParam("sort", "proteinName asc");
+                }
+                if(sortBy.equals("proteinName_desc")) {
+                        solrQuery.setParam("sort", "proteinName desc");
+                }
+                if(sortBy.equals("organismName_asc")) {
+                        solrQuery.setParam("sort", "organismName asc");
+                }
+		if(sortBy.equals("organismName_asc")) {
+                        solrQuery.setParam("sort", "organismName asc");
+                }
+                if(sortBy.equals("organismName_desc")) {
+                        solrQuery.setParam("sort", "organismName desc");
+                }
+                if(sortBy.equals("length_asc")) {
+                        solrQuery.setParam("sort", "length asc");
+                }
+                if(sortBy.equals("length_desc")) {
+                        solrQuery.setParam("sort", "length desc");
+                }
+                if(sortBy.equals("iedb_asc")) {
+                        solrQuery.setParam("sort", "iedb asc");
+                }
+                if(sortBy.equals("iedb_desc")) {
+                        solrQuery.setParam("sort", "iedb desc");
+                }
+                solrQuery.setStart(start);
+                solrQuery.setRows(rows);
+                System.out.println(solrQuery);
+                try {
+                        response = solrServer.query(solrQuery);
+                        docs = response.getResults();
+                        if (docs != null) {
+                                result = (int) docs.getNumFound();
+                        } else
+                                result = 0;
+                } catch (SolrServerException e) {
+                        System.out.print("search fail ");
+                }
+                initialDoc = docs;
+        }

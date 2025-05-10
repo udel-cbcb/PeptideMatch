@@ -1,0 +1,4 @@
+##Query peptide: FDPVVNWASK
+##Number of matched proteins: 1
+#UniRef100 ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+UniRef100_C5ATJ3	C5ATJ3	XoxF	599	Methylobacterium extorquens (strain ATCC 14718 / DSM 1338 / AM1) [272630]	364-373		

@@ -1,0 +1,6 @@
+##Query peptide: AAFGGSGGR
+##Number of matched proteins: 3
+#UniRef100 ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+UniRef100_G4ZP71	G4ZP71	Putative uncharacterized protein	631	Phytophthora sojae (strain P6497) (Soybean stem and root rot agent) (Phytophthora megasperma f. sp. glycines) [1094619]	234-242		
+UniRef100_K9PGF0	K9PGF0	GAF sensor signal transduction histidine kinase	1101	Calothrix sp. PCC 7507 [99598]	238-246		
+UniRef100_P35908	P35908	Keratin, type II cytoskeletal 2 epidermal	639	Homo sapiens (Human) [9606]	516-524	NIST, PeptideAtlas, Pride	

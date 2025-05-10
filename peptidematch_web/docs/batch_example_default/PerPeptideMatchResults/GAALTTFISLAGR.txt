@@ -1,0 +1,499 @@
+##Query peptide: GAALTTFISLAGR
+##Number of matched proteins: 496
+#Protein AC	Protein ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+A0K5T6	A0K5T6_BURCH [tr]	RNAse E	1059	Burkholderia cenocepacia (strain HI2424) [331272]	112-124		
+A0YGR2	A0YGR2_9GAMM [tr]	Ribonuclease E	956	marine gamma proteobacterium HTCC2143 [247633]	127-139		
+A1INT3	A1INT3_NEIMA [tr]	Ribonuclease E	919	Neisseria meningitidis serogroup A / serotype 4A (strain Z2491) [122587]	111-123		
+A1KRM8	A1KRM8_NEIMF [tr]	Ribonuclease E	919	Neisseria meningitidis serogroup C / serotype 2a (strain ATCC 700532 / FAM18) [272831]	111-123		
+A1U1T9	A1U1T9_MARAV [tr]	RNAse E	1056	Marinobacter aquaeolei (strain ATCC 700491 / DSM 11845 / VT8) (Marinobacter hydrocarbonoclasticus (strain DSM 11845)) [351348]	114-126		
+A1V6E2	A1V6E2_BURMS [tr]	Ribonuclease E	1090	Burkholderia mallei (strain SAVP1) [320388]	112-124		
+A1WAY7	A1WAY7_ACISJ [tr]	RNAse E	1025	Acidovorax sp. (strain JS42) [232721]	112-124		
+A2S9X2	A2S9X2_BURM9 [tr]	Ribonuclease E	1087	Burkholderia mallei (strain NCTC 10229) [412022]	112-124		
+A2VRT0	A2VRT0_9BURK [tr]	Ribonuclease E and G	1090	Burkholderia cenocepacia PC184 [350702]	112-124		
+A2WBK9	A2WBK9_9BURK [tr]	Ribonucleases G and E	1022	Burkholderia dolosa AUO158 [350701]	183-195		
+A3KW11	A3KW11_PSEAI [tr]	Ribonuclease E	1057	Pseudomonas aeruginosa C3719 [350704]	111-123		
+A3LB38	A3LB38_PSEAI [tr]	Ribonuclease E	1057	Pseudomonas aeruginosa 2192 [350703]	111-123		
+A3MM67	A3MM67_BURM7 [tr]	Ribonuclease E	1087	Burkholderia mallei (strain NCTC 10247) [320389]	112-124		
+A3NBV2	A3NBV2_BURP6 [tr]	Ribonuclease E	1088	Burkholderia pseudomallei (strain 668) [320373]	112-124		
+A3NXN9	A3NXN9_BURP0 [tr]	Ribonuclease E	1088	Burkholderia pseudomallei (strain 1106a) [357348]	112-124		
+A3RWT3	A3RWT3_RALSL [tr]	Ribonuclease E	1018	Ralstonia solanacearum UW551 [342110]	112-124		
+A4BML2	A4BML2_9GAMM [tr]	RNase E	910	Nitrococcus mobilis Nb-231 [314278]	111-123		
+A4JCN8	A4JCN8_BURVG [tr]	RNAse E	1074	Burkholderia vietnamiensis (strain G4 / LMG 22486) (Burkholderia cepacia (strain R1808)) [269482]	112-124		
+A4LE54	A4LE54_BURPE [tr]	Ribonuclease E	1093	Burkholderia pseudomallei 305 [425067]	112-124		
+A4VMT0	A4VMT0_PSEU5 [tr]	Ribonuclease E	1070	Pseudomonas stutzeri (strain A1501) [379731]	126-138		
+A4XSR7	A4XSR7_PSEMY [tr]	RNAse E	1012	Pseudomonas mendocina (strain ymp) [399739]	112-124		
+A5TIW3	A5TIW3_BURML [tr]	Ribonuclease E	1087	Burkholderia mallei 2002721280 [370895]	112-124		
+A5W723	A5W723_PSEP1 [tr]	RNAse E	1090	Pseudomonas putida (strain F1 / ATCC 700007) [351746]	111-123		
+A6F1D9	A6F1D9_9ALTE [tr]	Ribonucleases G and E	1047	Marinobacter algicola DG893 [443152]	114-126		
+A6GP30	A6GP30_9BURK [tr]	Ribonuclease E	972	Limnobacter sp. MED105 [391597]	112-124		
+A6V3C2	A6V3C2_PSEA7 [tr]	Ribonuclease E (RNase E)	1073	Pseudomonas aeruginosa (strain PA7) [381754]	126-138		
+A7BU35	A7BU35_9GAMM [tr]	Ribonuclease, Rne/Rng family	598	Beggiatoa sp. PS [422289]	136-148		
+A9ADG1	A9ADG1_BURM1 [tr]	Ribonuclease, Rne/Rng family	1111	Burkholderia multivorans (strain ATCC 17616 / 249) [395019]	169-181		
+A9BNL6	A9BNL6_DELAS [tr]	Ribonuclease, Rne/Rng family	1044	Delftia acidovorans (strain DSM 14801 / SPH-1) [398578]	112-124		
+A9IIF0	A9IIF0_BORPD [tr]	Ribonuclease E	995	Bordetella petrii (strain ATCC BAA-461 / DSM 12804 / CCUG 43448) [340100]	112-124		
+A9K9S8	A9K9S8_BURML [tr]	Ribonuclease E	1090	Burkholderia mallei ATCC 10399 [412021]	112-124		
+A9M3I4	A9M3I4_NEIM0 [tr]	Ribonuclease E	919	Neisseria meningitidis serogroup C (strain 053442) [374833]	111-123		
+B0KF46	B0KF46_PSEPG [tr]	Ribonuclease, Rne/Rng family	1086	Pseudomonas putida (strain GB-1) [76869]	111-123		
+B0RTH9	B0RTH9_XANCB [tr]	Ribonuclease E	1194	Xanthomonas campestris pv. campestris (strain B100) [509169]	112-124		
+B0U5V7	B0U5V7_XYLFM [tr]	Ribonuclease E	1132	Xylella fastidiosa (strain M12) [405440]	112-124		
+B1FGY7	B1FGY7_9BURK [tr]	Ribonuclease, Rne/Rng family	1051	Burkholderia ambifaria IOP40-10 [396596]	112-124		
+B1J511	B1J511_PSEPW [tr]	Ribonuclease, Rne/Rng family	1072	Pseudomonas putida (strain W619) [390235]	111-123		
+B1JY90	B1JY90_BURCC [tr]	Ribonuclease, Rne/Rng family	1056	Burkholderia cenocepacia (strain MC0-3) [406425]	112-124		
+B1T1P0	B1T1P0_9BURK [tr]	Ribonuclease, Rne/Rng family	1050	Burkholderia ambifaria MEX-5 [396597]	112-124		
+B1YVK1	B1YVK1_BURA4 [tr]	Ribonuclease, Rne/Rng family	1059	Burkholderia ambifaria (strain MC40-6) [398577]	112-124		
+B2FM92	B2FM92_STRMK [tr]	Putative ribonuclease E	1097	Stenotrophomonas maltophilia (strain K279a) [522373]	112-124		
+B2I9W9	B2I9W9_XYLF2 [tr]	Ribonuclease, Rne/Rng family	1132	Xylella fastidiosa (strain M23) [405441]	112-124		
+B2JFH9	B2JFH9_BURP8 [tr]	Ribonuclease, Rne/Rng family	1092	Burkholderia phymatum (strain DSM 17167 / STM815) [391038]	112-124		
+B2STP2	B2STP2_XANOP [tr]	Ribonuclease E	1238	Xanthomonas oryzae pv. oryzae (strain PXO99A) [360094]	112-124		
+B2T5V2	B2T5V2_BURPP [tr]	Ribonuclease, Rne/Rng family	1097	Burkholderia phytofirmans (strain DSM 17436 / PsJN) [398527]	112-124		
+B2U958	B2U958_RALPJ [tr]	Ribonuclease, Rne/Rng family	1011	Ralstonia pickettii (strain 12J) [402626]	112-124		
+B3CYY0	B3CYY0_BURM1 [tr]	Ribonuclease	1054	Burkholderia multivorans (strain ATCC 17616 / 249) [395019]	112-124		
+B3PEU2	B3PEU2_CELJU [tr]	Ribonuclease, Rne/Rng family protein	947	Cellvibrio japonicus (strain Ueda107) (Pseudomonas fluorescens subsp. cellulosa) [498211]	115-127		
+B3R5K7	B3R5K7_CUPTR [tr]	Ribonuclease E	1031	Cupriavidus taiwanensis (strain R1 / LMG 19424) (Ralstonia taiwanensis (strain LMG 19424)) [164546]	112-124		
+B3T0Q9	B3T0Q9_9ZZZZ [tr]	Putative S1 RNA binding domain protein	767	uncultured marine microorganism HF4000_006O13 [455509]	134-146		
+B3T2A0	B3T2A0_9ZZZZ [tr]	Putative S1 RNA-binding domain protein	776	uncultured marine microorganism HF4000_141E02 [455524]	134-146		
+B4EAJ6	B4EAJ6_BURCJ [tr]	Putative ribonuclease E	1054	Burkholderia cepacia (strain J2315 / LMG 16656) (Burkholderia cenocepacia (strain J2315)) [216591]	112-124		
+B4RR31	B4RR31_NEIG2 [tr]	Rne	919	Neisseria gonorrhoeae (strain NCCP11945) [521006]	111-123		
+B4SPV8	B4SPV8_STRM5 [tr]	Ribonuclease, Rne/Rng family	1091	Stenotrophomonas maltophilia (strain R551-3) [391008]	112-124		
+B4X005	B4X005_9GAMM [tr]	Ribonuclease, Rne/Rng family protein	1086	Alcanivorax sp. DG881 [236097]	111-123		
+B5SMG9	B5SMG9_RALSL [tr]	Ribonuclease e (Rnase e) protein	1018	Ralstonia solanacearum IPO1609 [564066]	112-124		
+B5WH16	B5WH16_9BURK [tr]	Ribonuclease, Rne/Rng family (Fragment)	599	Burkholderia sp. H160 [516466]	112-124		
+B7CMJ8	B7CMJ8_BURPE [tr]	Ribonuclease E	1085	Burkholderia pseudomallei 576 [557724]	112-124		
+B7RYM0	B7RYM0_9GAMM [tr]	Ribonuclease, Rne/Rng family protein	920	marine gamma proteobacterium HTCC2148 [247634]	113-125		
+B7V152	B7V152_PSEA8 [tr]	Ribonuclease E	1057	Pseudomonas aeruginosa (strain LESB58) [557722]	111-123		
+B7WSU0	B7WSU0_COMTE [tr]	Ribonuclease, Rne/Rng family	996	Comamonas testosteroni KF-1 [399795]	112-124		
+B8L9G0	B8L9G0_9GAMM [tr]	Ribonuclease, Rne/Rng family protein	1086	Stenotrophomonas sp. SKA14 [391601]	109-121		
+B9BBX0	B9BBX0_9BURK [tr]	Ribonuclease E (RNase E)	1056	Burkholderia multivorans CGD1 [513051]	112-124		
+B9BZL6	B9BZL6_9BURK [tr]	Ribonuclease, Rne/Rng family protein	1053	Burkholderia multivorans CGD2 [513052]	112-124		
+B9CGC6	B9CGC6_9BURK [tr]	Ribonuclease E (RNase E)	1053	Burkholderia multivorans CGD2M [513053]	112-124		
+B9MDR9	B9MDR9_ACIET [tr]	Ribonuclease, Rne/Rng family	1029	Acidovorax ebreus (strain TPSY) (Diaphorobacter sp. (strain TPSY)) [535289]	112-124		
+C0EKX3	C0EKX3_NEIFL [tr]	Putative uncharacterized protein	984	Neisseria flavescens NRL30031/H210 [546264]	135-147		
+C0N6T8	C0N6T8_9GAMM [tr]	Ribonuclease, Rne/Rng family protein	810	Methylophaga thiooxydans DMS010 [637616]	116-128		
+C0YFP3	C0YFP3_BURPE [tr]	Ribonuclease E (Fragment)	776	Burkholderia pseudomallei Pakistan 9 [595498]	109-121		
+C1DR24	C1DR24_AZOVD [tr]	Ribonuclease E	1139	Azotobacter vinelandii (strain DJ / ATCC BAA-1303) [322710]	111-123		
+C1I0B2	C1I0B2_NEIGO [tr]	Ribonuclease E	919	Neisseria gonorrhoeae 1291 [528345]	111-123		
+C3K0P3	C3K0P3_PSEFS [tr]	Putative ribonuclease E	1075	Pseudomonas fluorescens (strain SBW25) [216595]	127-139		
+C3X2M3	C3X2M3_OXAFO [tr]	Ribonuclease E protein	988	Oxalobacter formigenes HOxBLS [556268]	112-124		
+C3X9I5	C3X9I5_OXAFO [tr]	Ribonuclease E protein	977	Oxalobacter formigenes OXCC13 [556269]	112-124		
+C4AXC9	C4AXC9_BURML [tr]	Ribonuclease E	610	Burkholderia mallei GB8 horse 4 [320390]	112-124		
+C4KRK4	C4KRK4_BURPE [tr]	Ribonuclease E	1088	Burkholderia pseudomallei MSHR346 [536230]	112-124		
+C5AD76	C5AD76_BURGB [tr]	Ribonuclease E	1125	Burkholderia glumae (strain BGR1) [626418]	112-124		
+C5BU48	C5BU48_TERTT [tr]	Ribonuclease E	1070	Teredinibacter turnerae (strain ATCC 39867 / T7901) [377629]	114-126		
+C5CSD1	C5CSD1_VARPS [tr]	Ribonuclease, Rne/Rng family	1074	Variovorax paradoxus (strain S110) [543728]	112-124		
+C5ND10	C5ND10_BURML [tr]	Ribonuclease E	1090	Burkholderia mallei PRL-20 [436115]	112-124		
+C5TK00	C5TK00_NEIFL [tr]	Ribonuclease E	988	Neisseria flavescens SK114 [596320]	135-147		
+C5ZKQ4	C5ZKQ4_BURPE [tr]	Ribonuclease E	1088	Burkholderia pseudomallei 1106b [357347]	112-124		
+C6BFK7	C6BFK7_RALP1 [tr]	Ribonuclease, Rne/Rng family	1008	Ralstonia pickettii (strain 12D) [428406]	112-124		
+C6M7K1	C6M7K1_NEISI [tr]	Ribonuclease E	1012	Neisseria sicca ATCC 29256 [547045]	113-125		
+C6S9A2	C6S9A2_NEIML [tr]	Ribonuclease E	927	Neisseria meningitidis (strain alpha14) [662598]	119-131		
+C6SCH5	C6SCH5_NEIME [tr]	Ribonuclease E	927	Neisseria meningitidis alpha153 [663926]	119-131		
+C6SHF8	C6SHF8_NEIME [tr]	Ribonuclease E	927	Neisseria meningitidis alpha275 [295996]	119-131		
+C6TV41	C6TV41_BURPE [tr]	Ribonuclease E	1088	Burkholderia pseudomallei 1710a [320371]	112-124		
+C6WUY2	C6WUY2_METML [tr]	Ribonuclease, Rne/Rng family	920	Methylotenera mobilis (strain JLW8 / ATCC BAA-1282 / DSM 17540) [583345]	111-123		
+C6XD85	C6XD85_METSD [tr]	Ribonuclease, Rne/Rng family	913	Methylovorus sp. (strain SIP3-4) (Methylotenera sp. (strain SIP3-4)) [582744]	111-123		
+C9X1X1	C9X1X1_NEIM8 [tr]	Ribonuclease E (RNase E)	919	Neisseria meningitidis serogroup C (strain 8013) [604162]	111-123		
+C9Y9I7	C9Y9I7_9BURK [tr]	Ribonuclease E	990	Curvibacter putative symbiont of Hydra magnipapillata [667019]	112-124		
+D0J126	D0J126_COMT2 [tr]	Ribonuclease, Rne/Rng family	978	Comamonas testosteroni (strain CNB-2) [688245]	109-121		
+D0W2B9	D0W2B9_NEICI [tr]	Ribonuclease E	913	Neisseria cinerea ATCC 14685 [546262]	111-123		
+D0WA03	D0WA03_NEILA [tr]	Ribonuclease E	659	Neisseria lactamica ATCC 23970 [546265]	108-120		
+D1D670	D1D670_NEIGO [tr]	Ribonuclease E	919	Neisseria gonorrhoeae 35/02 [528346]	111-123		
+D1DE11	D1DE11_NEIGO [tr]	Ribonuclease E	919	Neisseria gonorrhoeae FA19 [528352]	111-123		
+D1DKF8	D1DKF8_NEIGO [tr]	Ribonuclease E	919	Neisseria gonorrhoeae MS11 [528354]	111-123		
+D1DS46	D1DS46_NEIGO [tr]	Ribonuclease E	919	Neisseria gonorrhoeae PID18 [528356]	111-123		
+D1DYK8	D1DYK8_NEIGO [tr]	Ribonuclease E	919	Neisseria gonorrhoeae PID1 [528355]	111-123		
+D1E529	D1E529_NEIGO [tr]	Ribonuclease E	919	Neisseria gonorrhoeae PID332 [528358]	111-123		
+D1E618	D1E618_NEIGO [tr]	Ribonuclease E	919	Neisseria gonorrhoeae SK-92-679 [528359]	111-123		
+D1EHX1	D1EHX1_NEIGO [tr]	Ribonuclease E	919	Neisseria gonorrhoeae SK-93-1035 [528360]	111-123		
+D2UDR7	D2UDR7_XANAP [tr]	Probable ribonuclease e protein	1112	Xanthomonas albilineans (strain GPE PC73 / CFBP 7063) [380358]	112-124		
+D2ZWY3	D2ZWY3_NEIMU [tr]	Putative ribonuclease E	1010	Neisseria mucosa ATCC 25996 [546266]	111-123		
+D3A242	D3A242_NEISU [tr]	Ribonuclease E	989	Neisseria subflava NJ9703 [546268]	135-147		
+D3RQ70	D3RQ70_ALLVD [tr]	Ribonuclease, Rne/Rng family	1001	Allochromatium vinosum (strain ATCC 17899 / DSM 180 / NBRC 103801 / D) (Chromatium vinosum) [572477]	114-126		
+D4DLY3	D4DLY3_NEIEG [tr]	Ribonuclease E	960	Neisseria elongata subsp. glycolytica ATCC 29315 [546263]	111-123		
+D4STP0	D4STP0_9XANT [tr]	Ribonuclease E	631	Xanthomonas fuscans subsp. aurantifolii str. ICPB 11122 [427081]	112-124		
+D4T361	D4T361_9XANT [tr]	Ribonuclease E	711	Xanthomonas fuscans subsp. aurantifolii str. ICPB 10535 [427082]	112-124		
+D4X932	D4X932_9BURK [tr]	Ribonuclease E	1032	Achromobacter piechaudii ATCC 43553 [742159]	112-124		
+D5WAD3	D5WAD3_BURSC [tr]	Ribonuclease, Rne/Rng family	1066	Burkholderia sp. (strain CCGE1002) [640511]	112-124		
+D6H587	D6H587_NEIGO [tr]	Ribonuclease E	921	Neisseria gonorrhoeae DGI2 [528348]	113-125		
+D6JJI2	D6JJI2_NEIGO [tr]	Ribonuclease E	919	Neisseria gonorrhoeae F62 [528351]	111-123		
+D7DIK4	D7DIK4_METS0 [tr]	Ribonuclease, Rne/Rng family	894	Methylotenera sp. (strain 301) [666681]	111-123		
+D7HXM9	D7HXM9_PSESS [tr]	Ribonuclease E	1129	Pseudomonas savastanoi pv. savastanoi NCPPB 3335 [693985]	127-139		
+D7N434	D7N434_9NEIS [tr]	Ribonuclease E	989	Neisseria sp. oral taxon 014 str. F0314 [641149]	111-123		
+D8D983	D8D983_COMTE [tr]	Ribonuclease, Rne/Rng family	987	Comamonas testosteroni S44 [563045]	109-121		
+D8NCL4	D8NCL4_RALSL [tr]	Ribonuclease E	1029	Ralstonia solanacearum (Pseudomonas solanacearum) [305]	112-124		
+D8NLA0	D8NLA0_RALSL [tr]	Ribonuclease E	1018	Ralstonia solanacearum CFBP2957 [859656]	112-124		
+D8NVM8	D8NVM8_RALSL [tr]	Ribonuclease E	1015	Ralstonia solanacearum (Pseudomonas solanacearum) [305]	112-124		
+D9Y3K7	D9Y3K7_9BURK [tr]	Ribonuclease E	1033	Burkholderiales bacterium 1_1_47 [469610]	112-124		
+E0NCQ8	E0NCQ8_NEIME [tr]	Ribonuclease E	927	Neisseria meningitidis ATCC 13091 [862513]	119-131		
+E1P241	E1P241_NEILA [tr]	Ribonuclease E	926	Neisseria lactamica Y92-1009 [869214]	119-131		
+E1RMS4	E1RMS4_XYLFG [tr]	Ribonuclease E	1132	Xylella fastidiosa (strain GB514) [788929]	112-124		
+E1T5N0	E1T5N0_BURSG [tr]	Ribonuclease, Rne/Rng family	1097	Burkholderia sp. (strain CCGE1003) [640512]	112-124		
+E1V9N9	E1V9N9_HALED [tr]	Ribonuclease, Rne/Rng family	1179	Halomonas elongata (strain ATCC 33173 / DSM 2581 / NBRC 15536 / NCIMB 2198 / 1H9) [768066]	111-123		
+E2MG58	E2MG58_PSEUB [tr]	RNAse E	1112	Pseudomonas syringae pv. tomato T1 [546231]	111-123		
+E2PBT6	E2PBT6_NEIPO [tr]	Ribonuclease E	927	Neisseria polysaccharea ATCC 43768 [546267]	119-131		
+E2SZG1	E2SZG1_9RALS [tr]	Ribonuclease E	1006	Ralstonia sp. 5_7_47FAA [658664]	112-124		
+E2XWS9	E2XWS9_PSEFL [tr]	Putative uncharacterized protein	1058	Pseudomonas fluorescens WH6 [746360]	127-139		
+E3D645	E3D645_NEIM7 [tr]	Ribonuclease E	916	Neisseria meningitidis serogroup B (strain alpha710) [630588]	108-120		
+E3HTA9	E3HTA9_ACHXA [tr]	Ribonuclease E	1027	Achromobacter xylosoxidans (strain A8) [762376]	112-124		
+E4PFR6	E4PFR6_MARAH [tr]	Ribonuclease, Rne/Rng family	1074	Marinobacter adhaerens (strain HP15) [225937]	111-123		
+E4QP05	E4QP05_METS6 [tr]	Ribonuclease, Rne/Rng family	913	Methylovorus sp. (strain MP688) [887061]	111-123		
+E4RCJ2	E4RCJ2_PSEPB [tr]	Ribonuclease	1095	Pseudomonas putida (strain BIRD-1) [931281]	108-120		
+E4ZAD7	E4ZAD7_NEIL0 [tr]	Ribonuclease E	918	Neisseria lactamica (strain 020-06) [489653]	111-123		
+E5ANW2	E5ANW2_BURRH [tr]	Ribonuclease E (EC 3.1.4.-)	1100	Burkholderia rhizoxinica (strain DSM 19002 / CIP 109453 / HKI 454) [882378]	112-124		
+E5UEV1	E5UEV1_ALCXX [tr]	Ribonuclease E (Fragment)	794	Achromobacter xylosoxidans C54 [562971]	112-124		
+E5UKQ8	E5UKQ8_NEIMU [tr]	Ribonuclease E	963	Neisseria mucosa C102 [435832]	111-123		
+E6MW75	E6MW75_NEIMH [tr]	Ribonuclease E	916	Neisseria meningitidis serogroup B / serotype 15 (strain H44/76) [909420]	108-120		
+E6V2K9	E6V2K9_VARPE [tr]	Ribonuclease, Rne/Rng family	1095	Variovorax paradoxus (strain EPS) [595537]	112-124		
+E6WTQ4	E6WTQ4_PSEUU [tr]	Ribonuclease, Rne/Rng family	1089	Pseudoxanthomonas suwonensis (strain 11-1) [743721]	112-124		
+E7BGD8	E7BGD8_NEIMW [tr]	Ribonuclease E (RNase E)	927	Neisseria meningitidis serogroup A (strain WUE 2594) [942513]	119-131		
+E7H335	E7H335_9BURK [tr]	Ribonuclease E	1169	Sutterella wadsworthensis 3_1_45B [742821]	112-124		
+E7P2U0	E7P2U0_PSESG [tr]	Ribonuclease E	1083	Pseudomonas syringae pv. glycinea str. B076 [875329]	108-120		
+E7PRT0	E7PRT0_PSESG [tr]	Ribonuclease E	1110	Pseudomonas syringae pv. glycinea str. race 4 [875330]	108-120		
+E8SNV1	E8SNV1_NEIGO [tr]	Rne	916	Neisseria gonorrhoeae TCDC-NG08107 [940296]	108-120		
+E8TZ97	E8TZ97_ALIDB [tr]	Ribonuclease, Rne/Rng family	1022	Alicycliphilus denitrificans (strain JCM 14587 / BC) [596153]	112-124		
+E8YL57	E8YL57_9BURK [tr]	Ribonuclease, Rne/Rng family	1080	Burkholderia sp. CCGE1001 [640510]	112-124		
+E9ZS95	E9ZS95_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis N1568 [562020]	111-123		
+E9ZY02	E9ZY02_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis OX99.30304 [935592]	111-123		
+F0A3D2	F0A3D2_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis M6190 [935587]	111-123		
+F0A8Y9	F0A8Y9_NEIME [tr]	Ribonuclease E	916	Neisseria meningitidis M13399 [935594]	108-120		
+F0AEN5	F0AEN5_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis M0579 [935590]	111-123		
+F0AK54	F0AK54_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis ES14902 [935586]	111-123		
+F0AQT9	F0AQT9_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis CU385 [935597]	111-123		
+F0AWM8	F0AWM8_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis 961-5945 [935598]	111-123		
+F0B258	F0B258_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis M01-240013 [935595]	111-123		
+F0BKF4	F0BKF4_9XANT [tr]	RNAse E	1243	Xanthomonas vesicatoria ATCC 35937 [925775]	112-124		
+F0BUN7	F0BUN7_9XANT [tr]	RNAse E	1222	Xanthomonas perforans 91-118 [925776]	109-121		
+F0C6F6	F0C6F6_9XANT [tr]	RNAse E	1243	Xanthomonas gardneri ATCC 19865 [925777]	109-121		
+F0E988	F0E988_PSEDT [tr]	Ribonuclease E (Fragment)	510	Pseudomonas sp. (strain TJI-51) [985010]	108-120		
+F0F286	F0F286_9NEIS [tr]	Ribonuclease E	917	Kingella denitrificans ATCC 33394 [888741]	111-123		
+F0GAR0	F0GAR0_9BURK [tr]	Ribonuclease E (Fragment)	586	Burkholderia sp. TJI49 [987057]	112-124		
+F0MDS8	F0MDS8_NEIMG [tr]	Ribonuclease E	919	Neisseria meningitidis serogroup B (strain G2136) [935599]	111-123		
+F0MID4	F0MID4_NEIMH [tr]	Ribonuclease E	919	Neisseria meningitidis serogroup B / serotype 15 (strain H44/76) [909420]	111-123		
+F0MQJ5	F0MQJ5_NEIMM [tr]	Ribonuclease E	919	Neisseria meningitidis serogroup B (strain M01-240149) [935591]	111-123		
+F0MYJ7	F0MYJ7_NEIMP [tr]	Ribonuclease E	919	Neisseria meningitidis serogroup B (strain M01-240355) [935588]	111-123		
+F0N3B4	F0N3B4_NEIMO [tr]	Ribonuclease E	919	Neisseria meningitidis serogroup B (strain M04-240196) [935593]	111-123		
+F0N8A3	F0N8A3_NEIMN [tr]	Ribonuclease E	919	Neisseria meningitidis serogroup B (strain NZ-05/33) [935589]	111-123		
+F2BFM0	F2BFM0_9NEIS [tr]	Ribonuclease E (Fragment)	954	Neisseria bacilliformis ATCC BAA-1200 [888742]	149-161		
+F2KK84	F2KK84_PSEBN [tr]	Ribonuclease E	1062	Pseudomonas brassicacearum (strain NFM421) [994484]	108-120		
+F2L817	F2L817_BURGS [tr]	Ribonuclease E	1114	Burkholderia gladioli (strain BSR3) [999541]	112-124		
+F2N4Y4	F2N4Y4_PSEU6 [tr]	Ribonuclease E	1052	Pseudomonas stutzeri (strain DSM 4166 / CMT.9.A) [996285]	108-120		
+F2ZLG2	F2ZLG2_9PSED [tr]	Ribonuclease E	1093	Pseudomonas syringae pv. oryzae str. 1_6 [563797]	108-120		
+F3C3Z4	F3C3Z4_PSESG [tr]	Ribonuclease E (Fragment)	504	Pseudomonas syringae pv. glycinea str. race 4 [875330]	108-120		
+F3DI26	F3DI26_9PSED [tr]	Ribonuclease E (Fragment)	685	Pseudomonas syringae pv. aesculi str. 0893_23 [629258]	108-120		
+F3E0S8	F3E0S8_9PSED [tr]	Ribonuclease E	1109	Pseudomonas syringae pv. morsprunorum str. M302280 [629259]	108-120		
+F3EC03	F3EC03_PSESL [tr]	Ribonuclease E	1112	Pseudomonas syringae pv. lachrymans str. M301315 [629260]	108-120		
+F3F1Q5	F3F1Q5_9PSED [tr]	Ribonuclease E (Fragment)	1033	Pseudomonas syringae pv. mori str. 301020 [629261]	37-49		
+F3FMZ1	F3FMZ1_PSESX [tr]	Ribonuclease E	860	Pseudomonas syringae pv. japonica str. M301072 [629262]	108-120		
+F3GDW5	F3GDW5_PSESJ [tr]	Ribonuclease E (Fragment)	603	Pseudomonas syringae pv. pisi str. 1704B [629263]	108-120		
+F3H0S3	F3H0S3_PSESX [tr]	Ribonuclease E (Fragment)	332	Pseudomonas syringae Cit 7 [629264]	108-120		
+F3HU73	F3HU73_PSEYM [tr]	Ribonuclease E	1101	Pseudomonas syringae pv. maculicola str. ES4326 [629265]	108-120		
+F3I4J7	F3I4J7_PSESF [tr]	Ribonuclease E	1112	Pseudomonas syringae pv. actinidiae str. M302091 [629266]	108-120		
+F3IQ12	F3IQ12_PSESL [tr]	Ribonuclease E	1109	Pseudomonas syringae pv. lachrymans str. M302278 [629267]	108-120		
+F3IT15	F3IT15_PSEAP [tr]	Ribonuclease E	1098	Pseudomonas syringae pv. aptata str. DSM 50252 [629268]	108-120		
+F3K687	F3K687_PSESZ [tr]	Ribonuclease E	1110	Pseudomonas syringae pv. tabaci str. ATCC 11528 [573066]	108-120		
+F3LD28	F3LD28_9GAMM [tr]	Ribonuclease E	902	gamma proteobacterium IMCC1989 [937772]	114-126		
+F3QHW8	F3QHW8_9BURK [tr]	S1 RNA binding domain protein	1033	Parasutterella excrementihominis YIT 11859 [762966]	112-124		
+F4DZT8	F4DZT8_PSEMN [tr]	RNAse E	1016	Pseudomonas mendocina (strain NK-01) [1001585]	109-121		
+F4GCX2	F4GCX2_ALIDK [tr]	Ribonuclease, Rne/Rng family	1028	Alicycliphilus denitrificans (strain DSM 14773 / CIP 107495 / K601) [596154]	112-124		
+F4GXK1	F4GXK1_PUSST [tr]	Ribonuclease E	962	Pusillimonas sp. (strain T7-7) [1007105]	112-124		
+F4LB43	F4LB43_BORPC [tr]	Ribonuclease E	1042	Bordetella pertussis (strain CS) [1017264]	112-124		
+F5K843	F5K843_PSEAI [tr]	Ribonuclease E (Fragment)	683	Pseudomonas aeruginosa 138244 [983918]	108-120		
+F5KM79	F5KM79_PSEAI [tr]	Ribonuclease E (Fragment)	661	Pseudomonas aeruginosa 152504 [983919]	108-120		
+F5R8P3	F5R8P3_9RHOO [tr]	Ribonuclease E	961	Methyloversatilis universalis FAM5 [1000565]	112-124		
+F5T2D4	F5T2D4_9GAMM [tr]	Ribonucleases G and E	826	Methylophaga aminisulfidivorans MP [1026882]	116-128		
+F6AIW1	F6AIW1_PSEF1 [tr]	Ribonuclease, Rne/Rng family	1055	Pseudomonas fulva (strain 12-X) [743720]	111-123		
+F6B0E5	F6B0E5_DELSC [tr]	Ribonuclease, Rne/Rng family	1044	Delftia sp. (strain Cs1-4) [742013]	112-124		
+F6G3C9	F6G3C9_RALS8 [tr]	Ribonuclease e (Rnase e) protein	1013	Ralstonia solanacearum (strain Po82) [1031711]	112-124		
+F7N7B2	F7N7B2_XYLFS [tr]	Ribonuclease G and E	1132	Xylella fastidiosa EB92.1 [945689]	112-124		
+F7SJW1	F7SJW1_9GAMM [tr]	Ribonuclease E	1137	Halomonas sp. TD01 [999141]	111-123		
+F7T3D0	F7T3D0_ALCXX [tr]	Ribonuclease E	1020	Achromobacter xylosoxidans AXX-A [1003200]	112-124		
+F8FS43	F8FS43_PSEPU [tr]	Ribonuclease	1060	Pseudomonas putida S16 [1042876]	93-105		
+F8H3U4	F8H3U4_PSEUT [tr]	Ribonuclease E	1052	Pseudomonas stutzeri (strain ATCC 17588 / DSM 5190 / CCUG 11256 / JCM 5965 / LMG 11199 / NCIMB 11358 / Stanier 221) [96563]	108-120		
+F9EYI4	F9EYI4_9NEIS [tr]	Ribonuclease E	1012	Neisseria macacae ATCC 33926 [997348]	113-125		
+F9U2X4	F9U2X4_MARPU [tr]	Ribonuclease, Rne/Rng family	1008	Marichromatium purpuratum 984 [765910]	114-126		
+F9UD81	F9UD81_9GAMM [tr]	Ribonuclease, Rne/Rng family	1152	Thiocapsa marina 5811 [768671]	154-166		
+G0CEX7	G0CEX7_XANCA [tr]	Ribonuclease E	1189	Xanthomonas campestris pv. raphani 756C [990315]	109-121		
+G0ERA0	G0ERA0_CUPNN [tr]	Ribonuclease E	1037	Cupriavidus necator (strain ATCC 43291 / DSM 13513 / N-1) (Ralstonia eutropha) [1042878]	112-124		
+G0JVQ1	G0JVQ1_STEMA [tr]	Ribonuclease, Rne/Rng family	1099	Stenotrophomonas maltophilia JV3 [868597]	112-124		
+G2DLE8	G2DLE8_9NEIS [tr]	Ribonuclease E	936	Neisseria weaveri LMG 5135 [1051985]	108-120		
+G2DUK3	G2DUK3_9NEIS [tr]	Ribonuclease E	936	Neisseria weaveri ATCC 51223 [1051972]	108-120		
+G2DY57	G2DY57_9GAMM [tr]	Ribonuclease, Rne/Rng family	980	Thiorhodococcus drewsii AZ1 [765913]	114-126		
+G2FFC6	G2FFC6_9GAMM [tr]	Ribonuclease E	985	endosymbiont of Tevnia jerichonana (vent Tica) [1049564]	111-123		
+G2L903	G2L903_PSEAI [tr]	Ribonuclease E	1054	Pseudomonas aeruginosa M18 [941193]	108-120		
+G2LTY4	G2LTY4_9XANT [tr]	Ribonuclease E	1226	Xanthomonas axonopodis pv. citrumelo F1 [981368]	112-124		
+G2ZVC6	G2ZVC6_9RALS [tr]	Ribonuclease E	1000	blood disease bacterium R229 [741978]	112-124		
+G3A844	G3A844_9RALS [tr]	Ribonuclease E	1023	Ralstonia syzygii R24 [907261]	122-134		
+G3Z572	G3Z572_9NEIS [tr]	Putative uncharacterized protein	1010	Neisseria sp. GT4A_CT1 [665946]	111-123		
+G4CKF3	G4CKF3_9NEIS [tr]	Ribonuclease E	981	Neisseria shayeganii 871 [1032488]	111-123		
+G4CTD9	G4CTD9_9NEIS [tr]	Ribonuclease E	963	Neisseria wadsworthii 9715 [1030841]	111-123		
+G4E7Q5	G4E7Q5_9GAMM [tr]	Ribonuclease, Rne/Rng family	679	Thiorhodospira sibirica ATCC 700588 [765914]	112-124		
+G4LNY7	G4LNY7_PSEAI [tr]	Ribonuclease E	1054	Pseudomonas aeruginosa NCGM2.S1 [1089456]	108-120		
+G5FP58	G5FP58_9PSED [tr]	Putative uncharacterized protein	1072	Pseudomonas sp. 2_1_26 [665948]	126-138		
+G6YW48	G6YW48_9ALTE [tr]	Ribonuclease	1073	Marinobacter manganoxydans MnI7-9 [1094979]	114-126		
+G7HI50	G7HI50_9BURK [tr]	Ribonuclease E	1064	Burkholderia cenocepacia H111 [1055524]	112-124		
+G7TGT9	G7TGT9_9XANT [tr]	Ribonuclease E	1239	Xanthomonas oryzae pv. oryzicola BLS256 [383407]	112-124		
+G7UP39	G7UP39_PSEUP [tr]	Ribonuclease E	1099	Pseudoxanthomonas spadix (strain BD-a59) [1045855]	109-121		
+G8M612	G8M612_9BURK [tr]	Ribonuclease E	1114	Burkholderia sp. YI23 [1097668]	112-124		
+G8Q262	G8Q262_PSEFL [tr]	Ribonuclease E	1060	Pseudomonas fluorescens F113 [1114970]	108-120		
+H0F649	H0F649_9BURK [tr]	Ribonuclease E	1017	Achromobacter arsenitoxydans SY8 [477184]	112-124		
+H0J2Z8	H0J2Z8_9GAMM [tr]	Ribonuclease E	1084	Halomonas sp. GFAJ-1 [1118153]	111-123		
+H0JD18	H0JD18_9PSED [tr]	Ribonuclease E	1090	Pseudomonas psychrotolerans L19 [1112217]	108-120		
+H1RR24	H1RR24_COMTE [tr]	Ribonuclease E	988	Comamonas testosteroni ATCC 11996 [1009852]	109-121		
+H1XJW4	H1XJW4_9XANT [tr]	Ribonuclease, Rne/Rng family domain protein	1224	Xanthomonas axonopodis pv. punicae str. LMG 859 [1085630]	112-124		
+H3KI33	H3KI33_9BURK [tr]	S1 RNA binding domain protein	1076	Sutterella parvirubra YIT 11816 [762967]	112-124		
+H3T025	H3T025_PSEAE [tr]	Ribonuclease E	1054	Pseudomonas aeruginosa MPAO1/P1 [1131757]	108-120		
+H3TCE9	H3TCE9_PSEAE [tr]	Ribonuclease E	1054	Pseudomonas aeruginosa MPAO1/P2 [1131758]	108-120		
+H5W9Y7	H5W9Y7_RALSL [tr]	Ribonuclease E	1020	Ralstonia solanacearum K60-1 [1091042]	112-124		
+H7EX70	H7EX70_PSEST [tr]	Ribonuclease E	1041	Pseudomonas stutzeri ATCC 14405 = CCUG 16156 [32042]	108-120		
+H8FJN4	H8FJN4_XANCI [tr]	Ribonuclease, Rne/Rng family domain protein	1223	Xanthomonas citri pv. mangiferaeindicae LMG 941 [1156940]	112-124		
+H8L0U5	H8L0U5_FRAAD [tr]	Ribonuclease, Rne/Rng family	1086	Frateuria aurantia (strain ATCC 33424 / DSM 6220 / NBRC 3245 / NCIMB 13370) (Acetobacter aurantius) [767434]	112-124		
+H8WBS0	H8WBS0_MARHY [tr]	Fused ribonucleaseE: endoribonuclease RNA-binding protein RNA degradosome binding protein	1056	Marinobacter hydrocarbonoclasticus ATCC 49840 [1163748]	114-126		
+H8YHY9	H8YHY9_SIMAS [tr]	RNaseE	934	Simiduia agarivorans (strain DSM 21679 / JCM 13881 / BCRC 17597 / SA1) [1117647]	111-123		
+H8YXD8	H8YXD8_9GAMM [tr]	Ribonuclease, Rne/Rng family	1016	Thiorhodovibrio sp. 970 [631362]	114-126		
+I0KQL3	I0KQL3_STEMA [tr]	Ribonuclease E	1085	Stenotrophomonas maltophilia D457 [1163399]	109-121		
+I1AAS0	I1AAS0_PSEAI [tr]	Ribonuclease E	1054	Pseudomonas aeruginosa PADK2_CF510 [1134459]	108-120		
+I1WGX4	I1WGX4_BURPE [tr]	Ribonuclease E	1088	Burkholderia pseudomallei 1026b [884204]	112-124		
+I1XMY5	I1XMY5_METNJ [tr]	Ribonuclease E	805	Methylophaga sp. (strain JAM1) [754476]	116-128		
+I1YHQ2	I1YHQ2_METFJ [tr]	Ribonuclease E	814	Methylophaga sp. (strain JAM7) [754477]	116-128		
+I2BMF2	I2BMF2_PSEFL [tr]	Ribonuclease E	1055	Pseudomonas fluorescens A506 [1037911]	111-123		
+I2DL44	I2DL44_9BURK [tr]	Ribonuclease E	1063	Burkholderia sp. KJ006 [416344]	112-124		
+I2HJV6	I2HJV6_NEIME [tr]	Ribonuclease E	918	Neisseria meningitidis NM220 [1053687]	111-123		
+I2HLE0	I2HLE0_NEIME [tr]	Ribonuclease E	918	Neisseria meningitidis NM233 [1055328]	111-123		
+I2IHN7	I2IHN7_9BURK [tr]	Ribonuclease, Rne/Rng family	1086	Burkholderia sp. Ch1-1 [243261]	112-124		
+I2JJT4	I2JJT4_9GAMM [tr]	Ribonuclease, Rne/Rng family protein	937	gamma proteobacterium BDW918 [1168065]	115-127		
+I2LIQ6	I2LIQ6_BURPE [tr]	Ribonuclease E	1088	Burkholderia pseudomallei 1026a [1085027]	112-124		
+I2LL36	I2LL36_BURPE [tr]	Ribonuclease E	1083	Burkholderia pseudomallei 1258a [1086032]	112-124		
+I2LRZ1	I2LRZ1_BURPE [tr]	Ribonuclease E	1088	Burkholderia pseudomallei 1258b [1086033]	112-124		
+I2MDC8	I2MDC8_BURPE [tr]	Ribonuclease E	1088	Burkholderia pseudomallei 354e [1086036]	112-124		
+I2MQJ2	I2MQJ2_BURPE [tr]	Ribonuclease E	1088	Burkholderia pseudomallei 354a [1086034]	112-124		
+I2NN48	I2NN48_NEISI [tr]	Ribonuclease E/G family protein	1006	Neisseria sicca VK64 [1095748]	108-120		
+I3CJD6	I3CJD6_9GAMM [tr]	Ribonuclease, Rne/Rng family	784	Beggiatoa alba B18LD [395493]	139-151		
+I3ICN9	I3ICN9_9GAMM [tr]	Ribonuclease, Rne/Rng family protein	939	Cellvibrio sp. BR [1134474]	114-126		
+I3UQP7	I3UQP7_PSEPU [tr]	Ribonuclease	1078	Pseudomonas putida ND6 [231023]	111-123		
+I3YAX3	I3YAX3_THIV6 [tr]	RNAse E	1036	Thiocystis violascens (strain ATCC 17096 / DSM 198 / 6111) (Chromatium violascens) [765911]	114-126		
+I4CVA6	I4CVA6_PSEST [tr]	Ribonuclease E	1035	Pseudomonas stutzeri CCUG 29243 [1196835]	108-120		
+I4JN61	I4JN61_PSEST [tr]	Ribonuclease E	997	Pseudomonas stutzeri TS44 [477228]	98-110		
+I4KGW9	I4KGW9_PSEFL [tr]	Ribonuclease E	1050	Pseudomonas fluorescens SS101 [1038924]	111-123		
+I4KNB0	I4KNB0_PSEFL [tr]	Ribonuclease E	1065	Pseudomonas fluorescens Q8r1-96 [1038923]	111-123		
+I4L935	I4L935_9PSED [tr]	Ribonuclease E	1052	Pseudomonas synxantha BG33R [96901]	111-123		
+I4MMT9	I4MMT9_9BURK [tr]	Ribonuclease E	970	Hydrogenophaga sp. PBC [795665]	112-124		
+I4MW14	I4MW14_9PSED [tr]	Ribonuclease E	1126	Pseudomonas sp. M47T1 [1179778]	108-120		
+I4VSN6	I4VSN6_9GAMM [tr]	Ribonuclease E	1033	Rhodanobacter fulvus Jip2 [1163408]	112-124		
+I4W6T1	I4W6T1_9GAMM [tr]	Ribonuclease E	1067	Rhodanobacter spathiphylli B39 [1163407]	109-121		
+I4WI69	I4WI69_9GAMM [tr]	Ribonuclease E	1052	Rhodanobacter thiooxydans LCS2 [1163409]	112-124		
+I4WXG6	I4WXG6_9GAMM [tr]	Ribonuclease E	1054	Rhodanobacter sp. 116-2 [1076650]	112-124		
+I4XS36	I4XS36_9PSED [tr]	Ribonuclease E	1065	Pseudomonas chlororaphis O6 [1037915]	111-123		
+I5CDX5	I5CDX5_9BURK [tr]	Ribonuclease E	1097	Burkholderia terrae BS001 [1171375]	112-124		
+I6AHN6	I6AHN6_BURTH [tr]	Ribonuclease E	1045	Burkholderia thailandensis MSMB43 [441157]	109-121		
+I6RJF4	I6RJF4_PSEAI [tr]	Ribonuclease E	1054	Pseudomonas aeruginosa DK2 [1093787]	108-120		
+I7AEP9	I7AEP9_PSEST [tr]	Ribonuclease E	1014	Pseudomonas stutzeri DSM 10701 [1123519]	98-110		
+I7C636	I7C636_PSEPU [tr]	Ribonuclease	1088	Pseudomonas putida DOT-T1E [1196325]	108-120		
+I7IEK9	I7IEK9_PSEPS [tr]	Ribonuclease E	1022	Pseudomonas pseudoalcaligenes CECT 5344 [1182590]	112-124		
+I7KFC9	I7KFC9_NEIME [tr]	Ribonuclease E	927	Neisseria meningitidis alpha704 [1200386]	119-131		
+I7ZD35	I7ZD35_9GAMM [tr]	Uncharacterized protein	1079	Hydrocarboniphaga effusa AP103 [1172194]	108-120		
+I9W7G3	I9W7G3_9RALS [tr]	Ribonuclease G and E	1049	Ralstonia sp. PBA [795666]	112-124		
+J0PFF7	J0PFF7_9PSED [tr]	Ribonuclease E	1081	Pseudomonas sp. Ag1 [1197727]	108-120		
+J0UV85	J0UV85_ALCFA [tr]	Ribonuclease E	1113	Alcaligenes faecalis subsp. faecalis NCIB 8687 [1156918]	112-124		
+J2KYT2	J2KYT2_9BURK [tr]	Ribonuclease, Rne/Rng family	1068	Variovorax sp. CF313 [1144315]	112-124		
+J2MSP9	J2MSP9_9PSED [tr]	Ribonuclease, Rne/Rng family	1073	Pseudomonas sp. GM16 [1144322]	111-123		
+J2QBH1	J2QBH1_9PSED [tr]	Ribonuclease, Rne/Rng family (Fragment)	700	Pseudomonas sp. GM33 [1144329]	111-123		
+J2UQR4	J2UQR4_9PSED [tr]	Ribonuclease, Rne/Rng family (Fragment)	709	Pseudomonas sp. GM74 [1144336]	111-123		
+J2V1X7	J2V1X7_9PSED [tr]	Ribonuclease, Rne/Rng family	1060	Pseudomonas sp. GM102 [1144321]	111-123		
+J2XBC2	J2XBC2_9PSED [tr]	Ribonuclease, Rne/Rng family	1078	Pseudomonas sp. GM80 [1144339]	111-123		
+J2XTE5	J2XTE5_9PSED [tr]	Ribonuclease, Rne/Rng family	1077	Pseudomonas sp. GM30 [1144328]	111-123		
+J2Y088	J2Y088_9PSED [tr]	Ribonuclease, Rne/Rng family	1085	Pseudomonas sp. GM84 [1144340]	111-123		
+J2YER7	J2YER7_PSEFL [tr]	Ribonuclease E	1073	Pseudomonas fluorescens Q2-87 [1038922]	111-123		
+J2YLQ3	J2YLQ3_9PSED [tr]	Ribonuclease E	1070	Pseudomonas chlororaphis subsp. aureofaciens 30-84 [1038921]	111-123		
+J3B3E0	J3B3E0_9PSED [tr]	Ribonuclease, Rne/Rng family (Fragment)	1029	Pseudomonas sp. GM55 [1144333]	111-123		
+J3BA21	J3BA21_9BURK [tr]	Ribonuclease, Rne/Rng family	1097	Burkholderia sp. BT03 [1144309]	112-124		
+J3DJT5	J3DJT5_9PSED [tr]	Ribonuclease, Rne/Rng family	1063	Pseudomonas sp. GM79 [1144338]	111-123		
+J3E6Q6	J3E6Q6_9PSED [tr]	Ribonuclease, Rne/Rng family	1068	Pseudomonas sp. GM17 [1144323]	111-123		
+J3EC27	J3EC27_9PSED [tr]	Ribonuclease, Rne/Rng family (Fragment)	947	Pseudomonas sp. GM18 [1144324]	111-123		
+J3EUB7	J3EUB7_9PSED [tr]	Ribonuclease, Rne/Rng family	1060	Pseudomonas sp. GM21 [1144325]	111-123		
+J3FF51	J3FF51_9PSED [tr]	Ribonuclease, Rne/Rng family	1081	Pseudomonas sp. GM25 [1144327]	111-123		
+J3FLV6	J3FLV6_9PSED [tr]	Ribonuclease, Rne/Rng family	1073	Pseudomonas sp. GM24 [1144326]	111-123		
+J3G0U4	J3G0U4_9PSED [tr]	Ribonuclease, Rne/Rng family	1076	Pseudomonas sp. GM41(2012) [1144708]	111-123		
+J3G892	J3G892_9PSED [tr]	Ribonuclease, Rne/Rng family	1067	Pseudomonas sp. GM48 [1144330]	111-123		
+J3GBZ1	J3GBZ1_9PSED [tr]	Ribonuclease, Rne/Rng family	1063	Pseudomonas sp. GM50 [1144332]	111-123		
+J3GGS3	J3GGS3_9PSED [tr]	Ribonuclease, Rne/Rng family (Fragment)	1024	Pseudomonas sp. GM49 [1144331]	111-123		
+J3GZH9	J3GZH9_9PSED [tr]	Ribonuclease, Rne/Rng family	1072	Pseudomonas sp. GM60 [1144334]	111-123		
+J3H7P3	J3H7P3_9PSED [tr]	Ribonuclease, Rne/Rng family	1072	Pseudomonas sp. GM67 [1144335]	111-123		
+J3I6Q0	J3I6Q0_9PSED [tr]	Ribonuclease, Rne/Rng family	1087	Pseudomonas sp. GM78 [1144337]	111-123		
+J4J8A0	J4J8A0_9BURK [tr]	Ribonuclease E	1034	Achromobacter piechaudii HLE [1156919]	112-124		
+J4JLT6	J4JLT6_9BURK [tr]	Ribonuclease E/G family protein (Fragment)	740	Burkholderia multivorans CF2 [985078]	109-121		
+J4S5K6	J4S5K6_9BURK [tr]	Ribonuclease E/G family protein (Fragment)	759	Burkholderia multivorans ATCC BAA-247 [985079]	109-121		
+J7DDX2	J7DDX2_PSEAI [tr]	Ribonuclease E	1057	Pseudomonas aeruginosa CIG1 [1163397]	111-123		
+J7J3S3	J7J3S3_BURCE [tr]	Ribonuclease	1055	Burkholderia cepacia GG4 [1009846]	112-124		
+J7RKP2	J7RKP2_BORP1 [tr]	Ribonuclease E	1040	Bordetella pertussis (strain ATCC 9797 / DSM 5571 / NCTC 10739 / 18323) [568706]	112-124		
+J7UB16	J7UB16_PSEME [tr]	Ribonuclease E	999	Pseudomonas mendocina DLHK [1197721]	99-111		
+J7UVU1	J7UVU1_STEMA [tr]	Rne/Rng family ribonuclease	1095	Stenotrophomonas maltophilia Ab55555 [1183154]	112-124		
+J8T8H6	J8T8H6_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis NM255 [1069610]	111-123		
+J8URX1	J8URX1_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis 80179 [1069617]	111-123		
+J8VFG0	J8VFG0_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis NM3081 [1069621]	111-123		
+J8WJ58	J8WJ58_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis 93004 [1069609]	111-123		
+J8WMA0	J8WMA0_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis 93003 [1069608]	111-123		
+J8WRB5	J8WRB5_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis NM183 [1069612]	111-123		
+J8WSZ1	J8WSZ1_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis NM140 [1069611]	111-123		
+J8X860	J8X860_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis 69166 [1069614]	111-123		
+J8X8Z5	J8X8Z5_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis NM2781 [1069613]	111-123		
+J8XIE2	J8XIE2_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis 98008 [1069616]	111-123		
+J8XPU9	J8XPU9_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis NM576 [1069615]	111-123		
+J8Y6M7	J8Y6M7_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis 92045 [1069618]	111-123		
+J8Y9C3	J8Y9C3_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis NM2795 [1069620]	111-123		
+J8YC44	J8YC44_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis NM2657 [1069619]	111-123		
+J8YCB9	J8YCB9_NEIME [tr]	Ribonuclease E	919	Neisseria meningitidis NM3001 [1069622]	111-123		
+K0CBR5	K0CBR5_ALCDB [tr]	Ribonuclease, Rne/Rng family protein	1126	Alcanivorax dieselolei (strain DSM 16502 / CGMCC 1.3690 / B-5) [930169]	111-123		
+K0DKV1	K0DKV1_9BURK [tr]	Ribonuclease E	1084	Burkholderia phenoliruptrix BR3459a [1229205]	112-124		
+K0HW93	K0HW93_9BURK [tr]	Ribonuclease	1031	Acidovorax sp. KKS102 [358220]	112-124		
+K0ML77	K0ML77_BORPB [tr]	Ribonuclease E	1033	Bordetella parapertussis (strain Bpp5) [1208660]	109-121		
+K0MWD5	K0MWD5_BORBM [tr]	Ribonuclease E	1045	Bordetella bronchiseptica (strain MO149) [1208658]	112-124		
+K0WMQ4	K0WMQ4_PSEFL [tr]	Ribonuclease	1078	Pseudomonas fluorescens R124 [743713]	111-123		
+K0XR52	K0XR52_PSEAI [tr]	Ribonuclease E	1054	Pseudomonas aeruginosa PAO579 [1191475]	108-120		
+K1APQ3	K1APQ3_PSEFL [tr]	Ribonuclease, Rne/Rng family protein	1084	Pseudomonas fluorescens BBc6R8 [463794]	108-120		
+K1C0B7	K1C0B7_PSEAI [tr]	Ribonuclease E	1057	Pseudomonas aeruginosa ATCC 14886 [1163392]	111-123		
+K1CPI0	K1CPI0_PSEAI [tr]	Ribonuclease E	1057	Pseudomonas aeruginosa CI27 [1163396]	111-123		
+K1CT71	K1CT71_PSEAI [tr]	Ribonuclease E	1057	Pseudomonas aeruginosa ATCC 700888 [1163394]	111-123		
+K1DG09	K1DG09_PSEAI [tr]	Ribonuclease E	1060	Pseudomonas aeruginosa E2 [1163395]	111-123		
+K1DG97	K1DG97_PSEAI [tr]	Ribonuclease E	1057	Pseudomonas aeruginosa ATCC 25324 [1163393]	111-123		
+K1JW65	K1JW65_9BURK [tr]	Rne/Rng family ribonuclease	1165	Sutterella wadsworthensis 2_1_59BFAA [742823]	112-124		
+K2SUM4	K2SUM4_9PSED [tr]	Ribonuclease, Rne/Rng family protein	1100	Pseudomonas avellanae BPIC 631 [1154758]	108-120		
+K2T6Q4	K2T6Q4_PSESY [tr]	Ribonuclease E and G	1106	Pseudomonas syringae pv. avellanae str. ISPaVe037 [1154762]	108-120		
+K2U845	K2U845_PSESY [tr]	Ribonuclease, Rne/Rng family protein	1106	Pseudomonas syringae pv. avellanae str. ISPaVe013 [1154761]	108-120		
+K4KFU1	K4KFU1_SIMAS [tr]	Ribonuclease, Rne/Rng family protein	880	Simiduia agarivorans (strain DSM 21679 / JCM 13881 / BCRC 17597 / SA1) [1117647]	57-69		
+K4QR86	K4QR86_BORBO [tr]	Ribonuclease E	1061	Bordetella bronchiseptica 253 [568707]	112-124		
+K4TH43	K4TH43_BORBO [tr]	Ribonuclease E	1045	Bordetella bronchiseptica Bbr77 [1208659]	112-124		
+K4TLU2	K4TLU2_BORBO [tr]	Ribonuclease E	873	Bordetella bronchiseptica D445 [1208665]	112-124		
+K4U411	K4U411_BORBO [tr]	Ribonuclease E	1038	Bordetella bronchiseptica 1289 [1208657]	112-124		
+K5X903	K5X903_9PSED [tr]	Ribonuclease E	998	Pseudomonas sp. Chol1 [440512]	98-110		
+K6CA77	K6CA77_PSEVI [tr]	Ribonuclease E	1083	Pseudomonas viridiflava UASWS0038 [450396]	108-120		
+K6CJI1	K6CJI1_PSEST [tr]	Ribonuclease E	1045	Pseudomonas stutzeri KOS6 [1218352]	98-110		
+K6D144	K6D144_CUPNE [tr]	Ribonuclease E (Fragment)	558	Cupriavidus necator HPC(L) [1217418]	112-124		
+K6UG08	K6UG08_9PROT [tr]	Uncharacterized protein	858	Sulfuricella denitrificans skB26 [1163617]	114-126		
+K7Q2R6	K7Q2R6_BURPE [tr]	Ribonuclease E	1088	Burkholderia pseudomallei BPC006 [1229785]	112-124		
+K8FXV9	K8FXV9_9XANT [tr]	Ribonuclease E	1223	Xanthomonas axonopodis pv. malvacearum str. GSPB1386 [1118965]	112-124		
+K8G0I3	K8G0I3_9XANT [tr]	Ribonuclease E	1223	Xanthomonas axonopodis pv. malvacearum str. GSPB2388 [1127439]	112-124		
+K8RSJ8	K8RSJ8_9BURK [tr]	Ribonuclease E	1096	Burkholderia sp. SJ98 [406819]	112-124		
+K9NNB9	K9NNB9_9PSED [tr]	Ribonuclease E	1064	Pseudomonas sp. UW4 [1207075]	111-123		
+L0B3T7	L0B3T7_9PROT [tr]	Ribonuclease E	829	Candidatus Kinetoplastibacterium crithidii (ex Angomonas deanei ATCC 30255) [1267577]	112-124		
+L0B892	L0B892_9PROT [tr]	Ribonuclease E	834	Candidatus Kinetoplastibacterium blastocrithidii (ex Strigomonas culicis) [1208923]	112-124		
+L0FHA5	L0FHA5_PSEPU [tr]	Ribonuclease E	1080	Pseudomonas putida HB3267 [1215088]	108-120		
+L0GLM3	L0GLM3_PSEST [tr]	Ribonuclease, Rne/Rng family	1060	Pseudomonas stutzeri RCH2 [644801]	111-123		
+L0GRJ1	L0GRJ1_9GAMM [tr]	Ribonuclease, Rne/Rng family	1094	Thioflavicoccus mobilis 8321 [765912]	114-126		
+L0WH97	L0WH97_9GAMM [tr]	Phosphoric diester hydrolase	1050	Alcanivorax hongdengensis A-11-3 [1177179]	111-123		
+L1HNT4	L1HNT4_PSEUO [tr]	Ribonuclease E	1090	Pseudomonas sp. (strain M1) [95619]	111-123		
+L1LTI4	L1LTI4_PSEPU [tr]	Ribonuclease E	1058	Pseudomonas putida CSV86 [1005395]	108-120		
+L1NS47	L1NS47_9NEIS [tr]	S1 RNA binding domain protein	924	Neisseria sp. oral taxon 020 str. F0370 [1127694]	111-123		
+L2EJD6	L2EJD6_9BURK [tr]	Ribonuclease E (Fragment)	555	Cupriavidus sp. HMR-1 [1249621]	112-124		
+L5PDD5	L5PDD5_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 87255 [1095700]	111-123		
+L5PFY1	L5PFY1_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis NM422 [1095701]	111-123		
+L5PJM2	L5PJM2_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 98080 [1095699]	111-123		
+L5PXV4	L5PXV4_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 68094 [1095698]	111-123		
+L5PZA4	L5PZA4_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 97021 [1095697]	111-123		
+L5Q0X4	L5Q0X4_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 88050 [1095696]	111-123		
+L5QGL1	L5QGL1_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 70012 [1095695]	111-123		
+L5QI96	L5QI96_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 63041 [1095694]	111-123		
+L5QKL1	L5QKL1_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 2006087 [1095693]	111-123		
+L5QVT6	L5QVT6_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 2002038 [1095692]	111-123		
+L5R0T5	L5R0T5_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 97014 [1095691]	111-123		
+L5R3V1	L5R3V1_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis M13255 [1095690]	111-123		
+L5RGF6	L5RGF6_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis NM586 [1095688]	111-123		
+L5RGH2	L5RGH2_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis NM418 [1095689]	111-123		
+L5RJU7	L5RJU7_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis NM762 [1095687]	111-123		
+L5S0C3	L5S0C3_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis M7124 [1095685]	111-123		
+L5S0T4	L5S0T4_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis M7089 [1095686]	111-123		
+L5S1P7	L5S1P7_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis NM174 [1095684]	111-123		
+L5SH54	L5SH54_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis NM126 [1095683]	111-123		
+L5SI50	L5SI50_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 9506 [1095682]	111-123		
+L5SJN5	L5SJN5_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 9757 [1095681]	111-123		
+L5T055	L5T055_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 12888 [1095680]	111-123		
+L5T1P2	L5T1P2_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 4119 [1095679]	111-123		
+L5T1Q9	L5T1Q9_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 63049 [1095678]	111-123		
+L5TJ17	L5TJ17_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 96023 [1095676]	111-123		
+L5TJH6	L5TJH6_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 2004090 [1095677]	111-123		
+L5TJZ3	L5TJZ3_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 65014 [1095675]	111-123		
+L5U2F1	L5U2F1_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 97020 [1095673]	111-123		
+L5U2P4	L5U2P4_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 61103 [1095674]	111-123		
+L5U305	L5U305_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 69096 [1095672]	111-123		
+L5UEM5	L5UEM5_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis NM3652 [1095671]	111-123		
+L5UL29	L5UL29_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 2007056 [1095669]	111-123		
+L5UN75	L5UN75_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis NM3642 [1095670]	111-123		
+L5UZJ5	L5UZJ5_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 2001212 [1095668]	111-123		
+L5V4J8	L5V4J8_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 70030 [1095666]	111-123		
+L5V501	L5V501_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 77221 [1095667]	111-123		
+L5VA58	L5VA58_NEIME [tr]	Ribonuclease, Rne/Rng family domain protein	919	Neisseria meningitidis 63006 [1095665]	111-123		
+L7FWI2	L7FWI2_PSESX [tr]	Ribonuclease E	1103	Pseudomonas syringae BRIP34881 [1205751]	108-120		
+L7GEU8	L7GEU8_PSESX [tr]	Ribonuclease E	1103	Pseudomonas syringae BRIP34876 [1204471]	108-120		
+L7HA84	L7HA84_PSESX [tr]	Ribonuclease E	1100	Pseudomonas syringae BRIP39023 [1205752]	108-120		
+L7HBG7	L7HBG7_XANCT [tr]	Ribonuclease E	1175	Xanthomonas translucens DAR61454 [1205753]	112-124		
+L7HHS8	L7HHS8_PSEFL [tr]	Ribonuclease E	1046	Pseudomonas fluorescens BRIP34879 [1205750]	108-120		
+L8MLH0	L8MLH0_PSEPS [tr]	Ribonuclease E	1056	Pseudomonas pseudoalcaligenes KF707 [1149133]	108-120		
+L8NF60	L8NF60_PSESY [tr]	Ribonuclease E	1104	Pseudomonas syringae pv. syringae B64 [1260626]	111-123		
+L8URT3	L8URT3_9BURK [tr]	Ribonuclease E/G family protein (Fragment)	845	Burkholderia cenocepacia K56-2Valvano [985076]	109-121		
+L8UVU7	L8UVU7_9BURK [tr]	Ribonuclease E/G family protein	1054	Burkholderia cenocepacia BC7 [985077]	112-124		
+M1L540	M1L540_9PROT [tr]	Ribonuclease E	826	Candidatus Kinetoplastibacterium crithidii TCC036E [1208918]	109-121		
+M1L784	M1L784_9PROT [tr]	Ribonuclease E	851	Candidatus Kinetoplastibacterium oncopeltii TCC290E [1208920]	112-124		
+M1LBS1	M1LBS1_9PROT [tr]	Ribonuclease E	834	Candidatus Kinetoplastibacterium blastocrithidii TCC012E [1208922]	112-124		
+M1LUD6	M1LUD6_9PROT [tr]	Ribonuclease E	861	Candidatus Kinetoplastibacterium galatii TCC219 [1208921]	112-124		
+M1LUN2	M1LUN2_9PROT [tr]	Ribonuclease E	879	Candidatus Kinetoplastibacterium desouzaii TCC079E [1208919]	112-124		
+M2V501	M2V501_PSEST [tr]	Ribonuclease E	1039	Pseudomonas stutzeri NF13 [1212548]	108-120		
+M2VZV6	M2VZV6_PSEAI [tr]	Ribonuclease E (Fragment)	587	Pseudomonas aeruginosa VRFPA01 [1262663]	108-120		
+M3BI64	M3BI64_PSEAI [tr]	Ribonuclease E	1054	Pseudomonas aeruginosa PA21_ST175 [1285581]	108-120		
+M3G835	M3G835_STEMA [tr]	Ribonuclease E	1095	Stenotrophomonas maltophilia EPM1 [1190567]	112-124		
+M3UTM9	M3UTM9_ENTHI [tr]	S1 RNA binding domain containing protein	494	Entamoeba histolytica HM-1:IMSS-B [885319]	108-120		
+M4K1J4	M4K1J4_9PSED [tr]	Ribonuclease E	1049	Pseudomonas poae RE*1-1-14 [1282356]	108-120		
+M4NMS9	M4NMS9_9GAMM [tr]	Ribonuclease, Rne/Rng family	1050	Rhodanobacter sp. 2APBS1 [666685]	112-124		
+M4TXN5	M4TXN5_9XANT [tr]	Ribonuclease E	1221	Xanthomonas axonopodis Xac29-1 [1304892]	112-124		
+M4UD27	M4UD27_RALSL [tr]	Ribonuclease E	1014	Ralstonia solanacearum FQY_4 [1262456]	112-124		
+M4WEP8	M4WEP8_XANCI [tr]	Ribonucleases G and E	1221	Xanthomonas citri subsp. citri Aw12879 [1137651]	112-124		
+M4X0M7	M4X0M7_PSEDE [tr]	Ribonuclease E	1045	Pseudomonas denitrificans ATCC 13867 [1294143]	108-120		
+M5IWP1	M5IWP1_9BURK [tr]	Ribonuclease E	1113	Alcaligenes sp. HPC1271 [1069631]	112-124		
+M5NVQ0	M5NVQ0_9BORD [tr]	Ribonuclease E	1043	Bordetella holmesii H558 [1281885]	112-124		
+M5QXM7	M5QXM7_PSESX [tr]	Ribonuclease E	1072	Pseudomonas syringae Lz4W [1206777]	108-120		
+M5TJN2	M5TJN2_STEMA [tr]	Ribonuclease E	1089	Stenotrophomonas maltophilia AU12-09 [1235458]	109-121		
+M7D4W5	M7D4W5_9ALTE [tr]	Ribonuclease, Rne/Rng family protein	1050	Marinobacter santoriniensis NKSG1 [1288826]	111-123		
+M7ETY6	M7ETY6_BURPE [tr]	Ribonuclease E	1088	Burkholderia pseudomallei MSHR1043 [1247713]	109-121		
+M7NY80	M7NY80_9GAMM [tr]	Ribonuclease E	787	Methylophaga lonarensis MPL [1286106]	115-127		
+M7S356	M7S356_PSEPU [tr]	Ribonuclease E	1088	Pseudomonas putida LS46 [1193146]	108-120		
+Q02PD9	Q02PD9_PSEAB [tr]	Ribonuclease E	1057	Pseudomonas aeruginosa (strain UCBPP-PA14) [208963]	111-123		
+Q0BH28	Q0BH28_BURCM [tr]	RNAse E	1068	Burkholderia ambifaria (strain ATCC BAA-244 / AMMD) (Burkholderia cepacia (strain AMMD)) [339670]	112-124		
+Q0K8K8	Q0K8K8_CUPNH [tr]	Ribonuclease G and E	1024	Cupriavidus necator (strain ATCC 17699 / H16 / DSM 428 / Stanier 337) (Ralstonia eutropha) [381666]	112-124		
+Q0VQP0	Q0VQP0_ALCBS [tr]	Phosphoric diester hydrolase	1074	Alcanivorax borkumensis (strain SK2 / ATCC 700651 / DSM 11573) [393595]	114-126		
+Q13VK4	Q13VK4_BURXL [tr]	RNAse E	1096	Burkholderia xenovorans (strain LB400) [266265]	112-124		
+Q1BXW4	Q1BXW4_BURCA [tr]	RNAse E	1059	Burkholderia cenocepacia (strain AU 1054) [331271]	112-124		
+Q1ICZ6	Q1ICZ6_PSEE4 [tr]	Putative ribonuclease E Rne	1075	Pseudomonas entomophila (strain L48) [384676]	111-123		
+Q1LKK9	Q1LKK9_RALME [tr]	Fused ribonucleaseE: endoribonuclease RNA-binding protein RNA degradosome binding protein	1037	Ralstonia metallidurans (strain CH34 / ATCC 43123 / DSM 2839) [266264]	112-124		
+Q1QX63	Q1QX63_CHRSD [tr]	RNAse E	1175	Chromohalobacter salexigens (strain DSM 3043 / ATCC BAA-138 / NCIMB 13768) [290398]	111-123		
+Q1YTQ8	Q1YTQ8_9GAMM [tr]	Ribonuclease E	1008	gamma proteobacterium HTCC2207 [314287]	113-125		
+Q21K98	Q21K98_SACD2 [tr]	RNAse E	968	Saccharophagus degradans (strain 2-40 / ATCC 43961 / DSM 17024) [203122]	114-126		
+Q2BJM3	Q2BJM3_NEPCE [tr]	Ribonuclease E	947	Neptuniibacter caesariensis [207954]	113-125		
+Q2KUL9	Q2KUL9_BORA1 [tr]	Ribonuclease E	1015	Bordetella avium (strain 197N) [360910]	112-124		
+Q2P196	Q2P196_XANOM [tr]	Ribonuclease E	1240	Xanthomonas oryzae pv. oryzae (strain MAFF 311018) [342109]	112-124		
+Q2SK60	Q2SK60_HAHCH [tr]	Ribonucleases G and E	1056	Hahella chejuensis (strain KCTC 2396) [349521]	113-125		
+Q2SXV7	Q2SXV7_BURTA [tr]	Ribonuclease E	1068	Burkholderia thailandensis (strain E264 / ATCC 700388 / DSM 13276 / CIP 106301) [271848]	109-121		
+Q39I96	Q39I96_BURS3 [tr]	RNAse E	1053	Burkholderia sp. (strain 383) (Burkholderia cepacia (strain ATCC 17760 / NCIB 9086 / R18194)) [269483]	112-124		
+Q3BSV9	Q3BSV9_XANC5 [tr]	Ribonuclease E	1216	Xanthomonas campestris pv. vesicatoria (strain 85-10) [316273]	112-124		
+Q3JQ54	Q3JQ54_BURP1 [tr]	Ribonuclease E	1085	Burkholderia pseudomallei (strain 1710b) [320372]	109-121		
+Q3K8K1	Q3K8K1_PSEPF [tr]	Putative ribonuclease E	1082	Pseudomonas fluorescens (strain Pf0-1) [205922]	111-123		
+Q3R576	Q3R576_XYLFS [tr]	Ribonuclease E and G	1132	Xylella fastidiosa subsp. sandyi Ann-1 [155920]	112-124		
+Q3R699	Q3R699_XYLFS [tr]	Ribonuclease E and G	1132	Xylella fastidiosa subsp. sandyi Ann-1 [155920]	112-124		
+Q3RG31	Q3RG31_XYLFS [tr]	Ribonuclease E and G	1132	Xylella fastidiosa Dixon [155919]	112-124		
+Q46YZ5	Q46YZ5_CUPPJ [tr]	RNAse E	1042	Cupriavidus pinatubonensis (strain JMP134 / LMG 1197) (Alcaligenes eutrophus) (Ralstonia eutropha) [264198]	112-124		
+Q48L50	Q48L50_PSE14 [tr]	Ribonuclease, Rne/Rng family protein	1129	Pseudomonas syringae pv. phaseolicola (strain 1448A / Race 6) [264730]	127-139		
+Q4KFS6	Q4KFS6_PSEF5 [tr]	Ribonuclease E	1071	Pseudomonas fluorescens (strain Pf-5 / ATCC BAA-477) [220664]	111-123		
+Q4UUW9	Q4UUW9_XANC8 [tr]	Ribonuclease E	1187	Xanthomonas campestris pv. campestris (strain 8004) [314565]	112-124		
+Q4ZVY6	Q4ZVY6_PSEU2 [tr]	RNAse E	1120	Pseudomonas syringae pv. syringae (strain B728a) [205918]	127-139		
+Q5F5Y3	Q5F5Y3_NEIG1 [tr]	Putative ribonuclease E	919	Neisseria gonorrhoeae (strain ATCC 700825 / FA 1090) [242231]	111-123		
+Q5GY94	Q5GY94_XANOR [tr]	Ribonuclease E	1237	Xanthomonas oryzae pv. oryzae (strain KACC10331 / KXO85) [291331]	117-129		
+Q62LV1	Q62LV1_BURMA [tr]	Ribonuclease E	1090	Burkholderia mallei (strain ATCC 23344) [243160]	112-124		
+Q63S73	Q63S73_BURPS [tr]	Putative ribonuclease E	1088	Burkholderia pseudomallei (strain K96243) [272560]	112-124		
+Q7VSF2	Q7VSF2_BORPE [tr]	Ribonuclease E	1042	Bordetella pertussis (strain Tohama I / ATCC BAA-589 / NCTC 13251) [257313]	112-124		
+Q7W5H3	Q7W5H3_BORPA [tr]	Ribonuclease E	1041	Bordetella parapertussis (strain 12822 / ATCC BAA-587 / NCTC 13253) [257311]	112-124		
+Q7WD09	Q7WD09_BORBR [tr]	Ribonuclease E	1046	Bordetella bronchiseptica (strain ATCC BAA-588 / NCTC 13252 / RB50) (Alcaligenes bronchisepticus) [257310]	112-124		
+Q87A48	Q87A48_XYLFT [tr]	Ribonuclease E	1132	Xylella fastidiosa (strain Temecula1 / ATCC 700964) [183190]	112-124		
+Q87YF9	Q87YF9_PSESM [tr]	Ribonuclease, Rne/Rng family protein	1128	Pseudomonas syringae pv. tomato (strain DC3000) [223283]	127-139		
+Q88LM4	Q88LM4_PSEPK [tr]	Ribonuclease E	1091	Pseudomonas putida (strain KT2440) [160488]	111-123		
+Q8P8Z4	Q8P8Z4_XANCP [tr]	Ribonuclease E	1187	Xanthomonas campestris pv. campestris (strain ATCC 33913 / NCPPB 528 / LMG 568) [190485]	112-124		
+Q8PKQ8	Q8PKQ8_XANAC [tr]	Ribonuclease E	1221	Xanthomonas axonopodis pv. citri (strain 306) [190486]	112-124		
+Q8Y0K3	Q8Y0K3_RALSO [tr]	Probable ribonuclease e (Rnase e) protein	1014	Ralstonia solanacearum (strain GMI1000) (Pseudomonas solanacearum) [267608]	112-124		
+Q9HZM8	Q9HZM8_PSEAE [tr]	Ribonuclease E	1057	Pseudomonas aeruginosa (strain ATCC 15692 / PAO1 / 1C / PRS 101 / LMG 12228) [208964]	111-123		
+Q9K1F8	Q9K1F8_NEIMB [tr]	Ribonuclease E	919	Neisseria meningitidis serogroup B (strain MC58) [122586]	111-123		
+Q9PAB1	Q9PAB1_XYLFA [tr]	Ribonuclease E	1132	Xylella fastidiosa (strain 9a5c) [160492]	112-124		

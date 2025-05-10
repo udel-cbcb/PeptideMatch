@@ -1,0 +1,97 @@
+##Query: DPETERQ
+##DB: 29805788 sequence(s) from "UniProtKB" (UniProt_2013_01)
+##Matched: 26 sequence(s)
+#AC	ID	ProteinName	Length	PIRSFID	PIRSFName	Organism	OrganismTaxonID	OrganismTaxonGroup	OrganismTaxonGroupID	Matched_range
+E8N4U7	E8N4U7_ANATU	Probable rRNA maturation factor	150	 	 	Anaerolinea thermophila (strain DSM 14523 / JCM 11388 / NBRC 100420 / UNI-1)	926569			72-78 TMDFFDPETERQYLGDI
+I3YEL5	I3YEL5_THIV6	tRNA (mo5U34)-methyltransferase precursor	329	 	 	Thiocystis violascens (strain ATCC 17096 / DSM 198 / 6111) (Chromatium violascens)	765911			78-84 SGNPLDPETERQLRDAL
+A0DLY7	A0DLY7_PARTE	Chromosome undetermined scaffold_56, whole genome shotgun sequence	916	 	 	Paramecium tetraurelia	5888			288-294 TIYKSDPETERQLRELQ;334-340 IIYQPDPETERQLQELK;429-435 TIYQTDPETERQLQIKI
+D2RRD1	D2RRD1_HALTV	Transketolase central region	348	 	 	Haloterrigena turkmenica (strain ATCC 51198 / DSM 5511 / NCIMB 13204 / VKM B-1734) (Halococcus turkmenicus)	543526			7-13 AQQETDPETERQTDRSL
+Q8PSD6	Q8PSD6_METMA	Putative uncharacterized protein	397	 	 	Methanosarcina mazei (strain ATCC BAA-159 / DSM 3647 / Goe1 / Go1 / JCM 11833 / OCM 88) (Methanosarcina frisia)	192952			164-170 KPEKMDPETERQYYEKI
+Q8TP27	Q8TP27_METAC	Predicted protein	397	 	 	Methanosarcina acetivorans (strain ATCC 35395 / DSM 2834 / JCM 12185 / C2A)	188937			164-170 KPEEMDPETERQYYKKI
+F8EA50	F8EA50_RUNSL	Putative uncharacterized protein	422	 	 	Runella slithyformis (strain ATCC 29530 / DSM 19594 / LMG 11500 / NCIMB 11436 / LSU 4)	761193			389-395 QNMPPDPETERQMMGKI
+B3CID3	B3CID3_9BACE	ABC transporter, ATP-binding protein	546	 	 	Bacteroides intestinalis DSM 17393	471870			507-513 ATSALDPETERQLIKNL
+D1VYS5	D1VYS5_9BACT	ABC transporter, ATP-binding protein	556	 	 	Prevotella timonensis CRIS 5C-B1	679189			515-521 ATSALDPETERQLLHNI
+D1W3F5	D1W3F5_9BACT	ABC transporter, ATP-binding protein	556	 	 	Prevotella buccalis ATCC 35310	679190			515-521 ATSALDPETERQLLHNI
+D3HWK0	D3HWK0_9BACT	Probable ABC transporter	633	 	 	Prevotella buccae D17	575611			592-598 ATSALDPETERQLLHNI
+D3ILL0	D3ILL0_9BACT	Probable ABC transporter	525	 	 	Prevotella sp. oral taxon 317 str. F0108	575615			481-487 ATSALDPETERQLLSNI
+E1KQW1	E1KQW1_9BACT	ABC transporter, ATP-binding protein	560	 	 	Prevotella disiens FB035-09AN	866771			515-521 ATSALDPETERQLLKNL
+E2N7I2	E2N7I2_9BACE	Putative uncharacterized protein	553	 	 	Bacteroides cellulosilyticus DSM 14838	537012			514-520 ATSALDPETERQLIKNL
+E6K685	E6K685_9BACT	Putative uncharacterized protein	597	 	 	Prevotella buccae ATCC 33574	873513			556-562 ATSALDPETERQLLHNI
+F9D2G9	F9D2G9_9BACT	Putative uncharacterized protein	566	 	 	Prevotella dentalis DSM 3688	908937			525-531 ATSALDPETERQLLRNI
+G6AHT9	G6AHT9_9BACT	Putative uncharacterized protein	558	 	 	Prevotella histicola F0411	857291			517-523 ATSALDPETERQLLKNI
+H1HMX1	H1HMX1_9BACT	Putative uncharacterized protein	565	 	 	Prevotella maculosa OT 289	999422			515-521 ATSALDPETERQLLRNI
+I8UQV1	I8UQV1_9BACE	Uncharacterized protein	553	 	 	Bacteroides cellulosilyticus CL02T12C19	997874			514-520 VTSALDPETERQLIKNL
+J4TZC2	J4TZC2_9BACT	ABC transporter transmembrane region	597	 	 	Prevotella sp. MSX73	1032506			556-562 ATSALDPETERQLLHNI
+J9HDK8	J9HDK8_9BACL	Replicative DNA helicase	461	 	 	Alicyclobacillus hesperidum URH17-3-68	1200346			416-422 RDDYYDPETERQNIVEV
+A4F6C0	A4F6C0_SACEN	Uncharacterized protein	488	 	 	Saccharopolyspora erythraea (strain NRRL 23338)	405948			45-51 PVLPPDPETERQALAQI
+A4F6Z2	A4F6Z2_SACEN	Uncharacterized protein	488	 	 	Saccharopolyspora erythraea (strain NRRL 23338)	405948			45-51 PMLPPDPETERQALAQI
+Q1J2Z5	Q1J2Z5_DEIGD	ABC-type transport system for cytochrome bd biosynthesis, ATPase and permease component precursor	529	 	 	Deinococcus geothermalis (strain DSM 11300)	319795			475-481 PTAHLDPETERQVLSVI
+A0C465	A0C465_PARTE	Chromosome undetermined scaffold_149, whole genome shotgun sequence	902	 	 	Paramecium tetraurelia	5888			432-438 TIYQPDPETERQLQLKI
+H0ZCS1	H0ZCS1_TAEGU	Uncharacterized protein (Fragment)	2000	 	 	Taeniopygia guttata (Zebra finch) (Poephila guttata)	59729			1170-1176 EIFMVDPETERQIAHLK
+
+##Query: PVLPPDP
+##DB: 29805788 sequence(s) from "UniProtKB" (UniProt_2013_01)
+##Matched: 61 sequence(s)
+#AC	ID	ProteinName	Length	PIRSFID	PIRSFName	Organism	OrganismTaxonID	OrganismTaxonGroup	OrganismTaxonGroupID	Matched_range
+A6E115	A6E115_9RHOB	Protease, putative	158	 	 	Roseovarius sp. TM1035	391613			107-113 ASVADPVLPPDPVRLAE
+I4MMZ3	I4MMZ3_9BURK	Transcriptional regulator	136	 	 	Hydrogenophaga sp. PBC	795665			60-66 ERKHYPVLPPDPVEAIR
+E9DYY5	E9DYY5_METAQ	Putative uncharacterized protein	193	 	 	Metarhizium acridum (strain CQMa 102)	655827			49-55 RIRHGPVLPPDPTGYKR
+E9F6Y7	E9F6Y7_METAR	Putative uncharacterized protein	194	 	 	Metarhizium robertsii (strain ARSEF 23 / ATCC MYA-3075) (Metarhizium anisopliae)	655844			49-55 RIRHGPVLPPDPTGTGY
+K0SVD5	K0SVD5_THAOC	Uncharacterized protein	196	 	 	Thalassiosira oceanica (Marine diatom)	159749			19-25 RSVAVPVLPPDPLGRPS
+G8NE26	G8NE26_9DEIN	Putative uncharacterized protein	228	 	 	Thermus sp. CCB_US3_UF1	1111069			207-213 PYRNFPVLPPDPHGFDR
+H0T7C6	H0T7C6_9BRAD	Putative uncharacterized protein	199	 	 	Bradyrhizobium sp. STM 3809	551936			28-34 EMLAPPVLPPDPVADGA
+K2E2C8	K2E2C8_9BACT	Peptidylprolyl isomerase PrsA1 family protein	173	 	 	uncultured bacterium	77133			8-14 KSIPDPVLPPDPRSQVL
+Q6WEG7	Q6WEG7_PECCC	HrpD	209	 	 	Pectobacterium carotovorum subsp. carotovorum (Erwinia carotovora subsp. carotovora)	555			68-74 YFSLPPVLPPDPLASLI
+A5ES05	A5ES05_BRASB	Putative uncharacterized protein	197	 	 	Bradyrhizobium sp. (strain BTAi1 / ATCC BAA-1182)	288000			28-34 EMLAPPVLPPDPAGDWS
+B4RBQ1	B4RBQ1_PHEZH	Chemotaxis MotB protein	301	 	 	Phenylobacterium zucineum (strain HLK1)	450851			293-299 LLREAPVLPPDPGL
+C1F1C7	HEMH_ACIC5	Ferrochelatase	325	 	 	Acidobacterium capsulatum (strain ATCC 51196 / DSM 11244 / JCM 7670)	240015			192-198 EAPRRPVLPPDPYNYEA
+F6XU89	F6XU89_CALJA	Uncharacterized protein (Fragment)	446	 	 	Callithrix jacchus (White-tufted-ear marmoset)	9483			311-317 TYSPSPVLPPDPHSREP
+F6YFU7	F6YFU7_CALJA	Uncharacterized protein (Fragment)	431	 	 	Callithrix jacchus (White-tufted-ear marmoset)	9483			297-303 TYSPSPVLPPDPHSREP
+K0V7G8	K0V7G8_MYCFO	Putative ribonuclease	338	 	 	Mycobacterium fortuitum subsp. fortuitum DSM 46621	1214102			294-300 SLAEAPVLPPDPAQIIT
+A9HQ52	A9HQ52_GLUDA	Putative conjugation TrbI-like protein	390	 	 	Gluconacetobacter diazotrophicus (strain ATCC 49037 / DSM 5601 / PAl5)	272568			15-21 GSSAAPVLPPDPRLRAE
+P03337	GAG_FSVGA	Gag polyprotein	425	 	 	Feline sarcoma virus (strain Gardner-Arnstein) (Ga-FeSV) (Gardner-Arnstein feline leukemia oncovirus B)	11774			216-222 DPPKPPVLPPDPSSPLI
+P04322	GAG_FSVHZ	Gag polyprotein (Fragment)	414	 	 	Feline sarcoma virus (strain Hardy-Zuckerman 4)	11777			213-219 DPPKPPVLPPDPSSPLI
+P03338	GAG_FSVST	Gag polyprotein	371	 	 	Feline sarcoma virus (strain Snyder-Theilen)	11780			213-219 DPPKPPVLPPDPSSPLI
+G0FZV4	G0FZV4_AMYMD	GntR family transcriptional regulator fused with aminotransferase	484	 	 	Amycolatopsis mediterranei S699	713604			97-103 VVVAAPVLPPDPSPDRP
+K0ENJ9	K0ENJ9_9NOCA	Two-component system sensor kinase	488	 	 	Nocardia brasiliensis ATCC 700358	1133849			78-84 RMPPPPVLPPDPRHAPS
+K5BC42	K5BC42_9MYCO	Alpha/beta hydrolase fold family protein	522	 	 	Mycobacterium hassiacum DSM 44199	1122247			26-32 ALDGRPVLPPDPAVVHT
+A4F6C0	A4F6C0_SACEN	Uncharacterized protein	488	 	 	Saccharopolyspora erythraea (strain NRRL 23338)	405948			40-46 GTGTGPVLPPDPETERQ
+A4WZT8	A4WZT8_RHOS5	Putative uncharacterized protein	629	 	 	Rhodobacter sphaeroides (strain ATCC 17025 / ATH 2.4.3)	349102			338-344 EADPTPVLPPDPARVQV
+B9L4L6	B9L4L6_THERP	WD40 domain protein beta Propeller	524	 	 	Thermomicrobium roseum (strain ATCC 27502 / DSM 5159 / P-2)	309801			503-509 PYRRFPVLPPDPHRFDP
+D1BFG6	D1BFG6_SANKS	Putative uncharacterized protein	520	 	 	Sanguibacter keddieii (strain ATCC 51767 / DSM 10542 / NCFB 3025 / ST-74)	446469			327-333 LPVVDPVLPPDPGDPGT
+D8HQX8	D8HQX8_AMYMU	GntR family transcriptional regulator fused with aminotransferase	484	 	 	Amycolatopsis mediterranei (strain U-32)	749927			97-103 VVVAAPVLPPDPSPDRP
+I7HEG0	I7HEG0_FLV	Gag protein	595	 	 	Feline leukemia virus	11768			227-233 DPPKAPVLPPDPSSPLI
+K0IZA4	K0IZA4_FLV	Gag polyprotein	584	 	 	Feline leukemia virus	11768			216-222 DPPKPPVLPPDPSSPLI
+P10262	GAG_FLV	Gag polyprotein	580	 	 	Feline leukemia virus	11768			213-219 DPPKPPVLPPDPSSPLI
+P03340	GAG_FSVMD	Gag polyprotein	536	 	 	Feline sarcoma virus (strain McDonough)	11778			216-222 NPPKPPVLPPDPSSPLI
+A4I3G1	A4I3G1_LEIIN	Putative uncharacterized protein	870	 	 	Leishmania infantum	5671			234-240 DSGLFPVLPPDPTWDTL
+A7SW45	A7SW45_NEMVE	Predicted protein (Fragment)	870	 	 	Nematostella vectensis (Starlet sea anemone)	45351			278-284 QSDGNPVLPPDPEGPGE
+E9BKD1	E9BKD1_LEIDB	Putative uncharacterized protein	870	 	 	Leishmania donovani (strain BPK282A1)	981087			234-240 DSGLFPVLPPDPTWDTL
+I1G9K8	I1G9K8_AMPQE	Uncharacterized protein	989	 	 	Amphimedon queenslandica (Sponge)	400682			272-278 KFVDVPVLPPDPPNFLI
+K4BWH0	K4BWH0_SOLLC	Uncharacterized protein	785	 	 	Solanum lycopersicum (Tomato) (Lycopersicon esculentum)	4081			59-65 PPSSPPVLPPDPTDKPA
+D3D1N5	D3D1N5_9ACTO	Molybdopterin oxidoreductase	865	 	 	Frankia sp. EUN1f	102897			553-559 AAYSPPVLPPDPGGMAE
+C5CE63	C5CE63_KOSOT	Urocanate hydratase	674	PIRSF001423	urocanate hydratase [Validated]	Kosmotoga olearia (strain TBF 19.5.1)	521045			17-23 TIKLDPVLPPDPEFLPG
+D1BS82	D1BS82_XYLCX	UvrABC system protein C	659	 	 	Xylanimonas cellulosilytica (strain DSM 15894 / CECT 5975 / LMG 20990 / XIL07)	446471			324-330 REVLVPVLPPDPQQVTA
+I0H3D9	I0H3D9_ACTM4	Putative dehydrogenase	727	 	 	Actinoplanes missouriensis (strain ATCC 14538 / DSM 43046 / CBS 188.64 / JCM 3121 / NCIMB 12654 / NBRC 102363 / 431)	512565			460-466 AAYSPPVLPPDPDGLDE
+B9GVW7	B9GVW7_POPTR	Predicted protein	1078	 	 	Populus trichocarpa (Western balsam poplar) (Populus balsamifera subsp. trichocarpa)	3694			581-587 KVLPVPVLPPDPLQRGG
+K7G5J1	K7G5J1_PELSI	Uncharacterized protein	1774	 	 	Pelodiscus sinensis	13735			377-383 RISREPVLPPDPSFASL
+G3XDD7	G3XDD7_FLV	Gag-pol polyprotein	1790	 	 	Feline leukemia virus	11768			216-222 DPPKPPVLPPDPSSPLI
+K0H563	K0H563_FLV	Pr80 gag polyprotein (Fragment)	1786	 	 	Feline leukemia virus	11768			213-219 DPPKPPVLPPDPSSPLI
+K0H6P0	K0H6P0_FLV	Pr80 gag-pol protein (Fragment)	1786	 	 	Feline leukemia virus	11768			213-219 GPPKPPVLPPDPSSPLI
+O89811	O89811_FLV	Gag-pol polyprotein gPr80	1786	 	 	Feline leukemia virus	11768			213-219 DPPKPPVLPPDPSSPLI
+Q85521	Q85521_FLV	Gag-pol polyprotein gPr80 precursor	1784	 	 	Feline leukemia virus	11768			213-219 DPPKPPVLPPDPSSPLI
+A5B1G8	A5B1G8_VITVI	Putative uncharacterized protein	2246	 	 	Vitis vinifera (Grape)	29760			583-589 KLLPVPVLPPDPLQRGG
+B8AVE6	B8AVE6_ORYSI	Putative uncharacterized protein	2414	 	 	Oryza sativa subsp. indica (Rice)	39946			581-587 GVIPVPVLPPDPMQSGG
+B9RI78	B9RI78_RICCO	Putative uncharacterized protein	2278	 	 	Ricinus communis (Castor bean)	3988			544-550 KVIPVPVLPPDPLQRGG
+C5YAD2	C5YAD2_SORBI	Putative uncharacterized protein Sb06g019820	2387	 	 	Sorghum bicolor (Sorghum) (Sorghum vulgare)	4558			557-563 GVIPVPVLPPDPMQRGG
+C7J1Q0	C7J1Q0_ORYSJ	Os04g0473900 protein	2470	 	 	Oryza sativa subsp. japonica (Rice)	39947			637-643 GVIPVPVLPPDPMQSGG
+E1ZG16	E1ZG16_CHLVA	Putative uncharacterized protein	2117	 	 	Chlorella variabilis (Green alga)	554065			1379-1385 EAAPEPVLPPDPWQYGA
+F6GUA1	F6GUA1_VITVI	Putative uncharacterized protein	2292	 	 	Vitis vinifera (Grape)	29760			559-565 KLLPVPVLPPDPLQRGG
+I1PM67	I1PM67_ORYGL	Uncharacterized protein	2391	 	 	Oryza glaberrima (African rice)	4538			558-564 GVIPVPVLPPDPMQSGG
+J3LYU5	J3LYU5_ORYBR	Uncharacterized protein	2450	 	 	Oryza brachyantha	4533			579-585 GVIPVPVLPPDPMQSGG
+K3YMP9	K3YMP9_SETIT	Uncharacterized protein	2384	 	 	Setaria italica (Foxtail millet) (Panicum italicum)	4555			554-560 GVIPVPVLPPDPMQRGG
+K7M3I7	K7M3I7_SOYBN	Uncharacterized protein	2191	 	 	Glycine max	3847			582-588 KVLPVPVLPPDPMQRGG
+K7M9A9	K7M9A9_SOYBN	Uncharacterized protein	2199	 	 	Glycine max	3847			594-600 KVLPVPVLPPDPMQRGG
+Q01KB0	Q01KB0_ORYSA	OSIGBa0135C13.1 protein	2391	 	 	Oryza sativa (Rice)	4530			558-564 GVIPVPVLPPDPMQSGG
+Q7XR12	Q7XR12_ORYSJ	OSJNBb0022F23.18 protein	2391	 	 	Oryza sativa subsp. japonica (Rice)	39947			558-564 GVIPVPVLPPDPMQSGG
+

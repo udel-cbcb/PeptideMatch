@@ -1,0 +1,315 @@
+##Query: AAVEEGIVLGGGCALLR	
+##DB: 32685509 sequence(s) from "UniProtKB" (UniProt_2013_03)	
+##Matched: 58 sequence(s)
+#AC	ID	Protein_Name	Length	Organism	Matched_range	
+D3ZVX2	D3ZVX2_RAT	60 kDa heat shock protein, mitochondrial	258	Rattus norvegicus (Rat)	115-131 LNATRAAVEEGIVLGGGCALLRCIPAL
+B7Z5E7	B7Z5E7_HUMAN	cDNA FLJ51046, highly similar to 60 kDa heat shock protein, mitochondrial	517	Homo sapiens (Human)	374-390 LNATRAAVEEGIVLGGGCALLRCIPAL
+P86206	CH60_MESAU	60 kDa heat shock protein, mitochondrial (Fragments)	271	Mesocricetus auratus (Golden hamster)	247-263 LNATRAAVEEGIVLGGGCALLRIGIEI
+B7Z4F6	B7Z4F6_HUMAN	cDNA FLJ54912, highly similar to 60 kDa heat shock protein, mitochondrial	550	Homo sapiens (Human)	407-423 LNATRAAVEEGIVLGGGCALLRCIPAL
+D4ABH6	D4ABH6_RAT	Uncharacterized protein	565	Rattus norvegicus (Rat)	424-440 LNATRAAVEEGIVLGGGCALLRCIPAL
+P10809	CH60_HUMAN	60 kDa heat shock protein, mitochondrial precursor	573	Homo sapiens (Human)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+P63038	CH60_MOUSE	60 kDa heat shock protein, mitochondrial precursor	573	Mus musculus (Mouse)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+P63039	CH60_RAT	60 kDa heat shock protein, mitochondrial precursor	573	Rattus norvegicus (Rat)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+B3GQS7	B3GQS7_HUMAN	Mitochondrial heat shock 60kD protein 1 variant 1	569	Homo sapiens (Human)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+B7Z597	B7Z597_HUMAN	cDNA FLJ54373, highly similar to 60 kDa heat shock protein, mitochondrial	564	Homo sapiens (Human)	421-437 LNATRAAVEEGIVLGGGCALLRCIPAL
+Q7ZTR6	Q7ZTR6_XENLA	Hspd1 protein (Fragment)	555	Xenopus laevis (African clawed frog)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+P18687	CH60_CRIGR	60 kDa heat shock protein, mitochondrial precursor	573	Cricetulus griseus (Chinese hamster) (Cricetulus barabensis griseus)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+G5DYI3	G5DYI3_9PIPI	Putative heat shock subunit protein 1 (Fragment)	367	Hymenochirus curtipes (western dwarf clawed frog)	336-352 LNATRAAVEEGIVLGGGCALLRCIPAL
+E2QUU5	E2QUU5_CANFA	60 kDa heat shock protein, mitochondrial	573	Canis familiaris (Dog) (Canis lupus familiaris)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+F1MUZ9	F1MUZ9_BOVIN	60 kDa heat shock protein, mitochondrial	573	Bos taurus (Bovine)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+F1SMZ7	F1SMZ7_PIG	Uncharacterized protein	575	Sus scrofa (Pig)	432-448 LNATRAAVEEGIVLGGGCALLRCIPAL
+F6PQQ8	F6PQQ8_MONDO	Uncharacterized protein	573	Monodelphis domestica (Gray short-tailed opossum)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+F6TFZ0	F6TFZ0_CALJA	Uncharacterized protein	575	Callithrix jacchus (White-tufted-ear marmoset)	432-448 LNATRAAVEEGIVLGGGCALLRCIPAL
+F6UT23	F6UT23_CALJA	Uncharacterized protein	517	Callithrix jacchus (White-tufted-ear marmoset)	374-390 LNATRAAVEEGIVLGGGCALLRCIPAL
+F6Z587	F6Z587_HORSE	Uncharacterized protein	575	Equus caballus (Horse)	432-448 LNATRAAVEEGIVLGGGCALLRCIPAL
+F7BGB7	F7BGB7_MACMU	Uncharacterized protein	575	Macaca mulatta (Rhesus macaque)	432-448 LNATRAAVEEGIVLGGGCALLRCIPAL
+F7GF46	F7GF46_MONDO	Uncharacterized protein	571	Monodelphis domestica (Gray short-tailed opossum)	428-444 LNATRAAVEEGIVLGGGCALLRCIPAL
+F7GZG0	F7GZG0_MACMU	Uncharacterized protein (Fragment)	533	Macaca mulatta (Rhesus macaque)	398-414 LNATRAAVEEGIVLGGGCALLRCIPAL
+F7HMR4	F7HMR4_MACMU	Uncharacterized protein	573	Macaca mulatta (Rhesus macaque)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+F7I3J9	F7I3J9_CALJA	Uncharacterized protein	573	Callithrix jacchus (White-tufted-ear marmoset)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+G1M5B6	G1M5B6_AILME	Uncharacterized protein	575	Ailuropoda melanoleuca (Giant panda)	432-448 LNATRAAVEEGIVLGGGCALLRCIPAL
+G1NUB2	G1NUB2_MYOLU	Uncharacterized protein	575	Myotis lucifugus (Little brown bat)	432-448 LNATRAAVEEGIVLGGGCALLRCIPAL
+G1R5A6	G1R5A6_NOMLE	Uncharacterized protein	575	Nomascus leucogenys (Northern white-cheeked gibbon) (Hylobates leucogenys)	432-448 LNATRAAVEEGIVLGGGCALLRCIPAL
+G1R5A7	G1R5A7_NOMLE	Uncharacterized protein	517	Nomascus leucogenys (Northern white-cheeked gibbon) (Hylobates leucogenys)	374-390 LNATRAAVEEGIVLGGGCALLRCIPAL
+G1T3Y8	G1T3Y8_RABIT	Uncharacterized protein	574	Oryctolagus cuniculus (Rabbit)	431-447 LNATRAAVEEGIVLGGGCALLRCIPAL
+G2HFN5	G2HFN5_PANTR	60 kDa heat shock protein, mitochondrial	573	Pan troglodytes (Chimpanzee)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+G2HG50	G2HG50_PANTR	60 kDa heat shock protein, mitochondrial	573	Pan troglodytes (Chimpanzee)	430-446 LNPTRAAVEEGIVLGGGCALLRCIPAL
+G3QYY4	G3QYY4_GORGO	Uncharacterized protein	572	Gorilla gorilla gorilla (Lowland gorilla)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+G3SL08	G3SL08_LOXAF	Uncharacterized protein	573	Loxodonta africana (African elephant)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+G3WZS7	G3WZS7_SARHA	Uncharacterized protein	573	Sarcophilus harrisii (Tasmanian devil) (Sarcophilus laniarius)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+G9F6X6	G9F6X6_PIG	Mitochondrial heat shock 60 kDa protein 1	573	Sus scrofa (Pig)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+G9K4Y8	G9K4Y8_MUSPF	Heat shock 60kDa protein 1 (Fragment)	572	Mustela putorius furo (European domestic ferret) (Mustela furo)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+H2P876	H2P876_PONAB	60 kDa heat shock protein, mitochondrial	573	Pongo abelii (Sumatran orangutan) (Pongo pygmaeus abelii)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+H9FTU5	H9FTU5_MACMU	60 kDa heat shock protein, mitochondrial	573	Macaca mulatta (Rhesus macaque)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+H9Z8E7	H9Z8E7_MACMU	60 kDa heat shock protein, mitochondrial	573	Macaca mulatta (Rhesus macaque)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+I3L9N6	I3L9N6_PIG	Uncharacterized protein	518	Sus scrofa (Pig)	375-391 LNATRAAVEEGIVLGGGCALLRCIPAL
+I7G496	I7G496_MACFA	Macaca fascicularis brain cDNA clone: QflA-16224, similar to human heat shock 60kDa protein 1 (chaperonin) (HSPD1), nucleargene encoding mitochondrial protein, transcript variant2, mRNA, RefSeq: NM_199440.1	573	Macaca fascicularis (Crab-eating macaque) (Cynomolgus monkey)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+K7AP51	K7AP51_PANTR	Heat shock 60kDa protein 1 (Chaperonin)	573	Pan troglodytes (Chimpanzee)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+K7D0W0	K7D0W0_PANTR	Heat shock 60kDa protein 1 (Chaperonin)	607	Pan troglodytes (Chimpanzee)	464-480 LNATRAAVEEGIVLGGGCALLRCIPAL
+K9J1X2	K9J1X2_DESRO	Putative 60 kDa heat shock protein mitochondrial	573	Desmodus rotundus (Vampire bat)	430-446 LNATRAAVEEGIVLGGGCALLRCIPPL
+K9K3I2	K9K3I2_HORSE	Mitochondrial 60 kDa heat shock protein-like protein (Fragment)	566	Equus caballus (Horse)	423-439 LNATRAAVEEGIVLGGGCALLRCIPAL
+L5LQG7	L5LQG7_MYODS	60 kDa heat shock protein, mitochondrial	543	Myotis davidii (David's myotis)	400-416 LNATPAAVEEGIVLGGGCALLRCIPAL
+G3HL13	G3HL13_CRIGR	60 kDa heat shock protein, mitochondrial	526	Cricetulus griseus (Chinese hamster) (Cricetulus barabensis griseus)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+H0W1Z7	H0W1Z7_CAVPO	Uncharacterized protein	563	Cavia porcellus (Guinea pig)	429-445 LNATRAAVEEGIVLGGGCALLRCIPAL
+A4II42	A4II42_XENTR	LOC100124945 protein	576	Xenopus tropicalis (Western clawed frog) (Silurana tropicalis)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+G4W8Y6	G4W8Y6_KRYMA	Heat shock protein 60	575	Kryptolebias marmoratus (Mangrove killifish) (Rivulus marmoratus)	430-446 LNATRAAVEEGIVLGGGCALLRCIPSL
+H3B645	H3B645_LATCH	Uncharacterized protein	545	Latimeria chalumnae (West Indian ocean coelacanth)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+H3B646	H3B646_LATCH	Uncharacterized protein	565	Latimeria chalumnae (West Indian ocean coelacanth)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+H9GFC4	H9GFC4_ANOCA	Uncharacterized protein	570	Anolis carolinensis (Green anole) (American chameleon)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+K7GIW1	K7GIW1_PELSI	Uncharacterized protein	571	Pelodiscus sinensis (Chinese softshell turtle) (Trionyx sinensis)	431-447 LNATRAAVEEGIVLGGGCALLRCIPAL
+Q6IP60	Q6IP60_XENLA	Hspd1 protein	579	Xenopus laevis (African clawed frog)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+Q7ZTK0	Q7ZTK0_XENLA	MGC53106 protein	468	Xenopus laevis (African clawed frog)	430-446 LNATRAAVEEGIVLGGGCALLRCIPAL
+L5K231	L5K231_PTEAL	60 kDa heat shock protein, mitochondrial	750	Pteropus alecto (Black flying fox)	606-622 LNATRAAVEEGIVLGGGCALLRCIPAL
+
+##Query: SVQYDDVPEYK	
+##DB: 32685509 sequence(s) from "UniProtKB" (UniProt_2013_03)	
+##Matched: 45 sequence(s)
+#AC	ID	Protein_Name	Length	Organism	Matched_range	
+Q6PEY4	Q6PEY4_HUMAN	ALCAM protein	133	Homo sapiens (Human)	77-87 SSTKKSVQYDDVPEYKDRLNL
+Q5MPX5	Q5MPX5_MOUSE	Activated leukocyte cell adhesion molecule soluble isoform	133	Mus musculus (Mouse)	77-87 SSTKKSVQYDDVPEYKDRLSL
+B4DX43	B4DX43_HUMAN	cDNA FLJ52980, highly similar to CD166 antigen	279	Homo sapiens (Human)	26-36 SSTKKSVQYDDVPEYKDRLNL
+Q13740	CD166_HUMAN	CD166 antigen precursor	583	Homo sapiens (Human)	77-87 SSTKKSVQYDDVPEYKDRLNL
+Q61490	CD166_MOUSE	CD166 antigen precursor	583	Mus musculus (Mouse)	77-87 SSTKKSVQYDDVPEYKDRLSL
+O35112	CD166_RAT	CD166 antigen precursor	583	Rattus norvegicus (Rat)	77-87 SSTKKSVQYDDVPEYKDRLSL
+B3KNN9	B3KNN9_HUMAN	cDNA FLJ30070 fis, clone ASTRO2000046, highly similar to CD166 ANTIGEN	555	Homo sapiens (Human)	77-87 SSTKKSVQYDDVPEYKDRLNL
+Q54AJ5	Q54AJ5_MOUSE	MuSC precursor	583	Mus musculus (Mouse)	77-87 SSTKKSVQYDDVPEYKDRLSL
+Q9BH13	CD166_BOVIN	CD166 antigen precursor	583	Bos taurus (Bovine)	77-87 SSTKKSVQYDDVPEYKDRLNL
+Q9BDE7	Q9BDE7_PIG	Activated leukocyte cell adhesion molecule (Fragment)	113	Sus scrofa (Pig)	15-25 SSTKKSVQYDDVPEYKNRLSL
+F7IPM8	F7IPM8_CALJA	Uncharacterized protein	279	Callithrix jacchus (White-tufted-ear marmoset)	26-36 SSTKKSVQYDDVPEYKDRLSL
+F5GXJ9	F5GXJ9_HUMAN	CD166 antigen	532	Homo sapiens (Human)	26-36 SSTKKSVQYDDVPEYKDRLNL
+D2H3A9	D2H3A9_AILME	Putative uncharacterized protein (Fragment)	569	Ailuropoda melanoleuca (Giant panda)	63-73 SSTKKSVQYDDVPEYKDRLSL
+F1MHN8	F1MHN8_BOVIN	CD166 antigen	583	Bos taurus (Bovine)	77-87 SSTKKSVQYDDVPEYKDRLNL
+F1PDR0	F1PDR0_CANFA	CD166 antigen	583	Canis familiaris (Dog) (Canis lupus familiaris)	77-87 SSTKKSVQYDDVPEYKDRLSL
+F1SL34	F1SL34_PIG	Uncharacterized protein (Fragment)	547	Sus scrofa (Pig)	54-64 SSTKKSVQYDDVPEYKNRLSL
+F7B5L3	F7B5L3_HORSE	Uncharacterized protein	583	Equus caballus (Horse)	77-87 SSTKKSVQYDDVPEYKDRLSL
+F7E9U2	F7E9U2_MACMU	Uncharacterized protein	583	Macaca mulatta (Rhesus macaque)	77-87 SSTKKSVQYDDVPEYKDRLSL
+F7HMG0	F7HMG0_CALJA	Uncharacterized protein	583	Callithrix jacchus (White-tufted-ear marmoset)	77-87 SSTKKSVQYDDVPEYKDRLSL
+F7HMH1	F7HMH1_CALJA	Uncharacterized protein	570	Callithrix jacchus (White-tufted-ear marmoset)	77-87 SSTKKSVQYDDVPEYKDRLSL
+G1LH19	G1LH19_AILME	Uncharacterized protein (Fragment)	586	Ailuropoda melanoleuca (Giant panda)	80-90 SSTKKSVQYDDVPEYKDRLSL
+G1P9R8	G1P9R8_MYOLU	Uncharacterized protein (Fragment)	544	Myotis lucifugus (Little brown bat)	67-77 SSTKKSVQYDDVPEYKDRLSL
+G1QTH1	G1QTH1_NOMLE	Uncharacterized protein	583	Nomascus leucogenys (Northern white-cheeked gibbon) (Hylobates leucogenys)	77-87 SSTKKSVQYDDVPEYKDRLSL
+G1T112	G1T112_RABIT	CD166 antigen	583	Oryctolagus cuniculus (Rabbit)	77-87 SSTKKSVQYDDVPEYKDRLNL
+G1TTE9	G1TTE9_RABIT	CD166 antigen (Fragment)	585	Oryctolagus cuniculus (Rabbit)	77-87 SSTKKSVQYDDVPEYKDRLNL
+G3QZI0	G3QZI0_GORGO	Uncharacterized protein	583	Gorilla gorilla gorilla (Lowland gorilla)	77-87 SSTKKSVQYDDVPEYKDRLSL
+G7MK34	G7MK34_MACMU	Putative uncharacterized protein	583	Macaca mulatta (Rhesus macaque)	77-87 SSTKKSVQYDDVPEYKDRLSL
+G7NZQ8	G7NZQ8_MACFA	Putative uncharacterized protein	583	Macaca fascicularis (Crab-eating macaque) (Cynomolgus monkey)	77-87 SSTKKSVQYDDVPEYKDRLSL
+H2P9U5	H2P9U5_PONAB	Uncharacterized protein	583	Pongo abelii (Sumatran orangutan) (Pongo pygmaeus abelii)	77-87 SSTKKSVQYDDVPEYKDRLSL
+H2R846	H2R846_PANTR	Activated leukocyte cell adhesion molecule	583	Pan troglodytes (Chimpanzee)	77-87 SSTKKSVQYDDVPEYKDRLSL
+H9ERZ1	H9ERZ1_MACMU	CD166 antigen isoform 1	583	Macaca mulatta (Rhesus macaque)	77-87 SSTKKSVQYDDVPEYKDRLSL
+H9YZP2	H9YZP2_MACMU	CD166 antigen	583	Macaca mulatta (Rhesus macaque)	77-87 SSTKKSVQYDDVPEYKDRLSL
+K7GLE8	K7GLE8_PIG	Uncharacterized protein (Fragment)	560	Sus scrofa (Pig)	54-64 SSTKKSVQYDDVPEYKNRLSL
+K9ILN7	K9ILN7_DESRO	Putative activated leukocyte cell adhesion molecule	583	Desmodus rotundus (Vampire bat)	77-87 SSTKKSVQYDDVPEYKDRLSL
+K9IWH1	K9IWH1_PIG	CD166 antigen	583	Sus scrofa (Pig)	77-87 SSTKKSVQYDDVPEYKNRLSL
+L5LYA4	L5LYA4_MYODS	CD166 antigen	542	Myotis davidii (David's myotis)	125-135 SSTKKSVQYDDVPEYKDRLSL
+Q4R603	Q4R603_MACFA	Testis cDNA, clone: QtsA-19552, similar to human activated leukocyte cell adhesion molecule (ALCAM),	543	Macaca fascicularis (Crab-eating macaque) (Cynomolgus monkey)	37-47 SSTKKSVQYDDVPEYKDRLSL
+Q5R640	Q5R640_PONAB	Putative uncharacterized protein DKFZp459H0124	570	Pongo abelii (Sumatran orangutan) (Pongo pygmaeus abelii)	77-87 SSTKKSVQYDDVPEYKDRLSL
+E9Q3Q6	E9Q3Q6_MOUSE	CD166 antigen	570	Mus musculus (Mouse)	77-87 SSTKKSVQYDDVPEYKDRLSL
+E9Q4G8	E9Q4G8_MOUSE	CD166 antigen	555	Mus musculus (Mouse)	77-87 SSTKKSVQYDDVPEYKDRLSL
+F1LUX8	F1LUX8_RAT	CD166 antigen (Fragment)	571	Rattus norvegicus (Rat)	65-75 SSTKKSVQYDDVPEYKDRLSL
+G3HRF8	G3HRF8_CRIGR	CD166 antigen	583	Cricetulus griseus (Chinese hamster) (Cricetulus barabensis griseus)	77-87 SSTKKSVQYDDVPEYKDRLSL
+I3LXH3	I3LXH3_SPETR	Uncharacterized protein (Fragment)	570	Spermophilus tridecemlineatus (Thirteen-lined ground squirrel) (Ictidomys tridecemlineatus)	77-87 SSTKKSVQYDDVPEYKDRLSL
+K7GAY1	K7GAY1_PELSI	Uncharacterized protein	541	Pelodiscus sinensis (Chinese softshell turtle) (Trionyx sinensis)	37-47 SSTKKSVQYDDVPEYKDRLSL
+O46651	CD166_RABIT	CD166 antigen (Fragment)	521	Oryctolagus cuniculus (Rabbit)	15-25 SSTKKSVQYDDVPEYKDRLNL
+
+##Query: CALLRCIPAL	
+##DB: 32685509 sequence(s) from "UniProtKB" (UniProt_2013_03)	
+##Matched: 73 sequence(s)
+#AC	ID	Protein_Name	Length	Organism	Matched_range	
+D3ZVX2	D3ZVX2_RAT	60 kDa heat shock protein, mitochondrial	258	Rattus norvegicus (Rat)	127-136 VLGGGCALLRCIPALDSLKP
+B7Z5E7	B7Z5E7_HUMAN	cDNA FLJ51046, highly similar to 60 kDa heat shock protein, mitochondrial	517	Homo sapiens (Human)	386-395 VLGGGCALLRCIPALDSLTP
+B7Z4F6	B7Z4F6_HUMAN	cDNA FLJ54912, highly similar to 60 kDa heat shock protein, mitochondrial	550	Homo sapiens (Human)	419-428 VLGGGCALLRCIPALDSLTP
+D4ABH6	D4ABH6_RAT	Uncharacterized protein	565	Rattus norvegicus (Rat)	436-445 VLGGGCALLRCIPALDSLNN
+P10809	CH60_HUMAN	60 kDa heat shock protein, mitochondrial precursor	573	Homo sapiens (Human)	442-451 VLGGGCALLRCIPALDSLTP
+P63038	CH60_MOUSE	60 kDa heat shock protein, mitochondrial precursor	573	Mus musculus (Mouse)	442-451 VLGGGCALLRCIPALDSLKP
+P63039	CH60_RAT	60 kDa heat shock protein, mitochondrial precursor	573	Rattus norvegicus (Rat)	442-451 VLGGGCALLRCIPALDSLKP
+B3GQS7	B3GQS7_HUMAN	Mitochondrial heat shock 60kD protein 1 variant 1	569	Homo sapiens (Human)	442-451 VLGGGCALLRCIPALDSLTP
+B7Z597	B7Z597_HUMAN	cDNA FLJ54373, highly similar to 60 kDa heat shock protein, mitochondrial	564	Homo sapiens (Human)	433-442 VLGGGCALLRCIPALDSLTP
+Q7ZTR6	Q7ZTR6_XENLA	Hspd1 protein (Fragment)	555	Xenopus laevis (African clawed frog)	442-451 VLGGGCALLRCIPALDSLNP
+P31081	CH60_BOVIN	60 kDa heat shock protein, mitochondrial precursor	573	Bos taurus (Bovine)	442-451 VLGGDCALLRCIPALESITP
+Q5ZL72	CH60_CHICK	60 kDa heat shock protein, mitochondrial precursor	573	Gallus gallus (Chicken)	442-451 VPGGGCALLRCIPALDALKP
+P18687	CH60_CRIGR	60 kDa heat shock protein, mitochondrial precursor	573	Cricetulus griseus (Chinese hamster) (Cricetulus barabensis griseus)	442-451 VLGGGCALLRCIPALDSLKP
+Q5NVM5	CH60_PONAB	60 kDa heat shock protein, mitochondrial precursor	573	Pongo abelii (Sumatran orangutan) (Pongo pygmaeus abelii)	442-451 VLGGGCALLRCIPALDSLTP
+Q7YSF0	Q7YSF0_BOVIN	60 kDa protein 1-like protein (Fragment)	134	Bos taurus (Bovine)	110-119 VLGGDCALLRCIPALESITP
+Q0MRP3	Q0MRP3_OREMO	Heat shock protein 60 (Fragment)	185	Oreochromis mossambicus (Mozambique tilapia) (Tilapia mossambica)	99-108 VPGGGCALLRCIPALDALKP
+J9NYE6	J9NYE6_CANFA	Uncharacterized protein (Fragment)	360	Canis familiaris (Dog) (Canis lupus familiaris)	341-350 IVGGGCALLRCIPALDSITP
+G5DYI3	G5DYI3_9PIPI	Putative heat shock subunit protein 1 (Fragment)	367	Hymenochirus curtipes (western dwarf clawed frog)	348-357 VLGGGCALLRCIPALDSLIP
+H0ZVL7	H0ZVL7_TAEGU	Uncharacterized protein (Fragment)	406	Taeniopygia guttata (Zebra finch) (Poephila guttata)	384-393 VPGGGCALLRCIPALDALTP
+E2QUU5	E2QUU5_CANFA	60 kDa heat shock protein, mitochondrial	573	Canis familiaris (Dog) (Canis lupus familiaris)	442-451 VLGGGCALLRCIPALDSITP
+F1MUZ9	F1MUZ9_BOVIN	60 kDa heat shock protein, mitochondrial	573	Bos taurus (Bovine)	442-451 VLGGGCALLRCIPALESITP
+F1SMZ7	F1SMZ7_PIG	Uncharacterized protein	575	Sus scrofa (Pig)	444-453 VLGGGCALLRCIPALESITP
+F6PQQ8	F6PQQ8_MONDO	Uncharacterized protein	573	Monodelphis domestica (Gray short-tailed opossum)	442-451 VLGGGCALLRCIPALEALTP
+F6TFZ0	F6TFZ0_CALJA	Uncharacterized protein	575	Callithrix jacchus (White-tufted-ear marmoset)	444-453 VLGGGCALLRCIPALDSLTP
+F6U8G5	F6U8G5_ORNAN	Uncharacterized protein	468	Ornithorhynchus anatinus (Duckbill platypus)	446-455 VPGGGCALLRCIPALDALTP
+F6UT23	F6UT23_CALJA	Uncharacterized protein	517	Callithrix jacchus (White-tufted-ear marmoset)	386-395 VLGGGCALLRCIPALDSLTP
+F6Z587	F6Z587_HORSE	Uncharacterized protein	575	Equus caballus (Horse)	444-453 VLGGGCALLRCIPALDSIKP
+F7BGB7	F7BGB7_MACMU	Uncharacterized protein	575	Macaca mulatta (Rhesus macaque)	444-453 VLGGGCALLRCIPALDSLTP
+F7GF46	F7GF46_MONDO	Uncharacterized protein	571	Monodelphis domestica (Gray short-tailed opossum)	440-449 VLGGGCALLRCIPALEALTP
+F7GZG0	F7GZG0_MACMU	Uncharacterized protein (Fragment)	533	Macaca mulatta (Rhesus macaque)	410-419 VLGGGCALLRCIPALDSLTP
+F7HMR4	F7HMR4_MACMU	Uncharacterized protein	573	Macaca mulatta (Rhesus macaque)	442-451 VLGGGCALLRCIPALDSLTP
+F7I3J9	F7I3J9_CALJA	Uncharacterized protein	573	Callithrix jacchus (White-tufted-ear marmoset)	442-451 VLGGGCALLRCIPALDSLTP
+G1M5B6	G1M5B6_AILME	Uncharacterized protein	575	Ailuropoda melanoleuca (Giant panda)	444-453 VLGGGCALLRCIPALDSLTP
+G1NUB2	G1NUB2_MYOLU	Uncharacterized protein	575	Myotis lucifugus (Little brown bat)	444-453 VLGGGCALLRCIPALDSLTP
+G1R5A6	G1R5A6_NOMLE	Uncharacterized protein	575	Nomascus leucogenys (Northern white-cheeked gibbon) (Hylobates leucogenys)	444-453 VLGGGCALLRCIPALDSLTP
+G1R5A7	G1R5A7_NOMLE	Uncharacterized protein	517	Nomascus leucogenys (Northern white-cheeked gibbon) (Hylobates leucogenys)	386-395 VLGGGCALLRCIPALDSLTP
+G1T3Y8	G1T3Y8_RABIT	Uncharacterized protein	574	Oryctolagus cuniculus (Rabbit)	443-452 VLGGGCALLRCIPALDSLTP
+G2HFN5	G2HFN5_PANTR	60 kDa heat shock protein, mitochondrial	573	Pan troglodytes (Chimpanzee)	442-451 VLGGGCALLRCIPALDSLTP
+G2HG50	G2HG50_PANTR	60 kDa heat shock protein, mitochondrial	573	Pan troglodytes (Chimpanzee)	442-451 VLGGGCALLRCIPALDSLTP
+G3QYY4	G3QYY4_GORGO	Uncharacterized protein	572	Gorilla gorilla gorilla (Lowland gorilla)	442-451 VLGGGCALLRCIPALDSLTP
+G3SL08	G3SL08_LOXAF	Uncharacterized protein	573	Loxodonta africana (African elephant)	442-451 VLGGGCALLRCIPALDSITP
+G3WZS7	G3WZS7_SARHA	Uncharacterized protein	573	Sarcophilus harrisii (Tasmanian devil) (Sarcophilus laniarius)	442-451 VLGGGCALLRCIPALEALTP
+G7PL40	G7PL40_MACFA	Putative uncharacterized protein	575	Macaca fascicularis (Crab-eating macaque) (Cynomolgus monkey)	444-453 VLGGGCALLRCIPALDSLTP
+G9F6X6	G9F6X6_PIG	Mitochondrial heat shock 60 kDa protein 1	573	Sus scrofa (Pig)	442-451 VLGGGCALLRCIPALESITP
+G9K4Y8	G9K4Y8_MUSPF	Heat shock 60kDa protein 1 (Fragment)	572	Mustela putorius furo (European domestic ferret) (Mustela furo)	442-451 VLGGGCALLRCIPALDSLTP
+H2P876	H2P876_PONAB	60 kDa heat shock protein, mitochondrial	573	Pongo abelii (Sumatran orangutan) (Pongo pygmaeus abelii)	442-451 VLGGGCALLRCIPALDSLTP
+H9FTU5	H9FTU5_MACMU	60 kDa heat shock protein, mitochondrial	573	Macaca mulatta (Rhesus macaque)	442-451 VLGGGCALLRCIPALDSLTP
+H9Z8E7	H9Z8E7_MACMU	60 kDa heat shock protein, mitochondrial	573	Macaca mulatta (Rhesus macaque)	442-451 VLGGGCALLRCIPALDSLTP
+I3L9N6	I3L9N6_PIG	Uncharacterized protein	518	Sus scrofa (Pig)	387-396 VLGGGCALLRCIPALESITP
+I7G496	I7G496_MACFA	Macaca fascicularis brain cDNA clone: QflA-16224, similar to human heat shock 60kDa protein 1 (chaperonin) (HSPD1), nucleargene encoding mitochondrial protein, transcript variant2, mRNA, RefSeq: NM_199440.1	573	Macaca fascicularis (Crab-eating macaque) (Cynomolgus monkey)	442-451 VLGGGCALLRCIPALDSLTP
+K7AP51	K7AP51_PANTR	Heat shock 60kDa protein 1 (Chaperonin)	573	Pan troglodytes (Chimpanzee)	442-451 VLGGGCALLRCIPALDSLTP
+K7D0W0	K7D0W0_PANTR	Heat shock 60kDa protein 1 (Chaperonin)	607	Pan troglodytes (Chimpanzee)	476-485 VLGGGCALLRCIPALDSLTP
+K9K3I2	K9K3I2_HORSE	Mitochondrial 60 kDa heat shock protein-like protein (Fragment)	566	Equus caballus (Horse)	435-444 VLGGGCALLRCIPALDSIKP
+L5LQG7	L5LQG7_MYODS	60 kDa heat shock protein, mitochondrial	543	Myotis davidii (David's myotis)	412-421 VLGGGCALLRCIPALDSLTP
+G3HL13	G3HL13_CRIGR	60 kDa heat shock protein, mitochondrial	526	Cricetulus griseus (Chinese hamster) (Cricetulus barabensis griseus)	442-451 VLGGGCALLRCIPALDSLKP
+H0W1Z7	H0W1Z7_CAVPO	Uncharacterized protein	563	Cavia porcellus (Guinea pig)	441-450 VLGGGCALLRCIPALDALTP
+A4II42	A4II42_XENTR	LOC100124945 protein	576	Xenopus tropicalis (Western clawed frog) (Silurana tropicalis)	442-451 VLGGGCALLRCIPALEALNP
+A9CPF0	A9CPF0_ALLMI	Heat shock protein 60	573	Alligator mississippiensis (American alligator)	442-451 VPGGGCALLRCIPALDAITP
+E2G4F9	E2G4F9_TANAL	Heat shock protein 60	575	Tanichthys albonubes (White cloud mountain minnow)	442-451 VPGGGCALLRCIPALENIKP
+E7D7N6	E7D7N6_CTEID	60 kDa heat shock protein	575	Ctenopharyngodon idella (Grass carp) (Leuciscus idella)	442-451 VPGGGCALLRCIPALENIKA
+G1N5G4	G1N5G4_MELGA	Uncharacterized protein	573	Meleagris gallopavo (Common turkey)	442-451 VPGGGCALLRCIPALDALKP
+H0ZJV4	H0ZJV4_TAEGU	Uncharacterized protein	573	Taeniopygia guttata (Zebra finch) (Poephila guttata)	442-451 VPGGGCALLRCIPALDALTP
+H3B645	H3B645_LATCH	Uncharacterized protein	545	Latimeria chalumnae (West Indian ocean coelacanth)	442-451 VLGGGCALLRCIPALEKLTP
+H3B646	H3B646_LATCH	Uncharacterized protein	565	Latimeria chalumnae (West Indian ocean coelacanth)	442-451 VLGGGCALLRCIPALEKLTP
+H9GFC4	H9GFC4_ANOCA	Uncharacterized protein	570	Anolis carolinensis (Green anole) (American chameleon)	442-451 VLGGGCALLRCIPALDALTP
+I3K867	I3K867_ORENI	Uncharacterized protein	575	Oreochromis niloticus (Nile tilapia) (Tilapia nilotica)	442-451 VPGGGCALLRCIPALDALKP
+I3QII5	I3QII5_ANAPL	Heat shock protein	568	Anas platyrhynchos (Domestic duck) (Anas boschas)	437-446 VPGGGCALLRCIPALDALTP
+K7GIW1	K7GIW1_PELSI	Uncharacterized protein	571	Pelodiscus sinensis (Chinese softshell turtle) (Trionyx sinensis)	443-452 VLGGGCALLRCIPALDSLTP
+Q0GC54	Q0GC54_CARAU	HSP60	575	Carassius auratus (Goldfish)	442-451 VLGGGCALLRCIPALDNIKP
+Q6IP60	Q6IP60_XENLA	Hspd1 protein	579	Xenopus laevis (African clawed frog)	442-451 VLGGGCALLRCIPALDSLNP
+Q7ZTK0	Q7ZTK0_XENLA	MGC53106 protein	468	Xenopus laevis (African clawed frog)	442-451 VLGGGCALLRCIPALDSINP
+Q803B0	Q803B0_DANRE	Heat shock 60kD protein 1 (Chaperonin)	575	Danio rerio (Zebrafish) (Brachydanio rerio)	442-451 VPGGGCALLRCIPALDNIKP
+L5K231	L5K231_PTEAL	60 kDa heat shock protein, mitochondrial	750	Pteropus alecto (Black flying fox)	618-627 VLGGGCALLRCIPALDSLTP
+
+
+##Summary of Matched Proteins
+#AC	ID	Protein_Name	Organism	Organism Taxononmy ID	Taxononmic Group	Taxononmic Group ID	Num. Matched Peptides
+A4II42	A4II42_XENTR	LOC100124945 protein	Xenopus tropicalis (Western clawed frog) (Silurana tropicalis)	8364	Euk/amphibian	8292	2
+B3GQS7	B3GQS7_HUMAN	Mitochondrial heat shock 60kD protein 1 variant 1	Homo sapiens (Human)	9606	Euk/mammal	40674	2
+B7Z4F6	B7Z4F6_HUMAN	cDNA FLJ54912, highly similar to 60 kDa heat shock protein, mitochondrial	Homo sapiens (Human)	9606	Euk/mammal	40674	2
+B7Z597	B7Z597_HUMAN	cDNA FLJ54373, highly similar to 60 kDa heat shock protein, mitochondrial	Homo sapiens (Human)	9606	Euk/mammal	40674	2
+B7Z5E7	B7Z5E7_HUMAN	cDNA FLJ51046, highly similar to 60 kDa heat shock protein, mitochondrial	Homo sapiens (Human)	9606	Euk/mammal	40674	2
+D3ZVX2	D3ZVX2_RAT	60 kDa heat shock protein, mitochondrial	Rattus norvegicus (Rat)	10116	Euk/mammal	40674	2
+D4ABH6	D4ABH6_RAT	Uncharacterized protein	Rattus norvegicus (Rat)	10116	Euk/mammal	40674	2
+E2QUU5	E2QUU5_CANFA	60 kDa heat shock protein, mitochondrial	Canis familiaris (Dog) (Canis lupus familiaris)	9615	Euk/mammal	40674	2
+F1MUZ9	F1MUZ9_BOVIN	60 kDa heat shock protein, mitochondrial	Bos taurus (Bovine)	9913	Euk/mammal	40674	2
+F1SMZ7	F1SMZ7_PIG	Uncharacterized protein	Sus scrofa (Pig)	9823	Euk/mammal	40674	2
+F6PQQ8	F6PQQ8_MONDO	Uncharacterized protein	Monodelphis domestica (Gray short-tailed opossum)	13616	Euk/mammal	40674	2
+F6TFZ0	F6TFZ0_CALJA	Uncharacterized protein	Callithrix jacchus (White-tufted-ear marmoset)	9483	Euk/mammal	40674	2
+F6UT23	F6UT23_CALJA	Uncharacterized protein	Callithrix jacchus (White-tufted-ear marmoset)	9483	Euk/mammal	40674	2
+F6Z587	F6Z587_HORSE	Uncharacterized protein	Equus caballus (Horse)	9796	Euk/mammal	40674	2
+F7BGB7	F7BGB7_MACMU	Uncharacterized protein	Macaca mulatta (Rhesus macaque)	9544	Euk/mammal	40674	2
+F7GF46	F7GF46_MONDO	Uncharacterized protein	Monodelphis domestica (Gray short-tailed opossum)	13616	Euk/mammal	40674	2
+F7GZG0	F7GZG0_MACMU	Uncharacterized protein (Fragment)	Macaca mulatta (Rhesus macaque)	9544	Euk/mammal	40674	2
+F7HMR4	F7HMR4_MACMU	Uncharacterized protein	Macaca mulatta (Rhesus macaque)	9544	Euk/mammal	40674	2
+F7I3J9	F7I3J9_CALJA	Uncharacterized protein	Callithrix jacchus (White-tufted-ear marmoset)	9483	Euk/mammal	40674	2
+G1M5B6	G1M5B6_AILME	Uncharacterized protein	Ailuropoda melanoleuca (Giant panda)	9646	Euk/mammal	40674	2
+G1NUB2	G1NUB2_MYOLU	Uncharacterized protein	Myotis lucifugus (Little brown bat)	59463	Euk/mammal	40674	2
+G1R5A6	G1R5A6_NOMLE	Uncharacterized protein	Nomascus leucogenys (Northern white-cheeked gibbon) (Hylobates leucogenys)	61853	Euk/mammal	40674	2
+G1R5A7	G1R5A7_NOMLE	Uncharacterized protein	Nomascus leucogenys (Northern white-cheeked gibbon) (Hylobates leucogenys)	61853	Euk/mammal	40674	2
+G1T3Y8	G1T3Y8_RABIT	Uncharacterized protein	Oryctolagus cuniculus (Rabbit)	9986	Euk/mammal	40674	2
+G2HFN5	G2HFN5_PANTR	60 kDa heat shock protein, mitochondrial	Pan troglodytes (Chimpanzee)	9598	Euk/mammal	40674	2
+G2HG50	G2HG50_PANTR	60 kDa heat shock protein, mitochondrial	Pan troglodytes (Chimpanzee)	9598	Euk/mammal	40674	2
+G3HL13	G3HL13_CRIGR	60 kDa heat shock protein, mitochondrial	Cricetulus griseus (Chinese hamster) (Cricetulus barabensis griseus)	10029	Euk/mammal	40674	2
+G3QYY4	G3QYY4_GORGO	Uncharacterized protein	Gorilla gorilla gorilla (Lowland gorilla)	9595	Euk/mammal	40674	2
+G3SL08	G3SL08_LOXAF	Uncharacterized protein	Loxodonta africana (African elephant)	9785	Euk/mammal	40674	2
+G3WZS7	G3WZS7_SARHA	Uncharacterized protein	Sarcophilus harrisii (Tasmanian devil) (Sarcophilus laniarius)	9305	Euk/mammal	40674	2
+G5DYI3	G5DYI3_9PIPI	Putative heat shock subunit protein 1 (Fragment)	Hymenochirus curtipes (western dwarf clawed frog)	8362	Euk/amphibian	8292	2
+G9F6X6	G9F6X6_PIG	Mitochondrial heat shock 60 kDa protein 1	Sus scrofa (Pig)	9823	Euk/mammal	40674	2
+G9K4Y8	G9K4Y8_MUSPF	Heat shock 60kDa protein 1 (Fragment)	Mustela putorius furo (European domestic ferret) (Mustela furo)	9669	Euk/mammal	40674	2
+H0W1Z7	H0W1Z7_CAVPO	Uncharacterized protein	Cavia porcellus (Guinea pig)	10141	Euk/mammal	40674	2
+H2P876	H2P876_PONAB	60 kDa heat shock protein, mitochondrial	Pongo abelii (Sumatran orangutan) (Pongo pygmaeus abelii)	9601	Euk/mammal	40674	2
+H3B645	H3B645_LATCH	Uncharacterized protein	Latimeria chalumnae (West Indian ocean coelacanth)	7897	Euk/Animal	33208	2
+H3B646	H3B646_LATCH	Uncharacterized protein	Latimeria chalumnae (West Indian ocean coelacanth)	7897	Euk/Animal	33208	2
+H9FTU5	H9FTU5_MACMU	60 kDa heat shock protein, mitochondrial	Macaca mulatta (Rhesus macaque)	9544	Euk/mammal	40674	2
+H9GFC4	H9GFC4_ANOCA	Uncharacterized protein	Anolis carolinensis (Green anole) (American chameleon)	28377	Euk/Animal	33208	2
+H9Z8E7	H9Z8E7_MACMU	60 kDa heat shock protein, mitochondrial	Macaca mulatta (Rhesus macaque)	9544	Euk/mammal	40674	2
+I3L9N6	I3L9N6_PIG	Uncharacterized protein	Sus scrofa (Pig)	9823	Euk/mammal	40674	2
+I7G496	I7G496_MACFA	Macaca fascicularis brain cDNA clone: QflA-16224, similar to human heat shock 60kDa protein 1 (chaperonin) (HSPD1), nucleargene encoding mitochondrial protein, transcript variant2, mRNA, RefSeq: NM_199440.1	Macaca fascicularis (Crab-eating macaque) (Cynomolgus monkey)	9541	Euk/mammal	40674	2
+K7AP51	K7AP51_PANTR	Heat shock 60kDa protein 1 (Chaperonin)	Pan troglodytes (Chimpanzee)	9598	Euk/mammal	40674	2
+K7D0W0	K7D0W0_PANTR	Heat shock 60kDa protein 1 (Chaperonin)	Pan troglodytes (Chimpanzee)	9598	Euk/mammal	40674	2
+K7GIW1	K7GIW1_PELSI	Uncharacterized protein	Pelodiscus sinensis (Chinese softshell turtle) (Trionyx sinensis)	13735	Euk/Animal	33208	2
+K9K3I2	K9K3I2_HORSE	Mitochondrial 60 kDa heat shock protein-like protein (Fragment)	Equus caballus (Horse)	9796	Euk/mammal	40674	2
+L5K231	L5K231_PTEAL	60 kDa heat shock protein, mitochondrial	Pteropus alecto (Black flying fox)	9402	Euk/mammal	40674	2
+L5LQG7	L5LQG7_MYODS	60 kDa heat shock protein, mitochondrial	Myotis davidii (David's myotis)	225400	Euk/mammal	40674	2
+P10809	CH60_HUMAN	60 kDa heat shock protein, mitochondrial precursor	Homo sapiens (Human)	9606	Euk/mammal	40674	2
+P18687	CH60_CRIGR	60 kDa heat shock protein, mitochondrial precursor	Cricetulus griseus (Chinese hamster) (Cricetulus barabensis griseus)	10029	Euk/mammal	40674	2
+P63038	CH60_MOUSE	60 kDa heat shock protein, mitochondrial precursor	Mus musculus (Mouse)	10090	Euk/mammal	40674	2
+P63039	CH60_RAT	60 kDa heat shock protein, mitochondrial precursor	Rattus norvegicus (Rat)	10116	Euk/mammal	40674	2
+Q6IP60	Q6IP60_XENLA	Hspd1 protein	Xenopus laevis (African clawed frog)	8355	Euk/amphibian	8292	2
+Q7ZTK0	Q7ZTK0_XENLA	MGC53106 protein	Xenopus laevis (African clawed frog)	8355	Euk/amphibian	8292	2
+Q7ZTR6	Q7ZTR6_XENLA	Hspd1 protein (Fragment)	Xenopus laevis (African clawed frog)	8355	Euk/amphibian	8292	2
+A9CPF0	A9CPF0_ALLMI	Heat shock protein 60	Alligator mississippiensis (American alligator)	8496	Euk/Animal	33208	1
+B3KNN9	B3KNN9_HUMAN	cDNA FLJ30070 fis, clone ASTRO2000046, highly similar to CD166 ANTIGEN	Homo sapiens (Human)	9606	Euk/mammal	40674	1
+B4DX43	B4DX43_HUMAN	cDNA FLJ52980, highly similar to CD166 antigen	Homo sapiens (Human)	9606	Euk/mammal	40674	1
+D2H3A9	D2H3A9_AILME	Putative uncharacterized protein (Fragment)	Ailuropoda melanoleuca (Giant panda)	9646	Euk/mammal	40674	1
+E2G4F9	E2G4F9_TANAL	Heat shock protein 60	Tanichthys albonubes (White cloud mountain minnow)	38762	Euk/Animal	33208	1
+E7D7N6	E7D7N6_CTEID	60 kDa heat shock protein	Ctenopharyngodon idella (Grass carp) (Leuciscus idella)	7959	Euk/Animal	33208	1
+E9Q3Q6	E9Q3Q6_MOUSE	CD166 antigen	Mus musculus (Mouse)	10090	Euk/mammal	40674	1
+E9Q4G8	E9Q4G8_MOUSE	CD166 antigen	Mus musculus (Mouse)	10090	Euk/mammal	40674	1
+F1LUX8	F1LUX8_RAT	CD166 antigen (Fragment)	Rattus norvegicus (Rat)	10116	Euk/mammal	40674	1
+F1MHN8	F1MHN8_BOVIN	CD166 antigen	Bos taurus (Bovine)	9913	Euk/mammal	40674	1
+F1PDR0	F1PDR0_CANFA	CD166 antigen	Canis familiaris (Dog) (Canis lupus familiaris)	9615	Euk/mammal	40674	1
+F1SL34	F1SL34_PIG	Uncharacterized protein (Fragment)	Sus scrofa (Pig)	9823	Euk/mammal	40674	1
+F5GXJ9	F5GXJ9_HUMAN	CD166 antigen	Homo sapiens (Human)	9606	Euk/mammal	40674	1
+F6U8G5	F6U8G5_ORNAN	Uncharacterized protein	Ornithorhynchus anatinus (Duckbill platypus)	9258	Euk/mammal	40674	1
+F7B5L3	F7B5L3_HORSE	Uncharacterized protein	Equus caballus (Horse)	9796	Euk/mammal	40674	1
+F7E9U2	F7E9U2_MACMU	Uncharacterized protein	Macaca mulatta (Rhesus macaque)	9544	Euk/mammal	40674	1
+F7HMG0	F7HMG0_CALJA	Uncharacterized protein	Callithrix jacchus (White-tufted-ear marmoset)	9483	Euk/mammal	40674	1
+F7HMH1	F7HMH1_CALJA	Uncharacterized protein	Callithrix jacchus (White-tufted-ear marmoset)	9483	Euk/mammal	40674	1
+F7IPM8	F7IPM8_CALJA	Uncharacterized protein	Callithrix jacchus (White-tufted-ear marmoset)	9483	Euk/mammal	40674	1
+G1LH19	G1LH19_AILME	Uncharacterized protein (Fragment)	Ailuropoda melanoleuca (Giant panda)	9646	Euk/mammal	40674	1
+G1N5G4	G1N5G4_MELGA	Uncharacterized protein	Meleagris gallopavo (Common turkey)	9103	Euk/bird	8782	1
+G1P9R8	G1P9R8_MYOLU	Uncharacterized protein (Fragment)	Myotis lucifugus (Little brown bat)	59463	Euk/mammal	40674	1
+G1QTH1	G1QTH1_NOMLE	Uncharacterized protein	Nomascus leucogenys (Northern white-cheeked gibbon) (Hylobates leucogenys)	61853	Euk/mammal	40674	1
+G1T112	G1T112_RABIT	CD166 antigen	Oryctolagus cuniculus (Rabbit)	9986	Euk/mammal	40674	1
+G1TTE9	G1TTE9_RABIT	CD166 antigen (Fragment)	Oryctolagus cuniculus (Rabbit)	9986	Euk/mammal	40674	1
+G3HRF8	G3HRF8_CRIGR	CD166 antigen	Cricetulus griseus (Chinese hamster) (Cricetulus barabensis griseus)	10029	Euk/mammal	40674	1
+G3QZI0	G3QZI0_GORGO	Uncharacterized protein	Gorilla gorilla gorilla (Lowland gorilla)	9595	Euk/mammal	40674	1
+G4W8Y6	G4W8Y6_KRYMA	Heat shock protein 60	Kryptolebias marmoratus (Mangrove killifish) (Rivulus marmoratus)	37003	Euk/Animal	33208	1
+G7MK34	G7MK34_MACMU	Putative uncharacterized protein	Macaca mulatta (Rhesus macaque)	9544	Euk/mammal	40674	1
+G7NZQ8	G7NZQ8_MACFA	Putative uncharacterized protein	Macaca fascicularis (Crab-eating macaque) (Cynomolgus monkey)	9541	Euk/mammal	40674	1
+G7PL40	G7PL40_MACFA	Putative uncharacterized protein	Macaca fascicularis (Crab-eating macaque) (Cynomolgus monkey)	9541	Euk/mammal	40674	1
+H0ZJV4	H0ZJV4_TAEGU	Uncharacterized protein	Taeniopygia guttata (Zebra finch) (Poephila guttata)	59729	Euk/bird	8782	1
+H0ZVL7	H0ZVL7_TAEGU	Uncharacterized protein (Fragment)	Taeniopygia guttata (Zebra finch) (Poephila guttata)	59729	Euk/bird	8782	1
+H2P9U5	H2P9U5_PONAB	Uncharacterized protein	Pongo abelii (Sumatran orangutan) (Pongo pygmaeus abelii)	9601	Euk/mammal	40674	1
+H2R846	H2R846_PANTR	Activated leukocyte cell adhesion molecule	Pan troglodytes (Chimpanzee)	9598	Euk/mammal	40674	1
+H9ERZ1	H9ERZ1_MACMU	CD166 antigen isoform 1	Macaca mulatta (Rhesus macaque)	9544	Euk/mammal	40674	1
+H9YZP2	H9YZP2_MACMU	CD166 antigen	Macaca mulatta (Rhesus macaque)	9544	Euk/mammal	40674	1
+I3K867	I3K867_ORENI	Uncharacterized protein	Oreochromis niloticus (Nile tilapia) (Tilapia nilotica)	8128	Euk/Animal	33208	1
+I3LXH3	I3LXH3_SPETR	Uncharacterized protein (Fragment)	Spermophilus tridecemlineatus (Thirteen-lined ground squirrel) (Ictidomys tridecemlineatus)	43179	Euk/mammal	40674	1
+I3QII5	I3QII5_ANAPL	Heat shock protein	Anas platyrhynchos (Domestic duck) (Anas boschas)	8839	Euk/bird	8782	1
+J9NYE6	J9NYE6_CANFA	Uncharacterized protein (Fragment)	Canis familiaris (Dog) (Canis lupus familiaris)	9615	Euk/mammal	40674	1
+K7GAY1	K7GAY1_PELSI	Uncharacterized protein	Pelodiscus sinensis (Chinese softshell turtle) (Trionyx sinensis)	13735	Euk/Animal	33208	1
+K7GLE8	K7GLE8_PIG	Uncharacterized protein (Fragment)	Sus scrofa (Pig)	9823	Euk/mammal	40674	1
+K9ILN7	K9ILN7_DESRO	Putative activated leukocyte cell adhesion molecule	Desmodus rotundus (Vampire bat)	9430	Euk/mammal	40674	1
+K9IWH1	K9IWH1_PIG	CD166 antigen	Sus scrofa (Pig)	9823	Euk/mammal	40674	1
+K9J1X2	K9J1X2_DESRO	Putative 60 kDa heat shock protein mitochondrial	Desmodus rotundus (Vampire bat)	9430	Euk/mammal	40674	1
+L5LYA4	L5LYA4_MYODS	CD166 antigen	Myotis davidii (David's myotis)	225400	Euk/mammal	40674	1
+O35112	CD166_RAT	CD166 antigen precursor	Rattus norvegicus (Rat)	10116	Euk/mammal	40674	1
+O46651	CD166_RABIT	CD166 antigen (Fragment)	Oryctolagus cuniculus (Rabbit)	9986	Euk/mammal	40674	1
+P31081	CH60_BOVIN	60 kDa heat shock protein, mitochondrial precursor	Bos taurus (Bovine)	9913	Euk/mammal	40674	1
+P86206	CH60_MESAU	60 kDa heat shock protein, mitochondrial (Fragments)	Mesocricetus auratus (Golden hamster)	10036	Euk/mammal	40674	1
+Q0GC54	Q0GC54_CARAU	HSP60	Carassius auratus (Goldfish)	7957	Euk/Animal	33208	1
+Q0MRP3	Q0MRP3_OREMO	Heat shock protein 60 (Fragment)	Oreochromis mossambicus (Mozambique tilapia) (Tilapia mossambica)	8127	Euk/Animal	33208	1
+Q13740	CD166_HUMAN	CD166 antigen precursor	Homo sapiens (Human)	9606	Euk/mammal	40674	1
+Q4R603	Q4R603_MACFA	Testis cDNA, clone: QtsA-19552, similar to human activated leukocyte cell adhesion molecule (ALCAM),	Macaca fascicularis (Crab-eating macaque) (Cynomolgus monkey)	9541	Euk/mammal	40674	1
+Q54AJ5	Q54AJ5_MOUSE	MuSC precursor	Mus musculus (Mouse)	10090	Euk/mammal	40674	1
+Q5MPX5	Q5MPX5_MOUSE	Activated leukocyte cell adhesion molecule soluble isoform	Mus musculus (Mouse)	10090	Euk/mammal	40674	1
+Q5NVM5	CH60_PONAB	60 kDa heat shock protein, mitochondrial precursor	Pongo abelii (Sumatran orangutan) (Pongo pygmaeus abelii)	9601	Euk/mammal	40674	1
+Q5R640	Q5R640_PONAB	Putative uncharacterized protein DKFZp459H0124	Pongo abelii (Sumatran orangutan) (Pongo pygmaeus abelii)	9601	Euk/mammal	40674	1
+Q5ZL72	CH60_CHICK	60 kDa heat shock protein, mitochondrial precursor	Gallus gallus (Chicken)	9031	Euk/bird	8782	1
+Q61490	CD166_MOUSE	CD166 antigen precursor	Mus musculus (Mouse)	10090	Euk/mammal	40674	1
+Q6PEY4	Q6PEY4_HUMAN	ALCAM protein	Homo sapiens (Human)	9606	Euk/mammal	40674	1
+Q7YSF0	Q7YSF0_BOVIN	60 kDa protein 1-like protein (Fragment)	Bos taurus (Bovine)	9913	Euk/mammal	40674	1
+Q803B0	Q803B0_DANRE	Heat shock 60kD protein 1 (Chaperonin)	Danio rerio (Zebrafish) (Brachydanio rerio)	7955	Euk/Animal	33208	1
+Q9BDE7	Q9BDE7_PIG	Activated leukocyte cell adhesion molecule (Fragment)	Sus scrofa (Pig)	9823	Euk/mammal	40674	1
+Q9BH13	CD166_BOVIN	CD166 antigen precursor	Bos taurus (Bovine)	9913	Euk/mammal	40674	1

@@ -1,0 +1,121 @@
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintWriter;
+import java.util.Iterator;
+import java.util.Properties;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.lucene.document.Document;
+import org.apache.lucene.index.IndexReader;
+import org.apache.lucene.index.Term;
+import org.apache.lucene.search.BooleanClause;
+import org.apache.lucene.search.BooleanQuery;
+import org.apache.lucene.search.IndexSearcher;
+import org.apache.lucene.search.PhraseQuery;
+import org.apache.lucene.search.Query;
+import org.apache.lucene.search.ScoreDoc;
+import org.apache.lucene.search.Sort;
+import org.apache.lucene.search.SortField;
+import org.apache.lucene.search.TermQuery;
+import org.apache.lucene.search.TopFieldDocs;
+import org.apache.lucene.search.TopScoreDocCollector;
+import org.apache.lucene.store.Directory;
+import org.apache.lucene.store.FSDirectory;
+import org.apache.solr.common.SolrDocument;
+import org.apache.solr.common.SolrDocumentList;
+import org.apache.commons.fileupload.*;
+import org.apache.commons.fileupload.disk.*;
+import org.apache.commons.fileupload.servlet.*;
+import org.apache.commons.io.output.*;
+
+public class PeptideMatchWS extends HttpServlet {
+	/**
+	 * This servlet is used to provide batch peptides retrieve
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private PrintWriter out;
+	private String id;;
+	private String description;
+	private String sequence;
+	private String[] features;
+	private String proteinID;
+	private String proteinName;
+	private String pirsfID;
+	private String organism;
+
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		out = response.getWriter();
+		// indexpath.properties is in the $tomcat_home/WEB-INF/class/
+		InputStream inputStream = this.getClass().getClassLoader()
+				.getResourceAsStream("config/index.properties");
+		Properties properties = new Properties();
+		properties.load(inputStream);
+		// get the value of the property
+		String indexPath = properties.getProperty("indexpath");
+		String version = properties.getProperty("version");
+		//initial the query
+		BooleanQuery bQuery = new BooleanQuery();
+		PhraseQuery phraseQuery;
+		// open the index
+		Directory indexDir = FSDirectory.open(new File(indexPath));
+		IndexSearcher searcher = new IndexSearcher(IndexReader.open(indexDir));
+		TopScoreDocCollector collector;
+		String organism;
+		String fileName;
+		String peptide = "";
+		int totalNumber = 0;
+		Document doc = new Document();
+		//using the Solr to get the total matched sequences
+		//PeptidePharseQuery is used in the web
+		String[] peptides = null;
+		PeptidePhraseQuery pquery = new PeptidePhraseQuery();
+		if(request.getParameter("querylist") != null) {
+			String peptideList = getUploadedPeptideList(request);
+			if(peptideList.length() > 0) {
+				peptides = peptideList.split(";");
+			}
+		}
+		if (request.getParameter("query") != null) {
+			peptides = request.getParameter("query").split(";");
+		}
+		if (request.getParameter("taxon") != null) {
+			organism = request.getParameter("taxon").toLowerCase();
+		}
+		else {
+			organism = "all";
+		}
+		String[] organisms = organism.split(";");
+		int organismCount = organisms.length;
+		int resultCount = 0;
+		String organismName = "";
+		// get the number of the candidate sequences for all the organisms
+		if (organism.toLowerCase().equals("all")) {
+			pquery.queryAll(0, 1);
+			organismName = "UniProtKB";
+			resultCount = pquery.getResult();
+		} else {
+			pquery.queryByOrganismIDs(organism, 0, 1);
+			SolrDocumentList doclist = pquery.getCurrentDocs();
+			Iterator<SolrDocument> docItr = doclist.iterator();
+			SolrDocument solrDoc;
+			while (docItr.hasNext()) {
+				solrDoc = docItr.next();
+				description = (String) solrDoc.get("description");
+				features = description.trim().split("\\^\\|\\^");
+				if (organismCount == 1)
+					organismName = features[5];
+				else
+					organismName = organism;
+			}
+			resultCount = pquery.getResult();
+		}
+}

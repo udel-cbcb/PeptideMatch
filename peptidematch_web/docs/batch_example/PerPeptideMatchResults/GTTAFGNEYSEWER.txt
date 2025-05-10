@@ -1,0 +1,4 @@
+##Query peptide: GTTAFGNEYSEWER
+##Number of matched proteins: 1
+#UniRef100 ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+UniRef100_E7NZD4	E7NZD4	OprD family outer membrane porin	453	Pseudomonas syringae pv. glycinea str. B076 [875329]	389-402		

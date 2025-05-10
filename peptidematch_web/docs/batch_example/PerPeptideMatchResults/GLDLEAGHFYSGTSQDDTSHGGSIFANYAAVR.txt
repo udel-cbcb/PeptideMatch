@@ -1,0 +1,4 @@
+##Query peptide: GLDLEAGHFYSGTSQDDTSHGGSIFANYAAVR
+##Number of matched proteins: 1
+#UniRef100 ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+UniRef100_E7P8R6	E7P8R6	Porin D	440	Pseudomonas syringae pv. glycinea str. B076 [875329]	172-203		

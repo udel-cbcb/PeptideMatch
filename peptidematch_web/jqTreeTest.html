@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Example 5</title>
+    <link rel="stylesheet" href="css/jqTree/gridless.css">
+    <link rel="stylesheet" href="css/jqTree/prism.css">
+    <link rel="stylesheet" href="css/jqTree/example.css">
+    <link rel="stylesheet" href="css/jqTree/jqtree.css">
+    <script src="js/jqTree/jquery-1.8.3.min.js"></script>
+    <script src="js/jqTree/prism.js"></script>
+    <script src="js/jqTree/jquery.mockjax.js"></script>
+    <script src="js/jqTree/example_data.js"></script>
+    <script src="js/jqTree/tree.jquery.js"></script>
+    <script src="js/jqTree/jquery.cookie.js"></script>
+</head>
+<body>
+    <p id="nav">
+        <a href="example4.html">&laquo; Example 4</a>
+        
+            <a href="example6.html" class="next">Example 6 &raquo;</a>
+        
+    </p>
+
+    <h1>Example 5 - Load nodes on demand from the server</h1>
+
+    
+    <div id="tree1" data-url="/nodes/"></div>
+
+    <p>
+        In this example, the data is loaded on demand from the server.
+        <br>
+        To use load on demand, you must do the following:
+    </p>
+
+    <ul>
+        <li>
+            You must specify a <strong>data url</strong>. In this example this is done using the <strong>data-url</strong> 
+            html data attribute.
+        </li>
+        <li>
+            Folders that must be loaded on demand must have the <strong>load_on_demand</strong> property. You can specify this in the data.
+        </li>
+        <li>
+            In this example, the url <strong>/nodes/</strong> returns the first level of data (Saurischia and Ornithischians).
+        </li>
+        <li>
+            The url for the load on demand data is <strong>&lt;data-url&gt;?node=&lt;node-id&gt;</strong>. So, for node 23  this would be
+            <strong>/nodes/?node=23</strong>.
+        </li>
+    </ul>
+
+    <h3>first level of data</h3>
+<pre><code class="language-javascript">
+[
+  {
+    label: 'Saurischia',
+    id: 1,
+    load_on_demand: true
+  },
+  {
+    label: 'Ornithischians',
+    id: 23,
+    load_on_demand: true
+  }
+]
+</code></pre>
+
+    <h3>html</h3>
+
+<pre><code class="language-markup">
+&lt;div id="tree1" data-url="/nodes/"&gt;&lt;/div&gt;
+</code></pre>
+
+    <h3>javascript</h3>
+
+<pre><code class="language-javascript">
+$('#tree1').tree({
+    dragAndDrop: true
+});
+</code></pre>
+
+    <script>
+        $.mockjax({
+            url: '*',
+            //responseTime: 1000,
+            responseTime: 100,
+            response: function(options) {
+                if (options.data && options.data.node) {
+                    this.responseText = ExampleData.getChildrenOfNode(options.data.node);
+                }
+                else {
+                    this.responseText = ExampleData.getFirstLevelData();
+                    //this.responseText = ExampleData.example_data;
+                }
+            }
+        });
+
+        $(function() {
+            var $tree = $('#tree1');
+
+            $tree.tree({
+                //dragAndDrop: true
+		//data: data,
+                autoEscape: false,
+                //autoOpen: true,
+		saveState: 'tree1' 
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+nohup java javaprogram.NGramIndexer -index ../jetty/solr/data/index_ipro.seq.uniprotkb.plus.isoform_nist_peptideAtlas_pride_iedb_lineage_shortlineage_uniref100_test2.2017_10 -data /data/chenc/peptidematch_data/2017_10/ipro.seq.uniprotkb.plus.isoform_nist_peptideAtlas_pride_iedb_lineage_shortlineage_uniref100.2017_10 -gram 3 3 > index_test2.log 

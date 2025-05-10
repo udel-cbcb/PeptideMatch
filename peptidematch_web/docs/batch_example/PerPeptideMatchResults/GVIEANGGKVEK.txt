@@ -1,0 +1,4 @@
+##Query peptide: GVIEANGGKVEK
+##Number of matched proteins: 1
+#UniRef100 ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+UniRef100_B8IED2	B8IED2	30S ribosomal protein S6	134	Methylobacterium nodulans (strain ORS2060 / LMG 21967) [460265]	28-39		

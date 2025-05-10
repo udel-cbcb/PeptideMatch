@@ -1,0 +1,21 @@
+<xs:element name="perProteinMatchSummaryReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="perProteinMatchInfo" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="proteinAC"/>
+              <xs:element type="xs:byte" name="numberOfMatchingPeptides"/>
+              <xs:element name="matchingPeptides">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="matchingPeptide"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>

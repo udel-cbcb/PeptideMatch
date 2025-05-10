@@ -1,0 +1,4 @@
+##Query peptide: DPLGVFHDALNNVKPNIEVR
+##Number of matched proteins: 1
+#Protein AC	Protein ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+F7WCM6	F7WCM6_SORMK [tr]	Ribosomal protein S7	156	Sordaria macrospora (strain ATCC MYA-333 / DSM 997 / K(L3346) / K-hell) [771870]	57-76		

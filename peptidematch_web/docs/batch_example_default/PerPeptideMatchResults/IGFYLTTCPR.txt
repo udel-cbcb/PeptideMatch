@@ -1,0 +1,5 @@
+##Query peptide: IGFYLTTCPR
+##Number of matched proteins: 2
+#Protein AC	Protein ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+D7MQL3	D7MQL3_ARALL [tr]	Putative uncharacterized protein	328	Arabidopsis lyrata subsp. lyrata (Lyre-leaved rock-cress) [81972]	37-46		
+Q43387	PER71_ARATH [sp]	Peroxidase 71 precursor	328	Arabidopsis thaliana (Mouse-ear cress) [3702]	37-46	Pride	

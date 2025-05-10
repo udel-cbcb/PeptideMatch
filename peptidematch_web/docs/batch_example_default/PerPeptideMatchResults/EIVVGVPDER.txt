@@ -1,0 +1,7 @@
+##Query peptide: EIVVGVPDER
+##Number of matched proteins: 4
+#Protein AC	Protein ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+F3X386	F3X386_9SPHN [tr]	AAA ATPase, CDC48 subfamily protein	763	Sphingomonas sp. S17 [1007104]	365-374		
+J2D6F8	J2D6F8_9SPHN [tr]	AAA family ATPase, CDC48 subfamily	764	Sphingobium sp. AP49 [1144307]	369-378		
+K9D736	K9D736_SPHYA [tr]	AAA family ATPase, CDC48 subfamily	764	Sphingobium yanoikuyae ATCC 51230 [883163]	369-378		
+Q1ND63	Q1ND63_9SPHN [tr]	AAA family ATPase, CDC48 subfamily protein	762	Sphingomonas sp. SKA58 [314266]	367-376		

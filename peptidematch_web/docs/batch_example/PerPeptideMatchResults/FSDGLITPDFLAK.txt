@@ -1,0 +1,4 @@
+##Query peptide: FSDGLITPDFLAK
+##Number of matched proteins: 1
+#UniRef100 ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+UniRef100_Q1H583	Q1H583	GDSL esterase/lipase At1g54000 precursor	391	Arabidopsis thaliana (Mouse-ear cress) [3702]	76-88	Pride	

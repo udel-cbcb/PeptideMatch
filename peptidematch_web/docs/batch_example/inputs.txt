@@ -1,0 +1,2 @@
+##Sequence data set: UniProtKB (2013_06) | UniRef100 | L and I are equivalent
+##Unique query peptides: 26

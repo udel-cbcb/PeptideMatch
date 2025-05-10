@@ -1,0 +1,7 @@
+##Query peptide: GYGFIQPDDGQK
+##Number of matched proteins: 4
+#Protein AC	Protein ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+G7DJP0	G7DJP0_BRAJP [tr]	Cold shock protein	69	Bradyrhizobium japonicum USDA 6 [1037409]	14-25		
+I0G9M0	I0G9M0_9BRAD [tr]	Cold shock protein	69	Bradyrhizobium sp. S23321 [335659]	14-25		
+J2W9U3	J2W9U3_9BRAD [tr]	Cold shock protein	69	Bradyrhizobium sp. YR681 [1144344]	14-25		
+Q89N56	Q89N56_BRAJA [tr]	Cold shock protein	69	Bradyrhizobium japonicum (strain USDA 110) [224911]	14-25		

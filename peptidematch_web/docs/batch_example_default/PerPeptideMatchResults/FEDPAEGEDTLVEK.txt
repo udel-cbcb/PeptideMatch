@@ -1,0 +1,9 @@
+##Query peptide: FEDPAEGEDTLVEK
+##Number of matched proteins: 6
+#Protein AC	Protein ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+B9DHU7	B9DHU7_ARATH [tr]	AT1G78900 protein (Fragment)	120	Arabidopsis thaliana (Mouse-ear cress) [3702]	87-100		
+B9DHY6	B9DHY6_ARATH [tr]	AT1G78900 protein (Fragment)	463	Arabidopsis thaliana (Mouse-ear cress) [3702]	430-443		
+O23654	VATA_ARATH [sp]	V-type proton ATPase catalytic subunit A	623	Arabidopsis thaliana (Mouse-ear cress) [3702]	590-603	Pride	
+Q0WLF6	Q0WLF6_ARATH [tr]	AT1G78900 protein	623	Arabidopsis thaliana (Mouse-ear cress) [3702]	590-603		
+Q56X25	Q56X25_ARATH [tr]	Vacuolar-type H+-ATPase subunit A	326	Arabidopsis thaliana (Mouse-ear cress) [3702]	293-306		
+Q570K4	Q570K4_ARATH [tr]	Vacuolar-type H+-ATPase subunit A	81	Arabidopsis thaliana (Mouse-ear cress) [3702]	48-61		

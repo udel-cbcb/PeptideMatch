@@ -1,0 +1,6 @@
+##Query peptide: DQSTLQYTTVINQR
+##Number of matched proteins: 3
+#UniRef100 ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+UniRef100_D7KCC9	D7KCC9	EDGP	433	Arabidopsis lyrata subsp. lyrata (Lyre-leaved rock-cress) [81972]	38-51		
+UniRef100_Q8LF70	Q8LF70	EDGP	433	Arabidopsis thaliana (Mouse-ear cress) [3702]	38-51		
+UniRef100_Q9ZVS4	Q9ZVS4	Aspartyl protease-like protein	433	Arabidopsis thaliana (Mouse-ear cress) [3702]	38-51		

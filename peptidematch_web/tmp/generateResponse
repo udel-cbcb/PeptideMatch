@@ -1,0 +1,63 @@
+	protected void printTable(Document doc, HttpServletResponse response,
+			String originalQuery) throws IOException {
+		out = response.getWriter();
+		id = (String) doc.get("id");
+		description = (String) doc.get("description");
+		sequence = (String) doc.get("sequence");
+		features = description.trim().split("\\^\\|\\^");
+		proteinID = features[0];
+		proteinName = features[2];
+		pirsfID = features[3];
+		organism = features[5];
+		int counter = 0;
+		out.print(id + "\t");
+		out.print(proteinID + "\t");
+		out.print(proteinName + "\t");
+		out.print(sequence.length() + "\t");
+		out.print(organism + "\t");
+		if (!pirsfID.equals(""))
+			out.print("PIR" + pirsfID + "\t");
+		else
+			out.print(" \t");
+		for (int i = 0; i <= sequence.length() - originalQuery.length(); i++) {
+			if (sequence.substring(i, i + originalQuery.length()).toUpperCase()
+					.equals(originalQuery.toUpperCase())) {
+				if (counter > 0)
+					out.print(";");
+				out.print(i + 1);
+				out.print("-");
+				out.print(i + originalQuery.length());
+				out.print(" ");
+				if (i < 5
+						&& (i + originalQuery.length() + 5) > sequence.length()) {
+					out.print(sequence.substring(0, i)
+							+ originalQuery.toUpperCase()
+							+ sequence.substring(i + originalQuery.length(),
+									sequence.length()));
+				} else if (i < 5
+						&& (i + originalQuery.length() + 5) <= sequence
+								.length()) {
+					out.print(sequence.substring(0, i)
+							+ originalQuery.toUpperCase()
+							+ sequence.substring(i + originalQuery.length(), i
+									+ originalQuery.length() + 5));
+				} else if (i >= 5
+						&& (i + originalQuery.length() + 5) > sequence.length()) {
+					out.print(sequence.substring(i - 5, i)
+							+ originalQuery.toUpperCase()
+							+ sequence.substring(i + originalQuery.length(),
+									sequence.length()));
+				} else if (i >= 5
+						&& (i + originalQuery.length() + 5) <= sequence
+								.length()) {
+					out.print(sequence.substring(i - 5, i)
+							+ originalQuery.toUpperCase()
+							+ sequence.substring(i + originalQuery.length(), i
+									+ originalQuery.length() + 5));
+				}
+				counter++;
+			}
+		}
+		out.println("");
+		out.flush();
+	}

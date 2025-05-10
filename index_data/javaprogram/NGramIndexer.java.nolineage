@@ -1,0 +1,193 @@
+package javaprogram;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
+import org.apache.lucene.document.Document;
+import org.apache.lucene.document.Field;
+import org.apache.lucene.index.IndexWriter;
+import org.apache.lucene.store.FSDirectory;
+import org.apache.lucene.util.Version;
+
+
+
+public class NGramIndexer {
+
+	public static void main(String[] args) throws Exception {
+		String usage =
+				"Usage:\tNGramIndexer [-index dir] [-gram lowerGram UpperGram] [-data dataFile]";
+		//program manual 
+		if (args.length > 0 && ("-h".equals(args[0]) || "-help".equals(args[0]))) {
+			System.out.println(usage);
+			System.exit(0);
+		}
+		else if(args.length != 7) { 
+			System.out.println(usage);
+			System.exit(0);
+		}
+		//define indexing parameters
+		String index = "index";
+		String dataFilePath = null;
+		int lowerGram=3;
+		int upperGram=3;
+		//get the paramters from the user input
+		for (int i = 0; i < args.length; i++) {
+			if ("-index".equals(args[i])) {
+				index = args[i+1];
+				i++;
+			} else if ("-data".equals(args[i])) {
+				dataFilePath = args[i+1];
+				i++;
+			}
+			else if("-gram".equals(args[i])){
+				lowerGram=Integer.parseInt(args[++i]);
+				upperGram=Integer.parseInt(args[++i]);
+			} 
+		}
+		//call the functions to index
+		if(dataFilePath != null) {	
+			File indexDir = new File(index);
+			File dataFile = new File(dataFilePath);			
+			index(indexDir, dataFile,lowerGram,upperGram);
+		}
+		else{
+			System.out.println("No Index");
+			System.exit(0);
+		}
+	}
+
+	//main entry of the index
+	public static void index(File indexDir, File dataFile, int lowerGram,int upperGram) throws IOException {
+		// if the directory exists, then delete the directory
+		if (indexDir.exists()) {
+			deleteDir(indexDir);
+		}
+		//check the index data
+		if (!dataFile.exists()) {
+			throw new IOException(dataFile + " does not exist");
+		}
+		long begin = System.currentTimeMillis(); 
+		try {
+			// call the NGramAnalyzer
+			NGramAnalyzer ngramAnalyzer = new NGramAnalyzer(lowerGram,upperGram);
+			//	
+			IndexWriter writer = new IndexWriter(FSDirectory.open(indexDir), ngramAnalyzer, true, IndexWriter.MaxFieldLength.UNLIMITED);
+			writer.setMaxFieldLength(Integer.MAX_VALUE);
+			System.out.println("Indexing to directory '" +indexDir+ "'...");
+			System.out.println("Indexing '" +dataFile+ "'...");
+			indexDataFile(writer, dataFile);
+			System.out.println("Optimizing...");
+			writer.optimize();
+			writer.close();
+			//      System.out.println(end.getTime() - start.getTime() + " total milliseconds");
+			long elapsed = System.currentTimeMillis() - begin; 
+			DateFormat df = new SimpleDateFormat("HH 'hours', mm 'mins,' ss 'seconds'"); 
+			df.setTimeZone(TimeZone.getTimeZone("GMT+0")); 
+			System.out.println(df.format(new Date(elapsed))); 
+		} catch (IOException e) {
+			System.out.println(" caught a " + e.getClass() +
+					"\n with message: " + e.getMessage());
+		}
+	}
+
+
+	public static boolean deleteDir(File dir) {
+		if (dir.isDirectory()) {
+			String[] children = dir.list();
+			for (int i=0; i<children.length; i++) {
+				boolean success = deleteDir(new File(dir, children[i]));
+				if (!success) {
+					return false;
+				}
+			}
+		}
+		// The directory is now empty so delete it
+		return dir.delete();
+	}
+//indexing entry
+	protected static void indexDataFile(IndexWriter writer, File dataFile) throws IOException {
+		FileReader fr = new FileReader(dataFile);
+		BufferedReader br = new BufferedReader(fr);
+		String eachLine = br.readLine();
+		String record = "";
+		while (eachLine != null) {
+			if(eachLine.startsWith(">")) {
+				if(record.length() > 0) {
+					addDoc(writer, record);
+					record = eachLine+"\n";
+				}
+				else {
+					record += eachLine+"\n";
+				}
+			}
+			else {
+				record += eachLine;
+			}
+			eachLine = br.readLine();
+		}
+		if(record.length() > 0) {
+			record += "\n";
+			//addDoc(writer, "record", record);
+			addDoc(writer, record);
+		}
+	}
+//add the documents
+	protected static void addDoc(IndexWriter w, String field, String value) throws IOException {
+		Document doc = new Document();
+		doc.add(new Field(field, value, Field.Store.YES, Field.Index.ANALYZED));
+		w.addDocument(doc);
+	}
+// add the documents. the main function
+	protected static void addDoc(IndexWriter w, String value) throws IOException {
+		/* delimit */
+		String delimiter = "\n";
+		String fieldDelimiter=" ";
+		Document doc = new Document();
+		String[] lines = value.split(delimiter);
+		String line = "";
+		String organismID="";
+		String taxongroupID="";
+		String taxongroupName="";
+		for(int i = 0; i < lines.length; i++) {
+			line = lines[i].trim();
+			if(line.length() > 0) {
+				if(line.startsWith(">")) {
+					String[] fields=line.split(fieldDelimiter);
+					String id = fields[0].substring(1);
+					String description=line.substring(id.length()+2, line.length());
+					//System.out.println("ID: |"+id+"|");
+					//doc.add(new Field("ID", id, Field.Store.YES, Field.Index.NOT_ANALYZED));
+					String[] features=description.trim().split("\\^\\|\\^");
+					if(features.length==9){
+					 organismID=features[6];
+					 taxongroupName=features[7];
+					 taxongroupID=features[8];}
+					else{
+						organismID=features[6];
+						 taxongroupName="other";
+						 taxongroupID="null";
+						 }
+					if(organismID.equals("")) organismID="N/A";
+					doc.add(new Field("id", id, Field.Store.YES, Field.Index.NOT_ANALYZED));
+					doc.add(new Field("description",description,Field.Store.YES,Field.Index.NOT_ANALYZED));
+					doc.add(new Field("organismid",organismID,Field.Store.YES,Field.Index.NOT_ANALYZED));
+					doc.add(new Field("taxongroupid",taxongroupID,Field.Store.YES,Field.Index.NOT_ANALYZED));
+					doc.add(new Field("taxongroupname",taxongroupName,Field.Store.YES,Field.Index.NOT_ANALYZED));
+				}
+				else {
+					doc.add(new Field("sequence", line, Field.Store.YES, Field.Index.ANALYZED));
+
+				}
+			}
+		}
+
+		w.addDocument(doc);
+	}
+}
+
+
+

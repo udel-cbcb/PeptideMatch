@@ -1,0 +1,22 @@
+B. taurus	Bos taurus (Bovine)	BOVIN	9913
+C. familiaris	Canis familiaris (Dog)	CANFA	9615
+H. sapiens	Homo sapiens (Human)	HUMAN	9606
+M. musculus	Mus musculus (Mouse)	MOUSE	10090
+R. norvegicus	Rattus norvegicus (Rat)	RAT	10116
+G. gallus	Gallus gallus (Chicken)	CHICK	9031
+D. rerio	Danio rerio (Zebrafish)	DANRE	7955
+X. tropicalis	Xenopus tropicalis (Western clawed frog)	XENTR	8364
+A. gambiae	Anopheles gambiae (African malaria mosquito)	ANOGA	7165
+A. mellifera	Apis mellifera (Honeybee)	APIME	7460
+D. melanogaster	Drosophila melanogaster (Fruit fly)	DROME	7227
+C. elegans	Caenorhabditis elegans	CAEEL	6239
+O. sativa	Oryza sativa subsp. japonica (Rice)	ORYSJ	39947
+A. thaliana	Arabidopsis thaliana (Mouse-ear cress)	ARATH	3702
+S. cerevisiae	Saccharomyces cerevisiae (strain ATCC 204508 / S288c) (Baker's yeast)	YEAST	559292
+B. anthracis, Ames	Bacillus anthracis	BACAN	198094
+E. coli, K12	Escherichia coli (strain K12)	ECOLI	83333
+L. lactis, I11403	Lactococcus lactis subsp. lactis (strain IL1403)	LACLA	272623
+M. tuberculosis, H37Ra	Mycobacterium tuberculosis (strain ATCC 25177 / H37Ra)	MYCTA	419947
+S. dysenteriae	Shigella dysenteriae	SHIDS	622	
+S. typhi	Salmonella typhi	SALTI	90370
+S. typhimurium	Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720)	SALTY	99287

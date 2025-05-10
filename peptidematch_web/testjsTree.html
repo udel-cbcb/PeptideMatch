@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo</title>
+    <script type="text/javascript" src="js/jsTree/jquery.js"></script>
+    <script type="text/javascript" src="js/jsTree/jquery.jstree.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#tree").jstree();
+        });
+    </script>
+        <script type="text/javascript" class="source">
+        $(function () {
+                $("#expand_all").click(
+                        function () { 
+                                $("#tree").jstree("open_all", -1);
+                });
+                $("#collapse_all").click(
+                        function () { 
+                                $("#tree").jstree("close_all", -1);
+                });
+                $("#tree").jstree({
+                        "themes" : {
+                        "theme" : "classic",
+                        "dots" : true,
+                        "icons" : false 
+                        },
+                        "plugins" : [ "themes", "html_data" ]
+                });
+
+        });
+</script>
+</head>
+<body>
+    <input type="button" class="button" value="Expand All" id="expand_all" style="clear:both;" />
+    <input type="button" class="button" value="Collapse All" id="collapse_all" style="clear:both;" />
+    <div id="tree">
+        <ul>
+            <li><a>Team A's Projects</a>
+                <ul>
+                    <li><span><a href="http://www.google.com">Iteration</a></span><span style="padding: 0 40px"><a href="http://yahoo.com">1</a></span>
+                        <ul>
+                            <li><a>Story A</a></li>
+                            <li><a>Story B</a></li>
+                            <li><a>Story C</a></li>
+                        </ul>
+                    </li>
+                    <li><a>Iteration 2</a>
+                        <ul>
+                            <li><a>Story D</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

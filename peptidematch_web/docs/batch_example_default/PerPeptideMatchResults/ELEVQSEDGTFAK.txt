@@ -1,0 +1,11 @@
+##Query peptide: ELEVQSEDGTFAK
+##Number of matched proteins: 8
+#Protein AC	Protein ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+D7I3L9	D7I3L9_PSESS [tr]	30S ribosomal protein S2	247	Pseudomonas savastanoi pv. savastanoi NCPPB 3335 [693985]	116-128	Pride	
+E7P8X4	E7P8X4_PSESG [tr]	30S ribosomal protein S2	247	Pseudomonas syringae pv. glycinea str. B076 [875329]	116-128	Pride	
+E7PLE8	E7PLE8_PSESG [tr]	30S ribosomal protein S2	247	Pseudomonas syringae pv. glycinea str. race 4 [875330]	116-128	Pride	
+F3DD98	F3DD98_9PSED [tr]	30S ribosomal protein S2	247	Pseudomonas syringae pv. aesculi str. 0893_23 [629258]	116-128	Pride	
+F3EAM8	F3EAM8_PSESL [tr]	30S ribosomal protein S2	247	Pseudomonas syringae pv. lachrymans str. M301315 [629260]	116-128		
+F3FAL7	F3FAL7_9PSED [tr]	30S ribosomal protein S2	247	Pseudomonas syringae pv. mori str. 301020 [629261]	116-128		
+F3JWP6	F3JWP6_PSESZ [tr]	30S ribosomal protein S2	247	Pseudomonas syringae pv. tabaci str. ATCC 11528 [573066]	116-128	Pride	
+Q48F59	RS2_PSE14 [sp]	30S ribosomal protein S2	247	Pseudomonas syringae pv. phaseolicola (strain 1448A / Race 6) [264730]	116-128	Pride	

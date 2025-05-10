@@ -1,0 +1,5 @@
+##Query peptide: HNDVNFGTQDHNR
+##Number of matched proteins: 2
+#UniRef100 ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+UniRef100_Q9SE50	Q9SE50	Beta-D-glucopyranosyl abscisate beta-glucosidase precursor	528	Arabidopsis thaliana (Mouse-ear cress) [3702]	433-445	Pride	
+UniRef100_Q9SE50-2	Q9SE50-2	Beta-D-glucopyranosyl abscisate beta-glucosidase precursor	461	Arabidopsis thaliana (Mouse-ear cress) [3702]	433-445		

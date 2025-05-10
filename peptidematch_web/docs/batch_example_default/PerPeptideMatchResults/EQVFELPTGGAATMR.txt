@@ -1,0 +1,5 @@
+##Query peptide: EQVFELPTGGAATMR
+##Number of matched proteins: 2
+#Protein AC	Protein ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+B2J294	B2J294_NOSP7 [tr]	Photosystem I protein PsaD	141	Nostoc punctiforme (strain ATCC 29133 / PCC 73102) [63737]	38-52		
+K9WZP8	K9WZP8_9NOST [tr]	PsaD	139	Cylindrospermum stagnale PCC 7417 [56107]	38-52		

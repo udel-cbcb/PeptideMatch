@@ -1,0 +1,21 @@
+##Query peptide: GACSGCPSSTATLR
+##Number of matched proteins: 18
+#UniRef100 ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+UniRef100_A6U5G6	A6U5G6	Scaffold protein Nfu/NifU	188	Sinorhizobium medicae (strain WSM419) (Ensifer medicae) [366394]	155-168		
+UniRef100_B0U8L4	B0U8L4	Scaffold protein Nfu/NifU	187	Methylobacterium sp. (strain 4-46) [426117]	154-167		
+UniRef100_B1LWF3	B1LWF3	Scaffold protein Nfu/NifU	188	Methylobacterium radiotolerans (strain ATCC 27329 / DSM 1819 / JCM 2831) [426355]	155-168		
+UniRef100_B1ZJQ9	B1ZJQ9	Scaffold protein Nfu/NifU	188	Methylobacterium populi (strain ATCC BAA-705 / NCIMB 13946 / BJ001) [441620]	155-168		
+UniRef100_B8IBP5	B8IBP5	Scaffold protein Nfu/NifU	187	Methylobacterium nodulans (strain ORS2060 / LMG 21967) [460265]	154-167		
+UniRef100_C3MF04	C3MF04	Putative scaffold protein Nfu/NifU	188	Rhizobium sp. (strain NGR234) [394]	155-168		
+UniRef100_D8JY66	D8JY66	Scaffold protein Nfu/NifU	184	Hyphomicrobium denitrificans (strain ATCC 51888 / DSM 1869 / NCIB 11706 / TK 0415) [582899]	151-164		
+UniRef100_E8L688	E8L688	Scaffold protein Nfu/NifU	187	Methylocystis sp. ATCC 49242 [622637]	154-167		
+UniRef100_F8JFM2	F8JFM2	NifU-like	184	Hyphomicrobium sp. (strain MC1) [717785]	151-164		
+UniRef100_G4IQD6	G4IQD6	Scaffold protein Nfu/NifU	184	Hyphomicrobium denitrificans 1NES1 [670307]	151-164		
+UniRef100_H0FXC8	H0FXC8	Scaffold protein Nfu/NifU	188	Sinorhizobium meliloti CCNWSX0020 [1107881]	155-168		
+UniRef100_H1KN69	H1KN69	Scaffold protein Nfu/NifU	188	Methylobacterium extorquens DSM 13060 [882800]	155-168		
+UniRef100_I3WYD5	I3WYD5	Putative scaffold protein Nfu/NifU	188	Sinorhizobium fredii USDA 257 [1185652]	155-168		
+UniRef100_I4YZ67	I4YZ67	Thioredoxin-like protein	186	Microvirga sp. WSM3557 [754501]	153-166		
+UniRef100_I9LDF5	I9LDF5	Scaffold protein Nfu/NifU	188	Methylobacterium sp. GXF4 [1096546]	155-168		
+UniRef100_J6UBU7	J6UBU7	NifU-like domain protein	184	Rhodovulum sp. PH10 [1187851]	151-164		
+UniRef100_J7QQV5	J7QQV5	Scaffold protein Nfu/NifU	185	Methylocystis sp. (strain SC2) [187303]	152-165		
+UniRef100_M7YPC2	M7YPC2	Scaffold protein Nfu/NifU	188	Methylobacterium mesophilicum SR1.6/6 [908290]	155-168		

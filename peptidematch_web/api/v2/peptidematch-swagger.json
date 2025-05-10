@@ -1,0 +1,367 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is PeptideMatch OpenAPI.",
+    "version": "2.0.0",
+    "title": "Peptide Match OpenAPI 2.0",
+    "contact": {
+      "email": "chenc@udel.edu"
+    },
+    "license": {
+      "name": "GPL version 3",
+      "url": "https://www.gnu.org/licenses/gpl.html"
+    }
+  },
+  "host": "research.bioinformatics.udel.edu",
+  "basePath": "/peptidematchapi2",
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "produces": [
+    "application/json",
+    "application/xml",
+    "text/x-fasta",
+    "text/tab-separated-values"
+  ],
+  "paths": {
+    "/match_get": {
+      "get": {
+        "tags": [
+          "Peptide Match API 2.0"
+        ],
+        "summary": "Do peptide match using GET method.",
+        "description": "Retrieve UniProtKB protein sequences that would exactly match to the query peptides using GET method.",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "peptides",
+            "description": "A list of comma-separated peptide sequences (up to 100). Each sequence consists of 3 or more amino acids.",
+            "required": true,
+            "type": "string",
+            "default": "AAVEEGIVLGGGCALLR,SVQYDDVPEYK"
+          },
+          {
+            "in": "query",
+            "name": "taxonids",
+            "description": "A list fo comma-separated NCBI taxonomy IDs.",
+            "type": "string",
+            "default": "9606,10090"
+          },
+          {
+            "in": "query",
+            "name": "swissprot",
+            "description": "Only search SwissProt protein sequences.",
+            "type": "boolean",
+            "default": true
+          },
+          {
+            "in": "query",
+            "name": "isoform",
+            "description": "Include isforms.",
+            "type": "boolean",
+            "default": true
+          },
+          {
+            "in": "query",
+            "name": "uniref100",
+            "description": "Only search UniRef100 protein sequences.",
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "in": "query",
+            "name": "leqi",
+            "description": "Treat Leucine (L) and Isoleucine (I) equivalent.",
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "Off set, page starting point, with default value 0.",
+            "type": "integer",
+            "default": 0
+          },
+          {
+            "in": "query",
+            "name": "size",
+            "description": "Page size with default value 100. When page size is -1, it returns all records and offset will be ignored.",
+            "type": "integer",
+            "default": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Match report.",
+            "schema": {
+              "$ref": "#/definitions/Report"
+            }
+          },
+          "400": {
+            "description": "Bad request. Number of query peptides is larger than 100.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "default": {
+            "description": "Unexpected error.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/match_post": {
+      "post": {
+        "tags": [
+          "Peptide Match API 2.0"
+        ],
+        "summary": "Do peptide match using POST method.",
+        "description": "Retrieve UniProtKB protein sequences that would exactly match to the query peptides using POST method.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "peptides",
+            "description": "A list of comma-separated peptide sequences (up to 100). Each sequence consists of 3 or more amino acids.",
+            "required": true,
+            "type": "string",
+            "default": "AAVEEGIVLGGGCALLR,SVQYDDVPEYK"
+          },
+          {
+            "in": "formData",
+            "name": "taxonids",
+            "description": "A list fo comma-separated NCBI taxonomy IDs.",
+            "type": "string",
+            "default": "9606,10090"
+          },
+          {
+            "in": "formData",
+            "name": "swissprot",
+            "description": "Only search SwissProt protein sequences.",
+            "type": "boolean",
+            "default": true
+          },
+          {
+            "in": "formData",
+            "name": "isoform",
+            "description": "Include isoforms.",
+            "type": "boolean",
+            "default": true
+          },
+          {
+            "in": "formData",
+            "name": "uniref100",
+            "description": "Only search UniRef100 protein sequences.",
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "in": "formData",
+            "name": "leqi",
+            "description": "Treat Leucine (L) and Isoleucine (I) equivalent.",
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "in": "formData",
+            "name": "offset",
+            "description": "Off set, page starting point, with default value 0.",
+            "type": "integer",
+            "default": 0
+          },
+          {
+            "in": "formData",
+            "name": "size",
+            "description": "Page size with default value 100. When page size is -1, it returns all records and offset will be ignored.",
+            "type": "integer",
+            "default": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Match report.",
+            "schema": {
+              "$ref": "#/definitions/Report"
+            }
+          },
+          "400": {
+            "description": "Bad request. Number of query peptides is larger than 100.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "default": {
+            "description": "Unexpected error.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Error": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "Protein": {
+      "type": "object",
+      "description": "Matched UniProt protein",
+      "properties": {
+        "reviewStatus": {
+          "description": "SwissProt or TrEMBL entry.",
+          "type": "string"
+        },
+        "ac": {
+          "description": "Protein accession number.",
+          "type": "string"
+        },
+        "id": {
+          "description": "Protein ID.",
+          "type": "string"
+        },
+        "name": {
+          "description": "Protein name.",
+          "type": "string"
+        },
+        "orgName": {
+          "description": "Organism name.",
+          "type": "string"
+        },
+        "orgTaxonId": {
+          "description": "Organism taxonomy ID.",
+          "type": "integer"
+        },
+        "orgTaxonGroupName": {
+          "description": "Organism taxonomy group name.",
+          "type": "string"
+        },
+        "orgTaxonGroupId": {
+          "description": "Organism taxonomy group ID.",
+          "type": "integer"
+        },
+        "sequence": {
+          "description": "Protein sequence.",
+          "type": "string"
+        },
+        "matchingPeptides": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "peptide": {
+                "description": "Query peptide.",
+                "type": "string"
+              },
+              "matchRange": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "start": {
+                      "type": "integer"
+                    },
+                    "end": {
+                      "type": "integer"
+                    },
+                    "replacedLocs": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Report": {
+      "type": "object",
+      "properties": {
+        "numberFound": {
+          "description": "Number of documents found.",
+          "type": "integer"
+        },
+        "qtime": {
+          "description": "Query response time in milliseocnds.",
+          "type": "integer"
+        },
+        "status": {
+          "description": "Query response status.",
+          "type": "integer"
+        },
+        "searchParameters": {
+          "type": "object",
+          "properties": {
+            "taxonids": {
+              "description": "NCBI taxonomy IDs.",
+              "type": "string"
+            },
+            "swissprot": {
+              "description": "Only search SwissProt protein sequences.",
+              "type": "boolean"
+            },
+            "isoform": {
+              "description": "Include isoforms.",
+              "type": "boolean"
+            },
+            "uniref100": {
+              "description": "Only search UniRef100 protein sequences.",
+              "type": "boolean"
+            },
+            "leqi": {
+              "description": "Treat Leucine (L) and Isoleucine (I) equivalent.",
+              "type": "boolean"
+            },
+            "offset": {
+              "description": "Off set, page starting point, with default value 0.",
+              "type": "integer"
+            },
+            "size": {
+              "description": "Page size with default value 100. When page size is -1, it returns all records and offset will be ignored.",
+              "type": "integer"
+            }
+          }
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "queryPeptide": {
+                "description": "Query peptide sequence.",
+                "type": "string"
+              },
+              "proteins": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Protein"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

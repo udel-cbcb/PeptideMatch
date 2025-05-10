@@ -1,0 +1,3 @@
+##Query peptide: TQVAIVSTTRPSATDCDVLFVATR
+##Number of matched proteins: 0
+#Protein AC	Protein ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB

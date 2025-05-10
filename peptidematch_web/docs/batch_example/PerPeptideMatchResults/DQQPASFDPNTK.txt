@@ -1,0 +1,4 @@
+##Query peptide: DQQPASFDPNTK
+##Number of matched proteins: 1
+#UniRef100 ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+UniRef100_A2SLA7	A2SLA7	Putative methanol dehydrogenase protein, large subunit	606	Methylibium petroleiphilum (strain PM1) [420662]	421-432		

@@ -1,0 +1,69 @@
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+ function drawVisualization() {
+   var orgData = google.visualization.arrayToDataTable([
+   	['OrganismCount', 'Hits per organsim'], 
+['Saccharomyces cerevisiae (strain YJM789) (Baker's yeast)', 1],
+['Saccharomyces cerevisiae (strain Lalvin QA23) (Baker's yeast)', 1],
+['Saccharomyces cerevisiae (strain Lalvin EC1118 / Prise de mousse) (Baker's yeast)', 1],
+['Saccharomyces cerevisiae (strain Kyokai no. 7 / NBRC 101557) (Baker's yeast)', 1],
+['Saccharomyces cerevisiae (strain FostersO) (Baker's yeast)', 1],
+['Others', 2]
+]);
+   var taxonGroupData = google.visualization.arrayToDataTable([
+       ['TaxonGroupCount', 'Hits per taxonGroup'], 
+['Euk/Fungi-Metazoa', 7]
+]);
+var options = {
+	colors: ['DodgerBlue', 'DeepSkyBlue', 'Lavender', 'LightBlue', 'LightSkyBlue', 'LightSteelBlue'],
+	legend: 'none', 
+	backgroundColor: { fill: 'none'}, 
+	pieSliceText: 'none',
+	 chartArea: {top:10, width:150, height:150},
+	tooltipTextStyle: {bold: true, fontSize: 11}}
+var orgChart = new google.visualization.PieChart(document.getElementById('orgChart'))
+	orgChart.draw(orgData, options);
+var taxonGroupChart = new google.visualization.PieChart(document.getElementById('taxonGroupChart'))
+	taxonGroupChart.draw(taxonGroupData, options);
+}
+google.load('visualization', '1', {packages: ['corechart'], callback: drawVisualization})
+</script><table width="100%" border=0>
+	<tr>
+		<td width="50%" align="right">
+		<table border=0 width="100%" align="right">
+			<tr><th align=center colspan="2" style="font-size: small;">Organisms (Total: 7, #seqs: 7)</th></tr>
+			<tr>
+				<td align="right">
+					<div id="orgChart" style=" width: 170px; height: 170px; "></div>
+				</td>
+				<td width="55%" align="left">
+					<table border=0 style="font-size: 14px;">
+					<tr><td style="background-color: DodgerBlue;" width=10px>&nbsp;<td nowrap>Saccharomyces cerevisiae (strain YJM789) (Baker's yeast) [<a href="peptidewithtaxonid.jsp?initialed=false&start=0&rows=20&keyword=GGGSFFSNNR&organism_id=all&total_number=7&taxon_name=Saccharomyces cerevisiae (strain YJM789) (Baker's yeast)&taxon_id=307796&uniref100=Y&lEqi=YsortBy=proteomic_asc">1</a>, 14.3%]</td></tr>
+					<tr><td style="background-color: DeepSkyBlue;" width=10px>&nbsp;<td nowrap>Saccharomyces cerevisiae (strain Lalvin QA23) (Baker's yeast) [<a href="peptidewithtaxonid.jsp?initialed=false&start=0&rows=20&keyword=GGGSFFSNNR&organism_id=all&total_number=7&taxon_name=Saccharomyces cerevisiae (strain Lalvin QA23) (Baker's yeast)&taxon_id=764098&uniref100=Y&lEqi=YsortBy=proteomic_asc">1</a>, 14.3%]</td></tr>
+					<tr><td style="background-color: Lavender;" width=10px>&nbsp;<td nowrap>Saccharomyces cerevisiae (strain Lalvin EC1118 / Prise de mousse) (Baker's yeast) [<a href="peptidewithtaxonid.jsp?initialed=false&start=0&rows=20&keyword=GGGSFFSNNR&organism_id=all&total_number=7&taxon_name=Saccharomyces cerevisiae (strain Lalvin EC1118 / Prise de mousse) (Baker's yeast)&taxon_id=643680&uniref100=Y&lEqi=YsortBy=proteomic_asc">1</a>, 14.3%]</td></tr>
+					<tr><td style="background-color: LightBlue;" width=10px>&nbsp;<td nowrap>Saccharomyces cerevisiae (strain Kyokai no. 7 / NBRC 101557) (Baker's yeast) [<a href="peptidewithtaxonid.jsp?initialed=false&start=0&rows=20&keyword=GGGSFFSNNR&organism_id=all&total_number=7&taxon_name=Saccharomyces cerevisiae (strain Kyokai no. 7 / NBRC 101557) (Baker's yeast)&taxon_id=721032&uniref100=Y&lEqi=YsortBy=proteomic_asc">1</a>, 14.3%]</td></tr>
+					<tr><td style="background-color: LightSkyBlue;" width=10px>&nbsp;<td nowrap>Saccharomyces cerevisiae (strain FostersO) (Baker's yeast) [<a href="peptidewithtaxonid.jsp?initialed=false&start=0&rows=20&keyword=GGGSFFSNNR&organism_id=all&total_number=7&taxon_name=Saccharomyces cerevisiae (strain FostersO) (Baker's yeast)&taxon_id=764101&uniref100=Y&lEqi=YsortBy=proteomic_asc">1</a>, 14.3%]</td></tr>
+					<tr><td style="background-color: LightSteelBlue;" width=10px>&nbsp;<td nowrap><a href="organismtableview.jsp?peptide=GGGSFFSNNR&organism_id=all&numberfound=7&total_orgs=7&uniref100=Y&lEqi=Y&sortBy=proteomic_asc">Others</a> [2, 28.6%]</td></tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		</td>
+              <td width="50%" align="left">
+              <table border=0 width="100%" align="right">
+                      <tr><th align=center colspan="2" style="font-size: small;">Taxonomic Groups (Total: 1, #seqs: 7)</th></tr>
+                      <tr>
+                              <td align="right">
+                                      <div id="taxonGroupChart" style=" width: 170px; height: 170px;"></div>
+                              </td>
+                              <td width="55%" align="left">
+                                      <table border=0 style="font-size: 14px;">
+                                      <tr><td style="background-color: DodgerBlue;" width=10px>&nbsp;<td nowrap>Euk/Fungi-Metazoa [<a href="peptidewithtaxongroup.jsp?initialed=false&start=0&rows=20&keyword=GGGSFFSNNR&organism_id=all&total_number=7&group_name=Euk/Fungi-Metazoa&taxongroup_id=33154&uniref100=Y&lEqi=YsortBy=proteomic_asc">7</a>, 100.0%]</td></tr>
+                                      </table>
+                              </td>
+                      </tr>
+              </table>
+              </td>
+	</tr>
+</table>
+||||organismtableview.jsp?peptide=GGGSFFSNNR&organism_id=all&numberfound=7&total_orgs=7&uniref100=Y&lEqi=Y&sortBy=proteomic_asc

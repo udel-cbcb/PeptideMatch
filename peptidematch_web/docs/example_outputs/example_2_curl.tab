@@ -1,0 +1,8 @@
+##Query: DPETERQ
+##DB: 45656 sequence(s) from "5888;537012" (UniProt_2013_01)
+##Matched: 3 sequence(s)
+#AC	ID	ProteinName	Length	PIRSFID	PIRSFName	Organism	OrganismTaxonID	OrganismTaxonGroup	OrganismTaxonGroupID	Matched_range
+E2N7I2	E2N7I2_9BACE	Putative uncharacterized protein	553	 	 	Bacteroides cellulosilyticus DSM 14838	537012			514-520 ATSALDPETERQLIKNL
+A0DLY7	A0DLY7_PARTE	Chromosome undetermined scaffold_56, whole genome shotgun sequence	916	 	 	Paramecium tetraurelia	5888			288-294 TIYKSDPETERQLRELQ;334-340 IIYQPDPETERQLQELK;429-435 TIYQTDPETERQLQIKI
+A0C465	A0C465_PARTE	Chromosome undetermined scaffold_149, whole genome shotgun sequence	902	 	 	Paramecium tetraurelia	5888			432-438 TIYQPDPETERQLQLKI
+

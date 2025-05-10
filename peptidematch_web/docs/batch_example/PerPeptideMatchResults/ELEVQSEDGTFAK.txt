@@ -1,0 +1,6 @@
+##Query peptide: ELEVQSEDGTFAK
+##Number of matched proteins: 3
+#UniRef100 ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+UniRef100_F3EAM8	F3EAM8	30S ribosomal protein S2	247	Pseudomonas syringae pv. lachrymans str. M301315 [629260]	116-128		
+UniRef100_F3FAL7	F3FAL7	30S ribosomal protein S2	247	Pseudomonas syringae pv. mori str. 301020 [629261]	116-128		
+UniRef100_Q48F59	Q48F59	30S ribosomal protein S2	247	Pseudomonas syringae pv. phaseolicola (strain 1448A / Race 6) [264730]	116-128	Pride	

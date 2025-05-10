@@ -1,0 +1,9 @@
+Cow	Bos taurus (Bovine)	BOVIN	9913
+Human	Homo sapiens (Human)	HUMAN	9606
+Mouse	Mus musculus (Mouse)	MOUSE	10090
+Drosophila	Drosophila melanogaster (Fruit fly)	DROME	7227
+C Elegans	Caenorhabditis elegans (Worm)	CAEEL	6239
+Honeybee	Apis mellifea (Honeybee)	APIME	7460
+Mtuberculosis	Mycobacterium tuberculosis (strain ATCC 25177 / H37Ra)	MYCTA	419947
+Pig	Sus scrofa (Pig)	PIG	9823
+Yeast	Saccharomyces cerevisiae (strain ATCC 204508 / S288c) (Baker's yeast)	YEAST	559292

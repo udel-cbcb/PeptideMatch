@@ -1,0 +1,4 @@
+##Query peptide: GVIEANGGKVEK
+##Number of matched proteins: 1
+#Protein AC	Protein ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+B8IED2	RS6_METNO [sp]	30S ribosomal protein S6	134	Methylobacterium nodulans (strain ORS2060 / LMG 21967) [460265]	28-39		

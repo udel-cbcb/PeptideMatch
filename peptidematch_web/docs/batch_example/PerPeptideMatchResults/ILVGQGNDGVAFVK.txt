@@ -1,0 +1,6 @@
+##Query peptide: ILVGQGNDGVAFVK
+##Number of matched proteins: 3
+#UniRef100 ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+UniRef100_D7LD33	D7LD33	Jacalin lectin family protein	459	Arabidopsis lyrata subsp. lyrata (Lyre-leaved rock-cress) [81972]	337-350		
+UniRef100_O80948	O80948	Myrosinase-binding protein-like At2g39330	459	Arabidopsis thaliana (Mouse-ear cress) [3702]	337-350	Pride	
+UniRef100_Q8W4Q6	Q8W4Q6	At2g39330/T16B24.3	459	Arabidopsis thaliana (Mouse-ear cress) [3702]	337-350		

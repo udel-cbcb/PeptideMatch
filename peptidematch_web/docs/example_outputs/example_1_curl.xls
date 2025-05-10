@@ -1,0 +1,31 @@
+##Query: DPETERQ
+##DB: 29805788 sequence(s) from "UniProtKB" (UniProt_2013_01)
+##Matched: 26 sequence(s)
+#AC	ID	ProteinName	Length	PIRSFID	PIRSFName	Organism	OrganismTaxonID	OrganismTaxonGroup	OrganismTaxonGroupID	Matched_range
+E8N4U7	E8N4U7_ANATU	Probable rRNA maturation factor	150	 	 	Anaerolinea thermophila (strain DSM 14523 / JCM 11388 / NBRC 100420 / UNI-1)	926569			72-78 TMDFFDPETERQYLGDI
+I3YEL5	I3YEL5_THIV6	tRNA (mo5U34)-methyltransferase precursor	329	 	 	Thiocystis violascens (strain ATCC 17096 / DSM 198 / 6111) (Chromatium violascens)	765911			78-84 SGNPLDPETERQLRDAL
+A0DLY7	A0DLY7_PARTE	Chromosome undetermined scaffold_56, whole genome shotgun sequence	916	 	 	Paramecium tetraurelia	5888			288-294 TIYKSDPETERQLRELQ;334-340 IIYQPDPETERQLQELK;429-435 TIYQTDPETERQLQIKI
+D2RRD1	D2RRD1_HALTV	Transketolase central region	348	 	 	Haloterrigena turkmenica (strain ATCC 51198 / DSM 5511 / NCIMB 13204 / VKM B-1734) (Halococcus turkmenicus)	543526			7-13 AQQETDPETERQTDRSL
+Q8PSD6	Q8PSD6_METMA	Putative uncharacterized protein	397	 	 	Methanosarcina mazei (strain ATCC BAA-159 / DSM 3647 / Goe1 / Go1 / JCM 11833 / OCM 88) (Methanosarcina frisia)	192952			164-170 KPEKMDPETERQYYEKI
+Q8TP27	Q8TP27_METAC	Predicted protein	397	 	 	Methanosarcina acetivorans (strain ATCC 35395 / DSM 2834 / JCM 12185 / C2A)	188937			164-170 KPEEMDPETERQYYKKI
+F8EA50	F8EA50_RUNSL	Putative uncharacterized protein	422	 	 	Runella slithyformis (strain ATCC 29530 / DSM 19594 / LMG 11500 / NCIMB 11436 / LSU 4)	761193			389-395 QNMPPDPETERQMMGKI
+B3CID3	B3CID3_9BACE	ABC transporter, ATP-binding protein	546	 	 	Bacteroides intestinalis DSM 17393	471870			507-513 ATSALDPETERQLIKNL
+D1VYS5	D1VYS5_9BACT	ABC transporter, ATP-binding protein	556	 	 	Prevotella timonensis CRIS 5C-B1	679189			515-521 ATSALDPETERQLLHNI
+D1W3F5	D1W3F5_9BACT	ABC transporter, ATP-binding protein	556	 	 	Prevotella buccalis ATCC 35310	679190			515-521 ATSALDPETERQLLHNI
+D3HWK0	D3HWK0_9BACT	Probable ABC transporter	633	 	 	Prevotella buccae D17	575611			592-598 ATSALDPETERQLLHNI
+D3ILL0	D3ILL0_9BACT	Probable ABC transporter	525	 	 	Prevotella sp. oral taxon 317 str. F0108	575615			481-487 ATSALDPETERQLLSNI
+E1KQW1	E1KQW1_9BACT	ABC transporter, ATP-binding protein	560	 	 	Prevotella disiens FB035-09AN	866771			515-521 ATSALDPETERQLLKNL
+E2N7I2	E2N7I2_9BACE	Putative uncharacterized protein	553	 	 	Bacteroides cellulosilyticus DSM 14838	537012			514-520 ATSALDPETERQLIKNL
+E6K685	E6K685_9BACT	Putative uncharacterized protein	597	 	 	Prevotella buccae ATCC 33574	873513			556-562 ATSALDPETERQLLHNI
+F9D2G9	F9D2G9_9BACT	Putative uncharacterized protein	566	 	 	Prevotella dentalis DSM 3688	908937			525-531 ATSALDPETERQLLRNI
+G6AHT9	G6AHT9_9BACT	Putative uncharacterized protein	558	 	 	Prevotella histicola F0411	857291			517-523 ATSALDPETERQLLKNI
+H1HMX1	H1HMX1_9BACT	Putative uncharacterized protein	565	 	 	Prevotella maculosa OT 289	999422			515-521 ATSALDPETERQLLRNI
+I8UQV1	I8UQV1_9BACE	Uncharacterized protein	553	 	 	Bacteroides cellulosilyticus CL02T12C19	997874			514-520 VTSALDPETERQLIKNL
+J4TZC2	J4TZC2_9BACT	ABC transporter transmembrane region	597	 	 	Prevotella sp. MSX73	1032506			556-562 ATSALDPETERQLLHNI
+J9HDK8	J9HDK8_9BACL	Replicative DNA helicase	461	 	 	Alicyclobacillus hesperidum URH17-3-68	1200346			416-422 RDDYYDPETERQNIVEV
+A4F6C0	A4F6C0_SACEN	Uncharacterized protein	488	 	 	Saccharopolyspora erythraea (strain NRRL 23338)	405948			45-51 PVLPPDPETERQALAQI
+A4F6Z2	A4F6Z2_SACEN	Uncharacterized protein	488	 	 	Saccharopolyspora erythraea (strain NRRL 23338)	405948			45-51 PMLPPDPETERQALAQI
+Q1J2Z5	Q1J2Z5_DEIGD	ABC-type transport system for cytochrome bd biosynthesis, ATPase and permease component precursor	529	 	 	Deinococcus geothermalis (strain DSM 11300)	319795			475-481 PTAHLDPETERQVLSVI
+A0C465	A0C465_PARTE	Chromosome undetermined scaffold_149, whole genome shotgun sequence	902	 	 	Paramecium tetraurelia	5888			432-438 TIYQPDPETERQLQLKI
+H0ZCS1	H0ZCS1_TAEGU	Uncharacterized protein (Fragment)	2000	 	 	Taeniopygia guttata (Zebra finch) (Poephila guttata)	59729			1170-1176 EIFMVDPETERQIAHLK
+

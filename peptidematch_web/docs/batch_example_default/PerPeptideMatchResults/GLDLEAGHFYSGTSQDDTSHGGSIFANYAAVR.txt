@@ -1,0 +1,6 @@
+##Query peptide: GLDLEAGHFYSGTSQDDTSHGGSIFANYAAVR
+##Number of matched proteins: 3
+#Protein AC	Protein ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+E7P8R6	E7P8R6_PSESG [tr]	Porin D	440	Pseudomonas syringae pv. glycinea str. B076 [875329]	172-203		
+E7PLK6	E7PLK6_PSESG [tr]	Porin D	440	Pseudomonas syringae pv. glycinea str. race 4 [875330]	172-203		
+Q48FB5	Q48FB5_PSE14 [tr]	Porin D	440	Pseudomonas syringae pv. phaseolicola (strain 1448A / Race 6) [264730]	172-203		

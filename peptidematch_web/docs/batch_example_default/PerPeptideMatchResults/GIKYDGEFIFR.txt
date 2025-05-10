@@ -1,0 +1,6 @@
+##Query peptide: GIKYDGEFIFR
+##Number of matched proteins: 3
+#Protein AC	Protein ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+F3X0I5	F3X0I5_9SPHN [tr]	50S ribosomal protein L6	177	Sphingomonas sp. S17 [1007104]	161-171		
+G2IQ51	G2IQ51_9SPHN [tr]	50S ribosomal protein L6	177	Sphingobium sp. SYK-6 [627192]	161-171		
+Q1N7X9	Q1N7X9_9SPHN [tr]	50S ribosomal protein L6	177	Sphingomonas sp. SKA58 [314266]	161-171		

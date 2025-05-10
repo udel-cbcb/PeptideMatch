@@ -1,0 +1,6 @@
+##Query peptide: FEDPAEGEDTLVEK
+##Number of matched proteins: 3
+#UniRef100 ID	Protein Name	Length	Organism	Matched Range(s)	Proteomic Databases	IEDB
+UniRef100_B9DHY6	B9DHY6	AT1G78900 protein (Fragment)	463	Arabidopsis thaliana (Mouse-ear cress) [3702]	430-443		
+UniRef100_O23654	O23654	V-type proton ATPase catalytic subunit A	623	Arabidopsis thaliana (Mouse-ear cress) [3702]	590-603	Pride	
+UniRef100_Q56X25	Q56X25	Vacuolar-type H+-ATPase subunit A	326	Arabidopsis thaliana (Mouse-ear cress) [3702]	293-306		
