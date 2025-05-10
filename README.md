@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-# peptidematch
-=======
-Source Code used for peptidematch.
->>>>>>> 62fd101 (Initial commit)
+Source code related to PeptideMatch project
