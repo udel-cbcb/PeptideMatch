@@ -19,7 +19,7 @@ This project is a Swagger UI powered API for Peptide Match service at https://re
 - [peptidematchws](./peptidematchws):
 This project is a Peptide Search Asynchronous RESTful API at https://peptidesearch.uniprot.org/, which is powering the [UniProt Peptide Search](https://www.uniprot.org/peptide-search).
 
-- [peptidematch_cmd_](./peptidematch_cmd_):
+- [peptidematch_cmd](./peptidematch_cmd):
   This project is a command line tool allows users to query the peptide sequences against their own customized protein sequence database.
 
 ## Publication
