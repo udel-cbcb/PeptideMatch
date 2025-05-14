@@ -14,7 +14,7 @@ This project is to create Lucene index and deploy the match service.
 This project is a Java web application at https://research.bioinformatics.udel.edu/peptidematch/index.jsp. It is the original web interface we developed for accessing our Peptide Match service.
 
 - [peptidematchapi2](./peptidematchapi2):
-This project is a Swagger UI powered API for Peptide Match service.
+This project is a Swagger UI powered API for Peptide Match service at https://research.bioinformatics.udel.edu/peptidematch/api/v2/.
 
 - [peptidematchws](./peptidematchws):
 This project is a Peptide Search Asynchronous RESTful API at https://peptidesearch.uniprot.org/, which is powering the [UniProt Peptide Search](https://www.uniprot.org/peptide-search).
