@@ -75,6 +75,12 @@
 			<artifactId>reload4j</artifactId>
 			<version>1.2.26</version>
 		</dependency>
+		<!-- JAXB API (required for @XmlRootElement on JDK 9+; bundled in JDK 7/8) -->
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
 		<!-- jersey client -->
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
