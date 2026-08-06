@@ -18,7 +18,7 @@ import javax.ws.rs.core.Link;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.glassfish.jersey.uri.UriComponent;
 import org.junit.After;
 import org.junit.Before;

@@ -18,8 +18,8 @@
 				<version>2.5.1</version>
 				<inherited>true</inherited>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -62,22 +62,22 @@
 
 		<!-- Jackson JSON conversion -->
 		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.9.13</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.22.1</version>
 		</dependency>
 
-		<!-- log4j -->
+		<!-- log4j (reload4j is the maintained drop-in replacement for EOL log4j 1.x) -->
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
+			<groupId>ch.qos.reload4j</groupId>
+			<artifactId>reload4j</artifactId>
+			<version>1.2.26</version>
 		</dependency>
-		<!-- solr -->
+		<!-- solr (solr-solrj is the client-only artifact; solr-core is EOL and has known CVEs) -->
 		<dependency>
 			<groupId>org.apache.solr</groupId>
-			<artifactId>solr-core</artifactId>
-			<version>3.4.0</version>
+			<artifactId>solr-solrj</artifactId>
+			<version>8.11.4</version>
 		</dependency>
 		<!-- jersey client -->
 		<dependency>

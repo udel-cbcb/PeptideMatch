@@ -17,9 +17,9 @@ import java.util.TreeMap;
 import org.apache.commons.lang.StringUtils;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.proteininformationresource.peptidematch.asyncrest.model.Job;
 import org.proteininformationresource.peptidematch.asyncrest.model.Log;
 import org.proteininformationresource.peptidematch.asyncrest.model.Match;
@@ -236,8 +236,6 @@ public class MatchService implements Runnable {
 			e.printStackTrace();
 		} catch (JsonMappingException e) {
 			e.printStackTrace();
-		} catch (org.apache.catalina.connector.ClientAbortException ca) {
-		    System.out.println("ClientAbortException caught");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (ParseException e) {

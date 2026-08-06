@@ -5,7 +5,7 @@ import java.util.*;
 
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
-import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer;
+import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocumentList;
 import org.apache.solr.client.solrj.SolrRequest.METHOD;
@@ -17,7 +17,7 @@ import org.apache.solr.common.util.NamedList;
 
 public class PeptideMatchPhraseQuery {
 	private QueryResponse response;
-	private CommonsHttpSolrServer solrServer;
+	private HttpSolrClient solrServer;
 	private ArrayList<String> idSets;
 	private int result = 0;
 	// private String url = "";
@@ -27,7 +27,7 @@ public class PeptideMatchPhraseQuery {
 	
 	public PeptideMatchPhraseQuery(String solrUrl) {
 		try {
-			solrServer = new CommonsHttpSolrServer(solrUrl);
+			solrServer = new HttpSolrClient.Builder(solrUrl).build();
 			
 		} catch (Exception e) {
 			System.out.println(e.toString());
@@ -113,7 +113,7 @@ public class PeptideMatchPhraseQuery {
 				result = (int) docs.getNumFound();
 			} else
 				result = 0;
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 1 ");
 		}
@@ -220,7 +220,7 @@ public class PeptideMatchPhraseQuery {
 					 */
 				}
 			}
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 2 ");
 		}
@@ -303,7 +303,7 @@ public class PeptideMatchPhraseQuery {
 				result = (int) docs.getNumFound();
 			} else
 				result = 0;
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 3 ");
 		}
@@ -360,7 +360,7 @@ public class PeptideMatchPhraseQuery {
 			} else {
 				result = 0;
 			}
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 3 ");
 		}
@@ -482,7 +482,7 @@ public class PeptideMatchPhraseQuery {
 					 */
 				}
 			}
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 4 ");
 		}
@@ -570,7 +570,7 @@ public class PeptideMatchPhraseQuery {
 				result = (int) docs.getNumFound();
 			} else
 				result = 0;
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 5 ");
 		}
@@ -665,7 +665,7 @@ public class PeptideMatchPhraseQuery {
 				result = (int) docs.getNumFound();
 			} else
 				result = 0;
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 6 ");
 		}
@@ -767,7 +767,7 @@ public class PeptideMatchPhraseQuery {
 				result = (int) docs.getNumFound();
 			} else
 				result = 0;
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 7 ");
 		}
@@ -864,7 +864,7 @@ public class PeptideMatchPhraseQuery {
 				result = (int) docs.getNumFound();
 			} else
 				result = 0;
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 8 ");
 		}
@@ -952,7 +952,7 @@ public class PeptideMatchPhraseQuery {
 				result = (int) docs.getNumFound();
 			} else
 				result = 0;
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 9 ");
 		}
@@ -1040,7 +1040,7 @@ public class PeptideMatchPhraseQuery {
 				result = (int) docs.getNumFound();
 			} else
 				result = 0;
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 10 ");
 		}
@@ -1129,7 +1129,7 @@ public class PeptideMatchPhraseQuery {
 				result = (int) docs.getNumFound();
 			} else
 				result = 0;
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 11 ");
 		}
@@ -1204,7 +1204,7 @@ public class PeptideMatchPhraseQuery {
 			response = solrServer.query(solrQuery, METHOD.POST);
 			docs = response.getResults();
 			result = (int) docs.getNumFound();
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 12 ");
 		}
@@ -1272,7 +1272,7 @@ public class PeptideMatchPhraseQuery {
 			response = solrServer.query(solrQuery, METHOD.POST);
 			docs = response.getResults();
 			result = (int) docs.getNumFound();
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 13 ");
 		}
@@ -1299,7 +1299,7 @@ public class PeptideMatchPhraseQuery {
 			response = solrServer.query(solrQuery, METHOD.POST);
 			docs = response.getResults();
 			result = (int) docs.getNumFound();
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 14 ");
 		}
@@ -1375,7 +1375,7 @@ public class PeptideMatchPhraseQuery {
 			response = solrServer.query(solrQuery, METHOD.POST);
 			docs = response.getResults();
 			result = (int) docs.getNumFound();
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 15 ");
 		}
@@ -1444,7 +1444,7 @@ public class PeptideMatchPhraseQuery {
 			response = solrServer.query(solrQuery, METHOD.POST);
 			docs = response.getResults();
 			result = (int) docs.getNumFound();
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 16 ");
 		}
@@ -1544,7 +1544,7 @@ public class PeptideMatchPhraseQuery {
 				result = (int) docs.getNumFound();
 			} else
 				result = 0;
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 17 ");
 		}
@@ -1637,7 +1637,7 @@ public class PeptideMatchPhraseQuery {
 				result = (int) docs.getNumFound();
 			} else
 				result = 0;
-		} catch (SolrServerException e) {
+		} catch (IOException | SolrServerException e) {
 			e.printStackTrace();
 			System.out.print("search fail 18 ");
 		}

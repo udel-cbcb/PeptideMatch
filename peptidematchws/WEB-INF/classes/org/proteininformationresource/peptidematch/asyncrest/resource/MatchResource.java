@@ -33,9 +33,9 @@ import javax.ws.rs.core.UriBuilder;
 import javax.ws.rs.core.UriInfo;
 
 import org.apache.log4j.Logger;
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.proteininformationresource.peptidematch.asyncrest.model.Job;
 import org.proteininformationresource.peptidematch.asyncrest.model.Log;
 import org.proteininformationresource.peptidematch.asyncrest.model.Match;
