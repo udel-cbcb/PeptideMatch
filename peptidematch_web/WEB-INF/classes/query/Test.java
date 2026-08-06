@@ -27,7 +27,7 @@ public class Test {
 			System.out.println(fields[2]);
 		}
 		
-		Organism org = new Organism();		
+		Organism org = new Organism("", "");		
 		
 		
 	}

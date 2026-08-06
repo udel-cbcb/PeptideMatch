@@ -154,12 +154,12 @@ public class BatchPeptideMatch extends HttpServlet {
 			String organismName = "";
 			// get the number of the candidate sequences for all the organisms
 			if (organism.toLowerCase().equals("all")) {
-				pquery.queryAll(0, 1);
+				pquery.queryAll(0, 1, "N", "Y", "N", "ac_asc", "N", "N");
 				organismName = "UniProtKB";
 				resultCount = pquery.getResult();
 			} 
 			else {
-				pquery.queryByOrganismIDs(organism, 0, 1);
+				pquery.queryByOrganismIDs(organism, 0, 1, "N", "Y", "N", "ac_asc", "N", "N");
 				SolrDocumentList doclist = pquery.getCurrentDocs();
 				Iterator<SolrDocument> docItr = doclist.iterator();
 				SolrDocument solrDoc;

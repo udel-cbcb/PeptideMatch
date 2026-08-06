@@ -12,7 +12,7 @@ public class RunLongProcessServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException
     {
-           LongProcess longProcess = (LongProcess) request.getSession().getAttribute("longProcess");
+           DemoLongProcess longProcess = (DemoLongProcess) request.getSession().getAttribute("longProcess");
         if ("XMLHttpRequest".equals(request.getHeader("x-requested-with"))) {
             //response.setContentType("application/json");
             response.setContentType("text/html");
@@ -21,8 +21,8 @@ public class RunLongProcessServlet extends HttpServlet {
             response.getWriter().write(String.valueOf(longProcess.getStatus()));
         }
 	else if(request.getParameter("getLog").equals("true")) {
-            //LongProcess longProcess = (LongProcess) request.getSession().getAttribute("longProcess");
-            longProcess = (LongProcess) request.getSession().getAttribute("longProcess");
+            //DemoLongProcess longProcess = (DemoLongProcess) request.getSession().getAttribute("longProcess");
+            longProcess = (DemoLongProcess) request.getSession().getAttribute("longProcess");
 	    if(longProcess != null) {
             response.setContentType("text/html");
             response.getWriter().write(String.valueOf(longProcess.getLog()));
@@ -41,7 +41,7 @@ public class RunLongProcessServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException
     {
-        LongProcess longProcess = new LongProcess();
+        DemoLongProcess longProcess = new DemoLongProcess();
         longProcess.setDaemon(true);
         longProcess.start();
         request.getSession().setAttribute("longProcess", longProcess);
@@ -52,7 +52,7 @@ public class RunLongProcessServlet extends HttpServlet {
 
 }
 
-class LongProcess extends Thread {
+class DemoLongProcess extends Thread {
 
     private int progress;
     private String status="";

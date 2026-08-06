@@ -51,8 +51,7 @@ public class SaveData extends HttpServlet {
 		for (int i = 0; i < idsets.length; i++) {
 			idList.add(i, idsets[i]);
 		}
-		peptideQuery.queryByIDSets(idList, rowsPerPage, uniref100Only,
-				ilEquivalent);
+		peptideQuery.queryByIDSets(idList, rowsPerPage, ilEquivalent);
 		docs = peptideQuery.getCurrentDocs();
 		// set the download format
 		response.setContentType("text/plain;");

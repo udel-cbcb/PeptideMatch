@@ -117,7 +117,7 @@ public class PeptideMatchWS extends HttpServlet {
 			for(int i = 0; i < queryPeptides.length; i++) {
 				String queryPeptide = queryPeptides[i];
 				if(queryPeptide != null && queryPeptide.length() > 0) {
-					ArrayList<MatchedProtein> matchedProteins = doSearch(queryPeptide, query.getSelectedOrganisms(), query.getUniRef100Only(), query.getLEqI(), "ac_asc", out, format); 
+					ArrayList<MatchedProtein> matchedProteins = doSearch(queryPeptide, query.getSelectedOrganisms(), query.getUniRef100Only(), query.getLEqI(), query.getSwissprot(), query.getIsoform(), query.getTrOnly(), query.getIsoOnly(), "ac_asc", out, format); 
 					if(matchedProteins.size() == 0) {
 						missedPeptideList.add(queryPeptide);
 					}	
@@ -516,21 +516,21 @@ public class PeptideMatchWS extends HttpServlet {
 		return query;
 	}
 
-	 private ArrayList<MatchedProtein> doSearch(String queryPeptide, Organism[] selectedOrganisms, String uniref100Only, String ilEquivalent, String sortBy, PrintWriter out, String format) {
+	 private ArrayList<MatchedProtein> doSearch(String queryPeptide, Organism[] selectedOrganisms, String uniref100Only, String ilEquivalent, String swissprot, String isoform, String trOnly, String isoOnly, String sortBy, PrintWriter out, String format) {
         PeptidePhraseQuery peptideQuery = new PeptidePhraseQuery();
         SolrDocumentList docs = new SolrDocumentList();
         int numberFound = 0;
         ArrayList<MatchedProtein> matchedProteins = new ArrayList<MatchedProtein>();
         if(selectedOrganisms == null || selectedOrganisms.length == 0) {
 		long startTime = System.currentTimeMillis();
-                peptideQuery.queryByPeptide(queryPeptide, 0, 1, uniref100Only, ilEquivalent, sortBy);
+                peptideQuery.queryByPeptide(queryPeptide, 0, 1, swissprot, isoform, uniref100Only, ilEquivalent, sortBy, trOnly, isoOnly);
 		long estimatedTime = System.currentTimeMillis() - startTime;	
 		System.out.println("search time: " + estimatedTime + " " + queryPeptide);
                 numberFound = peptideQuery.getResult();
                 if(numberFound > 0) {
 			printPerPeptideMatchedProteinsTableHeader(out, queryPeptide, numberFound, format); 
                         for(int i = 0; i < numberFound; i += 100) {
-                                peptideQuery.queryByPeptide(queryPeptide, i, 100, uniref100Only, ilEquivalent, sortBy);
+                                peptideQuery.queryByPeptide(queryPeptide, i, 100, swissprot, isoform, uniref100Only, ilEquivalent, sortBy, trOnly, isoOnly);
                                 docs = peptideQuery.getCurrentDocs();
                                 Iterator<SolrDocument> docItr = docs.iterator();
                                 while(docItr.hasNext()) {
@@ -556,7 +556,7 @@ public class PeptideMatchWS extends HttpServlet {
                 }
                 System.out.println("selectedOrgs: "+ organisms);
 		long startTime = System.currentTimeMillis();
-                peptideQuery.queryByPeptideWithMultiOrganism(queryPeptide, organisms, 0, 1, uniref100Only, ilEquivalent, sortBy);
+                peptideQuery.queryByPeptideWithMultiOrganism(queryPeptide, organisms, 0, 1, swissprot, isoform, uniref100Only, ilEquivalent, sortBy, trOnly, isoOnly);
 		long estimatedTime = System.currentTimeMillis() - startTime;	
 		//System.out.println("search time: " + estimatedTime);
 		System.out.println("search time: " + estimatedTime + " " + queryPeptide);
@@ -564,7 +564,7 @@ public class PeptideMatchWS extends HttpServlet {
                 if(numberFound > 0) {
 			printPerPeptideMatchedProteinsTableHeader(out, queryPeptide, numberFound, format); 
                         for(int i = 0; i < numberFound; i += 100) {
-                                peptideQuery.queryByPeptideWithMultiOrganism(queryPeptide, organisms, i, 100, uniref100Only, ilEquivalent, sortBy);
+                                peptideQuery.queryByPeptideWithMultiOrganism(queryPeptide, organisms, i, 100, swissprot, isoform, uniref100Only, ilEquivalent, sortBy, trOnly, isoOnly);
                                 docs = peptideQuery.getCurrentDocs();
                                 Iterator<SolrDocument> docItr = docs.iterator();
                                 while(docItr.hasNext()) {
