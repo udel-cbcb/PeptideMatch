@@ -21,9 +21,9 @@ class ESIndexerTest {
     void testParseRecord_standardFormat() throws IOException {
         ESIndexer indexer = createIndexerWithoutClient();
 
-        String record = ">P12345 P12345_HUMAN^|^^|^Tumor protein p53^|^^|^^|^Homo sapiens^|^9606^|^Mammalia^|^40674^|^Y^|^Y^|^Y^|^Y^|^1, 131567, 33208, 6072, 9606^|^1, 33208, 9606^|^UniRef100_P12345\nMSEQKLICNVC";
+        String record = ">sp|P12345|P12345_HUMAN Tumor protein p53 OS=Homo sapiens OX=9606 GN=TP53 PE=1 SV=2\nMSEQKLICNVC";
 
-        Map<String, Object> doc = indexer.parseRecord(record);
+        Map<String, Object> doc = indexer.parseRecord(record, "sp");
 
         assertNotNull(doc);
         assertEquals("P12345", doc.get("ac"));
@@ -31,61 +31,53 @@ class ESIndexerTest {
         assertEquals("Tumor protein p53", doc.get("proteinName"));
         assertEquals("Homo sapiens", doc.get("organismName"));
         assertEquals("9606", doc.get("organismID"));
-        assertEquals("Mammalia", doc.get("taxongroupName"));
-        assertEquals("40674", doc.get("taxongroupID"));
-        assertEquals("Y", doc.get("nist"));
-        assertEquals("Y", doc.get("peptideAtlas"));
-        assertEquals("Y", doc.get("pride"));
-        assertEquals("Y", doc.get("iedb"));
-        assertEquals("1, 131567, 33208, 6072, 9606", doc.get("fullLineage"));
-        assertEquals("1, 33208, 9606", doc.get("shortLineage"));
-        assertEquals("Y", doc.get("uniref100"));
-        assertEquals("tr", doc.get("sptr")); // P12345 = 6 chars, not < 6
+        assertEquals("TP53", doc.get("geneName"));
+        assertEquals("1", doc.get("proteinEvidence"));
+        assertEquals("2", doc.get("sequenceVersion"));
+        assertEquals("sp", doc.get("sptr"));
         assertEquals("N", doc.get("isoform")); // no dash in AC
         assertEquals("MSEQKLICNVC", doc.get("originalSeq"));
         assertEquals("MSEQKLICNVC".replaceAll("L", "I"), doc.get("lToiSeq"));
         assertEquals(11, doc.get("length"));
-        assertEquals(10.0f, doc.get("boost")); // nist = Y
+        assertEquals(1.0f, doc.get("boost"));
     }
 
     @Test
     void testParseRecord_isoform() throws IOException {
         ESIndexer indexer = createIndexerWithoutClient();
 
-        String record = ">P12345-2 P12345-2_HUMAN^|^^|^Isoform 2^|^^|^^|^Homo sapiens^|^9606^|^Mammalia^|^40674^|^Z^|^Z^|^Z^|^Z^|^1, 9606^|^1, 9606^\nACDEF";
+        String record = ">sp|P12345-2|P12345-2_HUMAN Isoform 2 OS=Homo sapiens OX=9606 GN=TP53 PE=1 SV=1\nACDEF";
 
-        Map<String, Object> doc = indexer.parseRecord(record);
+        Map<String, Object> doc = indexer.parseRecord(record, "sp");
 
         assertNotNull(doc);
         assertEquals("Y", doc.get("isoform")); // has dash
-        assertEquals("tr", doc.get("sptr")); // P12345-2 = 8 chars, not < 6
-        assertEquals(1.0f, doc.get("boost")); // no annotations
+        assertEquals("sp", doc.get("sptr"));
+        assertEquals("1", doc.get("sequenceVersion"));
     }
 
     @Test
     void testParseRecord_trembl() throws IOException {
         ESIndexer indexer = createIndexerWithoutClient();
 
-        String record = ">A0A1B2CDE9 A0A1B2CDE9_9ARCH^|^^|^Protein^|^^|^^|^Archaea^|^115547^|^Archaea^|^2157^|^Z^|^Z^|^Z^|^Z^|^1, 2157, 115547^|^1, 2157^|\nACDEF";
+        String record = ">tr|A0A1B2CDE9|A0A1B2CDE9_9ARCH Protein OS=Archaea OX=115547 GN=UNKN PE=5 SV=1\nACDEF";
 
-        Map<String, Object> doc = indexer.parseRecord(record);
+        Map<String, Object> doc = indexer.parseRecord(record, "tr");
 
         assertNotNull(doc);
-        assertEquals("tr", doc.get("sptr")); // 10 chars >= 6
+        assertEquals("tr", doc.get("sptr"));
         assertEquals("N", doc.get("isoform"));
+        assertEquals("5", doc.get("proteinEvidence"));
+        assertEquals("1", doc.get("sequenceVersion"));
+        assertEquals("UNKN", doc.get("geneName"));
     }
 
     @Test
     void testParseRecord_emptySequence() throws IOException {
         ESIndexer indexer = createIndexerWithoutClient();
 
-        String record = ">P12345 P12345_HUMAN^|^^|^Protein^|^^|^^|^Homo^|^9606^|^Mammalia^|^40674^|^Z^|^Z^|^Z^|^Z^|^1^|^1^\n";
-
-        // After trimming newlines, sequence is empty
-        // But our parser reads lines[1..] and joins, so " " would be included
-        // Let's use a record with actual sequence
-        String record2 = ">P12345 P12345_HUMAN^|^^|^Protein^|^^|^^|^Homo^|^9606^|^Mammalia^|^40674^|^Z^|^Z^|^Z^|^Z^|^1^|^1^\nAC";
-        Map<String, Object> doc = indexer.parseRecord(record2);
+        String record2 = ">sp|P12345|P12345_HUMAN Protein OS=Homo sapiens OX=9606 GN=TP53 PE=1 SV=1\nAC";
+        Map<String, Object> doc = indexer.parseRecord(record2, "sp");
         assertNotNull(doc);
         assertEquals("AC", doc.get("originalSeq"));
     }
@@ -94,109 +86,111 @@ class ESIndexerTest {
     void testParseRecord_insufficientFields() throws IOException {
         ESIndexer indexer = createIndexerWithoutClient();
 
-        String record = ">P12345 TOOSHORT\nACDEF";
-        Map<String, Object> doc = indexer.parseRecord(record);
+        String record = ">sp|P12345|TOOSHORT\nACDEF";
+        Map<String, Object> doc = indexer.parseRecord(record, "tr");
 
-        assertNull(doc); // less than 15 fields
+        assertNull(doc); // missing required OS= or OX= fields
     }
 
     @Test
-    void testParseRecord_emptyTaxgroupDefaults() throws IOException {
+    void testParseRecord_noGeneName() throws IOException {
         ESIndexer indexer = createIndexerWithoutClient();
 
-        String record = ">P12345 P12345_HUMAN^|^^|^Protein^|^^|^^|^Homo^|^9606^|^^|^^|^Z^|^Z^|^Z^|^Z^|^1^|^1^\nACDEF";
-
-        Map<String, Object> doc = indexer.parseRecord(record);
+        String record = ">sp|P12345|P12345_HUMAN Protein OS=Homo sapiens OX=9606 PE=1 SV=1\nACDEF";
+        Map<String, Object> doc = indexer.parseRecord(record, "sp");
 
         assertNotNull(doc);
-        assertEquals("other", doc.get("taxongroupName"));
-        assertEquals("null", doc.get("taxongroupID"));
+        assertEquals("", doc.get("geneName")); // GN= is optional and absent
+        assertEquals("Protein", doc.get("proteinName"));
     }
 
     @Test
-    void testParseRecord_nistBoost() throws IOException {
+    void testParseRecord_proteinEvidenceAndVersion() throws IOException {
         ESIndexer indexer = createIndexerWithoutClient();
 
-        // NIST annotation present
-        String record = ">P12345 P12345_HUMAN^|^^|^Protein^|^^|^^|^Homo^|^9606^|^Mammalia^|^40674^|^NIST123^|^Z^|^Z^|^Z^|^1^|^1^\nACDEF";
-        Map<String, Object> doc = indexer.parseRecord(record);
-        assertEquals(10.0f, doc.get("boost"));
+        String record = ">sp|Q9Y5Q8|TF3C5_HUMAN General transcription factor 3C polypeptide 5 OS=Homo sapiens OX=9606 GN=GTF3C5 PE=1 SV=2\nMKTLLILAVLCLAQ";
 
-        // PeptideAtlas only
-        String record2 = ">P12346 P12346_HUMAN^|^^|^Protein^|^^|^^|^Homo^|^9606^|^Mammalia^|^40674^|^Z^|^ATLAS123^|^Z^|^Z^|^1^|^1^\nACDEF";
-        Map<String, Object> doc2 = indexer.parseRecord(record2);
-        assertEquals(9.0f, doc2.get("boost"));
-    }
-
-    @Test
-    void testParseRecord_realisticUniProtFormat() throws IOException {
-        ESIndexer indexer = createIndexerWithoutClient();
-
-        // More realistic format with the ^| delimiter
-        String record = ">A0FGY6 A0FGY6_9ARCH^|^^|^Methyl coenzyme M reductase (Fragment)^|^^|^^|^uncultured archaeon^|^115547^|^Archaea/..^|^2157^|^X^|^X^|^X^|^^|^1, 131567, 2157, 48510, 115547^|^1, 131567, 2157, 115547^|^UniRef100_A0FGY6\nMSEQKLICNVCWGNLC";
-
-        Map<String, Object> doc = indexer.parseRecord(record);
+        Map<String, Object> doc = indexer.parseRecord(record, "sp");
 
         assertNotNull(doc);
-        assertEquals("A0FGY6", doc.get("ac"));
-        assertEquals("A0FGY6_9ARCH", doc.get("proteinID"));
-        assertEquals("Methyl coenzyme M reductase (Fragment)", doc.get("proteinName"));
-        assertEquals("uncultured archaeon", doc.get("organismName"));
-        assertEquals("115547", doc.get("organismID"));
-        assertEquals("tr", doc.get("sptr")); // A0FGY6 = 6 chars
-        assertEquals("Y", doc.get("uniref100"));
-    }
-
-    private ESIndexer createIndexerWithoutClient() throws IOException {
-        return new ESIndexer(null);
+        assertEquals("Q9Y5Q8", doc.get("ac"));
+        assertEquals("TF3C5_HUMAN", doc.get("proteinID"));
+        assertEquals("General transcription factor 3C polypeptide 5", doc.get("proteinName"));
+        assertEquals("Homo sapiens", doc.get("organismName"));
+        assertEquals("9606", doc.get("organismID"));
+        assertEquals("GTF3C5", doc.get("geneName"));
+        assertEquals("1", doc.get("proteinEvidence"));
+        assertEquals("2", doc.get("sequenceVersion"));
+        assertEquals("sp", doc.get("sptr"));
     }
 
     @Test
-    void testParseRecord_headerWithEmptyFields() throws IOException {
+    void testParseRecord_proteinEvidencePredicted() throws IOException {
         ESIndexer indexer = createIndexerWithoutClient();
 
-        String record = ">P99999 P99999_HUMAN^|^^|^Test^|^^|^^|^Human^|^9606^|^^|^^|^Z^|^Z^|^Z^|^Z^|^1^|^1^\nACDEF";
-        Map<String, Object> doc = indexer.parseRecord(record);
+        String record = ">tr|A0A001|PROT1_HUMAN Predicted protein OS=Mus musculus OX=10090 PE=5 SV=3\nACDEF";
+
+        Map<String, Object> doc = indexer.parseRecord(record, "tr");
 
         assertNotNull(doc);
-        assertEquals("other", doc.get("taxongroupName"));
-        assertEquals("null", doc.get("taxongroupID"));
+        assertEquals("5", doc.get("proteinEvidence"));
+        assertEquals("3", doc.get("sequenceVersion"));
+        assertEquals("tr", doc.get("sptr"));
+    }
+
+    @Test
+    void testParseRecord_geneNameOnly() throws IOException {
+        ESIndexer indexer = createIndexerWithoutClient();
+
+        String record = ">sp|P00001|P00001_HUMAN Protein OS=Homo sapiens OX=9606 GN=GENE1 PE=1 SV=1\nACDEF";
+        Map<String, Object> doc = indexer.parseRecord(record, "sp");
+
+        assertNotNull(doc);
+        assertEquals("GENE1", doc.get("geneName"));
+        assertEquals("P00001_HUMAN", doc.get("proteinID"));
+        assertEquals("Protein", doc.get("proteinName"));
     }
 
     @Test
     void testParseRecord_boostValues() throws IOException {
         ESIndexer indexer = createIndexerWithoutClient();
 
-        // NIST boost = 10
-        String r1 = ">P00001 P00001_HUMAN^|^^|^Protein^|^^|^^|^Human^|^9606^|^Mammalia^|^40674^|^NIST^|^Z^|^Z^|^Z^|^1^|^1^\nACDEF";
-        assertEquals(10.0f, indexer.parseRecord(r1).get("boost"));
+        // Boost = 1 (default)
+        String r1 = ">sp|P00001|P00001_HUMAN Protein OS=Homo sapiens OX=9606 GN=GENE PE=1 SV=1\nACDEF";
+        assertEquals(1.0f, indexer.parseRecord(r1, "sp").get("boost"));
 
-        // Atlas boost = 9
-        String r2 = ">P00002 P00002_HUMAN^|^^|^Protein^|^^|^^|^Human^|^9606^|^Mammalia^|^40674^|^Z^|^ATLAS^|^Z^|^Z^|^1^|^1^\nACDEF";
-        assertEquals(9.0f, indexer.parseRecord(r2).get("boost"));
-
-        // Pride boost = 8
-        String r3 = ">P00003 P00003_HUMAN^|^^|^Protein^|^^|^^|^Human^|^9606^|^Mammalia^|^40674^|^Z^|^Z^|^PRIDE^|^Z^|^1^|^1^\nACDEF";
-        assertEquals(8.0f, indexer.parseRecord(r3).get("boost"));
-
-        // IEDB boost = 7
-        String r4 = ">P00004 P00004_HUMAN^|^^|^Protein^|^^|^^|^Human^|^9606^|^Mammalia^|^40674^|^Z^|^Z^|^Z^|^IEDB^|^1^|^1^\nACDEF";
-        assertEquals(7.0f, indexer.parseRecord(r4).get("boost"));
-
-        // No annotations boost = 1
-        String r5 = ">P00005 P00005_HUMAN^|^^|^Protein^|^^|^^|^Human^|^9606^|^Mammalia^|^40674^|^Z^|^Z^|^Z^|^Z^|^1^|^1^\nACDEF";
-        assertEquals(1.0f, indexer.parseRecord(r5).get("boost"));
+        // PE=5 (predicted) boost still 1.0 for standard format
+        String r2 = ">tr|P00002|P00002_HUMAN Predicted OS=Homo sapiens OX=9606 GN=GENE PE=5 SV=1\nACDEF";
+        assertEquals(1.0f, indexer.parseRecord(r2, "tr").get("boost"));
     }
 
     @Test
     void testParseRecord_lToiSeq() throws IOException {
         ESIndexer indexer = createIndexerWithoutClient();
 
-        String record = ">P00001 P00001_HUMAN^|^^|^Protein^|^^|^^|^Human^|^9606^|^Mammalia^|^40674^|^Z^|^Z^|^Z^|^Z^|^1^|^1^\nALLIICCLL";
-        Map<String, Object> doc = indexer.parseRecord(record);
+        String record = ">sp|P00001|P00001_HUMAN Protein OS=Homo sapiens OX=9606 GN=GENE PE=1 SV=1\nALLIICCLL";
+        Map<String, Object> doc = indexer.parseRecord(record, "sp");
 
         assertNotNull(doc);
         assertEquals("ALLIICCLL", doc.get("originalSeq"));
         assertEquals("AIIIICCII", doc.get("lToiSeq"));
+    }
+
+    @Test
+    void testParseRecord_differentOrganisms() throws IOException {
+        ESIndexer indexer = createIndexerWithoutClient();
+
+        String record = ">tr|A0A1B2CDE9|Protein OS=Escherichia coli OX=562 GN=unc PE=3 SV=1\nACDEF";
+        Map<String, Object> doc = indexer.parseRecord(record, "tr");
+
+        assertNotNull(doc);
+        assertEquals("Escherichia coli", doc.get("organismName"));
+        assertEquals("562", doc.get("organismID"));
+        assertEquals("unc", doc.get("geneName"));
+        assertEquals("3", doc.get("proteinEvidence"));
+    }
+
+    private ESIndexer createIndexerWithoutClient() throws IOException {
+        return new ESIndexer(null);
     }
 }

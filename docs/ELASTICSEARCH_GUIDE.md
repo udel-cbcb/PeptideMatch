@@ -27,6 +27,25 @@ elasticsearch.scheme=http
 # elasticsearch.password=
 ```
 
+## Data Preparation
+
+Download UniProt reference databases from the UniProt FTP server:
+
+```bash
+# Create data directory
+mkdir -p /path/to/PeptideMatch/data/inputs
+
+# Download Swiss-Prot (curated, ~575K records, ~275MB)
+curl -o /path/to/PeptideMatch/data/inputs/uniprot_sprot.fasta.gz \
+  https://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
+gunzip /path/to/PeptideMatch/data/inputs/uniprot_sprot.fasta.gz
+
+# Download TrEMBL (automatically annotated, ~250M records, ~36GB compressed)
+curl -C - -o /path/to/PeptideMatch/data/inputs/uniprot_trembl.fasta.gz \
+  https://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_trembl.fasta.gz
+gunzip /path/to/PeptideMatch/data/inputs/uniprot_trembl.fasta.gz
+```
+
 ## Index Mapping
 
 The index `peptidematch` uses a trigram (n=3) NGram tokenizer for protein sequence fields:
@@ -61,6 +80,14 @@ java -cp peptidematch-es.jar org.proteininformationresource.peptidematch.cli.Pep
 # Custom batch size (default: 5000)
 java -cp peptidematch-es.jar org.proteininformationresource.peptidematch.cli.PeptideMatchCMD index \
   -d /path/to/uniprot_sprot.fasta --batch-size 10000
+
+# Index Swiss-Prot (sets sptr=sp)
+java -cp peptidematch-es.jar org.proteininformationresource.peptidematch.cli.PeptideMatchCMD index \
+  -d /path/to/uniprot_sprot.fasta --source sp
+
+# Index TrEMBL (sets sptr=tr)
+java -cp peptidematch-es.jar org.proteininformationresource.peptidematch.cli.PeptideMatchCMD index \
+  -d /path/to/uniprot_trembl.fasta --source tr
 ```
 
 **FASTA format expected:**

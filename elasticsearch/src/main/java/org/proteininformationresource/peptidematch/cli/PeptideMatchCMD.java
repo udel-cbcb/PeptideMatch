@@ -52,12 +52,14 @@ public class PeptideMatchCMD {
         String dataFile = null;
         boolean deleteExisting = false;
         int batchSize = 5000;
+        String source = "tr";
 
         for (int i = 1; i < args.length; i++) {
             switch (args[i]) {
                 case "-d", "--dataFile" -> dataFile = args[++i];
                 case "--delete-existing" -> deleteExisting = true;
                 case "--batch-size" -> batchSize = Integer.parseInt(args[++i]);
+                case "--source" -> source = args[++i];
                 case "-h", "--help" -> { printUsage(); return; }
             }
         }
@@ -78,7 +80,7 @@ public class PeptideMatchCMD {
         indexer.createIndex(deleteExisting);
 
         long start = System.currentTimeMillis();
-        indexer.indexDataFile(file);
+        indexer.indexDataFile(file, source);
         indexer.optimizeIndex();
 
         long elapsed = System.currentTimeMillis() - start;
@@ -234,6 +236,7 @@ public class PeptideMatchCMD {
               -d, --dataFile <path>       FASTA file to index
               --delete-existing           Delete and recreate the index
               --batch-size <N>            Bulk batch size (default: 5000)
+              --source <sp|tr>            Source type: sp=Swiss-Prot, tr=TrEMBL (default: tr)
 
             Query options:
               -q, --query <peptides>      Comma-separated peptide sequences

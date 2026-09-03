@@ -188,9 +188,9 @@ class ESSearchIntegrationTest {
     void testIndexerWithRealFASTAFormat() throws IOException {
         ESIndexer indexer = new ESIndexer(client);
 
-        String record = ">inttest INTTEST_TEST^|^^|^Integration test protein^|^^|^^|^Homo sapiens^|^9606^|^Mammalia^|^40674^|^Z^|^Z^|^Z^|^Z^|^1, 9606^|^1, 9606^|\nMKTIIALSYIFCLVFA";
+        String record = ">sp|INTTEST|INTTEST_TEST Integration test protein OS=Homo sapiens OX=9606 GN=INTTEST PE=1 SV=1\nMKTIIALSYIFCLVFA";
 
-        Map<String, Object> doc = indexer.parseRecord(record);
+        Map<String, Object> doc = indexer.parseRecord(record, "sp");
         assertNotNull(doc);
 
         client.index(i -> i

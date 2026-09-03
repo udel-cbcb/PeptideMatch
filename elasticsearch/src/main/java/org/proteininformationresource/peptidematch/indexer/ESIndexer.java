@@ -42,6 +42,7 @@ public class ESIndexer {
 
     private final ElasticsearchClient client;
     private final int bulkBatchSize;
+    private String sourceType = "tr"; // default to TrEMBL
     private long indexedCount = 0;
     private long errorCount = 0;
 
@@ -52,6 +53,10 @@ public class ESIndexer {
     public ESIndexer(ElasticsearchClient client, int bulkBatchSize) {
         this.client = client;
         this.bulkBatchSize = bulkBatchSize;
+    }
+
+    public void setSourceType(String sourceType) {
+        this.sourceType = sourceType;
     }
 
     /**
@@ -79,20 +84,26 @@ public class ESIndexer {
     }
 
     /**
-     * Index data from an enriched FASTA file.
+     * Index data from a FASTA file.
      *
-     * Expected format:
-     * >AC PROTEIN_ID^|^^|^PROTEIN_NAME^|^^|^^|^ORGANISM_NAME^|^TAXON_ID^|^TAXGROUP_NAME^|^TAXGROUP_ID^|^NIST^|^ATLAS^|^PRIDE^|^IEDB^|^FULL_LINEAGE^|^SHORT_LINEAGE^|^UNIREF100_AC
-     * SEQUENCE
+     * Supports two formats:
+     * 1. Standard UniProt FASTA:
+     *    >sp|Q9Y5Q8|TF3C5_HUMAN General transcription factor 3C polypeptide 5 OS=Homo sapiens OX=9606 GN=GTF3C5 PE=1 SV=2
+     *    SEQUENCE
+     *
+     * 2. Enriched FASTA format (^|^ delimited, from create_data pipeline):
+     *    >AC PROTEIN_ID^|^^|^PROTEIN_NAME^|^^|^^|^ORGANISM_NAME^|^TAXON_ID^|^TAXGROUP_NAME^|^TAXGROUP_ID^|^NIST^|^ATLAS^|^PRIDE^|^IEDB^|^FULL_LINEAGE^|^SHORT_LINEAGE^|^UNIREF100_AC
+     *    SEQUENCE
      */
-    public void indexDataFile(File dataFile) throws IOException {
+    public void indexDataFile(File dataFile, String sourceType) throws IOException {
         if (!dataFile.exists()) {
             throw new IOException("Data file does not exist: " + dataFile);
         }
+        this.sourceType = sourceType;
 
         long startTime = System.currentTimeMillis();
         long lastReportTime = startTime;
-        logger.info("Starting indexing from '{}' (batch size={})...", dataFile.getName(), bulkBatchSize);
+        logger.info("Starting indexing from '{}' (source={}, batch size={})...", dataFile.getName(), sourceType, bulkBatchSize);
 
         try (BufferedReader br = new BufferedReader(new FileReader(dataFile))) {
             BulkRequest.Builder bulkBuilder = new BulkRequest.Builder();
@@ -138,7 +149,7 @@ public class ESIndexer {
     }
 
     private void indexRecord(BulkRequest.Builder bulkBuilder, String record) {
-        Map<String, Object> doc = parseRecord(record);
+        Map<String, Object> doc = parseRecord(record, sourceType);
         if (doc != null) {
             addBulkDoc(bulkBuilder, doc);
             indexedCount++;
@@ -182,7 +193,7 @@ public class ESIndexer {
      * Parse a FASTA record into a document map.
      * Supports both enriched format (^|^ delimited) and standard UniProt format.
      */
-    public Map<String, Object> parseRecord(String record) {
+    public Map<String, Object> parseRecord(String record, String sourceType) {
         String[] lines = record.split("\n");
         if (lines.length < 2) return null;
 
@@ -196,30 +207,47 @@ public class ESIndexer {
 
         // Try enriched format first: ^|^ delimited
         if (header.contains("^|^")) {
-            return parseEnrichedRecord(header, sequence);
+            return parseEnrichedRecord(header, sequence, sourceType);
         }
 
-        // Standard UniProt FASTA: >sp|AC|ID Desc OS=... OX=... GN=... PE=... SV=...
-        // or tr|AC|ID Desc OS=... OX=... GN=... PE=... SV=...
+        // Standard UniProt FASTA: >sp|AC|EntryName ProteinName OS=... OX=... GN=... PE=... SV=...
+        // or tr|AC|EntryName ProteinName OS=... OX=... GN=... PE=... SV=...
         String headerContent = header.substring(1).trim(); // remove '>'
         String[] headerParts = headerContent.split("\\s+", 2);
 
-        String ac = headerParts[0];
-        // Strip prefix (sp|, tr|, etc.)
-        if (ac.contains("|")) {
-            String[] acParts = ac.split("\\|");
-            ac = acParts.length > 1 ? acParts[1] : acParts[0];
+        // Extract AC and EntryName from the first part: "sp|AC|EntryName"
+        String ac = "";
+        String proteinID = "";
+        if (headerParts[0].contains("|")) {
+            String[] acParts = headerParts[0].split("\\|");
+            if (acParts.length > 1) ac = acParts[1];
+            if (acParts.length > 2) proteinID = acParts[2];
+        } else {
+            ac = headerParts[0];
+            proteinID = ac;
         }
 
-        String proteinID = headerParts.length > 1 ? headerParts[1] : ac;
-        String description = headerParts.length > 1 ? headerParts[1] : "";
+        // Extract protein description (everything before OS=)
+        String proteinName = "";
+        String description = "";
+        if (headerParts.length > 1) {
+            description = headerParts[1];
+            int osIdx = description.indexOf(" OS=");
+            if (osIdx > 0) {
+                proteinName = description.substring(0, osIdx).trim();
+            } else {
+                proteinName = description;
+            }
+        }
 
         // Extract metadata from key=value pairs
         String rest = headerParts.length > 1 ? headerContent : "";
         String organismName = extractTag(rest, "OS=");
         String organismID = extractTag(rest, "OX=");
-        String proteinName = extractTag(rest, "GN=");
-        String sptr = ac.length() < 6 ? "sp" : "tr";
+        String geneName = extractTag(rest, "GN=");
+        String proteinEvidence = extractTag(rest, "PE=");
+        String sequenceVersion = extractTag(rest, "SV=");
+        String sptr = sourceType;
         String isoform = ac.contains("-") ? "Y" : "N";
 
         if (organismName.isEmpty()) organismName = description;
@@ -228,29 +256,23 @@ public class ESIndexer {
         Map<String, Object> doc = new HashMap<>();
         doc.put("ac", ac);
         doc.put("proteinID", proteinID);
-        doc.put("proteinName", proteinName.isEmpty() ? description : proteinName);
+        doc.put("proteinName", proteinName.isEmpty() ? (geneName.isEmpty() ? description : geneName) : proteinName);
         doc.put("organismName", organismName);
         doc.put("organismID", organismID);
-        doc.put("taxongroupName", "other");
-        doc.put("taxongroupID", "null");
-        doc.put("nist", "Z");
-        doc.put("peptideAtlas", "Z");
-        doc.put("pride", "Z");
-        doc.put("iedb", "Z");
-        doc.put("fullLineage", "");
-        doc.put("shortLineage", "");
-        doc.put("uniref100", "");
+        doc.put("geneName", geneName);
         doc.put("sptr", sptr);
         doc.put("isoform", isoform);
         doc.put("originalSeq", sequence.toUpperCase());
         doc.put("lToiSeq", sequence.toUpperCase().replaceAll("L", "I"));
         doc.put("length", sequence.length());
+        doc.put("proteinEvidence", proteinEvidence);
+        doc.put("sequenceVersion", sequenceVersion);
         doc.put("boost", 1.0f);
 
         return doc;
     }
 
-    private Map<String, Object> parseEnrichedRecord(String header, String sequence) {
+    private Map<String, Object> parseEnrichedRecord(String header, String sequence, String sourceType) {
         String[] fields = header.split("\\^\\|\\^");
         if (fields.length < 15) return null;
 
@@ -271,7 +293,7 @@ public class ESIndexer {
         String shortLineage = fields.length > 14 ? fields[14].trim() : "";
         String uniref100 = fields.length > 15 && !fields[15].trim().isEmpty() ? "Y" : "";
 
-        String sptr = ac.length() < 6 ? "sp" : "tr";
+        String sptr = sourceType;
         String isoform = ac.contains("-") ? "Y" : "N";
 
         if (organismID.isEmpty()) organismID = "N/A";
@@ -288,20 +310,14 @@ public class ESIndexer {
         doc.put("proteinName", proteinName);
         doc.put("organismName", organismName);
         doc.put("organismID", organismID);
-        doc.put("taxongroupName", taxongroupName);
-        doc.put("taxongroupID", taxongroupID);
-        doc.put("nist", nist);
-        doc.put("peptideAtlas", atlas);
-        doc.put("pride", pride);
-        doc.put("iedb", iedb);
-        doc.put("fullLineage", fullLineage);
-        doc.put("shortLineage", shortLineage);
-        doc.put("uniref100", uniref100);
+        doc.put("geneName", "");
         doc.put("sptr", sptr);
         doc.put("isoform", isoform);
         doc.put("originalSeq", sequence.toUpperCase());
         doc.put("lToiSeq", sequence.toUpperCase().replaceAll("L", "I"));
         doc.put("length", sequence.length());
+        doc.put("proteinEvidence", "");
+        doc.put("sequenceVersion", "");
         doc.put("boost", boost);
 
         return doc;
@@ -316,7 +332,7 @@ public class ESIndexer {
         start += tag.length();
         // Find next tag or end
         int end = header.length();
-        for (String nextTag : new String[]{" OX=", " GN=", " PE=", " SV=", " PE=", " OS="}) {
+        for (String nextTag : new String[]{" OX=", " GN=", " PE=", " SV=", " OS="}) {
             int idx = header.indexOf(nextTag, start);
             if (idx > 0 && idx < end) end = idx;
         }
@@ -366,19 +382,21 @@ public class ESIndexer {
         boolean deleteExisting = false;
         int batchSize = DEFAULT_BULK_BATCH_SIZE;
         boolean optimize = false;
+        String source = "tr";
 
         for (int i = 1; i < args.length; i++) {
             switch (args[i]) {
                 case "--delete-existing" -> deleteExisting = true;
                 case "--batch-size" -> batchSize = Integer.parseInt(args[++i]);
                 case "--optimize" -> optimize = true;
+                case "--source" -> source = args[++i];
             }
         }
 
         ElasticsearchClient client = ESClientFactory.createClient();
         ESIndexer indexer = new ESIndexer(client, batchSize);
         indexer.createIndex(deleteExisting);
-        indexer.indexDataFile(new File(dataFilePath));
+        indexer.indexDataFile(new File(dataFilePath), source);
         if (optimize) {
             indexer.optimizeIndex();
         }
