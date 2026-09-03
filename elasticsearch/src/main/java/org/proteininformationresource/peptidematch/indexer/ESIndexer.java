@@ -38,14 +38,20 @@ import org.proteininformationresource.peptidematch.config.IndexConfig;
 public class ESIndexer {
 
     private static final Logger logger = LoggerFactory.getLogger(ESIndexer.class);
-    private static final int BULK_BATCH_SIZE = 5000;
-    private static final DecimalFormat formatter = new DecimalFormat("0000000000");
+    private static final int DEFAULT_BULK_BATCH_SIZE = 5000;
 
     private final ElasticsearchClient client;
+    private final int bulkBatchSize;
     private long indexedCount = 0;
+    private long errorCount = 0;
 
     public ESIndexer(ElasticsearchClient client) {
+        this(client, DEFAULT_BULK_BATCH_SIZE);
+    }
+
+    public ESIndexer(ElasticsearchClient client, int bulkBatchSize) {
         this.client = client;
+        this.bulkBatchSize = bulkBatchSize;
     }
 
     /**
@@ -85,7 +91,8 @@ public class ESIndexer {
         }
 
         long startTime = System.currentTimeMillis();
-        logger.info("Starting indexing from '{}'...", dataFile.getName());
+        long lastReportTime = startTime;
+        logger.info("Starting indexing from '{}' (batch size={})...", dataFile.getName(), bulkBatchSize);
 
         try (BufferedReader br = new BufferedReader(new FileReader(dataFile))) {
             BulkRequest.Builder bulkBuilder = new BulkRequest.Builder();
@@ -96,17 +103,15 @@ public class ESIndexer {
             while ((line = br.readLine()) != null) {
                 if (line.startsWith(">")) {
                     if (record.length() > 0) {
-                        Map<String, Object> doc = parseRecord(record.toString());
-                        if (doc != null) {
-                            addBulkDoc(bulkBuilder, doc);
-                            batchCount++;
-                            indexedCount++;
+                        indexRecord(bulkBuilder, record.toString());
+                        batchCount++;
 
-                            if (batchCount >= BULK_BATCH_SIZE) {
-                                executeBulk(bulkBuilder);
-                                bulkBuilder = new BulkRequest.Builder();
-                                batchCount = 0;
-                            }
+                        if (batchCount >= bulkBatchSize) {
+                            executeBulk(bulkBuilder);
+                            bulkBuilder = new BulkRequest.Builder();
+                            batchCount = 0;
+                            reportProgress(startTime, lastReportTime);
+                            lastReportTime = System.currentTimeMillis();
                         }
                         record.setLength(0);
                     }
@@ -117,12 +122,8 @@ public class ESIndexer {
             }
             // Process last record
             if (record.length() > 0) {
-                Map<String, Object> doc = parseRecord(record.toString());
-                if (doc != null) {
-                    addBulkDoc(bulkBuilder, doc);
-                    batchCount++;
-                    indexedCount++;
-                }
+                indexRecord(bulkBuilder, record.toString());
+                batchCount++;
             }
             // Execute remaining
             if (batchCount > 0) {
@@ -131,8 +132,24 @@ public class ESIndexer {
         }
 
         long elapsed = System.currentTimeMillis() - startTime;
-        logger.info("Indexing complete. Total documents indexed: {} in {} seconds",
-                indexedCount, elapsed / 1000.0);
+        logger.info("Indexing complete. Total: {} indexed, {} errors, in {} seconds ({}/sec)",
+                indexedCount, errorCount, String.format("%.1f", elapsed / 1000.0),
+                indexedCount > 0 ? (indexedCount * 1000 / elapsed) : 0);
+    }
+
+    private void indexRecord(BulkRequest.Builder bulkBuilder, String record) {
+        Map<String, Object> doc = parseRecord(record);
+        if (doc != null) {
+            addBulkDoc(bulkBuilder, doc);
+            indexedCount++;
+        }
+    }
+
+    private void reportProgress(long startTime, long lastReportTime) {
+        long elapsed = (System.currentTimeMillis() - startTime) / 1000;
+        double rate = indexedCount > 0 ? (indexedCount * 1000.0 / (System.currentTimeMillis() - startTime)) : 0;
+        logger.info("Progress: {} documents indexed ({} errors) | {}s elapsed | {:.0f} docs/sec",
+                indexedCount, errorCount, elapsed, rate);
     }
 
     private void addBulkDoc(BulkRequest.Builder bulkBuilder, Map<String, Object> doc) {
@@ -149,12 +166,15 @@ public class ESIndexer {
         if (response.errors()) {
             for (BulkResponseItem item : response.items()) {
                 if (item.error() != null) {
-                    logger.error("Bulk index error for doc {}: {}", item.id(), item.error().reason());
+                    errorCount++;
+                    if (errorCount <= 10) {
+                        logger.error("Bulk index error for doc {}: {}", item.id(), item.error().reason());
+                    }
                 }
             }
-        }
-        if (indexedCount % 50000 == 0) {
-            logger.info("Indexed {} documents...", indexedCount);
+            if (errorCount == 11) {
+                logger.error("Suppressing further error messages (>10 errors)");
+            }
         }
     }
 
@@ -235,21 +255,59 @@ public class ESIndexer {
         return indexedCount;
     }
 
+    public long getErrorCount() {
+        return errorCount;
+    }
+
+    /**
+     * Force merge the index to a single segment for optimal search performance.
+     * Call this after bulk indexing is complete.
+     */
+    public void optimizeIndex() throws IOException {
+        logger.info("Force merging index to 1 segment...");
+        client.indices().forcemerge(f -> f
+            .index(IndexConfig.INDEX_NAME)
+            .maxNumSegments(1L)
+        );
+        logger.info("Index optimized.");
+    }
+
     /**
      * CLI entry point.
+     *
+     * Usage: java ESIndexer <data-file> [options]
+     *   --delete-existing   Delete and recreate the index before indexing
+     *   --batch-size N      Bulk batch size (default: 5000)
+     *   --optimize          Force merge index after indexing
      */
     public static void main(String[] args) throws Exception {
         if (args.length < 1) {
-            System.err.println("Usage: ESIndexer <data-file> [--delete-existing]");
+            System.err.println("Usage: ESIndexer <data-file> [options]");
+            System.err.println("  --delete-existing   Delete and recreate index");
+            System.err.println("  --batch-size N      Bulk batch size (default: 5000)");
+            System.err.println("  --optimize          Force merge after indexing");
             System.exit(1);
         }
 
         String dataFilePath = args[0];
-        boolean deleteExisting = args.length > 1 && "--delete-existing".equals(args[1]);
+        boolean deleteExisting = false;
+        int batchSize = DEFAULT_BULK_BATCH_SIZE;
+        boolean optimize = false;
+
+        for (int i = 1; i < args.length; i++) {
+            switch (args[i]) {
+                case "--delete-existing" -> deleteExisting = true;
+                case "--batch-size" -> batchSize = Integer.parseInt(args[++i]);
+                case "--optimize" -> optimize = true;
+            }
+        }
 
         ElasticsearchClient client = ESClientFactory.createClient();
-        ESIndexer indexer = new ESIndexer(client);
+        ESIndexer indexer = new ESIndexer(client, batchSize);
         indexer.createIndex(deleteExisting);
         indexer.indexDataFile(new File(dataFilePath));
+        if (optimize) {
+            indexer.optimizeIndex();
+        }
     }
 }

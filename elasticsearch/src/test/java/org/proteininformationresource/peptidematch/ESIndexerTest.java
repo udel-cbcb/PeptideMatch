@@ -148,10 +148,55 @@ class ESIndexerTest {
     }
 
     private ESIndexer createIndexerWithoutClient() throws IOException {
-        // Create indexer with null client — only for parsing tests
-        // We use reflection or just test the parseRecord method directly
-        // Since parseRecord is package-private, we instantiate via the constructor
-        // and test the public method. For unit testing without ES, we just test parsing.
         return new ESIndexer(null);
+    }
+
+    @Test
+    void testParseRecord_headerWithEmptyFields() throws IOException {
+        ESIndexer indexer = createIndexerWithoutClient();
+
+        String record = ">P99999 P99999_HUMAN^|^^|^Test^|^^|^^|^Human^|^9606^|^^|^^|^Z^|^Z^|^Z^|^Z^|^1^|^1^\nACDEF";
+        Map<String, Object> doc = indexer.parseRecord(record);
+
+        assertNotNull(doc);
+        assertEquals("other", doc.get("taxongroupName"));
+        assertEquals("null", doc.get("taxongroupID"));
+    }
+
+    @Test
+    void testParseRecord_boostValues() throws IOException {
+        ESIndexer indexer = createIndexerWithoutClient();
+
+        // NIST boost = 10
+        String r1 = ">P00001 P00001_HUMAN^|^^|^Protein^|^^|^^|^Human^|^9606^|^Mammalia^|^40674^|^NIST^|^Z^|^Z^|^Z^|^1^|^1^\nACDEF";
+        assertEquals(10.0f, indexer.parseRecord(r1).get("boost"));
+
+        // Atlas boost = 9
+        String r2 = ">P00002 P00002_HUMAN^|^^|^Protein^|^^|^^|^Human^|^9606^|^Mammalia^|^40674^|^Z^|^ATLAS^|^Z^|^Z^|^1^|^1^\nACDEF";
+        assertEquals(9.0f, indexer.parseRecord(r2).get("boost"));
+
+        // Pride boost = 8
+        String r3 = ">P00003 P00003_HUMAN^|^^|^Protein^|^^|^^|^Human^|^9606^|^Mammalia^|^40674^|^Z^|^Z^|^PRIDE^|^Z^|^1^|^1^\nACDEF";
+        assertEquals(8.0f, indexer.parseRecord(r3).get("boost"));
+
+        // IEDB boost = 7
+        String r4 = ">P00004 P00004_HUMAN^|^^|^Protein^|^^|^^|^Human^|^9606^|^Mammalia^|^40674^|^Z^|^Z^|^Z^|^IEDB^|^1^|^1^\nACDEF";
+        assertEquals(7.0f, indexer.parseRecord(r4).get("boost"));
+
+        // No annotations boost = 1
+        String r5 = ">P00005 P00005_HUMAN^|^^|^Protein^|^^|^^|^Human^|^9606^|^Mammalia^|^40674^|^Z^|^Z^|^Z^|^Z^|^1^|^1^\nACDEF";
+        assertEquals(1.0f, indexer.parseRecord(r5).get("boost"));
+    }
+
+    @Test
+    void testParseRecord_lToiSeq() throws IOException {
+        ESIndexer indexer = createIndexerWithoutClient();
+
+        String record = ">P00001 P00001_HUMAN^|^^|^Protein^|^^|^^|^Human^|^9606^|^Mammalia^|^40674^|^Z^|^Z^|^Z^|^Z^|^1^|^1^\nALLIICCLL";
+        Map<String, Object> doc = indexer.parseRecord(record);
+
+        assertNotNull(doc);
+        assertEquals("ALLIICCLL", doc.get("originalSeq"));
+        assertEquals("AIIIICCII", doc.get("lToiSeq"));
     }
 }
