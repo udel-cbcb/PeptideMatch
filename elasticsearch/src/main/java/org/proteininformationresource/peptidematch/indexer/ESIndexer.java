@@ -148,8 +148,8 @@ public class ESIndexer {
     private void reportProgress(long startTime, long lastReportTime) {
         long elapsed = (System.currentTimeMillis() - startTime) / 1000;
         double rate = indexedCount > 0 ? (indexedCount * 1000.0 / (System.currentTimeMillis() - startTime)) : 0;
-        logger.info("Progress: {} documents indexed ({} errors) | {}s elapsed | {:.0f} docs/sec",
-                indexedCount, errorCount, elapsed, rate);
+        logger.info("Progress: {} documents indexed ({} errors) | {}s elapsed | {} docs/sec",
+                indexedCount, errorCount, elapsed, String.format("%.0f", rate));
     }
 
     private void addBulkDoc(BulkRequest.Builder bulkBuilder, Map<String, Object> doc) {
@@ -180,6 +180,7 @@ public class ESIndexer {
 
     /**
      * Parse a FASTA record into a document map.
+     * Supports both enriched format (^|^ delimited) and standard UniProt format.
      */
     public Map<String, Object> parseRecord(String record) {
         String[] lines = record.split("\n");
@@ -193,11 +194,67 @@ public class ESIndexer {
         String sequence = seqBuilder.toString();
         if (sequence.isEmpty()) return null;
 
-        // Parse defline: >AC PROTEIN_ID^|...^|FIELD14^|FIELD15^|FIELD16
+        // Try enriched format first: ^|^ delimited
+        if (header.contains("^|^")) {
+            return parseEnrichedRecord(header, sequence);
+        }
+
+        // Standard UniProt FASTA: >sp|AC|ID Desc OS=... OX=... GN=... PE=... SV=...
+        // or tr|AC|ID Desc OS=... OX=... GN=... PE=... SV=...
+        String headerContent = header.substring(1).trim(); // remove '>'
+        String[] headerParts = headerContent.split("\\s+", 2);
+
+        String ac = headerParts[0];
+        // Strip prefix (sp|, tr|, etc.)
+        if (ac.contains("|")) {
+            String[] acParts = ac.split("\\|");
+            ac = acParts.length > 1 ? acParts[1] : acParts[0];
+        }
+
+        String proteinID = headerParts.length > 1 ? headerParts[1] : ac;
+        String description = headerParts.length > 1 ? headerParts[1] : "";
+
+        // Extract metadata from key=value pairs
+        String rest = headerParts.length > 1 ? headerContent : "";
+        String organismName = extractTag(rest, "OS=");
+        String organismID = extractTag(rest, "OX=");
+        String proteinName = extractTag(rest, "GN=");
+        String sptr = ac.length() < 6 ? "sp" : "tr";
+        String isoform = ac.contains("-") ? "Y" : "N";
+
+        if (organismName.isEmpty()) organismName = description;
+        if (organismID.isEmpty()) organismID = "N/A";
+
+        Map<String, Object> doc = new HashMap<>();
+        doc.put("ac", ac);
+        doc.put("proteinID", proteinID);
+        doc.put("proteinName", proteinName.isEmpty() ? description : proteinName);
+        doc.put("organismName", organismName);
+        doc.put("organismID", organismID);
+        doc.put("taxongroupName", "other");
+        doc.put("taxongroupID", "null");
+        doc.put("nist", "Z");
+        doc.put("peptideAtlas", "Z");
+        doc.put("pride", "Z");
+        doc.put("iedb", "Z");
+        doc.put("fullLineage", "");
+        doc.put("shortLineage", "");
+        doc.put("uniref100", "");
+        doc.put("sptr", sptr);
+        doc.put("isoform", isoform);
+        doc.put("originalSeq", sequence.toUpperCase());
+        doc.put("lToiSeq", sequence.toUpperCase().replaceAll("L", "I"));
+        doc.put("length", sequence.length());
+        doc.put("boost", 1.0f);
+
+        return doc;
+    }
+
+    private Map<String, Object> parseEnrichedRecord(String header, String sequence) {
         String[] fields = header.split("\\^\\|\\^");
         if (fields.length < 15) return null;
 
-        String headerContent = fields[0].substring(1).trim(); // remove '>'
+        String headerContent = fields[0].substring(1).trim();
         String[] headerParts = headerContent.split("\\s+", 2);
         String ac = headerParts[0];
         String proteinID = headerParts.length > 1 ? headerParts[1] : ac;
@@ -219,7 +276,6 @@ public class ESIndexer {
 
         if (organismID.isEmpty()) organismID = "N/A";
 
-        // Calculate boost based on annotations (for function_score or stored field)
         float boost = 1.0f;
         if (!"Z".equals(nist)) boost = 10.0f;
         else if (!"Z".equals(atlas)) boost = 9.0f;
@@ -249,6 +305,23 @@ public class ESIndexer {
         doc.put("boost", boost);
 
         return doc;
+    }
+
+    /**
+     * Extract tag value from header string (e.g. extractTag("OS=Homo sapiens OX=9606", "OS=") -> "Homo sapiens")
+     */
+    private String extractTag(String header, String tag) {
+        int start = header.indexOf(tag);
+        if (start < 0) return "";
+        start += tag.length();
+        // Find next tag or end
+        int end = header.length();
+        for (String nextTag : new String[]{" OX=", " GN=", " PE=", " SV=", " PE=", " OS="}) {
+            int idx = header.indexOf(nextTag, start);
+            if (idx > 0 && idx < end) end = idx;
+        }
+        // Also handle end of string
+        return header.substring(start, end).trim();
     }
 
     public long getIndexedCount() {
