@@ -83,13 +83,17 @@ class ESIndexerTest {
     }
 
     @Test
-    void testParseRecord_insufficientFields() throws IOException {
+    void testParseRecord_minimalHeader() throws IOException {
         ESIndexer indexer = createIndexerWithoutClient();
 
         String record = ">sp|P12345|TOOSHORT\nACDEF";
         Map<String, Object> doc = indexer.parseRecord(record, "tr");
 
-        assertNull(doc); // missing required OS= or OX= fields
+        // Standard format parses successfully even without OS=, OX=, GN=, PE=, SV= tags
+        assertNotNull(doc);
+        assertEquals("P12345", doc.get("ac"));
+        assertEquals("TOOSHORT", doc.get("proteinID"));
+        assertEquals("ACDEF", doc.get("originalSeq"));
     }
 
     @Test
