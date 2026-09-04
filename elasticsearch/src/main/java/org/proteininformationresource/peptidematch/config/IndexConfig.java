@@ -3,8 +3,10 @@ package org.proteininformationresource.peptidematch.config;
 /**
  * Elasticsearch index mapping configuration for PeptideMatch.
  *
- * Defines the index name, analyzers, and field mappings that mirror
- * the original Solr schema used by PeptideMatch.
+ * Defines the index name, analyzers, and field mappings for standard UniProt FASTA headers.
+ *
+ * Fields are derived from the UniProt KB FASTA definition line:
+ * >db|UniqueIdentifier|EntryName ProteinName OS=OrganismName OX=OrganismIdentifier GN=GeneName PE=ProteinExistence SV=SequenceVersion
  */
 public class IndexConfig {
 
@@ -16,7 +18,6 @@ public class IndexConfig {
      * Mapping design:
      * - originalSeq / lToiSeq: text fields with custom ngram analyzer (min=3, max=3)
      *   for exact substring matching via match_phrase queries
-     * - fullLineage / shortLineage: text fields with standard analyzer for taxonomy search
      * - All other fields: keyword (not analyzed) for exact match filtering
      */
     public static String getIndexMapping() {
@@ -33,10 +34,6 @@ public class IndexConfig {
                         },
                         "peptide_ngram_ltoi": {
                           "tokenizer": "peptide_ngram_tokenizer",
-                          "filter": ["lowercase"]
-                        },
-                        "lineage_analyzer": {
-                          "tokenizer": "whitespace",
                           "filter": ["lowercase"]
                         }
                       },
@@ -57,20 +54,11 @@ public class IndexConfig {
                       "proteinName":      { "type": "keyword" },
                       "organismName":     { "type": "keyword" },
                       "organismID":       { "type": "keyword" },
-                      "taxongroupName":   { "type": "keyword" },
-                      "taxongroupID":     { "type": "keyword" },
-                      "nist":             { "type": "keyword" },
-                      "peptideAtlas":     { "type": "keyword" },
-                      "pride":            { "type": "keyword" },
-                      "iedb":             { "type": "keyword" },
-                      "fullLineage":      { "type": "text", "analyzer": "lineage_analyzer" },
-                      "shortLineage":     { "type": "text", "analyzer": "lineage_analyzer" },
-                      "uniref100":        { "type": "keyword" },
-                      "sptr":             { "type": "keyword" },
-                      "isoform":          { "type": "keyword" },
+                      "geneName":         { "type": "keyword" },
                       "proteinEvidence":  { "type": "keyword" },
                       "sequenceVersion":  { "type": "keyword" },
-                      "geneName":         { "type": "keyword" },
+                      "sptr":             { "type": "keyword" },
+                      "isoform":          { "type": "keyword" },
                       "originalSeq":      { "type": "text", "analyzer": "peptide_ngram", "store": true },
                       "lToiSeq":          { "type": "text", "analyzer": "peptide_ngram_ltoi" },
                       "length":           { "type": "integer" },

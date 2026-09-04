@@ -26,11 +26,6 @@ import org.proteininformationresource.peptidematch.config.IndexConfig;
 /**
  * Elasticsearch-based peptide search service.
  *
- * Replaces the Solr-based PeptideMatchPhraseQuery classes found in:
- * - peptidematchapi2/PeptideMatchPhraseQuery.java
- * - peptidematchws/PeptideMatchPhraseQuery.java
- * - peptidematch_web/PeptidePhraseQuery.java
- *
  * Uses match_phrase queries on ngram-tokenized fields for exact substring matching.
  */
 public class ESSearchService {
@@ -47,7 +42,7 @@ public class ESSearchService {
      * Build filter clauses for search parameters.
      */
     private void addFilters(BoolQuery.Builder boolBuilder, String taxonids,
-                            String swissprot, String isoform, String uniref100) {
+                            String swissprot, String isoform) {
         if (taxonids != null && !taxonids.isEmpty()) {
             String[] ids = taxonids.replaceAll("\\s", "").split(",");
             if (ids.length == 1) {
@@ -69,16 +64,13 @@ public class ESSearchService {
         if ("N".equals(isoform)) {
             boolBuilder.filter(f -> f.bool(b -> b.mustNot(m -> m.term(t -> t.field("isoform").value("Y")))));
         }
-        if ("Y".equals(uniref100)) {
-            boolBuilder.filter(f -> f.term(t -> t.field("uniref100").value("Y")));
-        }
     }
 
     /**
      * Search for peptides matching a query peptide sequence.
      */
     public SearchResult searchByPeptide(String peptide, String taxonids,
-                                        String swissprot, String isoform, String uniref100,
+                                        String swissprot, String isoform,
                                         String leqi, int offset, int size, String sortBy) throws IOException {
         boolean leqiFlag = "Y".equals(leqi);
         String queryField = leqiFlag ? "lToiSeq" : "originalSeq";
@@ -90,7 +82,7 @@ public class ESSearchService {
                 .query(queryText)
                 .analyzer("peptide_ngram")
         ));
-        addFilters(boolBuilder, taxonids, swissprot, isoform, uniref100);
+        addFilters(boolBuilder, taxonids, swissprot, isoform);
 
         SearchRequest.Builder searchBuilder = new SearchRequest.Builder()
                 .index(IndexConfig.INDEX_NAME)
@@ -125,8 +117,7 @@ public class ESSearchService {
     /**
      * Search grouped by organism, returning match counts per organism.
      */
-    public Map<String, Long> searchByPeptideWithGroup(String peptide, String uniref100,
-                                                       String leqi) throws IOException {
+    public Map<String, Long> searchByPeptideWithGroup(String peptide, String leqi) throws IOException {
         boolean leqiFlag = "Y".equals(leqi);
         String queryField = leqiFlag ? "lToiSeq" : "originalSeq";
         String queryText = leqiFlag ? peptide.replaceAll("L", "I") : peptide;
@@ -137,9 +128,6 @@ public class ESSearchService {
                 .query(queryText)
                 .analyzer("peptide_ngram")
         ));
-        if ("Y".equals(uniref100)) {
-            boolBuilder.filter(f -> f.term(t -> t.field("uniref100").value("Y")));
-        }
 
         SearchRequest.Builder searchBuilder = new SearchRequest.Builder()
                 .index(IndexConfig.INDEX_NAME)
@@ -172,12 +160,9 @@ public class ESSearchService {
     /**
      * Search by protein accession ID.
      */
-    public SearchResult searchById(String ac, String uniref100) throws IOException {
+    public SearchResult searchById(String ac) throws IOException {
         BoolQuery.Builder boolBuilder = new BoolQuery.Builder();
         boolBuilder.must(m -> m.term(t -> t.field("ac").value(ac)));
-        if ("Y".equals(uniref100)) {
-            boolBuilder.filter(f -> f.term(t -> t.field("uniref100").value("Y")));
-        }
 
         SearchRequest request = new SearchRequest.Builder()
                 .index(IndexConfig.INDEX_NAME)
@@ -205,7 +190,7 @@ public class ESSearchService {
      * Count total matching documents for a peptide query.
      */
     public long countByPeptide(String peptide, String taxonids, String swissprot,
-                                String isoform, String uniref100, String leqi) throws IOException {
+                                String isoform, String leqi) throws IOException {
         boolean leqiFlag = "Y".equals(leqi);
         String queryField = leqiFlag ? "lToiSeq" : "originalSeq";
         String queryText = leqiFlag ? peptide.replaceAll("L", "I") : peptide;
@@ -216,7 +201,7 @@ public class ESSearchService {
                 .query(queryText)
                 .analyzer("peptide_ngram")
         ));
-        addFilters(boolBuilder, taxonids, swissprot, isoform, uniref100);
+        addFilters(boolBuilder, taxonids, swissprot, isoform);
 
         CountRequest request = new CountRequest.Builder()
                 .index(IndexConfig.INDEX_NAME)
@@ -243,7 +228,6 @@ public class ESSearchService {
             case "organismName_desc" -> builder.sort(s -> s.field(f -> f.field("organismName").order(SortOrder.Desc)));
             case "length_asc" -> builder.sort(s -> s.field(f -> f.field("length").order(SortOrder.Asc)));
             case "length_desc" -> builder.sort(s -> s.field(f -> f.field("length").order(SortOrder.Desc)));
-            case "proteomic_desc" -> builder.sort(s -> s.field(f -> f.field("peptideAtlas").order(SortOrder.Desc)));
             default -> builder.sort(s -> s.field(f -> f.field("ac").order(SortOrder.Asc)));
         }
     }

@@ -144,7 +144,7 @@ public class PeptideMatchCMD {
 
             for (String query : queries) {
                 SearchResult result = searchService.searchByPeptide(
-                        query, "", "", "", "", leqiFlag, 0, size, "ac_asc");
+                        query, "", "", "", leqiFlag, 0, size, "ac_asc");
 
                 if (result.totalFound() == 0) {
                     pw.println(query + "\tNo match");

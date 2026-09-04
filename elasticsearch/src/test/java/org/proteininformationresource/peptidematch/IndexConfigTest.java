@@ -27,7 +27,6 @@ class IndexConfigTest {
         String mapping = IndexConfig.getIndexMapping();
         assertTrue(mapping.contains("peptide_ngram"));
         assertTrue(mapping.contains("peptide_ngram_tokenizer"));
-        assertTrue(mapping.contains("lineage_analyzer"));
     }
 
     @Test
@@ -36,8 +35,7 @@ class IndexConfigTest {
 
         String[] expectedFields = {
                 "ac", "proteinID", "proteinName", "organismName", "organismID",
-                "taxongroupName", "taxongroupID", "nist", "peptideAtlas",
-                "pride", "iedb", "fullLineage", "shortLineage", "uniref100",
+                "geneName", "proteinEvidence", "sequenceVersion",
                 "sptr", "isoform", "originalSeq", "lToiSeq", "length", "boost"
         };
 

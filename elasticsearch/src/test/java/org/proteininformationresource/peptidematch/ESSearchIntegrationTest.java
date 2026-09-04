@@ -74,17 +74,11 @@ class ESSearchIntegrationTest {
         doc.put("length", seq.length());
         doc.put("organismName", "Homo sapiens");
         doc.put("organismID", "9606");
-        doc.put("taxongroupName", "Mammalia");
-        doc.put("taxongroupID", "40674");
+        doc.put("geneName", "TP" + ac);
+        doc.put("proteinEvidence", "1");
+        doc.put("sequenceVersion", "1");
         doc.put("sptr", sptr);
         doc.put("isoform", "N");
-        doc.put("nist", "Z");
-        doc.put("peptideAtlas", "Z");
-        doc.put("pride", "Z");
-        doc.put("iedb", "Z");
-        doc.put("fullLineage", "1, 33208, 9606");
-        doc.put("shortLineage", "1, 33208, 9606");
-        doc.put("uniref100", "Y");
         doc.put("boost", 1.0f);
         return doc;
     }
@@ -118,9 +112,8 @@ class ESSearchIntegrationTest {
     @Test
     @Order(2)
     void testNGramSearch() throws IOException {
-        // "IALS" should match MKTIIALSYIFCLVFA via trigram matching
         SearchResult result = searchService.searchByPeptide(
-            "IALS", "", "", "", "", "N", 0, 10, "ac_asc");
+            "IALS", "", "", "", "N", 0, 10, "ac_asc");
 
         assertTrue(result.totalFound() > 0,
             "Should find at least one match for peptide IALS");
@@ -134,7 +127,7 @@ class ESSearchIntegrationTest {
     @Order(3)
     void testNGramSearchNoMatch() throws IOException {
         SearchResult result = searchService.searchByPeptide(
-            "ZZZZZ", "", "", "", "", "N", 0, 10, "ac_asc");
+            "ZZZZZ", "", "", "", "N", 0, 10, "ac_asc");
 
         assertEquals(0, result.totalFound(),
             "Should not find any match for ZZZZZ");
@@ -143,15 +136,13 @@ class ESSearchIntegrationTest {
     @Test
     @Order(4)
     void testLeqiSearch() throws IOException {
-        // Index a document with L at specific positions
         Map<String, Object> doc2 = buildTestDoc("Q99999", "AAALLLAA", "sp");
 
         client.index(i -> i.index(INDEX_NAME).id("Q99999").document(doc2));
         client.indices().refresh(r -> r.index(INDEX_NAME));
 
-        // Search for "III" with L/I equivalence — should match AAALLLAA via lToiSeq
         SearchResult result = searchService.searchByPeptide(
-            "III", "", "", "", "", "Y", 0, 10, "ac_asc");
+            "III", "", "", "", "Y", 0, 10, "ac_asc");
 
         assertTrue(result.totalFound() > 0,
             "Should find Q99999 when searching III with L/I equivalence");
@@ -165,7 +156,7 @@ class ESSearchIntegrationTest {
     @Order(5)
     void testMatchPositionFinderWithIndexedData() throws IOException {
         SearchResult result = searchService.searchByPeptide(
-            "IALS", "", "", "", "", "N", 0, 10, "ac_asc");
+            "IALS", "", "", "", "N", 0, 10, "ac_asc");
 
         assertTrue(result.totalFound() > 0);
 
@@ -201,7 +192,7 @@ class ESSearchIntegrationTest {
         client.indices().refresh(r -> r.index(INDEX_NAME));
 
         SearchResult result = searchService.searchByPeptide(
-            "SYIFCL", "", "", "", "", "N", 0, 10, "ac_asc");
+            "SYIFCL", "", "", "", "N", 0, 10, "ac_asc");
 
         assertTrue(result.totalFound() > 0,
             "Should find the indexed FASTA record");
@@ -210,7 +201,7 @@ class ESSearchIntegrationTest {
     @Test
     @Order(7)
     void testSearchByAc() throws IOException {
-        SearchResult result = searchService.searchById(TEST_AC, "");
+        SearchResult result = searchService.searchById(TEST_AC);
 
         assertTrue(result.totalFound() > 0);
         assertEquals(TEST_AC, result.hits().get(0).get("ac"));
@@ -220,7 +211,7 @@ class ESSearchIntegrationTest {
     @Order(8)
     void testCountByPeptide() throws IOException {
         long count = searchService.countByPeptide(
-            "IALS", "", "", "", "", "N");
+            "IALS", "", "", "", "N");
 
         assertTrue(count > 0, "Count should be > 0 for IALS");
     }
@@ -229,10 +220,9 @@ class ESSearchIntegrationTest {
     @Order(9)
     void testSearchWithOrganismFilter() throws IOException {
         SearchResult result = searchService.searchByPeptide(
-            "IALS", "9606", "", "", "", "N", 0, 10, "ac_asc");
+            "IALS", "9606", "", "", "N", 0, 10, "ac_asc");
 
         assertTrue(result.totalFound() > 0);
-        // All results should have organismID = 9606
         for (Map<String, Object> hit : result.hits()) {
             assertEquals("9606", hit.get("organismID"));
         }
@@ -241,9 +231,8 @@ class ESSearchIntegrationTest {
     @Test
     @Order(10)
     void testSearchWithSwissProtFilter() throws IOException {
-        // All our test docs have sptr="sp", so filtering for SwissProt should return them
         SearchResult result = searchService.searchByPeptide(
-            "IALS", "", "Y", "", "", "N", 0, 10, "ac_asc");
+            "IALS", "", "Y", "", "N", 0, 10, "ac_asc");
 
         assertTrue(result.totalFound() > 0);
         for (Map<String, Object> hit : result.hits()) {

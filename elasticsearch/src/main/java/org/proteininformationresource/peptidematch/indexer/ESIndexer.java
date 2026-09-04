@@ -274,7 +274,7 @@ public class ESIndexer {
 
     private Map<String, Object> parseEnrichedRecord(String header, String sequence, String sourceType) {
         String[] fields = header.split("\\^\\|\\^");
-        if (fields.length < 15) return null;
+        if (fields.length < 7) return null;
 
         String headerContent = fields[0].substring(1).trim();
         String[] headerParts = headerContent.split("\\s+", 2);
@@ -283,26 +283,11 @@ public class ESIndexer {
         String proteinName = fields.length > 2 ? fields[2].trim() : "";
         String organismName = fields.length > 5 ? fields[5].trim() : "";
         String organismID = fields.length > 6 ? fields[6].trim() : "";
-        String taxongroupName = fields.length > 7 && !fields[7].trim().isEmpty() ? fields[7].trim() : "other";
-        String taxongroupID = fields.length > 8 && !fields[8].trim().isEmpty() ? fields[8].trim() : "null";
-        String nist = fields.length > 9 && !fields[9].trim().isEmpty() && !fields[9].trim().equals("Z") ? fields[9].trim() : "Z";
-        String atlas = fields.length > 10 && !fields[10].trim().isEmpty() && !fields[10].trim().equals("Z") ? "Y" : "Z";
-        String pride = fields.length > 11 && !fields[11].trim().isEmpty() && !fields[11].trim().equals("Z") ? "Y" : "Z";
-        String iedb = fields.length > 12 && !fields[12].trim().isEmpty() && !fields[12].trim().equals("Z") ? fields[12].trim() : "Z";
-        String fullLineage = fields.length > 13 ? fields[13].trim() : "";
-        String shortLineage = fields.length > 14 ? fields[14].trim() : "";
-        String uniref100 = fields.length > 15 && !fields[15].trim().isEmpty() ? "Y" : "";
 
         String sptr = sourceType;
         String isoform = ac.contains("-") ? "Y" : "N";
 
         if (organismID.isEmpty()) organismID = "N/A";
-
-        float boost = 1.0f;
-        if (!"Z".equals(nist)) boost = 10.0f;
-        else if (!"Z".equals(atlas)) boost = 9.0f;
-        else if (!"Z".equals(pride)) boost = 8.0f;
-        else if (!"Z".equals(iedb)) boost = 7.0f;
 
         Map<String, Object> doc = new HashMap<>();
         doc.put("ac", ac);
@@ -318,7 +303,7 @@ public class ESIndexer {
         doc.put("length", sequence.length());
         doc.put("proteinEvidence", "");
         doc.put("sequenceVersion", "");
-        doc.put("boost", boost);
+        doc.put("boost", 1.0f);
 
         return doc;
     }
