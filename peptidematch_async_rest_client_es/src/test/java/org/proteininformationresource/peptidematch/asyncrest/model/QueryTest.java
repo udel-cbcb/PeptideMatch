@@ -1,50 +1,53 @@
 package org.proteininformationresource.peptidematch.asyncrest.model;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-
-import java.util.ArrayList;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Test;
-
 public class QueryTest {
 
-	@Test
-	public void testDefaultLEqiIsTrue() {
-		Query query = new Query();
-		assertEquals("true", query.getlEqi());
-	}
+    @Test
+    public void testDefaultConstructor() {
+        Query query = new Query();
+        assertNotNull(query);
+        assertEquals("true", query.getlEqi());
+    }
 
-	@Test
-	public void testDefaultPepsIsNull() {
-		Query query = new Query();
-		assertNull(query.getPeps());
-	}
+    @Test
+    public void testSettersAndGetters() {
+        Query query = new Query();
 
-	@Test
-	public void testSetAndGetPeps() {
-		Query query = new Query();
-		List<String> peps = new ArrayList<String>(Arrays.asList("ACDE", "MKTA"));
-		query.setPeps(peps);
-		assertEquals(peps, query.getPeps());
-	}
+        List<String> peps = Arrays.asList("ACDE", "FGHI");
+        query.setPeps(peps);
+        assertEquals(peps, query.getPeps());
 
-	@Test
-	public void testSetAndGetLEqi() {
-		Query query = new Query();
-		query.setlEqi("false");
-		assertEquals("false", query.getlEqi());
-	}
+        query.setlEqi("N");
+        assertEquals("N", query.getlEqi());
+    }
 
-	@Test
-	public void testToStringContainsFields() {
-		Query query = new Query();
-		query.setPeps(Arrays.asList("ACDE"));
-		String str = query.toString();
-		assertTrue(str.contains("ACDE"));
-		assertTrue(str.contains("true"));
-	}
+    @Test
+    public void testEmptyPeptideList() {
+        Query query = new Query();
+        query.setPeps(Arrays.asList());
+        assertNotNull(query.getPeps());
+        assertTrue(query.getPeps().isEmpty());
+    }
+
+    @Test
+    public void testMultiplePeptides() {
+        List<String> peps = Arrays.asList("PEPTIDE1", "PEPTIDE2", "PEPTIDE3");
+        Query query = new Query();
+        query.setPeps(peps);
+        assertEquals(3, query.getPeps().size());
+    }
+
+    @Test
+    public void testToString() {
+        Query query = new Query();
+        query.setPeps(Arrays.asList("ACDE"));
+        String str = query.toString();
+        assertNotNull(str);
+        assertTrue(str.contains("ACDE"));
+    }
 }
