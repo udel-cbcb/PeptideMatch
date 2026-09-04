@@ -73,7 +73,7 @@ public class ESSearchService {
                                         String swissprot, String isoform,
                                         String leqi, int offset, int size, String sortBy) throws IOException {
         boolean leqiFlag = "Y".equals(leqi);
-        String queryField = leqiFlag ? "lToiSeq" : "originalSeq";
+        String queryField = leqiFlag ? "originalSeq.ltoi" : "originalSeq";
         String queryText = leqiFlag ? peptide.replaceAll("L", "I") : peptide;
 
         BoolQuery.Builder boolBuilder = new BoolQuery.Builder();
@@ -119,7 +119,7 @@ public class ESSearchService {
      */
     public Map<String, Long> searchByPeptideWithGroup(String peptide, String leqi) throws IOException {
         boolean leqiFlag = "Y".equals(leqi);
-        String queryField = leqiFlag ? "lToiSeq" : "originalSeq";
+        String queryField = leqiFlag ? "originalSeq.ltoi" : "originalSeq";
         String queryText = leqiFlag ? peptide.replaceAll("L", "I") : peptide;
 
         BoolQuery.Builder boolBuilder = new BoolQuery.Builder();
@@ -192,7 +192,7 @@ public class ESSearchService {
     public long countByPeptide(String peptide, String taxonids, String swissprot,
                                 String isoform, String leqi) throws IOException {
         boolean leqiFlag = "Y".equals(leqi);
-        String queryField = leqiFlag ? "lToiSeq" : "originalSeq";
+        String queryField = leqiFlag ? "originalSeq.ltoi" : "originalSeq";
         String queryText = leqiFlag ? peptide.replaceAll("L", "I") : peptide;
 
         BoolQuery.Builder boolBuilder = new BoolQuery.Builder();

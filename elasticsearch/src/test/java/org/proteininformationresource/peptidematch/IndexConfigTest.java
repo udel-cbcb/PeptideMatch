@@ -27,6 +27,8 @@ class IndexConfigTest {
         String mapping = IndexConfig.getIndexMapping();
         assertTrue(mapping.contains("peptide_ngram"));
         assertTrue(mapping.contains("peptide_ngram_tokenizer"));
+        assertTrue(mapping.contains("peptide_ngram_ltoi"));
+        assertTrue(mapping.contains("l_to_i_filter"));
     }
 
     @Test
@@ -36,7 +38,7 @@ class IndexConfigTest {
         String[] expectedFields = {
                 "ac", "proteinID", "proteinName", "organismName", "organismID",
                 "geneName", "proteinEvidence", "sequenceVersion",
-                "sptr", "isoform", "originalSeq", "lToiSeq", "length", "boost"
+                "sptr", "isoform", "originalSeq", "length", "boost"
         };
 
         for (String field : expectedFields) {

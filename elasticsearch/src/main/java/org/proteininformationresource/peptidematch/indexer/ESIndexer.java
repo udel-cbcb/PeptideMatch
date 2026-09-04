@@ -33,7 +33,7 @@ import org.proteininformationresource.peptidematch.config.IndexConfig;
  * - Uses ES BulkProcessor instead of Lucene IndexWriter
  * - NGram tokenization is handled by ES analyzer (no custom Java analyzer needed at index time)
  * - Document boost is stored as a field (ES handles scoring via function_score if needed)
- * - L→I substitution happens at field-value level (same as before)
+ * - L→I substitution handled by char_filter in ES analyzer (no separate field needed)
  */
 public class ESIndexer {
 
@@ -263,7 +263,6 @@ public class ESIndexer {
         doc.put("sptr", sptr);
         doc.put("isoform", isoform);
         doc.put("originalSeq", sequence.toUpperCase());
-        doc.put("lToiSeq", sequence.toUpperCase().replaceAll("L", "I"));
         doc.put("length", sequence.length());
         doc.put("proteinEvidence", proteinEvidence);
         doc.put("sequenceVersion", sequenceVersion);
@@ -299,7 +298,6 @@ public class ESIndexer {
         doc.put("sptr", sptr);
         doc.put("isoform", isoform);
         doc.put("originalSeq", sequence.toUpperCase());
-        doc.put("lToiSeq", sequence.toUpperCase().replaceAll("L", "I"));
         doc.put("length", sequence.length());
         doc.put("proteinEvidence", "");
         doc.put("sequenceVersion", "");

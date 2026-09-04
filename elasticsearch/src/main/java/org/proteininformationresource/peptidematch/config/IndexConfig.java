@@ -16,15 +16,18 @@ public class IndexConfig {
      * Returns the Elasticsearch index mapping as a JSON string.
      *
      * Mapping design:
-     * - originalSeq / lToiSeq: text fields with custom ngram analyzer (min=3, max=3)
-     *   for exact substring matching via match_phrase queries
+     * - originalSeq: text field with ngram analyzer for exact substring matching
+     * - originalSeq.ltoi: sub-field with L→I char_filter for isobaric leucine/isoleucine matching
      * - All other fields: keyword (not analyzed) for exact match filtering
+     *
+     * The L→I equivalence uses a char_filter instead of a separate field,
+     * saving ~50% storage by avoiding duplicate sequence data.
      */
     public static String getIndexMapping() {
         return """
                 {
                   "settings": {
-                    "number_of_shards": 4,
+                    "number_of_shards": 16,
                     "number_of_replicas": 1,
                     "analysis": {
                       "analyzer": {
@@ -34,7 +37,14 @@ public class IndexConfig {
                         },
                         "peptide_ngram_ltoi": {
                           "tokenizer": "peptide_ngram_tokenizer",
-                          "filter": ["lowercase"]
+                          "filter": ["lowercase"],
+                          "char_filter": ["l_to_i_filter"]
+                        }
+                      },
+                      "char_filter": {
+                        "l_to_i_filter": {
+                          "type": "mapping",
+                          "mappings": ["L => I", "l => i"]
                         }
                       },
                       "tokenizer": {
@@ -59,8 +69,17 @@ public class IndexConfig {
                       "sequenceVersion":  { "type": "keyword" },
                       "sptr":             { "type": "keyword" },
                       "isoform":          { "type": "keyword" },
-                      "originalSeq":      { "type": "text", "analyzer": "peptide_ngram", "store": true },
-                      "lToiSeq":          { "type": "text", "analyzer": "peptide_ngram_ltoi" },
+                      "originalSeq":      {
+                        "type": "text",
+                        "analyzer": "peptide_ngram",
+                        "store": true,
+                        "fields": {
+                          "ltoi": {
+                            "type": "text",
+                            "analyzer": "peptide_ngram_ltoi"
+                          }
+                        }
+                      },
                       "length":           { "type": "integer" },
                       "boost":            { "type": "float" }
                     }

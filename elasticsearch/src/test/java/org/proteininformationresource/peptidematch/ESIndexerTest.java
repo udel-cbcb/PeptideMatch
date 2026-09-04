@@ -37,7 +37,6 @@ class ESIndexerTest {
         assertEquals("sp", doc.get("sptr"));
         assertEquals("N", doc.get("isoform")); // no dash in AC
         assertEquals("MSEQKLICNVC", doc.get("originalSeq"));
-        assertEquals("MSEQKLICNVC".replaceAll("L", "I"), doc.get("lToiSeq"));
         assertEquals(11, doc.get("length"));
         assertEquals(1.0f, doc.get("boost"));
     }
@@ -169,7 +168,7 @@ class ESIndexerTest {
     }
 
     @Test
-    void testParseRecord_lToiSeq() throws IOException {
+    void testParseRecord_lToiSequence() throws IOException {
         ESIndexer indexer = createIndexerWithoutClient();
 
         String record = ">sp|P00001|P00001_HUMAN Protein OS=Homo sapiens OX=9606 GN=GENE PE=1 SV=1\nALLIICCLL";
@@ -177,7 +176,7 @@ class ESIndexerTest {
 
         assertNotNull(doc);
         assertEquals("ALLIICCLL", doc.get("originalSeq"));
-        assertEquals("AIIIICCII", doc.get("lToiSeq"));
+        // L→I conversion is now handled by ES char_filter, not in the document
     }
 
     @Test

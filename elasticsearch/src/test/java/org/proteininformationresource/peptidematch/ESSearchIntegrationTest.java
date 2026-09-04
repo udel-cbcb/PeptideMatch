@@ -70,7 +70,6 @@ class ESSearchIntegrationTest {
         doc.put("proteinID", ac + "_HUMAN");
         doc.put("proteinName", "Test protein " + ac);
         doc.put("originalSeq", seq);
-        doc.put("lToiSeq", seq.replaceAll("L", "I"));
         doc.put("length", seq.length());
         doc.put("organismName", "Homo sapiens");
         doc.put("organismID", "9606");
@@ -106,7 +105,7 @@ class ESSearchIntegrationTest {
         Map<String, Object> source = response.source();
         assertEquals(TEST_AC, source.get("ac"));
         assertEquals(TEST_SEQ, source.get("originalSeq"));
-        assertEquals("MKTIIAISYIFCIVFA", source.get("lToiSeq")); // L→I
+        // L→I conversion is now handled by ES char_filter, not stored in document
     }
 
     @Test
