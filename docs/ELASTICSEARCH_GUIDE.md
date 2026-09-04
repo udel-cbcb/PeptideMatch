@@ -8,6 +8,28 @@ This document describes how to use the Elasticsearch-based PeptideMatch implemen
 - Elasticsearch 8.x running (default: `localhost:9200`)
 - Maven (for building)
 
+## Running Elasticsearch with Docker
+
+```bash
+# Start Elasticsearch 8.11.3
+docker run -d \
+  --name peptidematch-es \
+  -p 9200:9200 -p 9300:9300 \
+  -e "discovery.type=single-node" \
+  -e "xpack.security.enabled=false" \
+  -e "ES_JAVA_OPTS=-Xms16g -Xmx16g" \
+  --user $(id -u):$(id -g) \
+  -v /data/chenc/2026/PeptideMatch/data/es-data:/usr/share/elasticsearch/data \
+  docker.elastic.co/elasticsearch/elasticsearch:8.11.3
+```
+
+The `--user $(id -u):$(id -g)` flag ensures data files are owned by your user, not the container's default user.
+
+```bash
+# Stop and remove
+docker stop peptidematch-es && docker rm peptidematch-es
+```
+
 ## Building
 
 ```bash
