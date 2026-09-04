@@ -50,19 +50,22 @@ gunzip /path/to/PeptideMatch/data/inputs/uniprot_trembl.fasta.gz
 
 The index `peptidematch` uses a trigram (n=3) NGram tokenizer for protein sequence fields:
 
-| Field | Type | Analyzer | Purpose |
-|-------|------|----------|---------|
-| `ac` | keyword | — | Accession (e.g. `P12345`) |
-| `proteinID` | keyword | — | Protein identifier |
-| `originalSeq` | text | `peptide_ngram` | Protein sequence (trigram tokenized) |
-| `lToiSeq` | text | `peptide_ngram_ltoi` | Sequence with L→I replacement |
-| `proteinName` | keyword | — | Protein name |
-| `organismName` | keyword | — | Organism name |
-| `length` | integer | — | Sequence length |
-| `boost` | float | — | Search boost |
-| `sptr` | keyword | — | `sp` or `tr` |
-| `fullLineage` | text | `lineage_analyzer` | Taxonomy lineage |
-| `shortLineage` | text | `lineage_analyzer` | Short lineage |
+| Field | Type | Analyzer | Source | Purpose |
+|-------|------|----------|--------|---------|
+| `ac` | keyword | — | `UniqueIdentifier` | Accession (e.g. `P12345`) |
+| `proteinID` | keyword | — | `EntryName` | Protein identifier (e.g. `P12345_HUMAN`) |
+| `proteinName` | keyword | — | `ProteinName` (before OS=) | Protein name |
+| `organismName` | keyword | — | `OS=` | Organism name (e.g. `Homo sapiens`) |
+| `organismID` | keyword | — | `OX=` | NCBI Taxonomy ID (e.g. `9606`) |
+| `geneName` | keyword | — | `GN=` | Gene symbol (optional) |
+| `proteinEvidence` | keyword | — | `PE=` | Protein existence (1=experimental, 5=predicted) |
+| `sequenceVersion` | keyword | — | `SV=` | Sequence version |
+| `sptr` | keyword | — | `--source` flag | `sp` or `tr` |
+| `isoform` | keyword | — | derived | `Y` if accession contains `-` |
+| `originalSeq` | text | `peptide_ngram` | FASTA sequence | Protein sequence (trigram tokenized) |
+| `lToiSeq` | text | `peptide_ngram_ltoi` | FASTA sequence | Sequence with L→I replacement |
+| `length` | integer | — | derived | Sequence length |
+| `boost` | float | — | — | Search boost (default: 1.0) |
 
 ## CLI Usage
 
