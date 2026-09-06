@@ -14,7 +14,7 @@ public class MatchResourceTest {
         List<Integer> taxIds = Arrays.asList(9606);
         String lEqi = "Y";
 
-        Query query = new Query(peps, taxIds, lEqi);
+        Query query = new Query(peps, taxIds, lEqi, "N", "", "ac");
 
         assertNotNull(query);
         assertEquals(2, query.getPeps().size());

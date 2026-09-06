@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.TreeMap;
 
+import co.elastic.clients.elasticsearch._types.FieldValue;
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import org.proteininformationresource.peptidematch.config.ESClientFactory;
 import org.proteininformationresource.peptidematch.search.ESSearchService;
@@ -31,7 +32,6 @@ public class MatchService implements Runnable {
 	private Query query;
 	private Job job;
 	private Properties configuration;
-	private Report report;
 	private static ESSearchService searchService;
 
 	static {
@@ -42,8 +42,6 @@ public class MatchService implements Runnable {
 			throw new RuntimeException("Failed to initialize ES client", e);
 		}
 	}
-
-	Map<String, Match> matchList;
 
 	public MatchService() {
 		super();
@@ -80,14 +78,6 @@ public class MatchService implements Runnable {
 		this.configuration = configuration;
 	}
 
-	public Report getReport() {
-		return report;
-	}
-
-	public void setReport(Report report) {
-		this.report = report;
-	}
-
 	@Override
 	public void run() {
 		try {
@@ -101,7 +91,6 @@ public class MatchService implements Runnable {
 			List<String> queryPeptides = query.getPeps();
 			job.setStatus("Searching ...");
 			writeToFile(logFile, mapper.writeValueAsString(job));
-			matchList = new TreeMap<String, Match>();
 
 			String taxonIds = "";
 			if (query.getTaxIds() != null && query.getTaxIds().size() > 0) {
@@ -114,38 +103,48 @@ public class MatchService implements Runnable {
 				}
 			}
 
+			String reportFile = cwd + File.separator + "report.txt";
+			String reportJsonFile = cwd + File.separator + "report.json";
+			java.util.TreeSet<String> uniqueACs = new java.util.TreeSet<>();
+			boolean writeJson = "json".equals(query.getFormat());
+			java.util.TreeMap<String, Map<String, Object>> jsonHits = writeJson ? new java.util.TreeMap<>() : null;
+
 			for (int i = 0; i < queryPeptides.size(); i++) {
 				String queryPeptide = queryPeptides.get(i);
 				Date start = new Date();
 				addSearchTaskStartLog(i, queryPeptides.size(), queryPeptide, start, taxonIds, query.getlEqi());
-				doSearch(queryPeptide, taxonIds, query.getlEqi());
+				doSearchStreaming(queryPeptide, taxonIds, query.getSwissprot(), query.getIsoform(), query.getlEqi(), uniqueACs, jsonHits);
 				Date end = new Date();
 				addSearchTaskEndLog(i, queryPeptides.size(), queryPeptide, start, end, taxonIds, query.getlEqi());
 			}
 
-			System.out.println("matchList size: " + matchList.size());
-			this.report = new Report(new ArrayList<Match>(matchList.values()));
+			System.out.println(new Date() + " " + job.getJobId() + " writing " + uniqueACs.size() + " accessions to file ...");
 
-			System.out.println(new Date() + " " + job.getJobId() + " preparing results ...");
-			List<String> matchACs = new ArrayList<String>();
-			TreeMap<String, String> matchACMap = new TreeMap<String, String>();
-
-			int count = 0;
-			for (Match match : report.getMatchList()) {
-				count++;
-				matchACMap.put(match.getAc(), match.getAc());
-				if (count % 1000000 == 0) {
-					System.out.println(count + " processed");
+			try (BufferedWriter writer = new BufferedWriter(new FileWriter(reportFile))) {
+				boolean first = true;
+				int count = 0;
+				for (String ac : uniqueACs) {
+					if (!first) {
+						writer.write(',');
+					}
+					writer.write(ac);
+					first = false;
+					count++;
+					if (count % 1000000 == 0) {
+						writer.flush();
+						System.out.println("  " + count + " written");
+					}
 				}
 			}
 
-			System.out.println("# Match ACs: " + matchACMap.keySet().size());
-			String resultStr = org.apache.commons.lang3.StringUtils.join(matchACMap.keySet(), ',');
+			if (writeJson && jsonHits != null) {
+				System.out.println(new Date() + " " + job.getJobId() + " writing JSON report ...");
+				java.util.List<Map<String, Object>> jsonList = new java.util.ArrayList<>(jsonHits.values());
+				writeToFile(reportJsonFile, mapper.writeValueAsString(jsonList));
+				System.out.println(new Date() + " " + job.getJobId() + " writing JSON done");
+			}
 
-			System.out.println(new Date() + " " + job.getJobId() + " preparing results ... done");
-
-			String reportFile = cwd + File.separator + "report.txt";
-			writeToFile(reportFile, resultStr);
+			System.out.println(new Date() + " " + job.getJobId() + " writing done");
 
 			Date jobEnd = new Date();
 			Date jobStart = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(job.getStartTime());
@@ -202,33 +201,52 @@ public class MatchService implements Runnable {
 		}
 	}
 
-	private void doSearch(String queryPeptide, String queryTaxonId, String lEqi) throws IOException {
-		System.out.println("Query peptide: " + queryPeptide);
+	private void doSearchStreaming(String queryPeptide, String queryTaxonId, String swissprot, String isoform, String lEqi,
+			java.util.TreeSet<String> uniqueACs, java.util.TreeMap<String, Map<String, Object>> jsonHits) throws IOException {
+		System.out.println("Query peptide: " + queryPeptide + " sp=" + swissprot + " iso=" + isoform + " leqi=" + lEqi);
 
-		int numberPerPage = Integer.parseInt(this.configuration.getProperty("numberperpage"));
+		int batchSize = 10000;
+		long totalFound = 0;
+		long fetched = 0;
+		List<FieldValue> searchAfterValues = null;
 
-		ESSearchService.SearchResult searchResult = searchService.searchByPeptide(
-			queryPeptide, queryTaxonId, "", "", lEqi,
-			0, 10000, "ac_asc");
+		while (true) {
+			ESSearchService.SearchResult searchResult;
+			if (searchAfterValues == null) {
+				searchResult = searchService.searchByPeptide(
+					queryPeptide, queryTaxonId, swissprot, isoform, lEqi,
+					0, batchSize, "ac_asc");
+			} else {
+				searchResult = searchService.searchAfter(
+					queryPeptide, queryTaxonId, swissprot, isoform, lEqi,
+					searchAfterValues, batchSize, "ac_asc");
+			}
 
-		int numberFound = (int) searchResult.totalFound();
+			totalFound = searchResult.totalFound();
+			List<Map<String, Object>> hits = searchResult.hits();
 
-		if (numberFound > 0) {
-			for (Map<String, Object> hit : searchResult.hits()) {
-				String uniprotAC = (String) hit.get("ac");
-				Match matchedProtein = matchList.get(uniprotAC);
-				if (matchedProtein == null) {
-					List<String> peptideList = new ArrayList<String>();
-					peptideList.add(queryPeptide);
-					matchedProtein = new Match(uniprotAC, peptideList);
-					matchList.put(uniprotAC, matchedProtein);
-				} else {
-					if (!matchedProtein.getMatchPeps().contains(queryPeptide)) {
-						matchedProtein.getMatchPeps().add(queryPeptide);
-					}
+			if (hits.isEmpty()) {
+				break;
+			}
+
+			for (Map<String, Object> hit : hits) {
+				String ac = (String) hit.get("ac");
+				uniqueACs.add(ac);
+				if (jsonHits != null) {
+					jsonHits.put(ac, hit);
 				}
 			}
+
+			fetched += hits.size();
+			searchAfterValues = searchResult.sortValues();
+			System.out.println("  " + queryPeptide + ": " + fetched + "/" + totalFound + " fetched");
+
+			if (fetched >= totalFound || hits.size() < batchSize) {
+				break;
+			}
 		}
+
+		System.out.println("  " + queryPeptide + ": total " + totalFound + " matches");
 	}
 
 	private void writeToFile(String fileName, String content) {

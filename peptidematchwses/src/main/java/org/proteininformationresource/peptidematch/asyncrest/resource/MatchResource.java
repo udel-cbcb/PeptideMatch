@@ -57,8 +57,10 @@ public class MatchResource {
 	@POST
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	public Response postQuery(@Context HttpServletRequest request,
-			@Context UriInfo uriInfo, @FormParam("peps") String peps, @FormParam("taxIds") String taxIds, @FormParam("lEQi") String lEQi) {
-		logger.info("POST query received: " + peps + " " + taxIds + " " + lEQi);
+			@Context UriInfo uriInfo, @FormParam("peps") String peps, @FormParam("taxIds") String taxIds,
+			@FormParam("lEQi") String lEQi, @FormParam("swissprot") String swissprot,
+			@FormParam("isoform") String isoform, @FormParam("format") String format) {
+		logger.info("POST query received: " + peps + " " + taxIds + " " + lEQi + " " + swissprot + " " + isoform + " " + format);
 		List<String> queryPeptides = new ArrayList<String>();
 		List<Integer> queryTaxonIds = new ArrayList<Integer>();
 		String equiv = "";
@@ -91,12 +93,25 @@ public class MatchResource {
 		else {
 			equiv = "N";
 		}
+
+		String spFilter = "N";
+		if(swissprot != null && (swissprot.toUpperCase().equals("Y") || swissprot.toUpperCase().equals("ON"))) {
+			spFilter = "Y";
+		}
+
+		String isoFilter = "";
+		if(isoform != null && (isoform.toUpperCase().equals("N") || isoform.toUpperCase().equals("NO"))) {
+			isoFilter = "N";
+		} else if(isoform != null && (isoform.toUpperCase().equals("Y") || isoform.toUpperCase().equals("YES"))) {
+			isoFilter = "Y";
+		}
+
+		String outputFormat = "ac";
+		if(format != null && format.toUpperCase().equals("JSON")) {
+			outputFormat = "json";
+		}
 		
-		//System.out.println("|"+peps+"| " + queryPeptides);
-		//System.out.println("|"+taxIds+"| " + queryTaxonIds);
-		//System.out.println("|"+lEQi+"| " + equiv );
-		
-		Query query = new Query(queryPeptides, queryTaxonIds, equiv);
+		Query query = new Query(queryPeptides, queryTaxonIds, equiv, spFilter, isoFilter, outputFormat);
 		
 		Job job = createJob(request);
 		URI jobUri = UriBuilder.fromUri(uriInfo.getBaseUri()).path("jobs")
@@ -117,6 +132,13 @@ public class MatchResource {
 	@Path("/jobs/{jobId}")
 	public Response getJobStatus(@PathParam("jobId") String jobId,
 			@Context UriInfo uriInfo) {
+		return getJobStatusWithFormat(jobId, uriInfo, null);
+	}
+
+	@GET
+	@Path("/jobs/{jobId}/{format}")
+	public Response getJobStatusWithFormat(@PathParam("jobId") String jobId,
+			@Context UriInfo uriInfo, @PathParam("format") String format) {
 		Properties prop = getProperties();
 		//String cwd = prop.getProperty("workdir") + File.separator + jobId;
 		String workDir = prop.getProperty("workdir");
@@ -148,46 +170,27 @@ public class MatchResource {
 						.header("Retry-After", 30).build();
 				return response;
 			} else {
-				//Report report = null;
 				String result = "";
-				f = new File(reportFile);
-				if (f.exists()) {
-				try {
-					//report = mapper.readValue(new File(reportFile), Report.class);
-					result = new String(Files.readAllBytes(Paths.get(reportFile)));
-				} catch (JsonParseException e) {
-					e.printStackTrace();
-				} catch (JsonMappingException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
-					e.printStackTrace();
+				File reportFileActual = new File(reportFile);
+				File jsonFileActual = new File(reportJsonFile);
+
+				if ("json".equals(format) && jsonFileActual.exists()) {
+					try {
+						result = new String(Files.readAllBytes(Paths.get(reportJsonFile)));
+						Response response = Response.ok(result).type(MediaType.APPLICATION_JSON).build();
+						return response;
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
 				}
 
-//					GenericEntity<List<Match>> entity = new GenericEntity<List<Match>>(
-//							report.getMatchList()) {
-//					};
-					/*
-					System.out.println(jobId + " " + new Date() + " creating match list ...");
-					List<String> matchACs = new ArrayList<String>();
-					for(Match match : report.getMatchList()) {
-						if(!matchACs.contains(match.getAc())) {
-							matchACs.add(match.getAc());
-						}
+				if (reportFileActual.exists()) {
+					try {
+						result = new String(Files.readAllBytes(Paths.get(reportFile)));
+					} catch (IOException e) {
+						e.printStackTrace();
 					}
-					String result = "";
-					for(String ac : matchACs) {
-						if(result.equals("")) {
-							result = ac;
-						}
-						else {
-							result += "," + ac;
-						}
-					}
-					System.out.println(jobId + " " + new Date() + " creating match list ... done");
-					*/
-					//System.out.println(jobId+"\n"+result);
 					Response response = Response.ok(result).build();
-
 					return response;
 				}
 				else {

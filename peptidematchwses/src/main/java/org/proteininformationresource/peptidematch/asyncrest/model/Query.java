@@ -23,29 +23,46 @@ public class Query {
 	 * LEqi treat Leucine and Isoleucine be equivalent, default is true
 	 */
 	private String lEqi = "true";
-	
-	
+
 	/**
-	 * 
+	 * SwissProt only filter: "Y" for swissprot only, "N" for all
 	 */
+	private String swissprot = "N";
+
+	/**
+	 * Isoform filter: "N" to exclude isoforms, "Y" to include, "" for all
+	 */
+	private String isoform = "";
+
+	/**
+	 * Output format: "ac" for comma-separated ACs (default), "json" for full JSON
+	 */
+	private String format = "ac";
+
 	public Query() {
 		super();
 		lEqi = "true";
+		swissprot = "N";
+		isoform = "";
+		format = "ac";
 	}
-
-
-	
 
 	/**
 	 * @param peps
 	 * @param taxIds
 	 * @param lEqi
+	 * @param swissprot
+	 * @param isoform
+	 * @param format
 	 */
-	public Query(List<String> peps, List<Integer> taxIds, String lEqi) {
+	public Query(List<String> peps, List<Integer> taxIds, String lEqi, String swissprot, String isoform, String format) {
 		super();
 		this.peps = peps;
 		this.taxIds = taxIds;
 		this.lEqi = lEqi;
+		this.swissprot = swissprot;
+		this.isoform = isoform;
+		this.format = format;
 	}
 
 
@@ -105,10 +122,46 @@ public class Query {
 		this.taxIds = taxIds;
 	}
 
-	
+	/**
+	 * @return the swissprot filter
+	 */
+	public String getSwissprot() {
+		return swissprot;
+	}
 
-	
+	/**
+	 * @param swissprot the swissprot to set
+	 */
+	public void setSwissprot(String swissprot) {
+		this.swissprot = swissprot;
+	}
 
-	
+	/**
+	 * @return the isoform filter
+	 */
+	public String getIsoform() {
+		return isoform;
+	}
+
+	/**
+	 * @param isoform the isoform to set
+	 */
+	public void setIsoform(String isoform) {
+		this.isoform = isoform;
+	}
+
+	/**
+	 * @return the output format
+	 */
+	public String getFormat() {
+		return format;
+	}
+
+	/**
+	 * @param format the format to set
+	 */
+	public void setFormat(String format) {
+		this.format = format;
+	}
 
 }

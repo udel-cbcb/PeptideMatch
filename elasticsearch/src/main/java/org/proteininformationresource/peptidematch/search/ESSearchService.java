@@ -101,17 +101,68 @@ public class ESSearchService {
         SearchResponse<Map> response = client.search(searchBuilder.build(), Map.class);
 
         List<Map<String, Object>> hits = new ArrayList<>();
+        List<FieldValue> lastSortValues = null;
         for (Hit<Map> hit : response.hits().hits()) {
             Map<String, Object> source = hit.source();
             if (source != null) {
                 hits.add(source);
             }
+            lastSortValues = hit.sort();
         }
 
         TotalHits total = response.hits().total();
         long totalFound = total != null ? total.value() : 0;
 
-        return new SearchResult(totalFound, response.took(), hits);
+        return new SearchResult(totalFound, response.took(), hits, lastSortValues);
+    }
+
+    /**
+     * Search for peptides using search_after for efficient deep pagination.
+     */
+    public SearchResult searchAfter(String peptide, String taxonids,
+                                    String swissprot, String isoform,
+                                    String leqi, List<FieldValue> searchAfterValues,
+                                    int size, String sortBy) throws IOException {
+        boolean leqiFlag = "Y".equals(leqi);
+        String queryField = leqiFlag ? "originalSeq.ltoi" : "originalSeq";
+        String queryText = leqiFlag ? peptide.replaceAll("L", "I") : peptide;
+
+        BoolQuery.Builder boolBuilder = new BoolQuery.Builder();
+        boolBuilder.must(m -> m.matchPhrase(mp -> mp
+                .field(queryField)
+                .query(queryText)
+                .analyzer("peptide_ngram")
+        ));
+        addFilters(boolBuilder, taxonids, swissprot, isoform);
+
+        SearchRequest.Builder searchBuilder = new SearchRequest.Builder()
+                .index(IndexConfig.INDEX_NAME)
+                .query(q -> q.bool(boolBuilder.build()))
+                .size(size)
+                .trackTotalHits(t -> t.enabled(true));
+
+        if (searchAfterValues != null && !searchAfterValues.isEmpty()) {
+            searchBuilder.searchAfter(searchAfterValues);
+        }
+
+        applySorting(searchBuilder, sortBy);
+
+        SearchResponse<Map> response = client.search(searchBuilder.build(), Map.class);
+
+        List<Map<String, Object>> hits = new ArrayList<>();
+        List<FieldValue> lastSortValues = null;
+        for (Hit<Map> hit : response.hits().hits()) {
+            Map<String, Object> source = hit.source();
+            if (source != null) {
+                hits.add(source);
+            }
+            lastSortValues = hit.sort();
+        }
+
+        TotalHits total = response.hits().total();
+        long totalFound = total != null ? total.value() : 0;
+
+        return new SearchResult(totalFound, response.took(), hits, lastSortValues);
     }
 
     /**
@@ -235,5 +286,9 @@ public class ESSearchService {
     /**
      * Search result container.
      */
-    public record SearchResult(long totalFound, long tookMs, List<Map<String, Object>> hits) {}
+    public record SearchResult(long totalFound, long tookMs, List<Map<String, Object>> hits, List<FieldValue> sortValues) {
+        public SearchResult(long totalFound, long tookMs, List<Map<String, Object>> hits) {
+            this(totalFound, tookMs, hits, null);
+        }
+    }
 }

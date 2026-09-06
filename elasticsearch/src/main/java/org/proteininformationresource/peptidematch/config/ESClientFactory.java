@@ -12,6 +12,7 @@ import org.apache.http.HttpHost;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.impl.client.BasicCredentialsProvider;
+import org.apache.http.impl.nio.client.HttpAsyncClientBuilder;
 import org.elasticsearch.client.RestClient;
 
 /**
@@ -67,6 +68,11 @@ public class ESClientFactory {
                     new UsernamePasswordCredentials(username, password));
             restBuilder.setHttpClientConfigCallback(b -> b.setDefaultCredentialsProvider(credsProv));
         }
+
+        restBuilder.setRequestConfigCallback(b -> b
+            .setConnectTimeout(30000)
+            .setSocketTimeout(600000)
+            .setConnectionRequestTimeout(30000));
 
         RestClient restClient = restBuilder.build();
         ElasticsearchTransport transport = new RestClientTransport(

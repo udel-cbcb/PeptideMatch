@@ -264,9 +264,19 @@ ESSearchService.SearchResult result = searchService.searchByPeptide(
 
 | Method | Description |
 |--------|-------------|
-| `searchByPeptide(peptide, organism, taxonGroup, accession, proteinID, leqiFlag, offset, size, sort)` | Search for peptide matches with filters |
-| `searchByPeptide(peptide, leqiFlag)` | Simple search without filters |
-| `close()` | Close the client |
+| `searchByPeptide(peptide, taxonids, swissprot, isoform, leqi, offset, size, sort)` | Search with filters |
+| `searchAfter(peptide, taxonids, swissprot, isoform, leqi, searchAfterValues, size, sort)` | Search with `search_after` pagination |
+| `searchByPeptideWithGroup(peptide, leqi)` | Search grouped by organism |
+| `searchById(ac)` | Search by accession ID |
+
+### `ESSearchService.SearchResult`
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `totalFound` | long | Total number of matching documents |
+| `tookMs` | long | Query time in milliseconds |
+| `hits` | List<Map> | List of matching document fields |
+| `sortValues` | List<FieldValue> | Sort values for `search_after` pagination |
 
 ### `ESIndexer`
 
@@ -275,7 +285,7 @@ ESSearchService.SearchResult result = searchService.searchByPeptide(
 | `ESIndexer(client, batchSize)` | Constructor with batch size |
 | `createIndex(deleteExisting)` | Create index (optionally delete first) |
 | `indexDataFile(fastaFile)` | Index a FASTA file |
-| `optimizeIndex()` | Force-merge to 1 segment |
+| `optimizeIndex()` | Force-merge to 1 segment per shard |
 | `getIndexedCount()` | Number of indexed documents |
 | `parseRecord(header, sequence)` | Parse FASTA header into a document map |
 | `close()` | Close the client |
@@ -304,3 +314,133 @@ mvn test              # Unit tests only
 mvn verify            # Unit + integration tests (requires ES running)
 mvn verify -DskipITs  # Skip integration tests
 ```
+
+## Web Service (peptidematchwses)
+
+The asynchronous REST web service provides peptide matching via HTTP API.
+
+### Starting the Service
+
+```bash
+cd peptidematchwses
+mvn jetty:run
+# Service starts on http://localhost:9090/peptidematchwses/
+```
+
+### API Endpoints
+
+#### Submit a Query
+
+```
+POST /peptidematchwses/asyncrest/
+Content-Type: application/x-www-form-urlencoded
+```
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `peps` | string | required | Peptide sequence(s), newline or comma separated |
+| `taxIds` | string | empty | Taxonomy ID(s), comma separated (e.g., `9606,10090`) |
+| `lEQi` | string | `N` | L/I equivalence: `Y` or `ON` to enable |
+| `swissprot` | string | `N` | `Y` to filter Swiss-Prot only, `N` for all |
+| `isoform` | string | empty | `N` to exclude isoforms, `Y` to include, empty for all |
+| `format` | string | `ac` | `ac` for comma-separated accessions, `json` for full JSON |
+
+**Response**: `202 Accepted` with `Location` header containing job URL.
+
+**Example**:
+```bash
+# Submit query
+curl -X POST 'localhost:9090/peptidematchwses/asyncrest/' \
+  -d 'peps=LLALLAL&taxIds=&lEQi=N&swissprot=Y'
+
+# Returns: Location: http://localhost:9090/peptidematchwses/asyncrest/jobs/PM20260905...
+```
+
+#### Check Job Status
+
+```
+GET /peptidematchwses/asyncrest/jobs/{jobId}
+GET /peptidematchwses/asyncrest/jobs/{jobId}/json
+```
+
+| Path | Description |
+|------|-------------|
+| `/jobs/{jobId}` | Returns comma-separated ACs (default) |
+| `/jobs/{jobId}/json` | Returns full JSON records (only if job was submitted with `format=json`) |
+
+**Response while running**: `303 See Other` with `Retry-After: 30` header.
+
+**Response when complete**: `200 OK` with results.
+
+**Example**:
+```bash
+# Poll until complete
+curl -L 'localhost:9090/peptidematchwses/asyncrest/jobs/PM20260905...'
+
+# Get JSON results (if format=json was used)
+curl -L 'localhost:9090/peptidematchwses/asyncrest/jobs/PM20260905.../json'
+```
+
+### Response Formats
+
+#### AC-only (default)
+```
+A0A2P2GK84,A0QPD4,A2D4U1,A2D670,...
+```
+
+#### JSON format
+```json
+[
+  {
+    "ac": "A0A2P2GK84",
+    "proteinName": "Drimenyl diphosphate synthase",
+    "proteinID": "DMS_STREW",
+    "organismID": "68268",
+    "organismName": "Streptomyces showdoensis",
+    "geneName": "VO63_21045",
+    "sptr": "sp",
+    "isoform": "N",
+    "length": 533,
+    "originalSeq": "MNASPTPTATTTTEPATAVVRCRTRLARRVVAAVGPDGLLPAPCESRVLESALALALLTEERAEADATARLTAYLRTTLR",
+    "proteinEvidence": "1",
+    "sequenceVersion": "1",
+    "boost": 1.0
+  }
+]
+```
+
+### Query Examples
+
+```bash
+# Basic peptide search
+curl -X POST 'localhost:9090/peptidematchwses/asyncrest/' \
+  -d 'peps=VWLRRCT'
+
+# With L/I equivalence
+curl -X POST 'localhost:9090/peptidematchwses/asyncrest/' \
+  -d 'peps=III&lEQi=Y'
+
+# Swiss-Prot only, human proteins
+curl -X POST 'localhost:9090/peptidematchwses/asyncrest/' \
+  -d 'peps=III&lEQi=Y&swissprot=Y&taxIds=9606'
+
+# Full JSON output
+curl -X POST 'localhost:9090/peptidematchwses/asyncrest/' \
+  -d 'peps=LLALLAL&swissprot=Y&format=json'
+
+# Multiple peptides
+curl -X POST 'localhost:9090/peptidematchwses/asyncrest/' \
+  -d 'peps=VWLRRCT\nIIIII&lEQi=Y'
+```
+
+### Verified Query Results
+
+All filter combinations validated against ES index counts:
+
+| Peptide | lEQi | swissprot | taxon | Result Count |
+|---------|------|-----------|-------|--------------|
+| LLALLAL | N | N (all) | — | 20,477 |
+| LLALLAL | N | Y (sp) | — | 93 |
+| III | Y | N (all) | — | 76,322,232 |
+| III | Y | N (all) | 9606 | 109,895 |
+| III | Y | Y (sp) | 9606 | 12,885 |

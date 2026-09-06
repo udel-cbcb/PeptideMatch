@@ -20,7 +20,7 @@ public class QueryTest {
         List<Integer> taxIds = Arrays.asList(9606, 10090);
         String lEqi = "Y";
 
-        Query query = new Query(peps, taxIds, lEqi);
+        Query query = new Query(peps, taxIds, lEqi, "N", "", "ac");
 
         assertEquals(peps, query.getPeps());
         assertEquals(taxIds, query.getTaxIds());
