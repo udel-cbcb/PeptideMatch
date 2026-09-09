@@ -23,11 +23,11 @@ import org.proteininformationresource.peptidematch.config.ESClientFactory;
 import org.proteininformationresource.peptidematch.config.IndexConfig;
 
 /**
- * Elasticsearch indexer for PeptideMatch.
+ * ElasticSearch indexer for PeptideMatch.
  *
  * Replaces NGramIndexer.java from index_data/javaprogram/.
  * Reads the enriched FASTA-format input (output of create_data pipeline)
- * and indexes documents into Elasticsearch.
+ * and indexes documents into ElasticSearch.
  *
  * Key differences from the Solr indexer:
  * - Uses ES BulkProcessor instead of Lucene IndexWriter
@@ -42,17 +42,27 @@ public class ESIndexer {
 
     private final ElasticsearchClient client;
     private final int bulkBatchSize;
+    private final String indexName;
     private String sourceType = "tr"; // default to TrEMBL
     private long indexedCount = 0;
     private long errorCount = 0;
 
     public ESIndexer(ElasticsearchClient client) {
-        this(client, DEFAULT_BULK_BATCH_SIZE);
+        this(client, DEFAULT_BULK_BATCH_SIZE, IndexConfig.INDEX_NAME);
     }
 
     public ESIndexer(ElasticsearchClient client, int bulkBatchSize) {
+        this(client, bulkBatchSize, IndexConfig.INDEX_NAME);
+    }
+
+    public ESIndexer(ElasticsearchClient client, int bulkBatchSize, String indexName) {
         this.client = client;
         this.bulkBatchSize = bulkBatchSize;
+        this.indexName = indexName;
+    }
+
+    public String getIndexName() {
+        return indexName;
     }
 
     public void setSourceType(String sourceType) {
@@ -63,24 +73,24 @@ public class ESIndexer {
      * Create or recreate the ES index.
      */
     public void createIndex(boolean deleteExisting) throws IOException {
-        boolean exists = client.indices().exists(ExistsRequest.of(e -> e.index(IndexConfig.INDEX_NAME))).value();
+        boolean exists = client.indices().exists(ExistsRequest.of(e -> e.index(indexName))).value();
         if (exists) {
             if (deleteExisting) {
-                logger.info("Deleting existing index '{}'...", IndexConfig.INDEX_NAME);
-                client.indices().delete(DeleteIndexRequest.of(d -> d.index(IndexConfig.INDEX_NAME)));
+                logger.info("Deleting existing index '{}'...", indexName);
+                client.indices().delete(DeleteIndexRequest.of(d -> d.index(indexName)));
             } else {
-                logger.info("Index '{}' already exists, skipping creation.", IndexConfig.INDEX_NAME);
+                logger.info("Index '{}' already exists, skipping creation.", indexName);
                 return;
             }
         }
 
-        logger.info("Creating index '{}'...", IndexConfig.INDEX_NAME);
+        logger.info("Creating index '{}'...", indexName);
         String mappingJson = IndexConfig.getIndexMapping();
         client.indices().create(CreateIndexRequest.of(c -> c
-                .index(IndexConfig.INDEX_NAME)
+                .index(indexName)
                 .withJson(new java.io.StringReader(mappingJson))
         ));
-        logger.info("Index '{}' created successfully.", IndexConfig.INDEX_NAME);
+        logger.info("Index '{}' created successfully.", indexName);
     }
 
     /**
@@ -166,7 +176,7 @@ public class ESIndexer {
     private void addBulkDoc(BulkRequest.Builder bulkBuilder, Map<String, Object> doc) {
         bulkBuilder.operations(op -> op
                 .index(idx -> idx
-                        .index(IndexConfig.INDEX_NAME)
+                        .index(indexName)
                         .document(doc)
                 )
         );
@@ -332,16 +342,20 @@ public class ESIndexer {
     }
 
     /**
-     * Force merge the index to a single segment for optimal search performance.
+     * Force merge the index to 16 segments (1 per shard) for optimal search performance.
      * Call this after bulk indexing is complete.
      */
-    public void optimizeIndex() throws IOException {
-        logger.info("Force merging index to 1 segment...");
-        client.indices().forcemerge(f -> f
-            .index(IndexConfig.INDEX_NAME)
-            .maxNumSegments(1L)
-        );
-        logger.info("Index optimized.");
+    public void optimizeIndex() {
+        logger.info("Force merging index '{}' to 16 segments (1 per shard)...", indexName);
+        try {
+            client.indices().forcemerge(f -> f
+                .index(indexName)
+                .maxNumSegments(16L)
+            );
+            logger.info("Index optimized.");
+        } catch (Exception e) {
+            logger.warn("Force merge failed (non-fatal): {}", e.getMessage());
+        }
     }
 
     /**

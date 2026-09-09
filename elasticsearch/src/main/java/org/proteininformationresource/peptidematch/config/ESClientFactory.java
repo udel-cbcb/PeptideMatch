@@ -16,7 +16,7 @@ import org.apache.http.impl.nio.client.HttpAsyncClientBuilder;
 import org.elasticsearch.client.RestClient;
 
 /**
- * Factory for creating Elasticsearch clients.
+ * Factory for creating ElasticSearch clients.
  *
  * Configuration is loaded from elasticsearch.properties on the classpath.
  * Falls back to defaults (localhost:9200, no auth) if no config file is found.
@@ -28,7 +28,7 @@ public class ESClientFactory {
     private static final String DEFAULT_SCHEME = "http";
 
     /**
-     * Create an Elasticsearch client from classpath configuration.
+     * Create an ElasticSearch client from classpath configuration.
      */
     public static ElasticsearchClient createClient() throws IOException {
         Properties props = loadProperties();
@@ -36,7 +36,7 @@ public class ESClientFactory {
     }
 
     /**
-     * Create an Elasticsearch client with explicit parameters.
+     * Create an ElasticSearch client with explicit parameters.
      */
     public static ElasticsearchClient createClient(String host, int port, String scheme) throws IOException {
         RestClient restClient = RestClient.builder(
@@ -51,7 +51,7 @@ public class ESClientFactory {
     }
 
     /**
-     * Create an Elasticsearch client from properties.
+     * Create an ElasticSearch client from properties.
      */
     public static ElasticsearchClient createClient(Properties props) throws IOException {
         String host = props.getProperty("elasticsearch.host", DEFAULT_HOST);

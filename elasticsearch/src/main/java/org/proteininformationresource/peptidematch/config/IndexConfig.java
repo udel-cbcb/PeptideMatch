@@ -1,7 +1,7 @@
 package org.proteininformationresource.peptidematch.config;
 
 /**
- * Elasticsearch index mapping configuration for PeptideMatch.
+ * ElasticSearch index mapping configuration for PeptideMatch.
  *
  * Defines the index name, analyzers, and field mappings for standard UniProt FASTA headers.
  *
@@ -13,7 +13,7 @@ public class IndexConfig {
     public static final String INDEX_NAME = "peptidematch";
 
     /**
-     * Returns the Elasticsearch index mapping as a JSON string.
+     * Returns the ElasticSearch index mapping as a JSON string.
      *
      * Mapping design:
      * - originalSeq: text field with ngram analyzer for exact substring matching

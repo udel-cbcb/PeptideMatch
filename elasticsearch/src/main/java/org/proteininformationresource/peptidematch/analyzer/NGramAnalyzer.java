@@ -3,7 +3,7 @@ package org.proteininformationresource.peptidematch.analyzer;
 /**
  * NGramAnalyzer placeholder for CLI tool compatibility.
  *
- * In the Elasticsearch migration, NGram tokenization is handled by the ES index
+ * In the ElasticSearch migration, NGram tokenization is handled by the ES index
  * analyzer (peptide_ngram_tokenizer with min_gram=3, max_gram=3).
  *
  * This class exists only for backward compatibility with the CLI tool

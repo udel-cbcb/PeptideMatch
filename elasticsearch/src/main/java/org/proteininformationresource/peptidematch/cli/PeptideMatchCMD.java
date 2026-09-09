@@ -14,6 +14,7 @@ import java.util.TimeZone;
 
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import org.proteininformationresource.peptidematch.config.ESClientFactory;
+import org.proteininformationresource.peptidematch.config.IndexConfig;
 import org.proteininformationresource.peptidematch.indexer.ESIndexer;
 import org.proteininformationresource.peptidematch.search.ESSearchService;
 import org.proteininformationresource.peptidematch.search.ESSearchService.SearchResult;
@@ -21,7 +22,7 @@ import org.proteininformationresource.peptidematch.search.MatchPositionFinder;
 import org.proteininformationresource.peptidematch.search.MatchPositionFinder.MatchRange;
 
 /**
- * Elasticsearch-based CLI for PeptideMatch.
+ * ElasticSearch-based CLI for PeptideMatch.
  * Replaces the Lucene 4.6-based PeptideMatchCMD.
  *
  * Usage:
@@ -53,6 +54,7 @@ public class PeptideMatchCMD {
         boolean deleteExisting = false;
         int batchSize = 5000;
         String source = "tr";
+        String indexName = IndexConfig.INDEX_NAME;
 
         for (int i = 1; i < args.length; i++) {
             switch (args[i]) {
@@ -60,6 +62,7 @@ public class PeptideMatchCMD {
                 case "--delete-existing" -> deleteExisting = true;
                 case "--batch-size" -> batchSize = Integer.parseInt(args[++i]);
                 case "--source" -> source = args[++i];
+                case "--index-name" -> indexName = args[++i];
                 case "-h", "--help" -> { printUsage(); return; }
             }
         }
@@ -76,7 +79,7 @@ public class PeptideMatchCMD {
         }
 
         ElasticsearchClient client = ESClientFactory.createClient();
-        ESIndexer indexer = new ESIndexer(client, batchSize);
+        ESIndexer indexer = new ESIndexer(client, batchSize, indexName);
         indexer.createIndex(deleteExisting);
 
         long start = System.currentTimeMillis();
@@ -97,6 +100,7 @@ public class PeptideMatchCMD {
         boolean lEqi = false;
         boolean listMode = false;
         int size = 10000;
+        String indexName = IndexConfig.INDEX_NAME;
 
         for (int i = 1; i < args.length; i++) {
             switch (args[i]) {
@@ -106,6 +110,7 @@ public class PeptideMatchCMD {
                 case "-e", "--leqi" -> lEqi = true;
                 case "-l", "--list" -> listMode = true;
                 case "--size" -> size = Integer.parseInt(args[++i]);
+                case "--index-name" -> indexName = args[++i];
                 case "-h", "--help" -> { printUsage(); return; }
             }
         }
@@ -133,7 +138,7 @@ public class PeptideMatchCMD {
         }
 
         ElasticsearchClient client = ESClientFactory.createClient();
-        ESSearchService searchService = new ESSearchService(client);
+        ESSearchService searchService = new ESSearchService(client, indexName);
 
         long start = System.currentTimeMillis();
         String leqiFlag = lEqi ? "Y" : "N";
@@ -225,7 +230,7 @@ public class PeptideMatchCMD {
 
     private static void printUsage() {
         System.out.println("""
-            PeptideMatch (Elasticsearch) - Peptide-protein matching tool
+            PeptideMatch (ElasticSearch) - Peptide-protein matching tool
 
             Usage:
               peptidematch index -d <dataFile> [options]
@@ -237,6 +242,7 @@ public class PeptideMatchCMD {
               --delete-existing           Delete and recreate the index
               --batch-size <N>            Bulk batch size (default: 5000)
               --source <sp|tr>            Source type: sp=Swiss-Prot, tr=TrEMBL (default: tr)
+              --index-name <name>         Index name (default: peptidematch)
 
             Query options:
               -q, --query <peptides>      Comma-separated peptide sequences
@@ -245,6 +251,7 @@ public class PeptideMatchCMD {
               -e, --leqi                  Treat L and I as equivalent
               -l, --list                  Query file is one peptide per line
               --size <N>                  Max results per query (default: 10000)
+              --index-name <name>         Index name (default: peptidematch)
 
             General:
               -h, --help                  Print this message

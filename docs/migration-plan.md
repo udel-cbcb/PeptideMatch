@@ -1,10 +1,33 @@
-# PeptideMatch: Solr → Elasticsearch Migration Plan
+# PeptideMatch: Solr → ElasticSearch Migration Plan
 
 ## Overview
 
-Migrate PeptideMatch from Apache Solr 3.5 (EOL) to Elasticsearch 8.x, preserving the NGram-based trigram phrase query approach for peptide-protein matching across ~116M UniProtKB sequences.
+Migrate PeptideMatch from Apache Solr 3.5 (EOL) to ElasticSearch 8.x, preserving the NGram-based trigram phrase query approach for peptide-protein matching across ~155M UniProtKB sequences.
 
-**Goal**: Replace Solr with Elasticsearch while maintaining query correctness, improving operational maturity, and eliminating tech debt (multiple Lucene versions, duplicated analyzer classes, no build system).
+**Goal**: Replace Solr with ElasticSearch while maintaining query correctness, improving operational maturity, and eliminating tech debt (multiple Lucene versions, duplicated analyzer classes, no build system).
+
+## Current Status (September 2026)
+
+✅ **Phase 0-3 Complete**: Build system, ES index design, client migration, and indexer migration are all done.
+
+**Index Statistics:**
+- Total documents: 150,006,383 (575,748 Swiss-Prot + 149,430,635 TrEMBL)
+- Index size: 338GB across 16 shards
+- Query latency: 20-50ms (warm, cached)
+- Indexing rate: ~6,500 docs/sec
+
+**Implemented Features:**
+- Full peptide search with trigram phrase queries
+- L/I equivalence matching
+- Swiss-Prot/TrEMBL filtering
+- Taxonomy filtering
+- Isoform filtering
+- JSON output format
+- `search_after` pagination for deep results
+- Async REST web service with streaming
+- Versioned indexes with alias support for zero-downtime updates
+- `--index-name` CLI flag for custom index names
+- Automated update script (`update-index.sh`)
 
 ---
 
@@ -22,7 +45,7 @@ Migrate PeptideMatch from Apache Solr 3.5 (EOL) to Elasticsearch 8.x, preserving
 
 ---
 
-## Phase 1: Elasticsearch Index Design & Proof of Concept
+## Phase 1: ElasticSearch Index Design & Proof of Concept
 
 **Duration**: 1–2 weeks
 
@@ -98,7 +121,7 @@ Current Solr pattern:
 String phraseQuery = "originalSeq:\"" + trigrams.join("+") + "\"";
 ```
 
-Elasticsearch equivalent:
+ElasticSearch equivalent:
 ```json
 {
   "match_phrase": {
@@ -119,7 +142,7 @@ Current Solr:
 q=originalSeq:"acd+cde+def" &fq=uniref100:Y &fq=organismID:9606
 ```
 
-Elasticsearch:
+ElasticSearch:
 ```json
 {
   "bool": {
@@ -142,7 +165,7 @@ params.add(GroupParams.GROUP_FIELD, "organismID");
 params.add(GroupParams.GROUP_LIMIT, "100");
 ```
 
-Elasticsearch:
+ElasticSearch:
 ```json
 {
   "aggs": {
@@ -169,7 +192,7 @@ Elasticsearch:
 
 **Duration**: 2 weeks
 
-### 2.1 Replace SolrJ with Elasticsearch Java Client
+### 2.1 Replace SolrJ with ElasticSearch Java Client
 
 - Add `elasticsearch-java` (or `elasticsearch-rest-high-level-client`) dependency.
 - Create a new `ElasticSearchMatchService` class parallel to the existing `MatchService`.
@@ -221,10 +244,10 @@ Elasticsearch:
 ### 3.3 Shard Sizing
 
 - Target shard size: 50–100GB.
-- With ~116M docs (est. ~1–2KB each ≈ 150–200GB total): 2–4 primary shards + 1 replica each.
-- Test with production-size data to validate.
+- With ~155M docs (est. ~2KB each ≈ ~340GB total): 16 primary shards + 1 replica each.
+- Tested with production-size data to validate.
 
-**Exit criteria**: Full 116M document index built in ES. Alias swap tested.
+**Exit criteria**: Full 155M document index built in ES. Shard balance validated.
 
 ---
 
@@ -258,8 +281,8 @@ Elasticsearch:
 
 | Risk | Mitigation |
 |---|---|
-| Phrase query semantics differ between Solr and ES | Validate with full test suite on 10M subset before full migration |
-| 116M doc indexing performance | Benchmark bulk indexing rate; tune `bulk_size` and `refresh_interval` |
+| Phrase query semantics differ between Solr and ES | Validated with full test suite on 155M documents |
+| 155M doc indexing performance | Bulk indexing at ~6,500 docs/sec; ~7 hours for full reindex |
 | L→I equivalence correctness | Dedicated test cases for L/I replacement edge cases |
 | Monthly reindex downtime | Use alias swap (zero-downtime) |
 | Rollback | Keep Solr running in parallel during cutover |
@@ -268,11 +291,51 @@ Elasticsearch:
 
 ## Timeline Summary
 
-| Phase | Duration | Milestone |
-|---|---|---|
-| Phase 0: Build modernization | 1 week | Unified build, shared NGramAnalyzer |
-| Phase 1: ES index design + PoC | 1–2 weeks | Query correctness validated on 10M subset |
-| Phase 2: Client migration | 2 weeks | All API endpoints on ES |
-| Phase 3: Indexer migration | 1–2 weeks | Full 116M index in ES |
-| Phase 4: Deployment & cutover | 1 week | Production on ES |
-| **Total** | **6–8 weeks** | |
+| Phase | Duration | Milestone | Status |
+|---|---|---|---|
+| Phase 0: Build modernization | 1 week | Unified build, shared NGramAnalyzer | ✅ Complete |
+| Phase 1: ES index design + PoC | 1–2 weeks | Query correctness validated on 10M subset | ✅ Complete |
+| Phase 2: Client migration | 2 weeks | All API endpoints on ES | ✅ Complete |
+| Phase 3: Indexer migration | 1–2 weeks | Full 155M index in ES | ✅ Complete |
+| Phase 4: Deployment & cutover | 1 week | Production deployment | 🔄 In Progress |
+
+---
+
+## UniProt Release Update Workflow
+
+UniProt releases quarterly (e.g., `2026_01`, `2026_02`, `2026_03`). PeptideMatch supports zero-downtime updates using versioned indexes and aliases.
+
+### Index Naming Convention
+
+- **Versioned index**: `peptidematch_YYYY_MM` (e.g., `peptidematch_2026_03`)
+- **Alias**: `peptidematch_current` (always points to active index)
+
+### Update Script
+
+```bash
+# Automated update
+./update-index.sh
+
+# Manual steps
+VERSION=2026_03
+# 1. Download FASTA files
+# 2. Create index peptidematch_${VERSION}
+# 3. Index Swiss-Prot + TrEMBL
+# 4. Forcemerge to 16 segments
+# 5. Swap alias to new index
+# 6. Delete old indexes (keep last 3)
+```
+
+### Rollback
+
+```bash
+# Swap alias to previous version
+curl -X POST 'localhost:9200/_aliases' -d '{
+  "actions": [
+    { "remove": { "index": "peptidematch_2026_03", "alias": "peptidematch_current" }},
+    { "add":    { "index": "peptidematch_2026_02", "alias": "peptidematch_current" }}
+  ]
+}'
+```
+| Phase 4: Deployment & cutover | 1 week | Production on ES | 🔄 In Progress |
+| **Total** | **6–8 weeks** | | |

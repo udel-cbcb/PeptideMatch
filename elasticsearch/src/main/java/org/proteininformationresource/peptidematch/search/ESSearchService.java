@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
 import org.proteininformationresource.peptidematch.config.IndexConfig;
 
 /**
- * Elasticsearch-based peptide search service.
+ * ElasticSearch-based peptide search service.
  *
  * Uses match_phrase queries on ngram-tokenized fields for exact substring matching.
  */
@@ -33,9 +33,16 @@ public class ESSearchService {
     private static final Logger logger = LoggerFactory.getLogger(ESSearchService.class);
 
     private final co.elastic.clients.elasticsearch.ElasticsearchClient client;
+    private final String indexName;
 
     public ESSearchService(co.elastic.clients.elasticsearch.ElasticsearchClient client) {
         this.client = client;
+        this.indexName = IndexConfig.INDEX_NAME;
+    }
+
+    public ESSearchService(co.elastic.clients.elasticsearch.ElasticsearchClient client, String indexName) {
+        this.client = client;
+        this.indexName = indexName;
     }
 
     /**
@@ -85,7 +92,7 @@ public class ESSearchService {
         addFilters(boolBuilder, taxonids, swissprot, isoform);
 
         SearchRequest.Builder searchBuilder = new SearchRequest.Builder()
-                .index(IndexConfig.INDEX_NAME)
+                .index(this.indexName)
                 .query(q -> q.bool(boolBuilder.build()))
                 .from(offset)
                 .trackTotalHits(t -> t.enabled(true));
@@ -136,7 +143,7 @@ public class ESSearchService {
         addFilters(boolBuilder, taxonids, swissprot, isoform);
 
         SearchRequest.Builder searchBuilder = new SearchRequest.Builder()
-                .index(IndexConfig.INDEX_NAME)
+                .index(this.indexName)
                 .query(q -> q.bool(boolBuilder.build()))
                 .size(size)
                 .trackTotalHits(t -> t.enabled(true));
@@ -181,7 +188,7 @@ public class ESSearchService {
         ));
 
         SearchRequest.Builder searchBuilder = new SearchRequest.Builder()
-                .index(IndexConfig.INDEX_NAME)
+                .index(this.indexName)
                 .query(q -> q.bool(boolBuilder.build()))
                 .size(0)
                 .trackTotalHits(t -> t.enabled(true))
@@ -216,7 +223,7 @@ public class ESSearchService {
         boolBuilder.must(m -> m.term(t -> t.field("ac").value(ac)));
 
         SearchRequest request = new SearchRequest.Builder()
-                .index(IndexConfig.INDEX_NAME)
+                .index(this.indexName)
                 .query(q -> q.bool(boolBuilder.build()))
                 .size(100)
                 .trackTotalHits(t -> t.enabled(true))
@@ -255,7 +262,7 @@ public class ESSearchService {
         addFilters(boolBuilder, taxonids, swissprot, isoform);
 
         CountRequest request = new CountRequest.Builder()
-                .index(IndexConfig.INDEX_NAME)
+                .index(this.indexName)
                 .query(q -> q.bool(boolBuilder.build()))
                 .build();
 

@@ -32,15 +32,13 @@ public class MatchService implements Runnable {
 	private Query query;
 	private Job job;
 	private Properties configuration;
-	private static ESSearchService searchService;
+	private static final String DEFAULT_INDEX = "peptidematch_current";
+	
+	// Allow override via system property: -Dindex.name=peptidematch_2026_03
+	private static final String INDEX_OVERRIDE = System.getProperty("index.name", "");
 
 	static {
-		try {
-			ElasticsearchClient client = ESClientFactory.createClient();
-			searchService = new ESSearchService(client);
-		} catch (Exception e) {
-			throw new RuntimeException("Failed to initialize ES client", e);
-		}
+		// Static initialization no longer needed - we create ESSearchService per request
 	}
 
 	public MatchService() {
@@ -92,6 +90,21 @@ public class MatchService implements Runnable {
 			job.setStatus("Searching ...");
 			writeToFile(logFile, mapper.writeValueAsString(job));
 
+			// Determine index name: system property > query param > default alias
+			String indexName;
+			if (!INDEX_OVERRIDE.isEmpty()) {
+				indexName = INDEX_OVERRIDE;
+			} else {
+				indexName = query.getIndexName();
+				if (indexName == null || indexName.isEmpty()) {
+					indexName = DEFAULT_INDEX;
+				}
+			}
+			// Create ESSearchService with specified index
+			ElasticsearchClient client = ESClientFactory.createClient();
+			ESSearchService searchService = new ESSearchService(client, indexName);
+			System.out.println("Using index: " + indexName);
+
 			String taxonIds = "";
 			if (query.getTaxIds() != null && query.getTaxIds().size() > 0) {
 				for (Integer tax : query.getTaxIds()) {
@@ -113,7 +126,7 @@ public class MatchService implements Runnable {
 				String queryPeptide = queryPeptides.get(i);
 				Date start = new Date();
 				addSearchTaskStartLog(i, queryPeptides.size(), queryPeptide, start, taxonIds, query.getlEqi());
-				doSearchStreaming(queryPeptide, taxonIds, query.getSwissprot(), query.getIsoform(), query.getlEqi(), uniqueACs, jsonHits);
+				doSearchStreaming(searchService, queryPeptide, taxonIds, query.getSwissprot(), query.getIsoform(), query.getlEqi(), uniqueACs, jsonHits);
 				Date end = new Date();
 				addSearchTaskEndLog(i, queryPeptides.size(), queryPeptide, start, end, taxonIds, query.getlEqi());
 			}
@@ -201,7 +214,7 @@ public class MatchService implements Runnable {
 		}
 	}
 
-	private void doSearchStreaming(String queryPeptide, String queryTaxonId, String swissprot, String isoform, String lEqi,
+	private void doSearchStreaming(ESSearchService searchService, String queryPeptide, String queryTaxonId, String swissprot, String isoform, String lEqi,
 			java.util.TreeSet<String> uniqueACs, java.util.TreeMap<String, Map<String, Object>> jsonHits) throws IOException {
 		System.out.println("Query peptide: " + queryPeptide + " sp=" + swissprot + " iso=" + isoform + " leqi=" + lEqi);
 

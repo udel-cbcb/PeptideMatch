@@ -39,12 +39,18 @@ public class Query {
 	 */
 	private String format = "ac";
 
+	/**
+	 * Index name: "current" for alias, or specific version like "peptidematch_2026_04"
+	 */
+	private String indexName = "";
+
 	public Query() {
 		super();
 		lEqi = "true";
 		swissprot = "N";
 		isoform = "";
 		format = "ac";
+		indexName = "";
 	}
 
 	/**
@@ -54,8 +60,9 @@ public class Query {
 	 * @param swissprot
 	 * @param isoform
 	 * @param format
+	 * @param indexName
 	 */
-	public Query(List<String> peps, List<Integer> taxIds, String lEqi, String swissprot, String isoform, String format) {
+	public Query(List<String> peps, List<Integer> taxIds, String lEqi, String swissprot, String isoform, String format, String indexName) {
 		super();
 		this.peps = peps;
 		this.taxIds = taxIds;
@@ -63,6 +70,7 @@ public class Query {
 		this.swissprot = swissprot;
 		this.isoform = isoform;
 		this.format = format;
+		this.indexName = indexName != null ? indexName : "";
 	}
 
 
@@ -162,6 +170,20 @@ public class Query {
 	 */
 	public void setFormat(String format) {
 		this.format = format;
+	}
+
+	/**
+	 * @return the index name
+	 */
+	public String getIndexName() {
+		return indexName;
+	}
+
+	/**
+	 * @param indexName the index name to set
+	 */
+	public void setIndexName(String indexName) {
+		this.indexName = indexName;
 	}
 
 }

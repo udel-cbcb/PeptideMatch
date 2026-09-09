@@ -24,6 +24,9 @@ import static org.junit.jupiter.api.Assertions.*;
  * Integration tests against a real Elasticsearch instance.
  * Requires ES running on localhost:9200 (or set ES_HOST/ES_PORT).
  *
+ * Uses a separate test index to avoid interfering with production data.
+ * To test against production alias, set system property: -Dtest.index=peptidematch_current
+ *
  * Run with: mvn test -Dtest=ESSearchIntegrationTest -DfailIfNoTests=false
  */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -31,32 +34,32 @@ class ESSearchIntegrationTest {
 
     private static ElasticsearchClient client;
     private static ESSearchService searchService;
-    private static final String INDEX_NAME = IndexConfig.INDEX_NAME;
+    private static final String TEST_INDEX_NAME = System.getProperty("test.index", IndexConfig.INDEX_NAME + "_test");
     private static final String TEST_AC = "P12345";
     private static final String TEST_SEQ = "MKTIIALSYIFCLVFA";
 
     @BeforeAll
     static void setUp() throws IOException {
         client = ESClientFactory.createClient();
-        searchService = new ESSearchService(client);
+        searchService = new ESSearchService(client, TEST_INDEX_NAME);
 
-        // Delete index if exists
+        // Delete test index if exists
         try {
-            client.indices().delete(d -> d.index(INDEX_NAME));
+            client.indices().delete(d -> d.index(TEST_INDEX_NAME));
         } catch (Exception e) {
             // index didn't exist, fine
         }
 
-        // Create index with mapping
+        // Create test index with mapping
         String mappingJson = IndexConfig.getIndexMapping();
-        client.indices().create(c -> c.index(INDEX_NAME).withJson(new StringReader(mappingJson)));
+        client.indices().create(c -> c.index(TEST_INDEX_NAME).withJson(new StringReader(mappingJson)));
     }
 
     @AfterAll
     static void tearDown() throws IOException {
         if (client != null) {
             try {
-                client.indices().delete(d -> d.index(INDEX_NAME));
+                client.indices().delete(d -> d.index(TEST_INDEX_NAME));
             } catch (Exception e) {
                 // ignore
             }
@@ -88,15 +91,15 @@ class ESSearchIntegrationTest {
         Map<String, Object> doc = buildTestDoc(TEST_AC, TEST_SEQ, "sp");
 
         client.index(i -> i
-            .index(INDEX_NAME)
+            .index(TEST_INDEX_NAME)
             .id(TEST_AC)
             .document(doc)
         );
 
-        client.indices().refresh(r -> r.index(INDEX_NAME));
+        client.indices().refresh(r -> r.index(TEST_INDEX_NAME));
 
         GetResponse<Map> response = client.get(g -> g
-            .index(INDEX_NAME)
+            .index(TEST_INDEX_NAME)
             .id(TEST_AC),
             Map.class
         );
@@ -137,8 +140,8 @@ class ESSearchIntegrationTest {
     void testLeqiSearch() throws IOException {
         Map<String, Object> doc2 = buildTestDoc("Q99999", "AAALLLAA", "sp");
 
-        client.index(i -> i.index(INDEX_NAME).id("Q99999").document(doc2));
-        client.indices().refresh(r -> r.index(INDEX_NAME));
+        client.index(i -> i.index(TEST_INDEX_NAME).id("Q99999").document(doc2));
+        client.indices().refresh(r -> r.index(TEST_INDEX_NAME));
 
         SearchResult result = searchService.searchByPeptide(
             "III", "", "", "", "Y", 0, 10, "ac_asc");
@@ -184,11 +187,11 @@ class ESSearchIntegrationTest {
         assertNotNull(doc);
 
         client.index(i -> i
-            .index(INDEX_NAME)
+            .index(TEST_INDEX_NAME)
             .id((String) doc.get("ac"))
             .document(doc)
         );
-        client.indices().refresh(r -> r.index(INDEX_NAME));
+        client.indices().refresh(r -> r.index(TEST_INDEX_NAME));
 
         SearchResult result = searchService.searchByPeptide(
             "SYIFCL", "", "", "", "N", 0, 10, "ac_asc");

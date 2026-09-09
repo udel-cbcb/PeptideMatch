@@ -59,8 +59,9 @@ public class MatchResource {
 	public Response postQuery(@Context HttpServletRequest request,
 			@Context UriInfo uriInfo, @FormParam("peps") String peps, @FormParam("taxIds") String taxIds,
 			@FormParam("lEQi") String lEQi, @FormParam("swissprot") String swissprot,
-			@FormParam("isoform") String isoform, @FormParam("format") String format) {
-		logger.info("POST query received: " + peps + " " + taxIds + " " + lEQi + " " + swissprot + " " + isoform + " " + format);
+			@FormParam("isoform") String isoform, @FormParam("format") String format,
+			@FormParam("index") String indexName) {
+		logger.info("POST query received: " + peps + " " + taxIds + " " + lEQi + " " + swissprot + " " + isoform + " " + format + " " + indexName);
 		List<String> queryPeptides = new ArrayList<String>();
 		List<Integer> queryTaxonIds = new ArrayList<Integer>();
 		String equiv = "";
@@ -111,7 +112,10 @@ public class MatchResource {
 			outputFormat = "json";
 		}
 		
-		Query query = new Query(queryPeptides, queryTaxonIds, equiv, spFilter, isoFilter, outputFormat);
+		// Default to "peptidematch_current" alias if no index specified
+		String idxName = (indexName != null && !indexName.isEmpty()) ? indexName : "peptidematch_current";
+		
+		Query query = new Query(queryPeptides, queryTaxonIds, equiv, spFilter, isoFilter, outputFormat, idxName);
 		
 		Job job = createJob(request);
 		URI jobUri = UriBuilder.fromUri(uriInfo.getBaseUri()).path("jobs")
