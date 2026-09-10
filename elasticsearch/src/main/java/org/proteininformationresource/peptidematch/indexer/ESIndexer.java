@@ -174,9 +174,11 @@ public class ESIndexer {
     }
 
     private void addBulkDoc(BulkRequest.Builder bulkBuilder, Map<String, Object> doc) {
+        String ac = (String) doc.get("ac");
         bulkBuilder.operations(op -> op
                 .index(idx -> idx
                         .index(indexName)
+                        .id(ac)
                         .document(doc)
                 )
         );

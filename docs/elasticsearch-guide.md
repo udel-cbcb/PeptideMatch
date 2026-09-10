@@ -49,6 +49,22 @@ elasticsearch.scheme=http
 # elasticsearch.password=
 ```
 
+## Directory Structure
+
+```
+PeptideMatch/
+├── data/
+│   ├── inputs/              # FASTA files
+│   │   ├── uniprot_sprot_2026_04.fasta
+│   │   └── uniprot_trembl_2026_04.fasta
+│   └── es-data/             # Elasticsearch data (Docker volume)
+├── logs/                    # Indexing and web service logs
+│   ├── trembl-2026_04.log
+│   └── web-service.log
+├── elasticsearch/           # ES module (indexer, search, CLI)
+└── peptidematchwses/        # Web service module
+```
+
 ## Data Preparation
 
 Download UniProt reference databases from the UniProt FTP server:
@@ -330,10 +346,10 @@ nohup java -cp elasticsearch/target/peptidematch-elasticsearch-1.0.0-SNAPSHOT.ja
   -d data/inputs/uniprot_trembl_2026_04.fasta \
   --source tr \
   --index-name peptidematch_2026_04 \
-  > data/trembl-2026_04.log 2>&1 &
+  > logs/trembl-2026_04.log 2>&1 &
 
 # Monitor progress
-tail -f data/trembl-2026_04.log
+tail -f logs/trembl-2026_04.log
 ```
 
 #### Step 3: Validate Index
