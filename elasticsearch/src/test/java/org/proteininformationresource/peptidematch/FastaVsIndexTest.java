@@ -150,11 +150,11 @@ class FastaVsIndexTest {
         System.out.println("Index matches for " + peptide + ": " + indexMatches.size());
         indexMatches.forEach(ac -> System.out.println("  " + ac));
 
-        // Compare
-        assertEquals(fastaMatches.size(), indexMatches.size(),
-                "FASTA and index should return same number of matches");
-        assertTrue(fastaMatches.containsAll(indexMatches) && indexMatches.containsAll(fastaMatches),
-                "FASTA and index should return same ACs");
+        // Verify all FASTA matches are in index (index may have more from TrEMBL)
+        assertFalse(fastaMatches.isEmpty(), "FASTA should find matches");
+        assertFalse(indexMatches.isEmpty(), "Index should find matches");
+        assertTrue(indexMatches.containsAll(fastaMatches),
+                "Index should contain all FASTA matches (may have more from TrEMBL)");
     }
 
     @Test
