@@ -105,21 +105,19 @@ mvn jetty:run
 
 #### Option B: Tomcat (Production)
 
-The WAR file is compatible with **Tomcat 9.x** (uses `javax.servlet` namespace).
+The WAR file is compatible with **Tomcat 10.x+** (uses `jakarta.servlet` namespace).
 
 ```bash
 # Build WAR
 mvn clean package -DskipTests
 
-# Deploy to Tomcat 9
+# Deploy to Tomcat 10+
 cp peptidematchwses/target/PeptideMatchWSAsync-ES.war $CATALINA_HOME/webapps/
 
 # Or rename for shorter context path
 cp peptidematchwses/target/PeptideMatchWSAsync-ES.war $CATALINA_HOME/webapps/peptidematch.war
 # Service accessible at http://localhost:8080/peptidematch/asyncrest/
 ```
-
-**Note:** Tomcat 10+ uses `jakarta.servlet` and is not compatible without migration.
 
 ## API Usage
 

@@ -661,13 +661,13 @@ mvn jetty:run
 
 #### Option B: Tomcat (Production)
 
-The module produces a standard WAR file compatible with **Tomcat 9.x** (uses `javax.servlet` namespace).
+The module produces a standard WAR file compatible with **Tomcat 10.x+** (uses `jakarta.servlet` namespace).
 
 ```bash
 # Build WAR
 mvn clean package -DskipTests
 
-# Deploy to Tomcat 9
+# Deploy to Tomcat 10+
 cp peptidematchwses/target/PeptideMatchWSAsync-ES.war $CATALINA_HOME/webapps/
 
 # Or rename for shorter context path
@@ -675,8 +675,8 @@ cp peptidematchwses/target/PeptideMatchWSAsync-ES.war $CATALINA_HOME/webapps/pep
 # Service accessible at http://localhost:8080/peptidematch/asyncrest/
 ```
 
-**Tomcat 9 configuration notes:**
-- Requires **Tomcat 9.x** (Tomcat 10+ uses `jakarta.servlet` and is incompatible)
+**Tomcat configuration notes:**
+- Requires **Tomcat 10.x+** (Tomcat 9 uses `javax.servlet` and is not compatible)
 - Ensure `config.properties` is in classpath (already inside `WEB-INF/classes` in WAR)
 - Ensure work directory (`/tmp/peptidematch-jobs`) is writable by Tomcat process
 - Set `ES_HOST` and `ES_PORT` in `config.properties` or via environment variables

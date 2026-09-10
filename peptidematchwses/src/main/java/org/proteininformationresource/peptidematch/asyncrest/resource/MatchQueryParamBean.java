@@ -2,7 +2,7 @@ package org.proteininformationresource.peptidematch.asyncrest.resource.bean;
 
 import java.util.List;
 
-import javax.ws.rs.QueryParam;
+import jakarta.ws.rs.QueryParam;
 
 import org.proteininformationresource.peptidematch.asyncrest.model.Organism;
 import org.proteininformationresource.peptidematch.asyncrest.model.Peptide;

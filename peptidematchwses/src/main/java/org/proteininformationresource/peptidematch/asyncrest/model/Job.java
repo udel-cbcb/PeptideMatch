@@ -2,7 +2,7 @@ package org.proteininformationresource.peptidematch.asyncrest.model;
 
 
 import java.util.List;
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 /**
  * This class represents a match job
  * 
