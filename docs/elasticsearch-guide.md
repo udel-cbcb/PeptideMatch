@@ -58,11 +58,23 @@ PeptideMatch/
 │   │   ├── uniprot_sprot_2026_04.fasta
 │   │   └── uniprot_trembl_2026_04.fasta
 │   └── es-data/             # Elasticsearch data (Docker volume)
-├── logs/                    # Indexing and web service logs
-│   ├── trembl-2026_04.log
-│   └── web-service.log
+├── logs/                    # Application logs
+│   ├── trembl-2026_04.log   # TrEMBL indexing log
+│   └── web-service.log      # Web service log
 ├── elasticsearch/           # ES module (indexer, search, CLI)
 └── peptidematchwses/        # Web service module
+```
+
+**Log access:**
+```bash
+# Indexing logs
+tail -f logs/trembl-2026_04.log
+
+# Web service logs
+tail -f logs/web-service.log
+
+# Elasticsearch logs (Docker)
+docker logs -f peptidematch-es
 ```
 
 ## Data Preparation
@@ -451,10 +463,10 @@ The web service uses the alias `peptidematch_current` by default. No code change
 **Two-server setup (optional):**
 ```bash
 # Production server (port 9090) - uses alias
-screen -dmS prod bash -c 'cd peptidematchwses && mvn jetty:run -Djetty.port=9090'
+screen -dmS prod bash -c 'cd peptidematchwses && mvn jetty:run -Djetty.port=9090 > logs/web-service.log 2>&1'
 
 # Test server (port 9091) - uses specific index
-screen -dmS test bash -c 'cd peptidematchwses && mvn jetty:run -Djetty.port=9091 -Dindex.name=peptidematch_2026_04'
+screen -dmS test bash -c 'cd peptidematchwses && mvn jetty:run -Djetty.port=9091 -Dindex.name=peptidematch_2026_04 > logs/web-service-test.log 2>&1'
 ```
 
 ### Rollback
@@ -651,10 +663,10 @@ For zero-downtime updates, run two servers on different ports:
 
 ```bash
 # Production server (port 9090) - uses alias peptidematch_current
-screen -dmS prod bash -c 'cd peptidematchwses && mvn jetty:run -Djetty.port=9090'
+screen -dmS prod bash -c 'cd peptidematchwses && mvn jetty:run -Djetty.port=9090 > logs/web-service.log 2>&1'
 
 # Test server (port 9091) - uses specific index version
-screen -dmS test bash -c 'cd peptidematchwses && mvn jetty:run -Djetty.port=9091 -Dindex.name=peptidematch_2026_03'
+screen -dmS test bash -c 'cd peptidematchwses && mvn jetty:run -Djetty.port=9091 -Dindex.name=peptidematch_2026_03 > logs/web-service-test.log 2>&1'
 ```
 
 **Priority order for index selection:**
