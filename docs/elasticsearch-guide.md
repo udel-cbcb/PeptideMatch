@@ -651,11 +651,35 @@ The asynchronous REST web service provides peptide matching via HTTP API.
 
 ### Starting the Service
 
+#### Option A: Jetty (Development)
+
 ```bash
 cd peptidematchwses
 mvn jetty:run
 # Service starts on http://localhost:9090/peptidematchwses/
 ```
+
+#### Option B: Tomcat (Production)
+
+The module produces a standard WAR file compatible with **Tomcat 9.x** (uses `javax.servlet` namespace).
+
+```bash
+# Build WAR
+mvn clean package -DskipTests
+
+# Deploy to Tomcat 9
+cp peptidematchwses/target/PeptideMatchWSAsync-ES.war $CATALINA_HOME/webapps/
+
+# Or rename for shorter context path
+cp peptidematchwses/target/PeptideMatchWSAsync-ES.war $CATALINA_HOME/webapps/peptidematch.war
+# Service accessible at http://localhost:8080/peptidematch/asyncrest/
+```
+
+**Tomcat 9 configuration notes:**
+- Requires **Tomcat 9.x** (Tomcat 10+ uses `jakarta.servlet` and is incompatible)
+- Ensure `config.properties` is in classpath (already inside `WEB-INF/classes` in WAR)
+- Ensure work directory (`/tmp/peptidematch-jobs`) is writable by Tomcat process
+- Set `ES_HOST` and `ES_PORT` in `config.properties` or via environment variables
 
 ### Running Two Servers (Production + Testing)
 

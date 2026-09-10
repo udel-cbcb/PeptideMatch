@@ -95,11 +95,31 @@ curl -X POST 'localhost:9200/_aliases' -H 'Content-Type: application/json' -d '{
 
 ### 6. Start Web Service
 
+#### Option A: Jetty (Development)
+
 ```bash
 cd peptidematchwses
 mvn jetty:run
 # Service starts on http://localhost:9090/peptidematchwses/
 ```
+
+#### Option B: Tomcat (Production)
+
+The WAR file is compatible with **Tomcat 9.x** (uses `javax.servlet` namespace).
+
+```bash
+# Build WAR
+mvn clean package -DskipTests
+
+# Deploy to Tomcat 9
+cp peptidematchwses/target/PeptideMatchWSAsync-ES.war $CATALINA_HOME/webapps/
+
+# Or rename for shorter context path
+cp peptidematchwses/target/PeptideMatchWSAsync-ES.war $CATALINA_HOME/webapps/peptidematch.war
+# Service accessible at http://localhost:8080/peptidematch/asyncrest/
+```
+
+**Note:** Tomcat 10+ uses `jakarta.servlet` and is not compatible without migration.
 
 ## API Usage
 
