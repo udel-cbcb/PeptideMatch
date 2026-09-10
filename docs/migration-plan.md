@@ -104,14 +104,14 @@ Create a custom index mapping that mirrors the current Solr schema:
       "sptr":             { "type": "keyword" },
       "isoform":          { "type": "keyword" },
       "originalSeq":      { "type": "text", "analyzer": "peptide_ngram" },
-      "lToiSeq":          { "type": "text", "analyzer": "peptide_ngram_ltoi" },
+      "originalSeq.ltoi": { "type": "text", "analyzer": "peptide_ngram_ltoi" },
       "length":           { "type": "integer" }
     }
   }
 }
 ```
 
-**Note on `lToiSeq`**: The L→I substitution must happen at index time (preprocessing the sequence before indexing), same as the current approach. ES ngram tokenizer cannot do character substitution.
+**Note on L/I equivalence**: The `originalSeq.ltoi` sub-field uses a `char_filter` (mapping type) to replace L→I at index time. At query time, the query text also has L→I replacement before searching this sub-field.
 
 ### 1.2 Query Translation
 
@@ -232,13 +232,13 @@ ElasticSearch:
 
 - Create `ESIndexer.java` using `BulkProcessor` or `_bulk` API.
 - Read from the same enriched FASTA input (output of `create_data` pipeline).
-- Apply L→I substitution during preprocessing (before indexing `lToiSeq`).
+- Apply L→I substitution via `originalSeq.ltoi` sub-field with char_filter at index time.
 - Apply document-level boost via `function_score` or index-time numeric field.
 
 ### 3.2 Index Aliases for Zero-Downtime Reindexing
 
 - Use index aliases (`peptidematch_v1`, `peptidematch_v2`, alias `peptidematch_current` → active version).
-- Monthly reindex: build new index, swap alias, delete old index.
+- Quarterly reindex: build new index, swap alias, delete old index.
 - Add `_aliases` API calls to the deployment script.
 
 ### 3.3 Shard Sizing
@@ -258,7 +258,7 @@ ElasticSearch:
 ### 4.1 Infrastructure
 
 - Deploy ES cluster (3+ nodes minimum for production).
-- Configure index lifecycle management (ILM) for monthly reindexing.
+- Configure index lifecycle management (ILM) for quarterly reindexing.
 - Set up monitoring (cluster health, query latency, indexing rate).
 
 ### 4.2 Parallel Run
@@ -284,7 +284,7 @@ ElasticSearch:
 | Phrase query semantics differ between Solr and ES | Validated with full test suite on 155M documents |
 | 155M doc indexing performance | Bulk indexing at ~6,500 docs/sec; ~7 hours for full reindex |
 | L→I equivalence correctness | Dedicated test cases for L/I replacement edge cases |
-| Monthly reindex downtime | Use alias swap (zero-downtime) |
+| Quarterly reindex downtime | Use alias swap (zero-downtime) |
 | Rollback | Keep Solr running in parallel during cutover |
 
 ---
@@ -337,5 +337,4 @@ curl -X POST 'localhost:9200/_aliases' -d '{
   ]
 }'
 ```
-| Phase 4: Deployment & cutover | 1 week | Production on ES | 🔄 In Progress |
 | **Total** | **6–8 weeks** | | |

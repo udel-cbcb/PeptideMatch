@@ -25,7 +25,7 @@ Locating occurrences of a specific peptide in a protein sequence database is imp
 │         Elasticsearch (port 9200)            │
 │  ┌─────────────────────────────────────┐   │
 │  │  Alias: peptidematch_current        │   │
-│  │  └──→ peptidematch_2026_04          │   │
+│  │  └──→ peptidematch_2026_03          │   │
 │  └─────────────────────────────────────┘   │
 └─────────────────────────────────────────────┘
 ```
@@ -61,7 +61,7 @@ mvn clean package -DskipTests
 ### 3. Download Data
 
 ```bash
-./update-index.sh --version 2026_04
+./update-index.sh --version 2026_03
 ```
 
 ### 4. Index Data
@@ -70,17 +70,17 @@ mvn clean package -DskipTests
 # Swiss-Prot (~2 minutes)
 java -cp elasticsearch/target/peptidematch-elasticsearch-1.0.0-SNAPSHOT.jar \
   org.proteininformationresource.peptidematch.cli.PeptideMatchCMD index \
-  -d data/inputs/uniprot_sprot_2026_04.fasta \
+  -d data/inputs/uniprot_sprot_2026_03.fasta \
   --source sp \
-  --index-name peptidematch_2026_04
+  --index-name peptidematch_2026_03
 
 # TrEMBL (~9 hours)
 nohup java -cp elasticsearch/target/peptidematch-elasticsearch-1.0.0-SNAPSHOT.jar \
   org.proteininformationresource.peptidematch.cli.PeptideMatchCMD index \
-  -d data/inputs/uniprot_trembl_2026_04.fasta \
+  -d data/inputs/uniprot_trembl_2026_03.fasta \
   --source tr \
-  --index-name peptidematch_2026_04 \
-  > logs/trembl-2026_04.log 2>&1 &
+  --index-name peptidematch_2026_03 \
+  > logs/trembl-2026_03.log 2>&1 &
 ```
 
 ### 5. Create Alias
@@ -88,7 +88,7 @@ nohup java -cp elasticsearch/target/peptidematch-elasticsearch-1.0.0-SNAPSHOT.ja
 ```bash
 curl -X POST 'localhost:9200/_aliases' -H 'Content-Type: application/json' -d '{
   "actions": [
-    { "add": { "index": "peptidematch_2026_04", "alias": "peptidematch_current" }}
+    { "add": { "index": "peptidematch_2026_03", "alias": "peptidematch_current" }}
   ]
 }'
 ```
@@ -133,11 +133,11 @@ curl -s 'localhost:9090/peptidematchwses/asyncrest/jobs/PM...'
 PeptideMatch/
 ├── data/
 │   ├── inputs/              # FASTA files
-│   │   ├── uniprot_sprot_2026_04.fasta
-│   │   └── uniprot_trembl_2026_04.fasta
+│   │   ├── uniprot_sprot_2026_03.fasta
+│   │   └── uniprot_trembl_2026_03.fasta
 │   └── es-data/             # Elasticsearch data (Docker volume)
 ├── logs/                    # Application logs
-│   ├── trembl-2026_04.log
+│   ├── trembl-2026_03.log
 │   └── web-service.log
 ├── elasticsearch/           # ES module (indexer, search, CLI)
 ├── peptidematchwses/        # Web service module
@@ -161,7 +161,7 @@ PeptideMatch/
 mvn test
 
 # Run FASTA vs Index comparison test
-mvn test -Dtest=FastaVsIndexTest -Dtest.index=peptidematch_2026_04
+mvn test -Dtest=FastaVsIndexTest -Dtest.index=peptidematch_2026_03
 
 # Run web service integration test
 mvn test -Dtest=MatchServiceIntegrationTest -Dws.port=9090

@@ -113,7 +113,7 @@ The index `peptidematch` uses a trigram (n=3) NGram tokenizer for protein sequen
 | `sptr` | keyword | — | `--source` flag | `sp` or `tr` |
 | `isoform` | keyword | — | derived | `Y` if accession contains `-` |
 | `originalSeq` | text | `peptide_ngram` | FASTA sequence | Protein sequence (trigram tokenized) |
-| `lToiSeq` | text | `peptide_ngram_ltoi` | FASTA sequence | Sequence with L→I replacement |
+| `originalSeq.ltoi` | text | `peptide_ngram_ltoi` | derived | Sequence sub-field with L→I char_filter |
 | `length` | integer | — | derived | Sequence length |
 | `boost` | float | — | — | Search boost (default: 1.0) |
 
@@ -412,34 +412,34 @@ curl -s 'localhost:9200/_alias/peptidematch_current'
 curl -X DELETE 'localhost:9200/peptidematch_2026_03'
 ```
 
-### Testing Before Production
+### Preparing New Index Before Release
 
-For testing before official UniProt release:
+When UniProt provides pre-release data (typically 2-4 weeks before official release):
 
 1. Place pre-release FASTA files in `data/inputs/` with version suffix:
    - `uniprot_sprot_2026_07.fasta`
    - `uniprot_trembl_2026_07.fasta`
 
-2. Index to test index:
+2. Index to test index (skip download since you already have the files):
    ```bash
    java -cp elasticsearch/target/peptidematch-elasticsearch-1.0.0-SNAPSHOT.jar \
      org.proteininformationresource.peptidematch.cli.PeptideMatchCMD index \
-     -d data/inputs/uniprot_sprot_2026_07.fasta --source sp --index-name peptidematch_2026_07_test
+     -d data/inputs/uniprot_sprot_2026_07.fasta --source sp --index-name peptidematch_2026_07
    
    java -cp elasticsearch/target/peptidematch-elasticsearch-1.0.0-SNAPSHOT.jar \
      org.proteininformationresource.peptidematch.cli.PeptideMatchCMD index \
-     -d data/inputs/uniprot_trembl_2026_07.fasta --source tr --index-name peptidematch_2026_07_test
+     -d data/inputs/uniprot_trembl_2026_07.fasta --source tr --index-name peptidematch_2026_07
    ```
 
 3. Run integration tests against test index:
    ```bash
-   mvn test -Dtest=FastaVsIndexTest -Dtest.index=peptidematch_2026_07_test
+   mvn test -Dtest=FastaVsIndexTest -Dtest.index=peptidematch_2026_07
    ```
 
 4. Query test index via web service:
    ```bash
    curl -X POST 'localhost:9090/peptidematchwses/asyncrest' \
-     -d 'peps=VWLRRCT&index=peptidematch_2026_07_test'
+     -d 'peps=VWLRRCT&index=peptidematch_2026_07'
    ```
 
 5. After validation, rename test index to production version:
@@ -584,7 +584,7 @@ ESSearchService.SearchResult result = searchService.searchByPeptide(
 1. **Trigram decomposition**: Each protein sequence is split into overlapping 3-character tokens (e.g., `MKTL` → `MKT`, `KTL`)
 2. **Phrase query**: The query peptide is decomposed into trigrams and executed as an exact phrase query (`slop=0`)
 3. **Post-search verification**: `MatchPositionFinder` does a brute-force substring scan to find exact match positions and return them with 1-based coordinates
-4. **L/I equivalence**: When enabled, both the query (`I` → `L`) and a parallel `lToiSeq` field (all `L` → `I` in the index) are used to match isobaric leucine/isoleucine
+4. **L/I equivalence**: When enabled, the query (`I` → `L`) is searched against the `originalSeq.ltoi` sub-field (which has an L→I char_filter applied at index time) to match isobaric leucine/isoleucine
 
 ## API Reference
 
