@@ -178,7 +178,7 @@ III	P12345	342	10	12	10,11,12
 
 ## Updating Index with New UniProt Releases
 
-PeptideMatch supports zero-downtime index updates using Elasticsearch aliases. When UniProt releases a new version (quarterly, e.g., `2026_06`), you can update the index without breaking the web service.
+PeptideMatch supports zero-downtime index updates using Elasticsearch aliases. When UniProt releases a new version (quarterly, e.g., `2026_04`), you can update the index without breaking the web service.
 
 ### Architecture
 
@@ -200,7 +200,7 @@ PeptideMatch supports zero-downtime index updates using Elasticsearch aliases. W
 │  │  └──→ peptidematch_2026_03          │   │
 │  └─────────────────────────────────────┘   │
 │  ┌─────────────────────────────────────┐   │
-│  │  Index: peptidematch_2026_06        │   │
+│  │  Index: peptidematch_2026_04        │   │
 │  │  (building...)                      │   │
 │  └─────────────────────────────────────┘   │
 └─────────────────────────────────────────────┘
@@ -225,29 +225,29 @@ PeptideMatch supports zero-downtime index updates using Elasticsearch aliases. W
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │  1. DOWNLOAD                                                    │
-│  ./update-index.sh --version 2026_06                            │
+│  ./update-index.sh --version 2026_04                            │
 │  → Downloads FASTA files to data/inputs/                        │
 └─────────────────────────────────────────────────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────────┐
 │  2. INDEX (Background, ~9 hours)                                │
 │  java -cp ... PeptideMatchCMD index \                           │
-│    -d data/inputs/uniprot_sprot_2026_06.fasta \                 │
-│    --source sp --index-name peptidematch_2026_06                 │
+│    -d data/inputs/uniprot_sprot_2026_04.fasta \                 │
+│    --source sp --index-name peptidematch_2026_04                 │
 │  java -cp ... PeptideMatchCMD index \                           │
-│    -d data/inputs/uniprot_trembl_2026_06.fasta \                │
-│    --source tr --index-name peptidematch_2026_06                 │
+│    -d data/inputs/uniprot_trembl_2026_04.fasta \                │
+│    --source tr --index-name peptidematch_2026_04                 │
 └─────────────────────────────────────────────────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────────┐
 │  3. VALIDATE                                                    │
-│  mvn test -Dtest=FastaVsIndexTest -Dtest.index=peptidematch_2026_06
-│  curl -X POST localhost:9091/asyncrest -d 'peps=VWLRRCT&index=peptidematch_2026_06'
+│  mvn test -Dtest=FastaVsIndexTest -Dtest.index=peptidematch_2026_04
+│  curl -X POST localhost:9091/asyncrest -d 'peps=VWLRRCT&index=peptidematch_2026_04'
 └─────────────────────────────────────────────────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────────┐
 │  4. FORCE MERGE                                                 │
-│  curl -X POST "localhost:9200/peptidematch_2026_06/_forcemerge?max_num_segments=16"
+│  curl -X POST "localhost:9200/peptidematch_2026_04/_forcemerge?max_num_segments=16"
 └─────────────────────────────────────────────────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────────┐
@@ -255,7 +255,7 @@ PeptideMatch supports zero-downtime index updates using Elasticsearch aliases. W
 │  curl -X POST localhost:9200/_aliases -d '{                     │
 │    "actions": [                                                 │
 │      {"remove": {"index": "peptidematch_2026_03", "alias": "peptidematch_current"}},
-│      {"add":    {"index": "peptidematch_2026_06", "alias": "peptidematch_current"}}
+│      {"add":    {"index": "peptidematch_2026_04", "alias": "peptidematch_current"}}
 │    ]                                                            │
 │  }'                                                             │
 └─────────────────────────────────────────────────────────────────┘
@@ -283,25 +283,25 @@ PeptideMatch supports zero-downtime index updates using Elasticsearch aliases. W
 
 ### Automated Update Script
 
-The `update-index.sh` script downloads files to `data/inputs/` with version suffix (e.g., `uniprot_sprot_2026_06.fasta`):
+The `update-index.sh` script downloads files to `data/inputs/` with version suffix (e.g., `uniprot_sprot_2026_04.fasta`):
 
 ```bash
 # Auto-detect latest version and update
 ./update-index.sh
 
 # Use specific version
-./update-index.sh --version 2026_06
+./update-index.sh --version 2026_04
 
 # Preview what would be done (dry run)
 ./update-index.sh --dry-run
 
 # Skip download (use pre-existing files)
-./update-index.sh --version 2026_06 --skip-download
+./update-index.sh --version 2026_04 --skip-download
 ```
 
 **Downloaded files location:**
-- `/data/chenc/2026/PeptideMatch/data/inputs/uniprot_sprot_2026_06.fasta`
-- `/data/chenc/2026/PeptideMatch/data/inputs/uniprot_trembl_2026_06.fasta`
+- `/data/chenc/2026/PeptideMatch/data/inputs/uniprot_sprot_2026_04.fasta`
+- `/data/chenc/2026/PeptideMatch/data/inputs/uniprot_trembl_2026_04.fasta`
 
 ### Detailed Steps
 
@@ -309,7 +309,7 @@ The `update-index.sh` script downloads files to `data/inputs/` with version suff
 
 ```bash
 cd /data/chenc/2026/PeptideMatch
-./update-index.sh --version 2026_06
+./update-index.sh --version 2026_04
 ```
 
 #### Step 2: Index Data
@@ -318,22 +318,22 @@ cd /data/chenc/2026/PeptideMatch
 ```bash
 java -cp elasticsearch/target/peptidematch-elasticsearch-1.0.0-SNAPSHOT.jar \
   org.proteininformationresource.peptidematch.cli.PeptideMatchCMD index \
-  -d data/inputs/uniprot_sprot_2026_06.fasta \
+  -d data/inputs/uniprot_sprot_2026_04.fasta \
   --source sp \
-  --index-name peptidematch_2026_06
+  --index-name peptidematch_2026_04
 ```
 
 **TrEMBL** (~9 hours, run in background):
 ```bash
 nohup java -cp elasticsearch/target/peptidematch-elasticsearch-1.0.0-SNAPSHOT.jar \
   org.proteininformationresource.peptidematch.cli.PeptideMatchCMD index \
-  -d data/inputs/uniprot_trembl_2026_06.fasta \
+  -d data/inputs/uniprot_trembl_2026_04.fasta \
   --source tr \
-  --index-name peptidematch_2026_06 \
-  > data/trembl-2026_06.log 2>&1 &
+  --index-name peptidematch_2026_04 \
+  > data/trembl-2026_04.log 2>&1 &
 
 # Monitor progress
-tail -f data/trembl-2026_06.log
+tail -f data/trembl-2026_04.log
 ```
 
 #### Step 3: Validate Index
@@ -341,14 +341,14 @@ tail -f data/trembl-2026_06.log
 **Run FASTA vs Index comparison test:**
 ```bash
 cd /data/chenc/2026/PeptideMatch/elasticsearch
-mvn test -Dtest=FastaVsIndexTest -Dtest.index=peptidematch_2026_06
+mvn test -Dtest=FastaVsIndexTest -Dtest.index=peptidematch_2026_04
 ```
 
 **Test with web service:**
 ```bash
 # Submit query to test index
 curl -X POST 'localhost:9090/peptidematchwses/asyncrest' \
-  -d 'peps=VWLRRCT&index=peptidematch_2026_06'
+  -d 'peps=VWLRRCT&index=peptidematch_2026_04'
 
 # Check job status
 curl -s 'localhost:9090/peptidematchwses/asyncrest/jobs/PM...'
@@ -357,7 +357,7 @@ curl -s 'localhost:9090/peptidematchwses/asyncrest/jobs/PM...'
 #### Step 4: Force Merge
 
 ```bash
-curl -X POST "localhost:9200/peptidematch_2026_06/_forcemerge?max_num_segments=16"
+curl -X POST "localhost:9200/peptidematch_2026_04/_forcemerge?max_num_segments=16"
 ```
 
 #### Step 5: Swap Alias (Zero-Downtime)
@@ -366,7 +366,7 @@ curl -X POST "localhost:9200/peptidematch_2026_06/_forcemerge?max_num_segments=1
 curl -X POST 'localhost:9200/_aliases' -H 'Content-Type: application/json' -d '{
   "actions": [
     { "remove": { "index": "peptidematch_2026_03", "alias": "peptidematch_current" }},
-    { "add":    { "index": "peptidematch_2026_06", "alias": "peptidematch_current" }}
+    { "add":    { "index": "peptidematch_2026_04", "alias": "peptidematch_current" }}
   ]
 }'
 ```
@@ -374,7 +374,7 @@ curl -X POST 'localhost:9200/_aliases' -H 'Content-Type: application/json' -d '{
 **Verify:**
 ```bash
 curl -s 'localhost:9200/_alias/peptidematch_current'
-# Should return: {"peptidematch_2026_06":{"aliases":{"peptidematch_current":{}}}}
+# Should return: {"peptidematch_2026_04":{"aliases":{"peptidematch_current":{}}}}
 ```
 
 #### Step 6: Cleanup Old Index (Optional)
@@ -438,7 +438,7 @@ The web service uses the alias `peptidematch_current` by default. No code change
 screen -dmS prod bash -c 'cd peptidematchwses && mvn jetty:run -Djetty.port=9090'
 
 # Test server (port 9091) - uses specific index
-screen -dmS test bash -c 'cd peptidematchwses && mvn jetty:run -Djetty.port=9091 -Dindex.name=peptidematch_2026_06'
+screen -dmS test bash -c 'cd peptidematchwses && mvn jetty:run -Djetty.port=9091 -Dindex.name=peptidematch_2026_04'
 ```
 
 ### Rollback
@@ -452,7 +452,7 @@ curl -s 'localhost:9200/_cat/indices/peptidematch_*?h=index' | sort -r | head -2
 # Swap alias back
 curl -X POST 'localhost:9200/_aliases' -H 'Content-Type: application/json' -d '{
   "actions": [
-    { "remove": { "index": "peptidematch_2026_06", "alias": "peptidematch_current" }},
+    { "remove": { "index": "peptidematch_2026_04", "alias": "peptidematch_current" }},
     { "add":    { "index": "peptidematch_2026_03", "alias": "peptidematch_current" }}
   ]
 }'
