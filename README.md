@@ -100,7 +100,7 @@ curl -X POST 'localhost:9200/_aliases' -H 'Content-Type: application/json' -d '{
 ```bash
 cd peptidematchwses
 mvn jetty:run
-# Service starts on http://localhost:9090/peptidematchwses/
+# Service starts on http://localhost:9090/peptidematchws/
 ```
 
 #### Option B: Tomcat (Production)
@@ -112,10 +112,10 @@ The WAR file is compatible with **Tomcat 10.x+** (uses `jakarta.servlet` namespa
 mvn clean package -DskipTests
 
 # Deploy to Tomcat 10+
-cp peptidematchwses/target/PeptideMatchWSAsync-ES.war $CATALINA_HOME/webapps/
+cp peptidematchwses/target/peptidematchws.war $CATALINA_HOME/webapps/
 
 # Or rename for shorter context path
-cp peptidematchwses/target/PeptideMatchWSAsync-ES.war $CATALINA_HOME/webapps/peptidematch.war
+cp peptidematchwses/target/peptidematchws.war $CATALINA_HOME/webapps/peptidematch.war
 # Service accessible at http://localhost:8080/peptidematch/asyncrest/
 ```
 
@@ -124,7 +124,7 @@ cp peptidematchwses/target/PeptideMatchWSAsync-ES.war $CATALINA_HOME/webapps/pep
 ### Submit a Query
 
 ```bash
-curl -X POST 'localhost:9090/peptidematchwses/asyncrest' \
+curl -X POST 'localhost:9090/peptidematchws/asyncrest' \
   -d 'peps=VWLRRCT&swissprot=Y&format=json'
 ```
 
@@ -142,7 +142,7 @@ curl -X POST 'localhost:9090/peptidematchwses/asyncrest' \
 ### Check Job Status
 
 ```bash
-curl -s 'localhost:9090/peptidematchwses/asyncrest/jobs/PM...'
+curl -s 'localhost:9090/peptidematchws/asyncrest/jobs/PM...'
 ```
 
 ## Directory Structure

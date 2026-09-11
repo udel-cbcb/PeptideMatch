@@ -31,7 +31,7 @@ class MatchServiceIntegrationTest {
     static void setUp() {
         String host = System.getProperty("ws.host", "localhost");
         String port = System.getProperty("ws.port", "9090");
-        baseUrl = "http://" + host + ":" + port + "/peptidematchwses";
+        baseUrl = "http://" + host + ":" + port + "/peptidematchws";
         System.out.println("Testing web service at: " + baseUrl);
     }
 

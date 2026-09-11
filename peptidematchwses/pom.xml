@@ -112,7 +112,7 @@
     </dependencies>
 
     <build>
-        <finalName>PeptideMatchWSAsync-ES</finalName>
+        <finalName>peptidematchws</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -142,7 +142,7 @@
                         <port>9090</port>
                     </httpConnector>
                     <webApp>
-                        <contextPath>/peptidematchwses</contextPath>
+                        <contextPath>/peptidematchws</contextPath>
                     </webApp>
                 </configuration>
             </plugin>

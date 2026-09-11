@@ -16,8 +16,8 @@
         <br>
 
         <h3>Client sends POST query</h3>
-        <p>POST a query to <code>http://localhost:9090/peptidematchwses/asyncrest/</code></p>
-        <pre>POST /peptidematchwses/asyncrest/ HTTP/1.1
+        <p>POST a query to <code>https://peptidesearch.uniprot.org/asyncrest/</code></p>
+        <pre>POST https://peptidesearch.uniprot.org/asyncrest/ HTTP/1.1
 Content-type: application/x-www-form-urlencoded
 
 peps=AAVEEGIVLGGGCALLR,STKKSVQY
@@ -32,10 +32,10 @@ lEQi=on</pre>
         <h3>Server responds 202 (Accepted)</h3>
         <p>Once the server receives the query, it creates a background job and returns a location to a job status resource.</p>
         <pre>HTTP/1.1 202 Accepted
-Location: http://localhost:9090/peptidematchwses/asyncrest/jobs/PM201602291d5444276668425dbb05a2044c4c15c4</pre>
+Location: https://peptidesearch.uniprot.org/asyncrest/jobs/PM201602291d5444276668425dbb05a2044c4c15c4</pre>
 
         <h3>Client requests the job status</h3>
-        <pre>GET /peptidematchwses/asyncrest/jobs/PM201602291d5444276668425dbb05a2044c4c15c4 HTTP/1.1</pre>
+        <pre>GET https://peptidesearch.uniprot.org/asyncrest/jobs/PM201602291d5444276668425dbb05a2044c4c15c4 HTTP/1.1</pre>
 
         <h3>Server responds 303 (See Other) - Job still running</h3>
         <pre>HTTP/1.1 303 See Other

@@ -375,11 +375,11 @@ mvn test -Dtest=FastaVsIndexTest -Dtest.index=peptidematch_2026_04
 **Test with web service:**
 ```bash
 # Submit query to test index
-curl -X POST 'localhost:9090/peptidematchwses/asyncrest' \
+curl -X POST 'localhost:9090/peptidematchws/asyncrest' \
   -d 'peps=VWLRRCT&index=peptidematch_2026_04'
 
 # Check job status
-curl -s 'localhost:9090/peptidematchwses/asyncrest/jobs/PM...'
+curl -s 'localhost:9090/peptidematchws/asyncrest/jobs/PM...'
 ```
 
 #### Step 4: Force Merge
@@ -438,7 +438,7 @@ When UniProt provides pre-release data (typically 2-4 weeks before official rele
 
 4. Query test index via web service:
    ```bash
-   curl -X POST 'localhost:9090/peptidematchwses/asyncrest' \
+   curl -X POST 'localhost:9090/peptidematchws/asyncrest' \
      -d 'peps=VWLRRCT&index=peptidematch_2026_07'
    ```
 
@@ -656,7 +656,7 @@ The asynchronous REST web service provides peptide matching via HTTP API.
 ```bash
 cd peptidematchwses
 mvn jetty:run
-# Service starts on http://localhost:9090/peptidematchwses/
+# Service starts on http://localhost:9090/peptidematchws/
 ```
 
 #### Option B: Tomcat (Production)
@@ -668,10 +668,10 @@ The module produces a standard WAR file compatible with **Tomcat 10.x+** (uses `
 mvn clean package -DskipTests
 
 # Deploy to Tomcat 10+
-cp peptidematchwses/target/PeptideMatchWSAsync-ES.war $CATALINA_HOME/webapps/
+cp peptidematchwses/target/peptidematchws.war $CATALINA_HOME/webapps/
 
 # Or rename for shorter context path
-cp peptidematchwses/target/PeptideMatchWSAsync-ES.war $CATALINA_HOME/webapps/peptidematch.war
+cp peptidematchwses/target/peptidematchws.war $CATALINA_HOME/webapps/peptidematch.war
 # Service accessible at http://localhost:8080/peptidematch/asyncrest/
 ```
 
@@ -701,13 +701,13 @@ screen -dmS test bash -c 'cd peptidematchwses && mvn jetty:run -Djetty.port=9091
 **Example usage:**
 ```bash
 # Query production (port 9090)
-curl -X POST 'localhost:9090/peptidematchwses/asyncrest' -d 'peps=VWLRRCT'
+curl -X POST 'localhost:9090/peptidematchws/asyncrest' -d 'peps=VWLRRCT'
 
 # Query test index (port 9091)
 curl -X POST 'localhost:9091/peptidematchwses/asyncrest' -d 'peps=VWLRRCT'
 
 # Or override index via query parameter (any port)
-curl -X POST 'localhost:9090/peptidematchwses/asyncrest' -d 'peps=VWLRRCT&index=peptidematch_2026_03'
+curl -X POST 'localhost:9090/peptidematchws/asyncrest' -d 'peps=VWLRRCT&index=peptidematch_2026_03'
 ```
 
 ### API Endpoints
@@ -734,10 +734,10 @@ Content-Type: application/x-www-form-urlencoded
 **Example**:
 ```bash
 # Submit query
-curl -X POST 'localhost:9090/peptidematchwses/asyncrest/' \
+curl -X POST 'localhost:9090/peptidematchws/asyncrest/' \
   -d 'peps=LLALLAL&taxIds=&lEQi=N&swissprot=Y'
 
-# Returns: Location: http://localhost:9090/peptidematchwses/asyncrest/jobs/PM20260905...
+# Returns: Location: http://localhost:9090/peptidematchws/asyncrest/jobs/PM20260905...
 ```
 
 #### Check Job Status
@@ -759,10 +759,10 @@ GET /peptidematchwses/asyncrest/jobs/{jobId}/json
 **Example**:
 ```bash
 # Poll until complete
-curl -L 'localhost:9090/peptidematchwses/asyncrest/jobs/PM20260905...'
+curl -L 'localhost:9090/peptidematchws/asyncrest/jobs/PM20260905...'
 
 # Get JSON results (if format=json was used)
-curl -L 'localhost:9090/peptidematchwses/asyncrest/jobs/PM20260905.../json'
+curl -L 'localhost:9090/peptidematchws/asyncrest/jobs/PM20260905.../json'
 ```
 
 ### Response Formats
@@ -797,23 +797,23 @@ A0A2P2GK84,A0QPD4,A2D4U1,A2D670,...
 
 ```bash
 # Basic peptide search
-curl -X POST 'localhost:9090/peptidematchwses/asyncrest/' \
+curl -X POST 'localhost:9090/peptidematchws/asyncrest/' \
   -d 'peps=VWLRRCT'
 
 # With L/I equivalence
-curl -X POST 'localhost:9090/peptidematchwses/asyncrest/' \
+curl -X POST 'localhost:9090/peptidematchws/asyncrest/' \
   -d 'peps=III&lEQi=Y'
 
 # Swiss-Prot only, human proteins
-curl -X POST 'localhost:9090/peptidematchwses/asyncrest/' \
+curl -X POST 'localhost:9090/peptidematchws/asyncrest/' \
   -d 'peps=III&lEQi=Y&swissprot=Y&taxIds=9606'
 
 # Full JSON output
-curl -X POST 'localhost:9090/peptidematchwses/asyncrest/' \
+curl -X POST 'localhost:9090/peptidematchws/asyncrest/' \
   -d 'peps=LLALLAL&swissprot=Y&format=json'
 
 # Multiple peptides
-curl -X POST 'localhost:9090/peptidematchwses/asyncrest/' \
+curl -X POST 'localhost:9090/peptidematchws/asyncrest/' \
   -d 'peps=VWLRRCT\nIIIII&lEQi=Y'
 ```
 
