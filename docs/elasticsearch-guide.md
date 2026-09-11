@@ -704,7 +704,7 @@ screen -dmS test bash -c 'cd peptidematchwses && mvn jetty:run -Djetty.port=9091
 curl -X POST 'localhost:9090/peptidematchws/asyncrest' -d 'peps=VWLRRCT'
 
 # Query test index (port 9091)
-curl -X POST 'localhost:9091/peptidematchwses/asyncrest' -d 'peps=VWLRRCT'
+curl -X POST 'localhost:9091/peptidematchws/asyncrest' -d 'peps=VWLRRCT'
 
 # Or override index via query parameter (any port)
 curl -X POST 'localhost:9090/peptidematchws/asyncrest' -d 'peps=VWLRRCT&index=peptidematch_2026_03'
