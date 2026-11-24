@@ -195,3 +195,6 @@ mvn test -Dtest=MatchServiceIntegrationTest -Dws.port=9090
 Chuming Chen; Zhiwen Li; Hongzhan Huang; Baris E. Suzek; Cathy H. Wu; UniProt Consortium.
 [A fast Peptide Match Service for UniProt Knowledgebase](https://bioinformatics.oxfordjournals.org/content/29/21/2808).
 Bioinformatics 2013; doi: 10.1093/bioinformatics/btt484.
+
+## License
+License: to be assigned (MIT intended)
