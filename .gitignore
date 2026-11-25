@@ -29,3 +29,13 @@ replay_pid*
 # Data files
 data/inputs/
 data/es-data/
+
+# IDE settings, run output and backups
+.settings/
+nohup.out
+*.orig
+*.bak
+.DS_Store
+create_data/REAME
+create_data/REAME.txt
+index_data/readme.txt

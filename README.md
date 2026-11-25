@@ -2,6 +2,10 @@
 
 Locating occurrences of a specific peptide in a protein sequence database is important for protein identification in proteomics studies as well as for sequence-based protein retrieval. PeptideMatch is a high-performance web application for peptide matching using Elasticsearch 8.x as the search backend.
 
+## Production use
+
+Peptide Match has been a UniProt service since 2017. It has run 3.5 million search jobs on 11.4 million peptide sequences, including 2.1 million jobs from January through September 2026. The stand-alone command-line tool ([`peptidematch_cmd`](./peptidematch_cmd/)), which searches a user's own protein database, was downloaded 2,257 times in the same period.
+
 ## Features
 
 - **Fast peptide matching** against UniProtKB (Swiss-Prot + TrEMBL)
@@ -167,10 +171,21 @@ PeptideMatch/
 
 ## Modules
 
-| Module | Description |
-|--------|-------------|
-| `elasticsearch` | ES indexer, search service, CLI tools |
-| `peptidematchwses` | RESTful web service (Jetty) |
+The current service runs on Elasticsearch. Modules from the earlier Apache Solr/Lucene version are kept for reference; [docs/migration-plan.md](docs/migration-plan.md) describes the migration.
+
+| Module | Status | Description |
+|--------|--------|-------------|
+| `elasticsearch` | Current | Elasticsearch indexer, search service, CLI tools |
+| `peptidematchwses` | Current | Asynchronous RESTful web service (Jetty or Tomcat) |
+| `peptidematchapi2es` | Current | API v2 on the Elasticsearch backend |
+| `peptidematch_async_rest_client_es` | Current | Client for the asynchronous REST service |
+| `peptidematch_cmd` | Current | Stand-alone command-line tool for a user's own FASTA database (Lucene); see its [README](peptidematch_cmd/README.md) |
+| `create_data` | Data preparation | Perl scripts that build the sequence and taxonomy input files |
+| `peptidematch_web` | Legacy | Original web application (JSP, Solr) |
+| `peptidematchws` | Legacy | Original web service (Solr) |
+| `peptidematchapi2` | Legacy | Original API v2 (Swagger, Solr) |
+| `peptidematch_async_rest_client` | Legacy | Original asynchronous REST client |
+| `index_data` | Legacy | Original Lucene/Solr indexing programs |
 
 ## Testing
 
